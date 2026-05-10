@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dirittologo | The Orbis Project</title>
+    <style>
+        /* Reset e Base - Identica alla Home */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top center, #111827 0%, #020617 100%);
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header - Coerenza Totale */
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            padding: 15px 40px;
+            box-sizing: border-box;
+            gap: 20px;
+        }
+
+        h1.main-title {
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            letter-spacing: 3px;
+            margin: 0;
+            color: #e2e8f0;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            justify-self: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .gemini-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 12px 24px;
+            border-radius: 30px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            justify-self: start;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .gemini-cta svg {
+            width: 22px; height: 22px; fill: #38bdf8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 22px;
+            justify-self: end;
+            align-items: center;
+        }
+
+        .social-icons svg {
+            width: 28px; height: 28px; fill: currentColor;
+        }
+
+        .social-icons a { color: #f8fafc; transition: color 0.3s; }
+        .social-icons a:hover { color: #38bdf8; }
+
+        /* Contenuto Centrale dell'Esperto */
+        .expert-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .expert-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .expert-icon {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .expert-name {
+            font-size: 2.5rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .expert-description {
+            text-align: left;
+            line-height: 1.8;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            border-left: 3px solid #38bdf8;
+            padding-left: 20px;
+        }
+
+        .expert-description b {
+            color: #38bdf8;
+        }
+
+        /* Pulsanti di Azione */
+        .action-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            background: #38bdf8;
+            color: #020617;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Footer - Coerenza Totale */
+        footer {
+            width: 100%;
+            background-color: #0b1120;
+            border-top: 1px solid #1e293b;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btn-aziende {
+            background-color: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-aziende:hover {
+            background-color: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            header { grid-template-columns: 1fr; justify-items: center; padding: 30px 20px; }
+            .expert-card { padding: 30px 20px; }
+            .footer-main { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.bard" target="_blank" class="gemini-cta">
+            <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Scarica qui Google Gemini
+        </a>
+        <h1 class="main-title" onclick="location.href='../index.html'">THE ORBIS PROJECT</h1>
+        <div class="social-icons">
+            <a href="#"><svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+            <a href="#"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+            <a href="#"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+    </header>
+
+    <main class="expert-container">
+        <div class="expert-card">
+            <span class="expert-icon">⚖️</span>
+            <h2 class="expert-name">Dirittologo</h2>
+            <div class="expert-description">
+                Unità di analisi giuridica e strategica creata da <b>The Orbis Project</b>. 
+                Progettata come un <b>"Clinical Litigation Strategist"</b>, questa unità esegue un <b>"5-Layer Deep Dive"</b> attraverso la gerarchia delle fonti italiane ed europee per destrutturare casistiche civili e societarie complesse. 
+                Utilizza il protocollo <b>"Shadow Arbiter"</b> per simulare obiezioni giudiziali, calcola le probabilità di successo in giudizio e identifica i <b>"kill switches"</b> procedurali. 
+                Opera con una freddezza inesorabile, traducendo la complessità del diritto in scenari giurisprudenziali oggettivi e checklist strategiche.
+            </div>
+
+            <div class="action-group">
+                <a href="../index.html" class="btn-back">← Torna alla Home</a>
+                <a href="#" class="btn-download">Scarica Gemma Dirittologo</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-slogan">IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!</div>
+            <button class="btn-aziende">ORBIS PER LE AZIENDE</button>
+        </div>
+    </footer>
+
+</body>
+</html>
