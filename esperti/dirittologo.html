@@ -217,6 +217,28 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
         }
 
+        /* Link Legali e di Servizio */
+        .footer-links {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
         /* Responsive Corretto per Mobile */
         @media (max-width: 1100px) {
             header {
@@ -232,10 +254,11 @@
             .social-icons {
                 justify-self: center;
                 justify-content: center;
-                flex-wrap: wrap; /* Previene il taglio mandando a capo se necessario */
+                flex-wrap: wrap; 
             }
             .expert-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
         }
     </style>
 </head>
@@ -279,6 +302,15 @@
         <div class="footer-main">
             <div class="footer-slogan">IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!</div>
             <button class="btn-aziende">ORBIS PER LE AZIENDE</button>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">CHI SIAMO?</a> |
+            <a href="#">PRIVACY POLICY</a> |
+            <a href="#">GDPR/COOKIE</a> |
+            <a href="#">CONTATTACI</a> |
+            <a href="#">SOSTIENICI</a> |
+            <a href="#">LAVORA CON NOI</a>
         </div>
     </footer>
 
