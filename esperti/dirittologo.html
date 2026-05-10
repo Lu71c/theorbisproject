@@ -213,9 +213,23 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
         }
 
-        /* Responsive */
+        /* Responsive Corretto per Mobile */
         @media (max-width: 1100px) {
-            header { grid-template-columns: 1fr; justify-items: center; padding: 30px 20px; }
+            header {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 25px;
+                text-align: center;
+                padding: 30px 20px 10px 20px;
+            }
+            .gemini-cta {
+                justify-self: center;
+            }
+            .social-icons {
+                justify-self: center;
+                justify-content: center;
+                flex-wrap: wrap; /* Previene il taglio mandando a capo se necessario */
+            }
             .expert-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
         }
