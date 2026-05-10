@@ -8,7 +8,8 @@
         /* Reset e Base Mobile-First */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
+            /* Sfondo "Oblio": Blu scuro profondo, niente galassie pesanti */
+            background: radial-gradient(circle at top center, #111827 0%, #020617 100%);
             color: #f8fafc;
             margin: 0;
             padding: 0;
@@ -19,78 +20,179 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header ottimizzato per schermi piccoli */
+        /* Header - La Barra Superiore */
         header {
-            padding: 40px 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
+            max-width: 1400px;
+            padding: 30px 40px;
             box-sizing: border-box;
         }
 
         h1 {
-            font-size: clamp(1.8rem, 8vw, 2.8rem); /* Si ridimensiona da solo in base allo schermo */
-            letter-spacing: 2px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            letter-spacing: 3px;
             margin: 0;
-            color: #38bdf8;
+            color: #ffffff;
             font-weight: 800;
+            text-transform: uppercase;
         }
 
-        .subtitle {
-            color: #94a3b8;
-            margin-top: 12px;
-            font-size: clamp(0.9rem, 4vw, 1.2rem);
-            font-weight: 400;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Contenitore Segnaposto per i Social */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        /* Griglia flessibile */
+        /* Griglia delle Gemme */
         .container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1200px;
             padding: 20px;
             box-sizing: border-box;
             flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            /* Crea colonne che si adattano da sole, 5 su PC, 1 o 2 su mobile */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            width: 100%;
         }
 
-        /* Box "Gemma" - Stile moderno e pulito */
+        /* Box "Gemma" */
         .box {
-            border: 1px solid #334155;
-            padding: 30px;
-            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 25px 15px;
             text-align: center;
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.4); /* Sfondo semi-trasparente */
+            backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.8);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Spazio dove andranno le tue immagini WebP */
+        .box-img-placeholder {
+            font-size: 3rem; /* Temporaneo per gli emoji */
+            margin-bottom: 15px;
+            display: block;
         }
 
         .box h3 {
-            margin-top: 0;
-            color: #38bdf8;
-            font-size: 1.4rem;
+            margin: 0;
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .box p {
-            color: #cbd5e1;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* Footer professionale */
+        /* Footer Strutturato */
         footer {
             width: 100%;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #64748b;
+            background-color: #0b1120;
             border-top: 1px solid #1e293b;
-            margin-top: 40px;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-slogan {
+            color: #94a3b8;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* IL BOTTONE AZIENDE */
+        .btn-aziende {
+            background-color: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            /* Effetto luminoso base */
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-aziende:hover {
+            background-color: #38bdf8;
+            color: #0f172a;
+            /* Effetto luminoso acceso al passaggio del mouse */
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+            transform: scale(1.05);
+        }
+
+        .footer-links {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Adattamento per Schermi Piccoli (Smartphone) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .footer-main {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -98,21 +200,42 @@
 
     <header>
         <h1>THE ORBIS PROJECT</h1>
-        <p class="subtitle">Ecosistema di Agenti Verticali e Logica Autonoma</p>
+        <div class="social-icons">
+            X &nbsp; TikTok &nbsp; YT &nbsp; FB &nbsp; Reddit &nbsp; In
+        </div>
     </header>
 
     <div class="container">
         <div class="grid">
-            <div class="box">
-                <h3>Cantiere in corso</h3>
-                <p>Configurazione della flotta di esperti verticali. Accesso riservato in fase di attivazione.</p>
-            </div>
+            <div class="box"><span class="box-img-placeholder">⚖️</span><h3>Dirittologo</h3></div>
+            <div class="box"><span class="box-img-placeholder">📍</span><h3>Guida Ristoranti</h3></div>
+            <div class="box"><span class="box-img-placeholder">📁</span><h3>Burocrate</h3></div>
+            <div class="box"><span class="box-img-placeholder">⚙️</span><h3>Pokedect</h3></div>
+            <div class="box"><span class="box-img-placeholder">👔</span><h3>Politologo</h3></div>
+            
+            <div class="box"><span class="box-img-placeholder">📋</span><h3>IA Detector</h3></div>
+            <div class="box"><span class="box-img-placeholder">🪙</span><h3>Cryptoanalista</h3></div>
+            <div class="box"><span class="box-img-placeholder">▶️</span><h3>Youtuber</h3></div>
+            <div class="box"><span class="box-img-placeholder">🍸</span><h3>Guida Nightlife</h3></div>
+            <div class="box"><span class="box-img-placeholder">⛈️</span><h3>Pessimista</h3></div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 The Orbis Project <br> 
-        Infrastruttura Certificata Google Business & GDPR Compliant
+        <div class="footer-main">
+            <div class="footer-slogan">
+                IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!
+            </div>
+            <button class="btn-aziende">ORBIS PER LE AZIENDE</button>
+        </div>
+        <div class="footer-links">
+            <a href="#">CHI SIAMO?</a> |
+            <a href="#">PRIVACY POLICY</a> |
+            <a href="#">GDPR/COOKIE</a> |
+            <a href="#">CONTATTACI</a> |
+            <a href="#">SOSTIENICI</a> |
+            <a href="#">LAVORA CON NOI</a>
+        </div>
     </footer>
 
 </body>
