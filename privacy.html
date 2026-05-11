@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lavori in corso | The Orbis Project</title>
+    <title>Privacy Policy | The Orbis Project</title>
     <style>
         /* Reset e Base */
         body {
@@ -74,49 +74,83 @@
         .social-icons a { color: #f8fafc; transition: color 0.3s ease, transform 0.3s ease; display: inline-flex; }
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
 
-        /* Contenitore Lavori in Corso */
-        .wip-container {
+        /* Contenitore Privacy Policy */
+        .policy-container {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .wip-card {
+        .policy-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #cbd5e1;
+            line-height: 1.8;
         }
 
-        .wip-card span {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .wip-card h2 {
+        .policy-card h2 {
             font-size: 2rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .policy-card h3 {
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
+            margin-top: 35px;
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .wip-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .policy-card p {
+            margin-bottom: 20px;
+        }
+
+        .policy-card ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .policy-card li {
+            margin-bottom: 10px;
+        }
+
+        .policy-card b {
+            color: #f8fafc;
+        }
+
+        .note-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 15px 20px;
+            margin-top: 20px;
             margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .btn-back {
@@ -124,7 +158,7 @@
             background: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -196,7 +230,7 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta { justify-self: center; }
             .social-icons { justify-self: center; justify-content: center; flex-wrap: wrap; }
-            .wip-card { padding: 30px 20px; }
+            .policy-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
@@ -220,13 +254,40 @@
         </div>
     </header>
 
-    <main class="wip-container">
-        <div class="wip-card">
-            <span>🚧</span>
-            <h2>PRIVACY POLICY</h2>
+    <main class="policy-container">
+        <div class="policy-card">
+            <h2>Politica di Trasparenza e Protezione Dati</h2>
             
-            <p>Pagina attualmente in fase di sviluppo.<br>Tutte le informazioni saranno disponibili a breve.</p>
-            <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <h3>Titolare del Trattamento</h3>
+            <p>Il Titolare del trattamento è <b>Simone Clemente</b>, Fondatore di The Orbis Project (P.IVA: Settore Produzione Software, ATECO 62.01.00). Qualsiasi richiesta inerente la privacy può essere inoltrata all'indirizzo email ufficiale indicato nella sezione contatti del sito.</p>
+
+            <h3>Architettura "Zero-Data"</h3>
+            <p><b>The Orbis Project</b> è progettato secondo una filosofia "Brutalista" e Statica. Non possediamo database, non profiliamo gli utenti e non raccogliamo log di navigazione internamente. Il sito funge esclusivamente da hub informativo e di smistamento verso piattaforme esterne sicure.</p>
+
+            <h3>Natura del Trattamento Dati</h3>
+            <ul>
+                <li><b>Comunicazioni Volontarie:</b> L'unico momento in cui il Titolare entra in possesso di dati (es. nome, indirizzo email) è tramite l'invio spontaneo di comunicazioni da parte dell'utente via Email o Telefono. Tali dati saranno utilizzati esclusivamente per rispondere alla richiesta (finalità pre-contrattuale o commerciale).</li>
+                <li><b>Lavora con noi:</b> I CV inviati volontariamente saranno trattati esclusivamente per finalità di selezione del personale e conservati per il tempo strettamente necessario alla valutazione (massimo 24 mesi).</li>
+                <li><b>Settore B2B:</b> I dati relativi a partnership aziendali sono gestiti tramite contrattazione privata offline e protetti da accordi di riservatezza specifici.</li>
+            </ul>
+
+            <h3>Perimetro di Responsabilità e Terze Parti</h3>
+            <p>The Orbis Project reindirizza l'utente verso ecosistemi di terze parti. Cliccando sui collegamenti esterni, l'utente accetta le privacy policy di:</p>
+            <ul>
+                <li><b>Google Gemini:</b> Per l'interazione con gli Agenti IA (Gems).</li>
+                <li><b>GitHub (Microsoft Corp.):</b> Per l'hosting statico del sito.</li>
+                <li><b>Social Media:</b> X (Twitter), TikTok, YouTube, Facebook, Reddit, LinkedIn.</li>
+            </ul>
+            <div class="note-box">
+                <b>Nota bene:</b> The Orbis Project non ha accesso alle conversazioni private tra l'utente e le Gems, né ai dati di profilazione raccolti dai social network sopra citati.
+            </div>
+
+            <h3>Diritti dell'Interessato</h3>
+            <p>Ai sensi del GDPR, l'utente può richiedere in ogni momento l'accesso, la rettifica o la cancellazione dei dati inviati via email scrivendo direttamente al Titolare.</p>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-back">← Torna alla Home</a>
+            </div>
         </div>
     </main>
 
