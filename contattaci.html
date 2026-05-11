@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lavori in corso | The Orbis Project</title>
+    <title>Contattaci | The Orbis Project</title>
     <style>
         /* Reset e Base */
         body {
@@ -74,49 +74,96 @@
         .social-icons a { color: #f8fafc; transition: color 0.3s ease, transform 0.3s ease; display: inline-flex; }
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
 
-        /* Contenitore Lavori in Corso */
-        .wip-container {
+        /* Contenitore Policy/Contatti */
+        .policy-container {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .wip-card {
+        .policy-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #cbd5e1;
+            line-height: 1.8;
         }
 
-        .wip-card span {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .wip-card h2 {
+        .policy-card h2 {
             font-size: 2rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .policy-card h3 {
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
+            margin-top: 35px;
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .wip-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .policy-card p {
+            margin-bottom: 20px;
+        }
+
+        .policy-card b {
+            color: #f8fafc;
+        }
+        
+        .policy-card ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .policy-card li {
+            margin-bottom: 10px;
+        }
+        
+        /* Stile specifico per i link email nella pagina contatti */
+        .email-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .email-link:hover {
+            color: #f8fafc;
+            text-decoration: underline;
+        }
+
+        .note-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 15px 20px;
+            margin-top: 20px;
             margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .btn-back {
@@ -124,7 +171,7 @@
             background: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -196,7 +243,7 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta { justify-self: center; }
             .social-icons { justify-self: center; justify-content: center; flex-wrap: wrap; }
-            .wip-card { padding: 30px 20px; }
+            .policy-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
@@ -220,13 +267,36 @@
         </div>
     </header>
 
-    <main class="wip-container">
-        <div class="wip-card">
-            <span>🚧</span>
-            <h2>CONTATTACI</h2>
+    <main class="policy-container">
+        <div class="policy-card">
+            <h2>Mappa Operativa e Contatti</h2>
             
-            <p>Pagina attualmente in fase di sviluppo.<br>Tutte le informazioni saranno disponibili a breve.</p>
-            <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <div class="note-box">
+                <b>Filosofia di Rete:</b> The Orbis Project non è progettato per inondare il web di rumore bianco. Ogni canale ha uno scopo preciso e verticale. Il nostro tempo è dedicato a creare tecnologia e soluzioni pratiche, non a rincorrere l'algoritmo.
+            </div>
+
+            <h3>L'Ecosistema Social</h3>
+            <p>Seleziona il canale più adatto alle tue necessità:</p>
+            <ul>
+                <li><b>YouTube:</b> La nostra biblioteca tecnica. Qui troverai video lunghi, tutorial approfonditi e guide strutturate sull'uso degli Agenti.</li>
+                <li><b>TikTok:</b> La vetrina rapida. Pillole di futuro, chicche veloci e scorciatoie per ottimizzare il tuo tempo in pochi secondi.</li>
+                <li><b>Facebook:</b> Il manuale e la bacheca. Aggiornamenti strutturati, post di approfondimento e riflessioni ponderate (non più di un paio di volte a settimana).</li>
+                <li><b>X (Twitter):</b> Il battito del progetto. Aggiornamenti quotidiani, news rapide e comunicazioni in tempo reale.</li>
+                <li><b>Reddit:</b> Il think tank. Una community ristretta e selezionata, pensata per confrontarsi tecnicamente e far evolvere il progetto con le persone giuste.</li>
+                <li><b>LinkedIn:</b> Il ponte professionale. Networking diretto, relazioni B2B e contatto con il fondatore.</li>
+            </ul>
+
+            <h3>Contatti Email Ufficiali</h3>
+            <p>Per comunicazioni dirette, utilizza gli indirizzi dedicati in base alla tua richiesta:</p>
+            <ul>
+                <li><b>Informazioni Generali:</b> <a href="mailto:info@theorbisproject.com" class="email-link">info@theorbisproject.com</a><br>Il punto di ingresso per dubbi, feedback o domande sull'utilizzo delle Gems.</li>
+                <li><b>Lavora con Noi e Collaborazioni:</b> <a href="mailto:candidature@theorbisproject.com" class="email-link">candidature@theorbisproject.com</a><br>Se vuoi unirti al team, proporre partnership tecniche o creative.</li>
+                <li><b>Orbis per le Aziende:</b> <a href="mailto:business@theorbisproject.com" class="email-link">business@theorbisproject.com</a><br>Canale esclusivo riservato alle richieste professionali, consulenze B2B e integrazioni aziendali.</li>
+            </ul>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-back">← Torna alla Home</a>
+            </div>
         </div>
     </main>
 
