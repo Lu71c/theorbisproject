@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lavori in corso | The Orbis Project</title>
+    <title>GDPR & Cookie Policy | The Orbis Project</title>
     <style>
         /* Reset e Base */
         body {
@@ -74,49 +74,64 @@
         .social-icons a { color: #f8fafc; transition: color 0.3s ease, transform 0.3s ease; display: inline-flex; }
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
 
-        /* Contenitore Lavori in Corso */
-        .wip-container {
+        /* Contenitore Policy */
+        .policy-container {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .wip-card {
+        .policy-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #cbd5e1;
+            line-height: 1.8;
         }
 
-        .wip-card span {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .wip-card h2 {
+        .policy-card h2 {
             font-size: 2rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .policy-card h3 {
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
+            margin-top: 35px;
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .wip-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .policy-card p {
+            margin-bottom: 20px;
+        }
+
+        .policy-card b {
+            color: #f8fafc;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .btn-back {
@@ -124,7 +139,7 @@
             background: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -196,7 +211,7 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta { justify-self: center; }
             .social-icons { justify-self: center; justify-content: center; flex-wrap: wrap; }
-            .wip-card { padding: 30px 20px; }
+            .policy-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
@@ -220,13 +235,25 @@
         </div>
     </header>
 
-    <main class="wip-container">
-        <div class="wip-card">
-            <span>🚧</span>
-            <h2>GDPR/COOKIE</h2>
+    <main class="policy-container">
+        <div class="policy-card">
+            <h2>Dichiarazione sui Cookie e Tecnologie di Tracciamento</h2>
             
-            <p>Pagina attualmente in fase di sviluppo.<br>Tutte le informazioni saranno disponibili a breve.</p>
-            <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <h3>Stato di Immunità da Tracciamento</h3>
+            <p><b>The Orbis Project</b> dichiara la totale assenza di cookie di profilazione, cookie di marketing, pixel di tracciamento (es. Meta Pixel) o sistemi di analisi comportamentale invasiva (es. Google Analytics). Il sito è Cookie-Free per quanto concerne la gestione diretta del Titolare.</p>
+
+            <h3>Cookie Tecnici e CDN</h3>
+            <p>L'infrastruttura è ospitata su GitHub Pages (Microsoft Corp.). Per la corretta distribuzione dei contenuti a livello globale e la sicurezza della connessione, GitHub potrebbe rilasciare cookie strettamente tecnici necessari alla stabilità del servizio. Questi cookie non sono sotto il controllo di The Orbis Project e non vengono utilizzati per identificare l'utente. Per approfondimenti, consultare la GitHub Privacy Statement.</p>
+
+            <h3>Base Legale ed Esenzione dal Consenso</h3>
+            <p>In conformità alla Direttiva e-Privacy (2002/58/CE) e alle Linee Guida del Garante Privacy, questo sito non è tenuto a mostrare un cookie banner. L'esenzione è motivata dalla natura esclusivamente tecnica degli strumenti utilizzati e dall'assenza totale di finalità pubblicitarie.</p>
+
+            <h3>Interazioni Esterne</h3>
+            <p>L'utente è informato che l'interazione con le piattaforme esterne collegate (Social Media e Google Gemini) comporterà l'attivazione di cookie proprietari di tali fornitori una volta abbandonato il dominio di The Orbis Project.</p>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-back">← Torna alla Home</a>
+            </div>
         </div>
     </main>
 
