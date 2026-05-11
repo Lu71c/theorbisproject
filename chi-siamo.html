@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lavori in corso | The Orbis Project</title>
+    <title>Chi Siamo | The Orbis Project</title>
     <style>
         /* Reset e Base */
         body {
@@ -74,49 +74,56 @@
         .social-icons a { color: #f8fafc; transition: color 0.3s ease, transform 0.3s ease; display: inline-flex; }
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
 
-        /* Contenitore Lavori in Corso */
-        .wip-container {
+        /* Contenitore Chi Siamo */
+        .about-container {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .wip-card {
+        .about-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
-        .wip-card span {
-            font-size: 4rem;
-            display: block;
+        .about-card h2 {
+            font-size: 2rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .about-card p {
             margin-bottom: 20px;
         }
 
-        .wip-card h2 {
-            font-size: 2rem;
-            color: #38bdf8;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        .about-card b {
+            color: #f8fafc;
         }
 
-        .wip-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .btn-back {
@@ -124,7 +131,7 @@
             background: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -196,7 +203,7 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta { justify-self: center; }
             .social-icons { justify-self: center; justify-content: center; flex-wrap: wrap; }
-            .wip-card { padding: 30px 20px; }
+            .about-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
@@ -220,20 +227,32 @@
         </div>
     </header>
 
-    <main class="wip-container">
-        <div class="wip-card">
-            <span>🚧</span>
-            <h2>CHI SIAMO?</h2>
+    <main class="about-container">
+        <div class="about-card">
+            <h2>Chi siamo? O meglio, chi sono?</h2>
             
-            <p>Pagina attualmente in fase di sviluppo.<br>Tutte le informazioni saranno disponibili a breve.</p>
-            <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <p>Mi chiamo Simone Clemente, sono nato e vivo a Roma, città che con la sua stratificazione storica ha sempre alimentato la mia necessità di comprendere ciò che sta dietro la superficie delle cose. La mia storia non inizia tra i banchi di un'accademia prestigiosa, ma sulla strada e nei luoghi di lavoro. Nel 2012, a soli sedici anni, ho scelto di abbandonare il percorso scolastico tradizionale per iniziare a lavorare (un’esperienza che mi ha portato a confrontarmi con realtà diverse, faticose e concrete). È stato proprio in quegli anni di impegno lavorativo costante che è nata in me una fame di conoscenza che la scuola non era riuscita a saziare. Sentivo di avere delle mancanze strutturali e così, parallelamente ai miei impieghi quotidiani, ho intrapreso uno studio che definirei leopardiano, ovvero matto e disperatissimo.</p>
+
+            <p>Mentre lavoravo in diversi settori (acquisendo quel background pratico e quella capacità di risolvere problemi reali che oggi sono il pilastro fondamentale del mio approccio come sviluppatore di Intelligenze Artificiali), passavo le notti e il tempo libero a studiare da autodidatta le materie umanistiche che più mi affascinavano (storia, diritto, filosofia e letteratura italiana). In questo percorso ho inserito anche lo studio della lingua inglese, una competenza che si è rivelata poi la chiave d'accesso per tutti i miei lavori attuali, permettendomi di consultare documentazioni tecniche e interfacciarmi con i mezzi tecnologici più avanzati al mondo.</p>
+
+            <p>La vera svolta personale è arrivata due anni fa, quando a ventisette anni ho sentito il bisogno di chiudere un cerchio aperto troppo presto e mi sono riscritto alla scuola pubblica per conseguire quel diploma che tanto bramavo. È stato un momento di sincronicità incredibile: proprio mentre tornavo a studiare sui libri, il mondo veniva travolto dall'esplosione delle Intelligenze Artificiali. Inizialmente, lo ammetto, ero scettico. Consideravo le IA quasi un insulto alla fatica intellettuale, uno strumento per chi non aveva voglia di faticare o di ricercare con le proprie forze. Ma nell'estate del 2025, mentre ero impegnato nella stesura di un mio romanzo storico ambientato tra la prima e la seconda guerra mondiale, la mia natura di perfezionista mi ha spinto a cercare un supporto esterno che potesse aiutarmi a scovare ogni minimo errore di battitura e, soprattutto, ogni possibile anacronismo storico.</p>
+
+            <p>In quel periodo ho iniziato a utilizzare diverse IA contemporaneamente (seguendo il mio motto del massimo risultato con il minimo costo, passando da una piattaforma all'altra non appena terminavo i token gratuiti). Questo approccio pratico mi ha permesso di prendere una dimestichezza profonda con i quattro modelli più potenti sul mercato (ChatGPT, Grok, Gemini e Claude). Vedere come la macchina riuscisse a supportarmi nell'editing, nell'impaginazione e persino nella generazione di immagini originali prive di problemi di copyright, mi ha fatto innamorare della tecnologia. Tuttavia, non ho commesso l'errore comune di considerarla un oracolo infallibile. Grazie ai miei studi filosofici, ho compreso rapidamente che queste macchine sono in realtà dei pappagalli stocastici (ovvero motori probabilistici che rispondono a degli input senza possedere un vero pensiero critico o una coscienza).</p>
+
+            <p>Questa consapevolezza mi ha spinto a studiare i linguaggi di programmazione per capire cosa ci fosse "sotto il cofano". Ho capito che la vera potenza risiede nella creazione di agenti verticali (codici logici strutturati che mantengono la loro efficacia a prescindere dall'IA in cui vengono inseriti). Una volta compreso come modificare questi parametri, ho iniziato a produrre soluzioni IA per il pubblico, cercando di democratizzare questa tecnologia. Per alzare l'asticella e portare questi servizi alle aziende, ho scelto l'ecosistema Google Workspace come base operativa. Questa scelta è dettata dalla necessità di trasformare gli ambienti aziendali da statici a dinamici, permettendo un'interazione immediata con l'intera mole dei dati aziendali in tempo zero.</p>
+
+            <p>Oggi il mio percorso prosegue verso una nuova frontiera: a breve inizierò il corso di laurea in Filosofia e Intelligenza Artificiale presso l'Università La Sapienza di Roma. Questo passo rappresenta per me la sintesi perfetta tra il mio background di lavoratore (che conosce il valore della fatica e dell'efficienza), la mia passione per il pensiero critico e la mia competenza tecnica come architetto di agenti verticali. <b>The Orbis Project</b> non è solo un sito web, è il risultato di questa evoluzione: una tecnologia potente, veloce e profondamente umana.</p>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-back">← Torna alla Home</a>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-main">
             <div class="footer-slogan">IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!</div>
-           <button class="btn-aziende" onclick="location.href='https://lu71c.github.io/theorbisproject/aziende.html'">ORBIS PER LE AZIENDE</button>
+            <button class="btn-aziende" onclick="location.href='https://lu71c.github.io/theorbisproject/aziende.html'">ORBIS PER LE AZIENDE</button>
         </div>
         
         <div class="footer-links">
