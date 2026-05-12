@@ -102,7 +102,7 @@
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 1100px;
+            max-width: 1000px;
             width: 100%;
             text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
@@ -131,21 +131,12 @@
         }
 
         .policy-card h3 {
-            font-size: 1.6rem;
-            color: #f8fafc;
+            font-size: 1.4rem;
+            color: #38bdf8;
             text-transform: uppercase;
-            margin-top: 50px;
+            margin-top: 40px;
             margin-bottom: 15px;
             letter-spacing: 1px;
-            border-left: 4px solid #38bdf8;
-            padding-left: 15px;
-        }
-
-        .policy-card h4 {
-            font-size: 1.2rem;
-            color: #38bdf8;
-            margin-top: 30px;
-            margin-bottom: 10px;
         }
 
         .policy-card p { margin-bottom: 20px; }
@@ -157,70 +148,45 @@
             padding: 20px;
             margin: 30px 0;
             border-radius: 0 8px 8px 0;
+            font-style: italic;
         }
 
-        .compliance-box {
-            background: rgba(220, 38, 38, 0.1);
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            border-left: 4px solid #ef4444;
-            padding: 25px;
-            margin: 40px 0;
-            border-radius: 8px;
-        }
-
-        .compliance-box h4 {
-            color: #ef4444;
-            margin-top: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .compliance-box b { color: #fca5a5; }
-
-        /* Elenchi personalizzati */
-        .services-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .services-list li {
+        /* Stile Tabella Prezzi */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
             background: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(56, 189, 248, 0.1);
             border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
             padding: 15px 20px;
-            margin-bottom: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        .services-list b { color: #38bdf8; }
-
-        /* Griglia Agenti */
-        .agent-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-top: 30px;
+        .comparison-table th {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1rem;
         }
 
-        .agent-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .highlight-col { color: #f8fafc; font-weight: 700; background: rgba(56, 189, 248, 0.05); }
+
+        .email-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
         }
+        .email-link:hover { color: #f8fafc; text-decoration: underline; }
 
-        .agent-card:hover {
-            border-color: #38bdf8;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .agent-card h4 { margin-top: 0; color: #f8fafc; font-size: 1.3rem; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px;}
-        .agent-card .agent-role { color: #38bdf8; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; display: block;}
-        .agent-card p { font-size: 0.95rem; margin-bottom: 0; color: #94a3b8;}
-
-        .btn-wrapper { text-align: center; margin-top: 60px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-wrapper { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
         .btn-action {
             display: inline-block;
@@ -290,8 +256,8 @@
         @media (max-width: 1100px) {
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta, .social-icons { justify-self: center; }
-            .policy-card { padding: 40px 20px; }
-            .agent-grid { grid-template-columns: 1fr; }
+            .policy-card { padding: 30px 20px; }
+            .comparison-table th, .comparison-table td { padding: 10px; font-size: 0.9rem; }
         }
         @media (max-width: 768px) {
             .footer-main { flex-direction: column; text-align: center; }
@@ -310,4 +276,79 @@
         <div class="social-icons">
             <a href="https://x.com/OrbisProject26" target="_blank" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
             <a href="https://www.tiktok.com/@theorbisproject" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
-            <a href="https://www.youtube.com/@theorbisprojectYT" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122
+            <a href="https://www.youtube.com/@theorbisprojectYT" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://www.facebook.com/people/The-Orbis-Project/61585519696555/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.reddit.com/user/TheOrbisProject/" target="_blank" title="Reddit"><svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .883.175 1.188.467 1.21-.865 2.884-1.439 4.735-1.503l.88-4.137a.326.326 0 0 1 .388-.252l3.273.693c.121-.433.526-.77 1.01-.77zM9.546 12.87c-.854 0-1.55.696-1.55 1.55s.696 1.55 1.55 1.55c.853 0 1.549-.696 1.549-1.55s-.696-1.55-1.549-1.55zm4.908 0c-.854 0-1.549.696-1.549 1.55s.695 1.55 1.549 1.55c.853 0 1.549-.696 1.549-1.55s-.696-1.55-1.549-1.55zm-2.454 4.631c-1.328 0-2.433-.655-2.482-.686-.168-.109-.215-.333-.105-.502.109-.168.333-.215.502-.105.02.012.92.56 2.085.56 1.166 0 2.067-.549 2.086-.56.168-.11.393-.063.502.105.11.168.063.393-.105.502-.049.031-1.154.686-2.483.686z"/></svg></a>
+            <a href="https://it.linkedin.com/in/simone-clemente-519838360" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+        </div>
+    </header>
+
+    <main class="policy-container">
+        <div class="policy-card">
+            <h2>Suite Aziendale Multi-Agente</h2>
+            <div class="subtitle">Il Sistema Operativo Autocosciente per la tua Impresa.</div>
+
+            <p>Il più grande difetto dell'Intelligenza Artificiale commerciale è l'<b>allucinazione</b>: la tendenza a inventare dati quando non li conosce. Per un'azienda che gestisce risorse umane, stipendi e compliance legale, un'allucinazione non è un bug, è un danno economico incalcolabile.</p>
+            <p>La Suite di The Orbis Project risolve questo problema alla radice. Non vi offriamo un singolo chatbot generalista, ma un <b>ecosistema di Agenti Verticali che lavorano a compartimenti stagni</b>, si controllano a vicenda e sono ancorati rigidamente ai vostri file aziendali su Google Drive.</p>
+
+            <div class="note-box">
+                <b>🛡️ Protocollo "Human-in-the-Loop": Compliance EU AI Act 2024</b><br><br>
+                La nostra infrastruttura è progettata nativamente per rispettare l'<b>Articolo 14 dell'AI Act Europeo (Human Oversight)</b>. Il sistema impedisce all'IA di prendere decisioni autonome non verificate. Tramite un rigoroso "Loop di Autocorrezione" basato sul copia-incolla dei dati, trasformiamo il dipendente umano da semplice inseritore dati massivo a <b>Revisore e Auditor Finale</b>. L'azienda mantiene così il 100% della responsabilità legale e decisionale, proteggendosi da sanzioni per "trattamento automatizzato opaco" (GDPR Art.22).
+            </div>
+
+            <h3>1. L'Infrastruttura di Base: Terminale Operativo Orbis</h3>
+            <p>Più che una semplice Intelligenza Artificiale, il Terminale Operativo è un vero e proprio <b>software integrato all'interno dell'ecosistema IA</b>. È il motore che elimina la fatica dell'inserimento dati massivo, combinandosi con gli altri agenti. Il suo unico scopo è elaborare il testo: non inventa e non opina.</p>
+            <p><b>Le sue funzioni primarie includono:</b></p>
+            <ul>
+                <li><b>Estrazione Dati Mirata:</b> Isolamento istantaneo degli ultimi 7 giorni di turnazione per agevolare il controllo logistico.</li>
+                <li><b>Reportistica Massiva:</b> Raggruppa enormi moli di dati mensili per Operatore o Appalto, creando report lineari perfetti per l'elaborazione amministrativa.</li>
+                <li><b>Data-Entry e Conversione:</b> Riceve appunti o note disordinate e le converte rigorosamente nel formato compatibile con il database aziendale.</li>
+            </ul>
+
+            <h3>2. Logistica a Zero Allucinazioni: Il Sistema Multi-Agente</h3>
+            <p>A differenza dell'IA standard che viene lasciata sola a indovinare, Orbis usa un approccio basato sul "pessimismo computazionale": diamo per scontato che l'IA possa sbagliare. Per questo, un agente crea e un altro agente revisiona.</p>
+            
+            <p><b>⚙️ Gestoturn (Architetto Pianificazione Turni):</b><br>
+            Crea le bozze logistiche leggendo dal Drive aziendale. Applica il dogma della <i>Zero-Vacancy Policy</i> bilanciandolo con l'etica del lavoro (target 8h), e gestisce le emergenze applicando la flessibilità operativa richiesta dall'impresa.</p>
+
+            <p><b>⚖️ Reviturn (L'Auditor Incorruttibile):</b><br>
+            Il controllore che fa le pulci a Gestoturn. Applica la "Ghigliottina": se l'agente operativo ha violato le 11h di riposo legale, assegnato turni per 7 giorni di fila, o <b>allucinato nomi non presenti in anagrafica</b>, Reviturn blocca l'output e impone la rettifica.</p>
+
+            <h3>3. Reparto Amministrativo: Agente Payroll & Fatturazione (In Rilascio)</h3>
+            <p>Il Validatore Fiscale Autocosciente. Si nutre dei report generati dal Terminale Operativo per produrre buste paga e fatture precise al centesimo. Sottoposto a un nostro esclusivo <b>loop di autocorrezione iterativo</b>, questo agente viene forzato a ricontrollare i propri calcoli finché l'allucinazione non è allo 0%. Autocertifica che ogni importo o maggiorazione corrisponda esplicitamente ai dati originali, abbattendo drasticamente i tempi di revisione umana.</p>
+
+            <h3>4. Consulenza Normativa e Strategica</h3>
+            <p>Agenti dal dialogo più aperto e discorsivo, accessibili in qualsiasi momento. Progettati per rispondere istantaneamente ai dubbi di manager e direttori, traducendo il "burocratese" in soluzioni pratiche e limitando il ricorso a costose consulenze esterne.</p>
+
+            <p><b>💼 Esperto Diritto Aziendale:</b><br>
+            L'alleato della Direzione per la tutela giuslavoristica. Analizza policy, contestazioni disciplinari e norme del CCNL. Di fronte a una potenziale violazione aziendale, agisce preventivamente simulando un controllo dell'Ispettorato del Lavoro e calcolando l'esatto rischio sanzionatorio in Euro.</p>
+
+            <p><b>🏛️ Esperto Burocrazia PA:</b><br>
+            Il navigatore amministrativo che decodifica portali telematici, INPS, INAIL e bandi di gara. Attiva lo <i>"Shadow Inspector"</i>: simula di essere un funzionario ostile che analizza la tua pratica alla ricerca di un errore formale per rigettarla, permettendoti di correggere i documenti prima dell'invio ufficiale.</p>
+
+            <div class="btn-wrapper">
+                <a href="mailto:business@theorbisproject.com" class="btn-action">Richiedi Demo della Suite</a>
+                <a href="aziende.html" class="btn-back">← Torna alle Soluzioni</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-slogan">
+                IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!
+            </div>
+            <a href="index.html" class="btn-pubblico">ORBIS PER IL PUBBLICO</a>
+        </div>
+        <div class="footer-links">
+            <a href="chi-siamo.html">CHI SIAMO?</a> |
+            <a href="privacy.html">PRIVACY POLICY</a> |
+            <a href="gdpr.html">GDPR/COOKIE</a> |
+            <a href="contattaci.html">CONTATTACI</a> |
+            <a href="sostienici.html">SOSTIENICI</a> |
+            <a href="lavora-con-noi.html">LAVORA CON NOI</a>
+        </div>
+    </footer>
+
+</body>
+</html>
