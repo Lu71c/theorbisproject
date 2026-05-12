@@ -90,7 +90,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centrato verticalmente per la pagina in costruzione */
+            justify-content: flex-start;
             padding: 20px 20px 60px;
             width: 100%;
             box-sizing: border-box;
@@ -101,31 +101,145 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
-            padding: 80px 50px; /* Più padding per centrare bene il testo di "Lavori in corso" */
-            max-width: 1000px;
+            padding: 50px;
+            max-width: 1100px;
             width: 100%;
-            text-align: center; /* Testo centrato */
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             color: #cbd5e1;
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
         .policy-card h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #f8fafc;
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 20px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         .policy-card .subtitle {
+            text-align: center;
             color: #38bdf8;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 40px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
         }
 
-        .btn-wrapper { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .policy-card h3 {
+            font-size: 1.6rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 15px;
+        }
+
+        .policy-card h4 {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .policy-card p { margin-bottom: 20px; }
+        .policy-card b { color: #f8fafc; }
+
+        .note-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .compliance-box {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-left: 4px solid #ef4444;
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .compliance-box h4 {
+            color: #ef4444;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .compliance-box b { color: #fca5a5; }
+
+        /* Elenchi personalizzati */
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .services-list li {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+        }
+
+        .services-list b { color: #38bdf8; }
+
+        /* Griglia Agenti */
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .agent-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .agent-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .agent-card h4 { margin-top: 0; color: #f8fafc; font-size: 1.3rem; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px;}
+        .agent-card .agent-role { color: #38bdf8; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; display: block;}
+        .agent-card p { font-size: 0.95rem; margin-bottom: 0; color: #94a3b8;}
+
+        .btn-wrapper { text-align: center; margin-top: 60px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+        .btn-action {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 14px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+            background: #f8fafc;
+        }
 
         .btn-back {
             display: inline-block;
@@ -176,7 +290,8 @@
         @media (max-width: 1100px) {
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta, .social-icons { justify-self: center; }
-            .policy-card { padding: 50px 20px; }
+            .policy-card { padding: 40px 20px; }
+            .agent-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .footer-main { flex-direction: column; text-align: center; }
@@ -195,40 +310,4 @@
         <div class="social-icons">
             <a href="https://x.com/OrbisProject26" target="_blank" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
             <a href="https://www.tiktok.com/@theorbisproject" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
-            <a href="https://www.youtube.com/@theorbisprojectYT" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-            <a href="https://www.facebook.com/people/The-Orbis-Project/61585519696555/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://www.reddit.com/user/TheOrbisProject/" target="_blank" title="Reddit"><svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .883.175 1.188.467 1.21-.865 2.884-1.439 4.735-1.503l.88-4.137a.326.326 0 0 1 .388-.252l3.273.693c.121-.433.526-.77 1.01-.77zM9.546 12.87c-.854 0-1.55.696-1.55 1.55s.696 1.55 1.55 1.55c.853 0 1.549-.696 1.549-1.55s-.696-1.55-1.549-1.55zm4.908 0c-.854 0-1.549.696-1.549 1.55s.695 1.55 1.549 1.55c.853 0 1.549-.696 1.549-1.55s-.696-1.55-1.549-1.55zm-2.454 4.631c-1.328 0-2.433-.655-2.482-.686-.168-.109-.215-.333-.105-.502.109-.168.333-.215.502-.105.02.012.92.56 2.085.56 1.166 0 2.067-.549 2.086-.56.168-.11.393-.063.502.105.11.168.063.393-.105.502-.049.031-1.154.686-2.483.686z"/></svg></a>
-            <a href="https://it.linkedin.com/in/simone-clemente-519838360" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-        </div>
-    </header>
-
-    <main class="policy-container">
-        <div class="policy-card">
-            <h2>Lavori in Corso</h2>
-            <div class="subtitle">La Suite Aziendale sarà disponibile a breve.</div>
-            
-            <div class="btn-wrapper">
-                <a href="aziende.html" class="btn-back">← Torna alle Soluzioni</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-main">
-            <div class="footer-slogan">
-                IL PRIMO SITO FORNITORE DI AGENTI VERTICALI. SCEGLI LA TUA GEMMA ED ENTRA NEL FUTURO!
-            </div>
-            <a href="index.html" class="btn-pubblico">ORBIS PER IL PUBBLICO</a>
-        </div>
-        <div class="footer-links">
-            <a href="chi-siamo.html">CHI SIAMO?</a> |
-            <a href="privacy.html">PRIVACY POLICY</a> |
-            <a href="gdpr.html">GDPR/COOKIE</a> |
-            <a href="contattaci.html">CONTATTACI</a> |
-            <a href="sostienici.html">SOSTIENICI</a> |
-            <a href="lavora-con-noi.html">LAVORA CON NOI</a>
-        </div>
-    </footer>
-
-</body>
-</html>
+            <a href="https://www.youtube.com/@theorbisprojectYT" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122
