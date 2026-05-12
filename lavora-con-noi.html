@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lavori in corso | The Orbis Project</title>
+    <title>Lavora con noi | The Orbis Project</title>
     <style>
         /* Reset e Base */
         body {
@@ -74,49 +74,96 @@
         .social-icons a { color: #f8fafc; transition: color 0.3s ease, transform 0.3s ease; display: inline-flex; }
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
 
-        /* Contenitore Lavori in Corso */
-        .wip-container {
+        /* Contenitore Policy/Contatti (Stile importato per la CTA) */
+        .policy-container {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        .wip-card {
+        .policy-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 24px;
             padding: 50px;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #cbd5e1;
+            line-height: 1.8;
         }
 
-        .wip-card span {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .wip-card h2 {
+        .policy-card h2 {
             font-size: 2rem;
+            color: #f8fafc;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .policy-card h3 {
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
+            margin-top: 35px;
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .wip-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .policy-card p {
+            margin-bottom: 20px;
+        }
+
+        .policy-card b {
+            color: #f8fafc;
+        }
+        
+        .policy-card ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .policy-card li {
+            margin-bottom: 15px;
+        }
+        
+        /* Stile specifico per i link email */
+        .email-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .email-link:hover {
+            color: #f8fafc;
+            text-decoration: underline;
+        }
+
+        .note-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 15px 20px;
+            margin-top: 20px;
             margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .btn-back {
@@ -124,7 +171,7 @@
             background: transparent;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 12px 24px;
+            padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -196,7 +243,7 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta { justify-self: center; }
             .social-icons { justify-self: center; justify-content: center; flex-wrap: wrap; }
-            .wip-card { padding: 30px 20px; }
+            .policy-card { padding: 30px 20px; }
             .footer-main { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
@@ -220,13 +267,44 @@
         </div>
     </header>
 
-    <main class="wip-container">
-        <div class="wip-card">
-            <span>🚧</span>
-            <h2>LAVORA CON NOI</h2>
+    <main class="policy-container">
+        <div class="policy-card">
+            <h2>Call To Action</h2>
             
-            <p>Pagina attualmente in fase di sviluppo.<br>Tutte le informazioni saranno disponibili a breve.</p>
-            <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <div class="note-box">
+                <b>Patto Etico e Operativo:</b> The Orbis Project è attualmente in fase pre-aziendale (pre-Partita IVA). Non stiamo offrendo posizioni retribuite, ma un ecosistema di mutuo soccorso tecnologico. Offriamo alle menti più brillanti la possibilità di plasmare la prossima generazione di AI. In cambio del tuo talento, garantiamo pubblicità etica, visibilità permanente nei System Prompt delle Gemme create e crediti ufficiali nella nostra pagina dei ringraziamenti.
+            </div>
+
+            <p>Stiamo assemblando l'élite tecnologica di Orbis. Cerchiamo tre profili specifici pronti a sporcarsi le mani:</p>
+
+            <h3>1. Stress Tester & Jailbreaker</h3>
+            <ul>
+                <li><b>La tua missione:</b> Distruggere le nostre certezze. Vogliamo menti capaci di stressare i nostri modelli di intelligenza artificiale fino al punto di rottura.</li>
+                <li><b>Cosa farai:</b> Tenterai di forzare i limiti delle Gemme, cercando falle logiche e applicando tecniche di jailbreaking pesanti per aiutarci a renderle inattaccabili prima del rilascio al pubblico.</li>
+            </ul>
+
+            <h3>2. Hacker Etici (Red Team)</h3>
+            <ul>
+                <li><b>La tua missione:</b> Bombardamento H24.</li>
+                <li><b>Cosa farai:</b> Attaccherai la nostra infrastruttura web e i nostri servizi. Vogliamo che tu trovi ogni possibile falla di sicurezza o vulnerabilità DdoS, proponendoci attivamente le soluzioni per blindare Orbis e i nostri futuri clienti B2B.</li>
+            </ul>
+
+            <h3>3. Visionari di Agenti Verticali</h3>
+            <ul>
+                <li><b>La tua missione:</b> Costruire il futuro.</li>
+                <li><b>Cosa farai:</b> Hai un'idea rivoluzionaria per un nuovo Agente Verticale? Proponila. Se l'idea sarà ritenuta valida e verrà sviluppata, il tuo nome o alias verrà inserito per sempre nelle istruzioni interne della Gemma e nella pagina ufficiale dei Ringraziamenti, garantendoti una pubblicità etica perpetua.</li>
+            </ul>
+
+            <h3>Hub di Contatto</h3>
+            <p>Se sei pronto a raccogliere la sfida, utilizza i seguenti canali:</p>
+            <ul>
+                <li><b>Persone Fisiche e Collaborazioni Tecniche:</b> Invia la tua proposta o candidatura a <a href="mailto:candidature@theorbisproject.com" class="email-link">candidature@theorbisproject.com</a></li>
+                <li><b>Entità Giuridiche e Servizi Aziendali:</b> Le aziende che desiderano richiedere servizi, test o collaborazioni B2B devono rivolgersi esclusivamente a <a href="mailto:business@theorbisproject.com" class="email-link">business@theorbisproject.com</a></li>
+            </ul>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-back">← Torna alla Home</a>
+            </div>
         </div>
     </main>
 
