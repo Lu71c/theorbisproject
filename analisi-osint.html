@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Intelligence OSINT | Orbis Enterprise</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/theorbisproject/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theorbisproject/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theorbisproject/favicon-16x16.png">
+    <link rel="manifest" href="/theorbisproject/site.webmanifest">
+    <link rel="shortcut icon" href="/theorbisproject/favicon.ico">
+
     <style>
         /* Reset e Base Mobile-First */
         body {
@@ -111,8 +118,9 @@
             font-size: 1.05rem;
         }
 
+        /* TITOLO SCHEDA - Ridotto con clamp per il mobile */
         .policy-card h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
             color: #f8fafc;
             text-transform: uppercase;
             margin-top: 0;
@@ -124,14 +132,14 @@
         .policy-card .subtitle {
             text-align: center;
             color: #38bdf8;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(56, 189, 248, 0.2);
             padding-bottom: 20px;
         }
 
         .policy-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
             margin-top: 40px;
@@ -159,12 +167,14 @@
             background: rgba(15, 23, 42, 0.5);
             border-radius: 12px;
             overflow: hidden;
+            table-layout: fixed; /* Aiuta a mantenere le proporzioni */
         }
 
         .comparison-table th, .comparison-table td {
             padding: 15px 20px;
             text-align: left;
             border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            word-wrap: break-word; /* Forza l'a capo se il testo è troppo lungo */
         }
 
         .comparison-table th {
@@ -177,14 +187,6 @@
 
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table .highlight-col { color: #f8fafc; font-weight: 700; background: rgba(56, 189, 248, 0.05); }
-
-        .email-link {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .email-link:hover { color: #f8fafc; text-decoration: underline; }
 
         .btn-wrapper { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
@@ -257,7 +259,10 @@
             header { grid-template-columns: 1fr; justify-items: center; gap: 25px; text-align: center; padding: 30px 20px 10px 20px; }
             .gemini-cta, .social-icons { justify-self: center; }
             .policy-card { padding: 30px 20px; }
-            .comparison-table th, .comparison-table td { padding: 10px; font-size: 0.9rem; }
+            
+            /* RIDUZIONE 15% TESTO TABELLA SU MOBILE */
+            .comparison-table th { font-size: 0.93rem; padding: 10px 8px; } /* 1.1rem - 15% = ~0.93rem */
+            .comparison-table td { font-size: 0.76rem; padding: 10px 8px; } /* 0.9rem - 15% = ~0.76rem */
         }
         @media (max-width: 768px) {
             .footer-main { flex-direction: column; text-align: center; }
