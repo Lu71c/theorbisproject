@@ -1,9 +1,29 @@
+Venerdì 15 maggio 2026, ore 12:38.
+
+Hai fatto benissimo a togliere i nomi esatti. Nominare direttamente "Wix" o "WordPress" in tono dispregiativo su una landing page aziendale può esporti a inutili diffide legali da parte dei loro uffici legali europei. L'approccio "stealth" è molto più professionale: colpisci la categoria, non il brand.
+
+Ho sistemato l'intero codice applicando queste modifiche:
+
+1. **CSS Clamp sul Titolo:** Ho ridotto la grandezza dell'h2 della policy card con la funzione mobile-first, esattamente come per l'altra pagina.
+2. **Testo Sicuro (Legal-Safe):** Sostituito i nomi dei marchi con "piattaforme commerciali pesanti e pre-confezionate".
+3. **Nuovo Modello di Prezzo (500€ / 200€):** Ho aggiornato la tabella e i testi sottostanti in modo che la distinzione tra sito nuovo (500€) e migrazione/trasloco (200€) sia chiara e d'impatto.
+4. **Chiusura del Codice:** Ho ripristinato la parte finale del footer e il tag `</html>` che si erano tagliati nel tuo messaggio.
+
+Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pure Code Web | Orbis Enterprise</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/theorbisproject/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theorbisproject/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theorbisproject/favicon-16x16.png">
+    <link rel="manifest" href="/theorbisproject/site.webmanifest">
+    <link rel="shortcut icon" href="/theorbisproject/favicon.ico">
     <style>
         /* Reset e Base Mobile-First */
         body {
@@ -84,7 +104,7 @@
         .social-icons a:hover { color: #38bdf8; transform: translateY(-3px); }
         .social-icons svg { width: 28px; height: 28px; fill: currentColor; }
 
-        /* CONTENITORE TESTI (Importato dallo stile "Contattaci/Lavora con noi") */
+        /* CONTENITORE TESTI */
         .policy-container {
             flex-grow: 1;
             display: flex;
@@ -111,8 +131,9 @@
             font-size: 1.05rem;
         }
 
+        /* TITOLO SCHEDA - Ridotto con clamp per il mobile */
         .policy-card h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
             color: #f8fafc;
             text-transform: uppercase;
             margin-top: 0;
@@ -124,14 +145,14 @@
         .policy-card .subtitle {
             text-align: center;
             color: #38bdf8;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(56, 189, 248, 0.2);
             padding-bottom: 20px;
         }
 
         .policy-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #38bdf8;
             text-transform: uppercase;
             margin-top: 40px;
@@ -288,7 +309,7 @@
             <h2>La Fine delle Rendite Parassitarie nel Web</h2>
             <div class="subtitle">Il mercato digitale vi sta mentendo. Noi vi diamo il codice sorgente.</div>
 
-            <p>Il mercato dello sviluppo web tradizionale si basa su un modello superato: agenzie che chiedono migliaia di euro per siti costruiti su piattaforme pesanti (come WordPress o Wix), seguiti da "canoni di manutenzione" mensili che vi legano a loro per ogni minima modifica. <b>Noi distruggiamo questo modello.</b></p>
+            <p>Il mercato dello sviluppo web tradizionale si basa su un modello superato: agenzie che chiedono migliaia di euro per siti costruiti su piattaforme commerciali pesanti e pre-confezionate, seguiti da "canoni di manutenzione" mensili che vi legano a loro per ogni minima modifica. <b>Noi distruggiamo questo modello.</b></p>
             <p>Con Orbis, non comprate un abbonamento. Comprate un'infrastruttura d'élite e l'autonomia per gestirla.</p>
 
             <table class="comparison-table">
@@ -303,7 +324,7 @@
                     <tr>
                         <td><b>Creazione Architettura</b></td>
                         <td>Da 1.500€ a 3.000€+</td>
-                        <td class="highlight-col">200€ (Una Tantum)</td>
+                        <td class="highlight-col">500€ (Sito Nuovo)<br><span style="font-size: 0.85em; font-weight: normal;">o 200€ (Migrazione)</span></td>
                     </tr>
                     <tr>
                         <td><b>Costo Server / Hosting</b></td>
@@ -331,7 +352,7 @@
                 <b>Non siete soli davanti al codice.</b> Sappiamo che GitHub sembra complesso, ma vi diamo le chiavi per dominarlo.
             </div>
             <p>Insieme al sito, vi forniremo l'accesso al nostro <b>Web Architect Agent</b> (un'Intelligenza Artificiale verticale). Volete cambiare una frase, aggiornare un'immagine o aggiungere un link? Non dovete chiamare un programmatore e pagargli la tariffa oraria. Chiedete all'Agente: vi dirà esattamente quale riga di codice sostituire e vi guiderà passo dopo passo in pochi secondi.</p>
-            <p><b>La Regola:</b> Noi costruiamo le fondamenta solide per 200€. Voi imparate a viverci dentro gratuitamente. Solo qualora in futuro voleste stravolgere il design o aggiungere decine di nuove pagine complesse, concorderemo una cifra equa e bassissima per il nostro tempo.</p>
+            <p><b>La Regola:</b> Noi costruiamo il vostro nuovo sito da zero per 500€, oppure trasportiamo quello vecchio in puro codice per soli 200€. Voi imparate a viverci dentro gratuitamente. Solo qualora in futuro voleste stravolgere il design o aggiungere decine di nuove pagine complesse, concorderemo una cifra equa e bassissima per il nostro tempo.</p>
 
             <div class="btn-wrapper">
                 <a href="mailto:business@theorbisproject.com" class="btn-action">Richiedi Sviluppo Web</a>
@@ -352,4 +373,12 @@
             <a href="privacy.html">PRIVACY POLICY</a> |
             <a href="gdpr.html">GDPR/COOKIE</a> |
             <a href="contattaci.html">CONTATTACI</a> |
-            <a href="sostienici.html">
+            <a href="sostienici.html">SOSTIENICI</a> |
+            <a href="lavora-con-noi.html">LAVORA CON NOI</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+```
