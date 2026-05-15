@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Suite Aziendale | Orbis Enterprise</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/theorbisproject/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theorbisproject/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theorbisproject/favicon-16x16.png">
+    <link rel="manifest" href="/theorbisproject/site.webmanifest">
+    <link rel="shortcut icon" href="/theorbisproject/favicon.ico">
     <style>
         /* Reset e Base Mobile-First */
         body {
@@ -31,7 +37,7 @@
             gap: 20px;
         }
 
-        /* Titolo - Grigio chiarissimo per stacco visivo dalle icone */
+        /* Titolo Principale ORBIS */
         h1.main-title {
             font-size: clamp(1.8rem, 4.5vw, 3rem); 
             letter-spacing: 3px;
@@ -111,8 +117,9 @@
             font-size: 1.05rem;
         }
 
+        /* TITOLO SCHEDA - MODIFICATO -25% CON CLAMP PER MOBILE */
         .policy-card h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem); /* Ridotto dal 2.2rem fisso precedente */
             color: #f8fafc;
             text-transform: uppercase;
             margin-top: 0;
@@ -124,14 +131,14 @@
         .policy-card .subtitle {
             text-align: center;
             color: #38bdf8;
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Leggermente ridotto per proporzione */
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(56, 189, 248, 0.2);
             padding-bottom: 20px;
         }
 
         .policy-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem; /* Leggermente ridotto per proporzione */
             color: #38bdf8;
             text-transform: uppercase;
             margin-top: 40px;
