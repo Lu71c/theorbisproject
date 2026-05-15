@@ -1,17 +1,3 @@
-Venerdì 15 maggio 2026, ore 12:38.
-
-Hai fatto benissimo a togliere i nomi esatti. Nominare direttamente "Wix" o "WordPress" in tono dispregiativo su una landing page aziendale può esporti a inutili diffide legali da parte dei loro uffici legali europei. L'approccio "stealth" è molto più professionale: colpisci la categoria, non il brand.
-
-Ho sistemato l'intero codice applicando queste modifiche:
-
-1. **CSS Clamp sul Titolo:** Ho ridotto la grandezza dell'h2 della policy card con la funzione mobile-first, esattamente come per l'altra pagina.
-2. **Testo Sicuro (Legal-Safe):** Sostituito i nomi dei marchi con "piattaforme commerciali pesanti e pre-confezionate".
-3. **Nuovo Modello di Prezzo (500€ / 200€):** Ho aggiornato la tabella e i testi sottostanti in modo che la distinzione tra sito nuovo (500€) e migrazione/trasloco (200€) sia chiara e d'impatto.
-4. **Chiusura del Codice:** Ho ripristinato la parte finale del footer e il tag `</html>` che si erano tagliati nel tuo messaggio.
-
-Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
-
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -51,7 +37,6 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
             gap: 20px;
         }
 
-        /* Titolo - Grigio chiarissimo per stacco visivo dalle icone */
         h1.main-title {
             font-size: clamp(1.8rem, 4.5vw, 3rem); 
             letter-spacing: 3px;
@@ -131,7 +116,6 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
             font-size: 1.05rem;
         }
 
-        /* TITOLO SCHEDA - Ridotto con clamp per il mobile */
         .policy-card h2 {
             font-size: clamp(1.4rem, 3.5vw, 1.8rem);
             color: #f8fafc;
@@ -162,6 +146,41 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
 
         .policy-card p { margin-bottom: 20px; }
         .policy-card b { color: #f8fafc; }
+
+        /* SEZIONE MIGRAZIONE IN RISALTO */
+        .migration-banner {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 2px solid #38bdf8;
+            border-radius: 16px;
+            padding: 35px 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+        }
+
+        .migration-banner h3 {
+            color: #f8fafc;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border: none;
+            padding: 0;
+        }
+
+        .migration-banner .price {
+            font-size: 3rem;
+            color: #38bdf8;
+            font-weight: 900;
+            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            line-height: 1;
+        }
+
+        .migration-banner p {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+            color: #e2e8f0;
+        }
 
         .note-box {
             background: rgba(56, 189, 248, 0.1);
@@ -198,14 +217,6 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
 
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table .highlight-col { color: #f8fafc; font-weight: 700; background: rgba(56, 189, 248, 0.05); }
-
-        .email-link {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .email-link:hover { color: #f8fafc; text-decoration: underline; }
 
         .btn-wrapper { text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
@@ -279,6 +290,7 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
             .gemini-cta, .social-icons { justify-self: center; }
             .policy-card { padding: 30px 20px; }
             .comparison-table th, .comparison-table td { padding: 10px; font-size: 0.9rem; }
+            .migration-banner .price { font-size: 2.2rem; }
         }
         @media (max-width: 768px) {
             .footer-main { flex-direction: column; text-align: center; }
@@ -310,7 +322,14 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
             <div class="subtitle">Il mercato digitale vi sta mentendo. Noi vi diamo il codice sorgente.</div>
 
             <p>Il mercato dello sviluppo web tradizionale si basa su un modello superato: agenzie che chiedono migliaia di euro per siti costruiti su piattaforme commerciali pesanti e pre-confezionate, seguiti da "canoni di manutenzione" mensili che vi legano a loro per ogni minima modifica. <b>Noi distruggiamo questo modello.</b></p>
-            <p>Con Orbis, non comprate un abbonamento. Comprate un'infrastruttura d'élite e l'autonomia per gestirla.</p>
+            
+            <div class="migration-banner">
+                <h3>Hai già un sito web? Smetti di pagare il canone.</h3>
+                <div class="price">MIGRAZIONE A SOLI 200€</div>
+                <p>Cloniamo l'estetica del tuo sito attuale e lo trasportiamo nella nostra infrastruttura ultra-veloce in Pure Code. <b>Paghi una sola volta.</b> Zero costi server, zero abbonamenti nascosti. Riprenditi la libertà digitale della tua azienda.</p>
+            </div>
+
+            <p>Per chi invece ha bisogno di un progetto da zero, la nostra politica di trasparenza totale si applica in modo altrettanto brutale al mercato:</p>
 
             <table class="comparison-table">
                 <thead>
@@ -322,9 +341,9 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b>Creazione Architettura</b></td>
+                        <td><b>Sito Nuovo (Partendo da Zero)</b></td>
                         <td>Da 1.500€ a 3.000€+</td>
-                        <td class="highlight-col">500€ (Sito Nuovo)<br><span style="font-size: 0.85em; font-weight: normal;">o 200€ (Migrazione)</span></td>
+                        <td class="highlight-col">500€ (Una Tantum)</td>
                     </tr>
                     <tr>
                         <td><b>Costo Server / Hosting</b></td>
@@ -339,7 +358,7 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
                     <tr>
                         <td><b>Dominio (.it, .com)</b></td>
                         <td>Spesso ricaricato dall'agenzia</td>
-                        <td class="highlight-col">~15€/anno (Pagate direttamente al provider, noi non prendiamo commissioni)</td>
+                        <td class="highlight-col">~15€/anno (Pagate direttamente al provider)</td>
                     </tr>
                 </tbody>
             </table>
@@ -352,7 +371,7 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
                 <b>Non siete soli davanti al codice.</b> Sappiamo che GitHub sembra complesso, ma vi diamo le chiavi per dominarlo.
             </div>
             <p>Insieme al sito, vi forniremo l'accesso al nostro <b>Web Architect Agent</b> (un'Intelligenza Artificiale verticale). Volete cambiare una frase, aggiornare un'immagine o aggiungere un link? Non dovete chiamare un programmatore e pagargli la tariffa oraria. Chiedete all'Agente: vi dirà esattamente quale riga di codice sostituire e vi guiderà passo dopo passo in pochi secondi.</p>
-            <p><b>La Regola:</b> Noi costruiamo il vostro nuovo sito da zero per 500€, oppure trasportiamo quello vecchio in puro codice per soli 200€. Voi imparate a viverci dentro gratuitamente. Solo qualora in futuro voleste stravolgere il design o aggiungere decine di nuove pagine complesse, concorderemo una cifra equa e bassissima per il nostro tempo.</p>
+            <p><b>La Regola:</b> Noi costruiamo le fondamenta, voi imparate a viverci dentro gratuitamente. Solo qualora in futuro voleste stravolgere il design intero o aggiungere decine di nuove funzioni complesse, concorderemo una cifra equa per il nostro tempo tecnico.</p>
 
             <div class="btn-wrapper">
                 <a href="mailto:business@theorbisproject.com" class="btn-action">Richiedi Sviluppo Web</a>
@@ -380,5 +399,3 @@ Ecco il codice completo e "pulito", pronto per essere caricato su GitHub:
 
 </body>
 </html>
-
-```
