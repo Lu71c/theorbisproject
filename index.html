@@ -47,15 +47,76 @@
         <!-- HUD Navigazione Interattiva -->
         <div class="hud-container">
             
-            <!-- Logo Centrale Vettoriale -->
+            <!-- Logo Centrale Vettoriale 3D Olografico -->
             <div class="hud-center" id="hud-core">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
-                    <circle class="ring ring-outer" cx="100" cy="100" r="90" />
-                    <circle class="ring ring-inner" cx="100" cy="100" r="75" />
-                    <polygon class="shield-outline" points="30,50 170,50 100,160" />
-                    <polygon class="shield-inner" points="40,55 160,55 100,150" />
-                    <line class="shield-line" x1="100" y1="55" x2="100" y2="150" />
-                    <circle class="core-dot" cx="100" cy="75" r="12" />
+                    <defs>
+                        <!-- Filtro Glow Volumetrico -->
+                        <filter id="coreGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <filter id="softAura" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="15" />
+                        </filter>
+
+                        <!-- Sfera di Plasma Centrale -->
+                        <radialGradient id="plasmaGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.8" />
+                            <stop offset="50%" stop-color="#00ff9d" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#020610" stop-opacity="0" />
+                        </radialGradient>
+
+                        <!-- Gradienti Sfaccettature 3D dello Scudo -->
+                        <linearGradient id="facetTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.5" />
+                            <stop offset="100%" stop-color="#0088ff" stop-opacity="0.2" />
+                        </linearGradient>
+
+                        <linearGradient id="facetLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#002b4d" stop-opacity="0.25" />
+                        </linearGradient>
+
+                        <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Aura di sfocatura di fondo -->
+                    <circle cx="100" cy="100" r="75" fill="url(#plasmaGlow)" filter="url(#softAura)" />
+                    <!-- Sfera di energia centrale -->
+                    <circle cx="100" cy="100" r="65" fill="url(#plasmaGlow)" />
+
+                    <!-- Anelli orbitali prospettici 3D -->
+                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="92" ry="40" transform="rotate(-15 100 100)" />
+                    <ellipse class="ring ring-inner" cx="100" cy="100" rx="78" ry="78" />
+                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="88" ry="28" transform="rotate(25 100 100)" />
+
+                    <!-- GEOMETRIA SCUDO ORBIS 3D -->
+                    <g filter="url(#coreGlowFilter)">
+                        <!-- Sfaccettatura Superiore 3D (Triangolo in Prospettiva) -->
+                        <polygon class="shield-facet-top" points="35,45 165,45 100,85" fill="url(#facetTopGrad)" stroke="#00f3ff" stroke-width="1.5" />
+                        
+                        <!-- Occhio / Punto Centrale incastonato nella base della sfaccettatura superiore -->
+                        <circle class="core-dot-3d" cx="100" cy="63" r="8" fill="#00ff9d" stroke="#ffffff" stroke-width="1.5" />
+
+                        <!-- Sfaccettatura Inferiore Sinistra -->
+                        <polygon class="shield-facet-left" points="35,45 100,85 100,165" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.5" />
+
+                        <!-- Sfaccettatura Inferiore Destra -->
+                        <polygon class="shield-facet-right" points="165,45 100,85 100,165" fill="url(#facetRightGrad)" stroke="#00f3ff" stroke-width="1.5" />
+
+                        <!-- Bordi esterni e spigolo centrale 3D accentuati -->
+                        <polygon points="35,45 165,45 100,165" fill="none" stroke="#00f3ff" stroke-width="2" />
+                        <line x1="100" y1="85" x2="100" y2="165" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                        <line x1="35" y1="45" x2="100" y2="85" stroke="#00ff9d" stroke-width="1.2" />
+                        <line x1="165" y1="45" x2="100" y2="85" stroke="#00f3ff" stroke-width="1.2" />
+                    </g>
                 </svg>
             </div>
 
