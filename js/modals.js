@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE ORBIS PROJECT - MODAL ENGINE & HASH ROUTER
+   THE ORBIS PROJECT - MODAL ENGINE & PLANET BIG BANG ROUTER
    Fast, zero refresh, deeplinking support (#osint, #agenti-ai, etc.)
    ========================================================================== */
 
@@ -21,14 +21,13 @@ const modalData = {
             </div>`
     },
     'osint': {
-        title: "👁️️‍🗨️ OSINT DATA ANALYSIS",
+        title: "👁‍🗨️ OSINT DATA ANALYSIS",
         subtitle: "Data Mining Python, API Direct Integration & Lead Extraction",
         content: `
             <div style="line-height:1.6; color:#e2e8f0;">
                 <p style="margin-bottom:1rem;">Sviluppiamo pipeline personalizzate in <strong>Python</strong> per l'estrazione, pulizia ed elaborazione dati ad alte prestazioni.</p>
                 <div style="background:rgba(10, 25, 45, 0.8); border:1px solid rgba(0,255,157,0.3); padding:1rem; font-family:monospace; border-radius:6px; margin-bottom:1rem; color:#00ff9d;">
-                    > [SYSTEM STATUS]: FIERA DI RIMINI EXTRACTION COMPLETE<br>
-                    > Total Leads Processed: 2,148<br>
+                    > [SYSTEM STATUS]: EXTRACTION COMPLETE<br>
                     > Data Cleaned: P.IVA, PEC, Phone, Contact Name<br>
                     > Format Output: Structured JSON / PostgreSQL Ready
                 </div>
@@ -44,11 +43,11 @@ const modalData = {
             </div>`
     },
     'telegram-bridge': {
-        title: "⚡ WEB APP & TELEGRAM BRIDGE",
+        title: "⚡ SITO WEB INTELLIGENTE",
         subtitle: "Siti Web Custom su GitHub Pages & Gestione Telegram Bot",
         content: `
             <div style="line-height:1.6; color:#e2e8f0;">
-                <p style="margin-bottom:1rem;">Creiamo Single-Page Application ultra-veloci ospitate su GitHub Pages, collegate direttamente ad un **Bot Telegram aziendale**.</p>
+                <p style="margin-bottom:1rem;">Creiamo Single-Page Application ultra-veloci ospitate su GitHub Pages, collegate direttamente ad un <strong>Bot Telegram aziendale</strong>.</p>
                 <div style="background:rgba(0, 243, 255, 0.05); padding:1rem; border-radius:6px;">
                     <strong>Vantaggi dell'integrazione Telegram:</strong>
                     <ul style="margin-left:1.5rem; margin-top:0.5rem;">
@@ -91,17 +90,65 @@ const modalData = {
         title: "✉️ CONTATTACI",
         subtitle: "Canale Diretto",
         content: "<p style='color:#e2e8f0;'>Contattaci via email o direttamente tramite il nostro canale Telegram per discutere la tua soluzione custom.</p>"
+    },
+    'sostienici': {
+        title: "✨ SOSTIENICI",
+        subtitle: "Supporta la Ricerca Indipendente",
+        content: "<p style='color:#e2e8f0;'>Sostieni il nostro impegno nello sviluppo di software etico, aperto e conforme alle normative europee sulla riservatezza dei dati.</p>"
     }
 };
+
+let isBigBangTriggered = false;
+
+// Funzione per scatenare l'esplosione a raggiera dei Nodi (Big Bang)
+function triggerBigBang() {
+    const hiddenNodes = document.querySelectorAll('.hud-node-hidden');
+    hiddenNodes.forEach((node, index) => {
+        setTimeout(() => {
+            node.classList.remove('hud-node-hidden');
+        }, index * 90); // Rilascio progressivo elusivo
+    });
+
+    // Aggiorna il messaggio di Xenon
+    const xenonText = document.getElementById('xenon-text');
+    if (xenonText) {
+        xenonText.innerText = "Eccellente! Gli artefatti tecnologici sono stati sbloccati. Esplora i nodi o clicca su di me per assistenza.";
+    }
+
+    isBigBangTriggered = true;
+}
 
 function openModal(key) {
     const data = modalData[key];
     if (!data) return;
 
+    // Se si apre una modale direttamente da hash URL, sblocchiamo comunque il Big Bang
+    if (!isBigBangTriggered) {
+        triggerBigBang();
+    }
+
     const overlay = document.getElementById('modal-overlay');
     const dynamicBody = document.getElementById('modal-dynamic-body');
 
+    // SVG Mini Avatar di Xenon per l'intestazione della finestra modale
+    const xenonMiniSvg = `
+        <svg viewBox="0 0 120 120" class="xenon-mini-avatar">
+            <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
+            <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
+            <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
+            <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+            <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+            <circle cx="53" cy="45" r="2" fill="#00f3ff" />
+            <circle cx="67" cy="45" r="2" fill="#00f3ff" />
+            <circle cx="60" cy="22" r="3" fill="#00ff9d" />
+        </svg>
+    `;
+
     dynamicBody.innerHTML = `
+        <div class="modal-xenon-bar">
+            ${xenonMiniSvg}
+            <p><strong>Xenon Guida:</strong> Stai analizzando l'artefatto <em>"${data.title}"</em>. Clicca su ESCI in alto a destra per tornare all'Universo Orbis.</p>
+        </div>
         <h2 style="font-size:1.8rem; color:#00f3ff; margin-bottom:0.3rem;">${data.title}</h2>
         <h4 style="font-size:0.9rem; color:#00ff9d; margin-bottom:1.5rem; font-weight:400;">${data.subtitle}</h4>
         <hr style="border:0; border-top:1px solid rgba(0,243,255,0.2); margin-bottom:1.5rem;">
@@ -127,6 +174,26 @@ function handleHashChange() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // CLICK SUL PIANETA ORBIS -> SBLOCCO "BIG BANG" DEI NODI
+    const planetCore = document.getElementById('hud-core');
+    if (planetCore) {
+        planetCore.addEventListener('click', () => {
+            triggerBigBang();
+        });
+    }
+
+    // CLICK SU XENON AVATAR -> INTERAZIONE E SBLOCCO
+    const xenonAvatar = document.getElementById('xenon-avatar');
+    if (xenonAvatar) {
+        xenonAvatar.addEventListener('click', () => {
+            if (!isBigBangTriggered) {
+                triggerBigBang();
+            } else {
+                openModal('info');
+            }
+        });
+    }
+
     // Close button click
     const closeBtn = document.getElementById('modal-close');
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -146,5 +213,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // URL Hash Routing Listeners
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Check on initial page load
+    handleHashChange(); // Check iniziale al caricamento della pagina
 });
