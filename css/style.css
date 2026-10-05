@@ -225,18 +225,18 @@ html, body {
 
 /* PIANETA ORBIS INGRANDITO E INTERATTIVO */
 .hud-center.planet-interactive {
-    width: 240px;
-    height: 240px;
+    width: 250px;
+    height: 250px;
     position: absolute;
     z-index: 2;
     cursor: pointer;
-    filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.4));
+    filter: drop-shadow(0 0 30px rgba(0, 243, 255, 0.45));
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
 .hud-center.planet-interactive:hover {
     transform: scale(1.08);
-    filter: drop-shadow(0 0 45px rgba(0, 255, 157, 0.6));
+    filter: drop-shadow(0 0 50px rgba(0, 255, 157, 0.65));
 }
 
 .cyber-logo-svg {
@@ -245,7 +245,7 @@ html, body {
     overflow: visible;
 }
 
-/* STILI DELLE SFACCETTATURE 3D E DELLE LINEE */
+/* STILI DELLE SFACCETTATURE 3D PIRAMIDE */
 .shield-facet-top,
 .shield-facet-left,
 .shield-facet-right {
@@ -253,13 +253,13 @@ html, body {
 }
 
 .shield-facet-top:hover {
-    fill-opacity: 0.85;
+    fill-opacity: 0.95;
     filter: brightness(1.3);
 }
 
 .shield-facet-left:hover,
 .shield-facet-right:hover {
-    fill-opacity: 0.75;
+    fill-opacity: 0.85;
     filter: brightness(1.2);
 }
 
@@ -269,38 +269,70 @@ html, body {
 
 @keyframes pulseCoreDot {
     0%, 100% {
-        r: 7px;
+        r: 6px;
         fill: #00ff9d;
         filter: drop-shadow(0 0 6px #00ff9d);
     }
     50% {
-        r: 9px;
+        r: 8px;
         fill: #ffffff;
         filter: drop-shadow(0 0 14px #00f3ff);
     }
 }
 
-/* ANELLI ORBITALI ROTANTI PROSPETTICI */
+/* 6 ANELLI ORBITALI MULTI-LIVELLO STILE SATURNO */
 .ring {
     fill: none;
     stroke-linecap: round;
     transform-origin: center;
 }
 
-.ring-outer {
+.ring-saturn-1 {
     stroke: var(--cyan-glow);
     stroke-width: 1.2;
-    stroke-dasharray: 45 15 90 30;
-    animation: rotateClockwise 28s linear infinite;
+    stroke-dasharray: 60 20 120 40;
+    animation: rotateClockwise 32s linear infinite;
+    opacity: 0.75;
+}
+
+.ring-saturn-2 {
+    stroke: var(--emerald-glow);
+    stroke-width: 1.5;
+    stroke-dasharray: 40 80 50 30;
+    animation: rotateCounterClockwise 22s linear infinite;
     opacity: 0.65;
 }
 
-.ring-inner {
-    stroke: var(--emerald-glow);
-    stroke-width: 1.5;
-    stroke-dasharray: 25 70 60 20;
-    animation: rotateCounterClockwise 20s linear infinite;
+.ring-saturn-3 {
+    stroke: #a855f7;
+    stroke-width: 1;
+    stroke-dasharray: 30 50 90 20;
+    animation: rotateClockwise 18s linear infinite;
     opacity: 0.55;
+}
+
+.ring-saturn-4 {
+    stroke: #fbbf24;
+    stroke-width: 1.2;
+    stroke-dasharray: 80 30 40 10;
+    animation: rotateCounterClockwise 26s linear infinite;
+    opacity: 0.6;
+}
+
+.ring-saturn-5 {
+    stroke: var(--cyan-glow);
+    stroke-width: 0.8;
+    stroke-dasharray: 100 20 30 40;
+    animation: rotateClockwise 40s linear infinite;
+    opacity: 0.45;
+}
+
+.ring-saturn-6 {
+    stroke: rgba(0, 255, 157, 0.4);
+    stroke-width: 1;
+    stroke-dasharray: 15 40;
+    animation: rotateCounterClockwise 15s linear infinite;
+    opacity: 0.35;
 }
 
 @keyframes rotateClockwise {
@@ -338,7 +370,7 @@ html, body {
 .hud-node-hidden {
     opacity: 0 !important;
     pointer-events: none !important;
-    transform: scale(0.2) translate(0, 0) !important;
+    transform: scale(0.1) translate(0, 0) !important;
 }
 
 .node-top-left     { top: 15px; left: 30px; }
@@ -414,7 +446,7 @@ html, body {
     100% { transform: scale(0.95); opacity: 0.7; }
 }
 
-/* XENON: LA GUIDA ALIENA FLUTTUANTE */
+/* XENON: LA GUIDA ALIENA DIVERSIFICATA E DINAMICA */
 #xenon-container {
     position: fixed;
     bottom: 52px;
@@ -428,22 +460,28 @@ html, body {
 }
 
 .xenon-float {
-    animation: xenonFloat 4.5s ease-in-out infinite;
+    animation: xenonDrift 9s ease-in-out infinite;
 }
 
-@keyframes xenonFloat {
+@keyframes xenonDrift {
     0%, 100% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-12px, -18px) rotate(-3deg);
     }
     50% {
-        transform: translateY(-12px) rotate(-1.5deg);
+        transform: translate(-25px, -8px) rotate(2deg);
+    }
+    75% {
+        transform: translate(-8px, -24px) rotate(-1.5deg);
     }
 }
 
 /* FUMETTO GLASSMORPHISM DI XENON */
 .xenon-bubble {
     pointer-events: auto;
-    background: rgba(8, 15, 30, 0.85);
+    background: rgba(8, 15, 30, 0.88);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(14px);
     border-radius: 14px 14px 2px 14px;
@@ -462,21 +500,46 @@ html, body {
 
 .xenon-avatar-btn {
     pointer-events: auto;
-    width: 75px;
-    height: 75px;
+    width: 78px;
+    height: 78px;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .xenon-avatar-btn:hover {
-    transform: scale(1.12);
-    filter: drop-shadow(0 0 15px rgba(0, 255, 157, 0.6));
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 18px rgba(0, 255, 157, 0.65));
 }
 
 .xenon-svg {
     width: 100%;
     height: 100%;
     overflow: visible;
+}
+
+/* MODAL XENON BANNER INTERNO */
+.modal-xenon-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 1.5rem;
+}
+
+.xenon-mini-avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px var(--emerald-glow));
+}
+
+.modal-xenon-bar p {
+    font-size: 0.82rem;
+    color: #e2e8f0;
+    line-height: 1.35;
 }
 
 /* FOOTER STRUTTURATO */
@@ -621,8 +684,8 @@ html, body {
 
     .hud-center.planet-interactive {
         position: relative;
-        width: 160px;
-        height: 160px;
+        width: 170px;
+        height: 170px;
         margin-bottom: 0.8rem;
     }
 
@@ -651,8 +714,8 @@ html, body {
     }
 
     .xenon-avatar-btn {
-        width: 60px;
-        height: 60px;
+        width: 62px;
+        height: 62px;
     }
 
     /* Bottom Sheet per Mobile */
