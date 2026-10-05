@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Sfondo Interattivo Galattico -->
+    <!-- Sfondo Interattivo Galattico (Canvas 2D) -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Overlay per l'effetto Glassmorphism/Vignettatura globale -->
+    <!-- Overlay per Vignettatura & Glassmorphism globale -->
     <div class="cyber-vignette"></div>
 
     <!-- NAVBAR SUPERIORE -->
@@ -45,82 +45,99 @@
             <p id="main-subtitle">Applichiamo la tecnologia del domani per risolvere i problemi di oggi.</p>
         </div>
 
-        <!-- HUD Navigazione Interattiva (Pianeta Orbis) -->
+        <!-- HUD NAVIGAZIONE INTERATTIVA (PIANETA ORBIS GIGANTE) -->
         <div class="hud-container" id="hud-container">
             
-            <!-- Logo Centrale: PIANETA ORBIS & PIRAMIDE 3D CON ROMBO -->
-            <div class="hud-center planet-interactive" id="hud-core">
+            <!-- CORE VETTORIALE: PIANETA ORBIS & PIRAMIDE 3D CENTRATA -->
+            <div class="hud-center planet-interactive" id="hud-core" title="Clicca sul Pianeta Orbis per accedere ai servizi">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
                     <defs>
                         <!-- Filtri Glow e Aura -->
                         <filter id="coreGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feGaussianBlur stdDeviation="4" result="blur" />
                             <feMerge>
                                 <feMergeNode in="blur" />
                                 <feMergeNode in="SourceGraphic" />
                             </feMerge>
                         </filter>
                         <filter id="softAura" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="18" />
+                            <feGaussianBlur stdDeviation="22" />
                         </filter>
 
-                        <!-- Gradienti Pianeta e Plasma -->
-                        <radialGradient id="planetBody" cx="40%" cy="40%" r="60%">
-                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.9" />
-                            <stop offset="45%" stop-color="#005588" stop-opacity="0.6" />
-                            <stop offset="85%" stop-color="#020610" stop-opacity="0.85" />
-                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.2" />
+                        <!-- GRADIENTE CORPO PIANETA: OCEANO COBALTO / INDACO PROFONDO -->
+                        <radialGradient id="planetOceanGrad" cx="35%" cy="35%" r="65%">
+                            <stop offset="0%" stop-color="#002b55" />
+                            <stop offset="40%" stop-color="#021330" />
+                            <stop offset="80%" stop-color="#010817" />
+                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.3" />
                         </radialGradient>
 
-                        <!-- Gradienti Sfaccettature Piramide 3D -->
+                        <!-- Atmosphere / Corona Luminosa -->
+                        <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="70%" stop-color="#00f3ff" stop-opacity="0.15" />
+                            <stop offset="92%" stop-color="#00ff9d" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                        </radialGradient>
+
+                        <!-- GRADIENTI SFACCETTATURE PIRAMIDE 3D (CONTRASTO PLATINO / CIANO / SMERALDO) -->
                         <linearGradient id="facetRomboGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
-                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.2" />
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.5" />
                         </linearGradient>
 
                         <linearGradient id="facetLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.5" />
-                            <stop offset="100%" stop-color="#001a33" stop-opacity="0.3" />
+                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#003344" stop-opacity="0.4" />
                         </linearGradient>
 
                         <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.4" />
-                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.15" />
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.75" />
+                            <stop offset="100%" stop-color="#004433" stop-opacity="0.3" />
                         </linearGradient>
                     </defs>
 
-                    <!-- Atmosphere / Atmosphere Glow -->
-                    <circle cx="100" cy="100" r="82" fill="url(#planetBody)" filter="url(#softAura)" />
-                    <!-- Corpo del Pianeta Orbis -->
-                    <circle cx="100" cy="100" r="72" fill="url(#planetBody)" stroke="#00f3ff" stroke-width="0.8" stroke-dasharray="120 10 40 5" />
+                    <!-- Aura Atmosferica Esterna -->
+                    <circle cx="100" cy="100" r="85" fill="url(#atmosphereGlow)" filter="url(#softAura)" />
 
-                    <!-- Anelli Orbitali Stile Saturno (Prospettivi 3D) -->
-                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="96" ry="32" transform="rotate(-20 100 100)" />
-                    <ellipse class="ring ring-inner" cx="100" cy="100" rx="84" ry="22" transform="rotate(-20 100 100)" />
-                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="90" ry="38" transform="rotate(30 100 100)" />
+                    <!-- Corpo del Pianeta Orbis (Oceano) -->
+                    <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="#00f3ff" stroke-width="1" stroke-dasharray="140 10 30 5" />
 
-                    <!-- GEOMETRIA PIRAMIDE 3D REALE (ROMBO SUPERIORE) -->
+                    <!-- 6 ANELLI ORBITALI MULTI-LIVELLO STILE SATURNO -->
+                    <!-- Anello 1: Ciano Esterno -->
+                    <ellipse class="ring ring-saturn-1" cx="100" cy="100" rx="98" ry="28" transform="rotate(-22 100 100)" />
+                    <!-- Anello 2: Smeraldo Medio -->
+                    <ellipse class="ring ring-saturn-2" cx="100" cy="100" rx="90" ry="20" transform="rotate(-22 100 100)" />
+                    <!-- Anello 3: Violetto Interno -->
+                    <ellipse class="ring ring-saturn-3" cx="100" cy="100" rx="82" ry="14" transform="rotate(-22 100 100)" />
+                    <!-- Anello 4: Oro Solare Trasversale -->
+                    <ellipse class="ring ring-saturn-4" cx="100" cy="100" rx="94" ry="34" transform="rotate(35 100 100)" />
+                    <!-- Anello 5: Ciano Fino Inclinato -->
+                    <ellipse class="ring ring-saturn-5" cx="100" cy="100" rx="86" ry="42" transform="rotate(-65 100 100)" />
+                    <!-- Anello 6: Micro-Particelle Smeraldo -->
+                    <ellipse class="ring ring-saturn-6" cx="100" cy="100" rx="76" ry="76" />
+
+                    <!-- GEOMETRIA PIRAMIDE 3D INCASTONATA INTERAMENTE NEL PIANETA -->
                     <g filter="url(#coreGlowFilter)">
-                        <!-- FACCIA SUPERIORE: ROMBO PROSPETTICO PERFECTO -->
-                        <polygon class="shield-facet-top" points="35,50 100,25 165,50 100,75" fill="url(#facetRomboGrad)" stroke="#00f3ff" stroke-width="1.5" />
+                        <!-- FACCIA SUPERIORE: ROMBO PROSPETTICO PERFETTO (Sulla superficie nord del pianeta) -->
+                        <polygon class="shield-facet-top" points="65,80 100,60 135,80 100,95" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="1.2" />
                         
-                        <!-- Occhio / Punto Centrale incastonato al centro del Rombo -->
-                        <circle class="core-dot-3d" cx="100" cy="50" r="7" fill="#00ff9d" stroke="#ffffff" stroke-width="1.5" />
+                        <!-- Occhio / Punto Centrale incastonato nel Rombo -->
+                        <circle class="core-dot-3d" cx="100" cy="77" r="6" fill="#00ff9d" stroke="#ffffff" stroke-width="1.5" />
 
                         <!-- FACCIA INFERIORE SINISTRA -->
-                        <polygon class="shield-facet-left" points="35,50 100,75 100,165" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.5" />
+                        <polygon class="shield-facet-left" points="65,80 100,95 100,145" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.2" />
 
                         <!-- FACCIA INFERIORE DESTRA -->
-                        <polygon class="shield-facet-right" points="165,50 100,75 100,165" fill="url(#facetRightGrad)" stroke="#00f3ff" stroke-width="1.5" />
+                        <polygon class="shield-facet-right" points="135,80 100,95 100,145" fill="url(#facetRightGrad)" stroke="#00f3ff" stroke-width="1.2" />
 
-                        <!-- Spigoli e Contorni 3D -->
-                        <polygon points="35,50 100,25 165,50 100,165" fill="none" stroke="#00f3ff" stroke-width="1.8" />
-                        <line x1="100" y1="75" x2="100" y2="165" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <!-- Spigoli di Profondità 3D -->
+                        <polygon points="65,80 100,60 135,80 100,145" fill="none" stroke="#00f3ff" stroke-width="1.5" />
+                        <line x1="100" y1="95" x2="100" y2="145" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
                     </g>
                 </svg>
             </div>
 
-            <!-- I 4 Nodi Fluttuanti (Partono Nascosti) -->
+            <!-- I 4 NODI FLUTTUANTI (Partono Nascosti per l'Esplosione Big Bang) -->
             <a href="#agenti-ai" class="hud-node node-top-left hud-node-hidden" data-target="agenti-ai">
                 <div class="node-icon">🧠</div>
                 <div class="node-text">
@@ -167,7 +184,7 @@
     <div id="xenon-container" class="xenon-float">
         <!-- Fumetto di Dialogo Glassmorphism -->
         <div id="xenon-speech" class="xenon-bubble">
-            <p id="xenon-text">Saluti umano. Sono Xenon, la tua interfaccia guida. Clicca sul Pianeta Orbis per rivelare i nostri artefatti tecnologici.</p>
+            <p id="xenon-text">Saluti umano! Sono Xenon, la tua interfaccia guida. Clicca sul Pianeta Orbis al centro per scatenare i nostri artefatti tecnologici.</p>
         </div>
         
         <!-- Avatar Vettoriale SVG di Xenon nell'UFO -->
@@ -197,24 +214,19 @@
                 <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
 
                 <!-- ALIEN XENON (Testa Grigio/Smeraldo e Occhi Neon) -->
-                <!-- Collo/Busto -->
                 <path d="M 52,68 L 68,68 L 65,60 L 55,60 Z" fill="#1e293b" />
-                <!-- Testa d'Alieno Classica -->
                 <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
-                <!-- Grandi Occhi Neri Mandorlati con Bagliore Ciano -->
                 <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
                 <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
-                <!-- Punti di Luce negli Occhi -->
                 <circle cx="53" cy="45" r="2" fill="#00f3ff" />
                 <circle cx="67" cy="45" r="2" fill="#00f3ff" />
-                <!-- Antenna Olografica -->
                 <line x1="60" y1="34" x2="60" y2="24" stroke="#00ff9d" stroke-width="1.5" />
                 <circle cx="60" cy="22" r="3" fill="#00ff9d" />
             </svg>
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER STRUTTURATO -->
     <footer class="bottom-footer">
         <div class="footer-links">
             <a href="#privacy">Privacy Policy</a>
@@ -247,7 +259,7 @@
         </div>
     </footer>
 
-    <!-- CONTAINER DELLE SCHEDE MODALI -->
+    <!-- CONTAINER DELLE SCHEDE MODALI / POPUP VIEWPORT -->
     <div id="modal-overlay" class="hidden">
         <div id="modal-content-box">
             <button id="modal-close" class="cyber-btn-close">✖ ESCI</button>
