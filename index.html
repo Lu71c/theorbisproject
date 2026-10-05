@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Sfondo Interattivo -->
+    <!-- Sfondo Interattivo Galattico -->
     <canvas id="bg-canvas"></canvas>
 
     <!-- Overlay per l'effetto Glassmorphism/Vignettatura globale -->
@@ -31,7 +31,7 @@
         </nav>
 
         <div class="system-controls">
-            <button id="lang-toggle" class="cyber-btn" title="Cambia Lingua">🇬🇧 EN</button>
+            <button id="lang-toggle" class="cyber-btn lang-btn-subtle" title="Cambia Lingua">🇬🇧 EN</button>
             <button id="audio-toggle" class="cyber-btn" title="Attiva/Disattiva Audio">🔊</button>
         </div>
     </header>
@@ -45,14 +45,14 @@
             <p id="main-subtitle">Applichiamo la tecnologia del domani per risolvere i problemi di oggi.</p>
         </div>
 
-        <!-- HUD Navigazione Interattiva -->
-        <div class="hud-container">
+        <!-- HUD Navigazione Interattiva (Pianeta Orbis) -->
+        <div class="hud-container" id="hud-container">
             
-            <!-- Logo Centrale Vettoriale 3D Olografico -->
-            <div class="hud-center" id="hud-core">
+            <!-- Logo Centrale: PIANETA ORBIS & PIRAMIDE 3D CON ROMBO -->
+            <div class="hud-center planet-interactive" id="hud-core">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
                     <defs>
-                        <!-- Filtro Glow Volumetrico -->
+                        <!-- Filtri Glow e Aura -->
                         <filter id="coreGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
                             <feGaussianBlur stdDeviation="5" result="blur" />
                             <feMerge>
@@ -61,68 +61,67 @@
                             </feMerge>
                         </filter>
                         <filter id="softAura" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="15" />
+                            <feGaussianBlur stdDeviation="18" />
                         </filter>
 
-                        <!-- Sfera di Plasma Centrale -->
-                        <radialGradient id="plasmaGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.8" />
-                            <stop offset="50%" stop-color="#00ff9d" stop-opacity="0.3" />
-                            <stop offset="100%" stop-color="#020610" stop-opacity="0" />
+                        <!-- Gradienti Pianeta e Plasma -->
+                        <radialGradient id="planetBody" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.9" />
+                            <stop offset="45%" stop-color="#005588" stop-opacity="0.6" />
+                            <stop offset="85%" stop-color="#020610" stop-opacity="0.85" />
+                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.2" />
                         </radialGradient>
 
-                        <!-- Gradienti Sfaccettature 3D dello Scudo -->
-                        <linearGradient id="facetTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.5" />
-                            <stop offset="100%" stop-color="#0088ff" stop-opacity="0.2" />
+                        <!-- Gradienti Sfaccettature Piramide 3D -->
+                        <linearGradient id="facetRomboGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.2" />
                         </linearGradient>
 
                         <linearGradient id="facetLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.4" />
-                            <stop offset="100%" stop-color="#002b4d" stop-opacity="0.25" />
+                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.5" />
+                            <stop offset="100%" stop-color="#001a33" stop-opacity="0.3" />
                         </linearGradient>
 
                         <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.3" />
-                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.1" />
+                            <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.15" />
                         </linearGradient>
                     </defs>
 
-                    <!-- Aura di sfocatura di fondo -->
-                    <circle cx="100" cy="100" r="75" fill="url(#plasmaGlow)" filter="url(#softAura)" />
-                    <!-- Sfera di energia centrale -->
-                    <circle cx="100" cy="100" r="65" fill="url(#plasmaGlow)" />
+                    <!-- Atmosphere / Atmosphere Glow -->
+                    <circle cx="100" cy="100" r="82" fill="url(#planetBody)" filter="url(#softAura)" />
+                    <!-- Corpo del Pianeta Orbis -->
+                    <circle cx="100" cy="100" r="72" fill="url(#planetBody)" stroke="#00f3ff" stroke-width="0.8" stroke-dasharray="120 10 40 5" />
 
-                    <!-- Anelli orbitali prospettici 3D -->
-                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="92" ry="40" transform="rotate(-15 100 100)" />
-                    <ellipse class="ring ring-inner" cx="100" cy="100" rx="78" ry="78" />
-                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="88" ry="28" transform="rotate(25 100 100)" />
+                    <!-- Anelli Orbitali Stile Saturno (Prospettivi 3D) -->
+                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="96" ry="32" transform="rotate(-20 100 100)" />
+                    <ellipse class="ring ring-inner" cx="100" cy="100" rx="84" ry="22" transform="rotate(-20 100 100)" />
+                    <ellipse class="ring ring-outer" cx="100" cy="100" rx="90" ry="38" transform="rotate(30 100 100)" />
 
-                    <!-- GEOMETRIA SCUDO ORBIS 3D -->
+                    <!-- GEOMETRIA PIRAMIDE 3D REALE (ROMBO SUPERIORE) -->
                     <g filter="url(#coreGlowFilter)">
-                        <!-- Sfaccettatura Superiore 3D (Triangolo in Prospettiva) -->
-                        <polygon class="shield-facet-top" points="35,45 165,45 100,85" fill="url(#facetTopGrad)" stroke="#00f3ff" stroke-width="1.5" />
+                        <!-- FACCIA SUPERIORE: ROMBO PROSPETTICO PERFECTO -->
+                        <polygon class="shield-facet-top" points="35,50 100,25 165,50 100,75" fill="url(#facetRomboGrad)" stroke="#00f3ff" stroke-width="1.5" />
                         
-                        <!-- Occhio / Punto Centrale incastonato nella base della sfaccettatura superiore -->
-                        <circle class="core-dot-3d" cx="100" cy="63" r="8" fill="#00ff9d" stroke="#ffffff" stroke-width="1.5" />
+                        <!-- Occhio / Punto Centrale incastonato al centro del Rombo -->
+                        <circle class="core-dot-3d" cx="100" cy="50" r="7" fill="#00ff9d" stroke="#ffffff" stroke-width="1.5" />
 
-                        <!-- Sfaccettatura Inferiore Sinistra -->
-                        <polygon class="shield-facet-left" points="35,45 100,85 100,165" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.5" />
+                        <!-- FACCIA INFERIORE SINISTRA -->
+                        <polygon class="shield-facet-left" points="35,50 100,75 100,165" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.5" />
 
-                        <!-- Sfaccettatura Inferiore Destra -->
-                        <polygon class="shield-facet-right" points="165,45 100,85 100,165" fill="url(#facetRightGrad)" stroke="#00f3ff" stroke-width="1.5" />
+                        <!-- FACCIA INFERIORE DESTRA -->
+                        <polygon class="shield-facet-right" points="165,50 100,75 100,165" fill="url(#facetRightGrad)" stroke="#00f3ff" stroke-width="1.5" />
 
-                        <!-- Bordi esterni e spigolo centrale 3D accentuati -->
-                        <polygon points="35,45 165,45 100,165" fill="none" stroke="#00f3ff" stroke-width="2" />
-                        <line x1="100" y1="85" x2="100" y2="165" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
-                        <line x1="35" y1="45" x2="100" y2="85" stroke="#00ff9d" stroke-width="1.2" />
-                        <line x1="165" y1="45" x2="100" y2="85" stroke="#00f3ff" stroke-width="1.2" />
+                        <!-- Spigoli e Contorni 3D -->
+                        <polygon points="35,50 100,25 165,50 100,165" fill="none" stroke="#00f3ff" stroke-width="1.8" />
+                        <line x1="100" y1="75" x2="100" y2="165" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
                     </g>
                 </svg>
             </div>
 
-            <!-- I 4 Nodi Fluttuanti -->
-            <a href="#agenti-ai" class="hud-node node-top-left" data-target="agenti-ai">
+            <!-- I 4 Nodi Fluttuanti (Partono Nascosti) -->
+            <a href="#agenti-ai" class="hud-node node-top-left hud-node-hidden" data-target="agenti-ai">
                 <div class="node-icon">🧠</div>
                 <div class="node-text">
                     <h3>Agenti AI Verticali</h3>
@@ -130,7 +129,7 @@
                 </div>
             </a>
 
-            <a href="#osint" class="hud-node node-top-right" data-target="osint">
+            <a href="#osint" class="hud-node node-top-right hud-node-hidden" data-target="osint">
                 <div class="node-icon">👁️‍🗨️</div>
                 <div class="node-text">
                     <h3>OSINT Data Analysis</h3>
@@ -138,7 +137,7 @@
                 </div>
             </a>
 
-            <a href="#suite-aziendale" class="hud-node node-bottom-left" data-target="suite-aziendale">
+            <a href="#suite-aziendale" class="hud-node node-bottom-left hud-node-hidden" data-target="suite-aziendale">
                 <div class="node-icon">⚙️</div>
                 <div class="node-text">
                     <h3>Suite & Automazione</h3>
@@ -146,7 +145,7 @@
                 </div>
             </a>
 
-            <a href="#telegram-bridge" class="hud-node node-bottom-right" data-target="telegram-bridge">
+            <a href="#telegram-bridge" class="hud-node node-bottom-right hud-node-hidden" data-target="telegram-bridge">
                 <div class="node-icon">⚡</div>
                 <div class="node-text">
                     <h3>Sito Web Intelligente</h3>
@@ -156,13 +155,64 @@
 
         </div>
 
-        <!-- Nodo Inferiore: Compliance Center -->
-        <a href="#compliance" class="bottom-node" data-target="compliance">
+        <!-- Nodo Inferiore: Compliance Center (Parte Nascosto) -->
+        <a href="#compliance" class="bottom-node hud-node-hidden" data-target="compliance">
             <span class="pulse-dot"></span>
             ETICA & CODICE // Compliance Center (EU AI Act & GDPR)
         </a>
 
     </main>
+
+    <!-- XENON: LA GUIDA ALIENA FLUTTUANTE -->
+    <div id="xenon-container" class="xenon-float">
+        <!-- Fumetto di Dialogo Glassmorphism -->
+        <div id="xenon-speech" class="xenon-bubble">
+            <p id="xenon-text">Saluti umano. Sono Xenon, la tua interfaccia guida. Clicca sul Pianeta Orbis per rivelare i nostri artefatti tecnologici.</p>
+        </div>
+        
+        <!-- Avatar Vettoriale SVG di Xenon nell'UFO -->
+        <div id="xenon-avatar" class="xenon-avatar-btn" title="Parla con Xenon">
+            <svg viewBox="0 0 120 120" class="xenon-svg">
+                <defs>
+                    <radialGradient id="ufoGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="#00ff9d" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Fascio di luce inferiore dell'UFO -->
+                <polygon points="40,80 80,80 105,115 15,115" fill="url(#ufoGlow)" opacity="0.4" />
+                
+                <!-- Disco Volante (Base Metallico-Neon) -->
+                <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
+                <ellipse cx="60" cy="78" rx="30" ry="5" fill="#00ff9d" opacity="0.6" filter="blur(1px)" />
+                <!-- Luci di Navigazione UFO -->
+                <circle cx="25" cy="76" r="2.5" fill="#00ff9d" />
+                <circle cx="42" cy="80" r="2.5" fill="#00f3ff" />
+                <circle cx="60" cy="81" r="3" fill="#ffffff" />
+                <circle cx="78" cy="80" r="2.5" fill="#00f3ff" />
+                <circle cx="95" cy="76" r="2.5" fill="#00ff9d" />
+
+                <!-- Cupola Trasparente di Vetro -->
+                <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
+
+                <!-- ALIEN XENON (Testa Grigio/Smeraldo e Occhi Neon) -->
+                <!-- Collo/Busto -->
+                <path d="M 52,68 L 68,68 L 65,60 L 55,60 Z" fill="#1e293b" />
+                <!-- Testa d'Alieno Classica -->
+                <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
+                <!-- Grandi Occhi Neri Mandorlati con Bagliore Ciano -->
+                <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                <!-- Punti di Luce negli Occhi -->
+                <circle cx="53" cy="45" r="2" fill="#00f3ff" />
+                <circle cx="67" cy="45" r="2" fill="#00f3ff" />
+                <!-- Antenna Olografica -->
+                <line x1="60" y1="34" x2="60" y2="24" stroke="#00ff9d" stroke-width="1.5" />
+                <circle cx="60" cy="22" r="3" fill="#00ff9d" />
+            </svg>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bottom-footer">
@@ -176,27 +226,21 @@
         </div>
         
         <div class="social-icons">
-            <!-- X (Twitter) -->
             <a href="#" target="_blank" title="X (Twitter)" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <!-- TikTok -->
             <a href="#" target="_blank" title="TikTok" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 2.14 6.338 6.338 0 0 0 1.253 8.877 6.337 6.337 0 0 0 8.605-1.928A6.305 6.305 0 0 0 15.82 15V8.293a8.212 8.212 0 0 0 4.769 1.488V6.335a4.81 4.81 0 0 1-1-.05z"/></svg>
             </a>
-            <!-- YouTube -->
             <a href="#" target="_blank" title="YouTube" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
-            <!-- Facebook -->
             <a href="#" target="_blank" title="Facebook" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <!-- Reddit -->
             <a href="#" target="_blank" title="Reddit" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.308.73-.498 1.196-.498a1.72 1.72 0 0 1 1.718 1.718c0 .64-.351 1.196-.87 1.49.02.18.03.36.03.54 0 2.754-3.1 4.987-6.924 4.987-3.824 0-6.924-2.233-6.924-4.987 0-.18.01-.36.03-.54A1.718 1.718 0 0 1 3.51 11.9a1.72 1.72 0 0 1 1.718-1.718c.466 0 .888.19 1.196.498 1.194-.856 2.85-1.418 4.674-1.488l.942-4.41 3.28.69a1.25 1.25 0 0 1 .69-.13zM9.423 11.9a1.18 1.18 0 0 0-1.18 1.18c0 .65.53 1.18 1.18 1.18.65 0 1.18-.53 1.18-1.18 0-.65-.53-1.18-1.18-1.18zm5.154 0a1.18 1.18 0 0 0-1.18 1.18c0 .65.53 1.18 1.18 1.18.65 0 1.18-.53 1.18-1.18 0-.65-.53-1.18-1.18-1.18zm-5.32 4.492c-.08.08-.08.2 0 .28.87.87 2.47 1.1 3.743 1.1 1.273 0 2.873-.23 3.743-1.1a.198.198 0 0 0 0-.28.198.198 0 0 0-.28 0c-.74.74-2.18.95-3.463.95-1.283 0-2.723-.21-3.463-.95a.198.198 0 0 0-.28 0z"/></svg>
             </a>
-            <!-- LinkedIn -->
             <a href="#" target="_blank" title="LinkedIn" class="social-link">
                 <svg viewBox="0 0 24 24" class="social-svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
