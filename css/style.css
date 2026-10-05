@@ -176,25 +176,27 @@ html, body {
     padding: 1rem 2rem;
 }
 
+/* MODIFICA TITOLI: AUTOREVOLI, ELEGANTI E B2B */
 .hero-titles {
     text-align: center;
-    max-width: 880px;
+    max-width: 900px;
 }
 
 .hero-titles h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1px;
-    background: linear-gradient(135deg, #ffffff 10%, var(--cyan-glow) 60%, var(--emerald-glow) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.8rem;
 }
 
 .hero-titles p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.45;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #e2e8f0;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
 }
 
 /* HUD CONTAINER CENTRALE CON I 4 NODI */
@@ -520,8 +522,8 @@ html, body {
     .center-links { display: none; }
     .footer-credits { display: none; }
 
-    .hero-titles h2 { font-size: 1.35rem; }
-    .hero-titles p { font-size: 0.82rem; }
+    .hero-titles h2 { font-size: 1.45rem; }
+    .hero-titles p { font-size: 0.95rem; }
 
     .hud-container {
         height: auto;
