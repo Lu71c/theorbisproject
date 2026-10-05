@@ -1,47 +1,4 @@
-function toggleLanguage() {
-    currentLang = currentLang === 'it' ? 'en' : 'it';
-    const langBtn = document.getElementById('lang-toggle');
-    if (langBtn) {
-        // Mostra la bandiera della lingua in cui PUOI passare
-        langBtn.innerText = currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
-    }
-
-    const t = translations[currentLang];
-    
-    // Update main titles
-    document.getElementById('main-title').innerText = t.title;
-    document.getElementById('main-subtitle').innerText = t.subtitle;
-
-    // Update nodes
-    const node1 = document.querySelector('[data-target="agenti-ai"] .node-text');
-    if (node1) {
-        node1.querySelector('h3').innerText = t.node1_title;
-        node1.querySelector('span').innerText = t.node1_sub;
-    }
-
-    const node2 = document.querySelector('[data-target="osint"] .node-text');
-    if (node2) {
-        node2.querySelector('h3').innerText = t.node2_title;
-        node2.querySelector('span').innerText = t.node2_sub;
-    }
-
-    const node3 = document.querySelector('[data-target="suite-aziendale"] .node-text');
-    if (node3) {
-        node3.querySelector('h3').innerText = t.node3_title;
-        node3.querySelector('span').innerText = t.node3_sub;
-    }
-
-    const node4 = document.querySelector('[data-target="telegram-bridge"] .node-text');
-    if (node4) {
-        node4.querySelector('h3').innerText = t.node4_title;
-        node4.querySelector('span').innerText = t.node4_sub;
-    }
-
-    const compBtn = document.querySelector('.bottom-node');
-    if (compBtn) {
-        compBtn.childNodes[1].nodeValue = " " + t.compliance_btn;
-    }
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +6,6 @@ function toggleLanguage() {
     <title>The Orbis Project | Sistemi Intelligenti e Architetture Tech</title>
     <meta name="description" content="Uniamo data intelligence, script avanzati, sviluppo web e automazione per trasformare la complessità tecnologica nel vantaggio competitivo della tua azienda.">
     
-    <!-- Link al CSS (che creeremo nel prossimo step) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -62,8 +18,7 @@ function toggleLanguage() {
     <!-- NAVBAR SUPERIORE -->
     <header class="top-nav">
         <div class="brand-container">
-            <!-- Sostituisci "Logo_T.O.P.png" con il percorso reale del tuo logo pulito -->
-            <img src="Logo_T.O.P.png" alt="The Orbis Project Logo" class="brand-logo-img">
+            <img src="logo.jpg" alt="The Orbis Project Logo" class="brand-logo-img">
             <h1 class="brand-text">THE ORBIS<br>PROJECT</h1>
         </div>
         
@@ -75,8 +30,8 @@ function toggleLanguage() {
         </nav>
 
         <div class="system-controls">
-            <button id="lang-toggle" class="cyber-btn">[ 🇮🇹 IT | 🇬🇧 EN ]</button>
-            <button id="audio-toggle" class="cyber-btn">[ 🔇 SFX OFF ]</button>
+            <button id="lang-toggle" class="cyber-btn" title="Cambia Lingua">🇬🇧 EN</button>
+            <button id="audio-toggle" class="cyber-btn" title="Attiva/Disattiva Audio">🔊</button>
         </div>
     </header>
 
@@ -92,17 +47,14 @@ function toggleLanguage() {
         <!-- HUD Navigazione Interattiva -->
         <div class="hud-container">
             
-            <!-- Logo Centrale Vettoriale (Stilizzato Cyber-Neon) -->
+            <!-- Logo Centrale Vettoriale -->
             <div class="hud-center" id="hud-core">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
-                    <!-- Anelli orbitali rotanti -->
                     <circle class="ring ring-outer" cx="100" cy="100" r="90" />
                     <circle class="ring ring-inner" cx="100" cy="100" r="75" />
-                    <!-- Geometria Scudo Orbis -->
                     <polygon class="shield-outline" points="30,50 170,50 100,160" />
                     <polygon class="shield-inner" points="40,55 160,55 100,150" />
                     <line class="shield-line" x1="100" y1="55" x2="100" y2="150" />
-                    <!-- Punto Centrale -->
                     <circle class="core-dot" cx="100" cy="75" r="12" />
                 </svg>
             </div>
@@ -162,7 +114,6 @@ function toggleLanguage() {
         </div>
         
         <div class="social-icons">
-            <!-- Icone di testo/unicode in attesa di inserire gli SVG completi nel CSS o JS -->
             <a href="#" target="_blank" title="X (Twitter)">𝕏</a>
             <a href="#" target="_blank" title="TikTok">🎵</a>
             <a href="#" target="_blank" title="YouTube">▶️</a>
@@ -172,17 +123,15 @@ function toggleLanguage() {
         </div>
     </footer>
 
-    <!-- CONTAINER DELLE SCHEDE MODALI (Gestito via JS) -->
+    <!-- CONTAINER DELLE SCHEDE MODALI -->
     <div id="modal-overlay" class="hidden">
         <div id="modal-content-box">
             <button id="modal-close" class="cyber-btn-close">✖ ESCI</button>
-            <div id="modal-dynamic-body">
-                <!-- Il contenuto viene iniettato qui da modals.js -->
-            </div>
+            <div id="modal-dynamic-body"></div>
         </div>
     </div>
 
-    <!-- SCRIPT (Caricati a fine body per non bloccare il render) -->
+    <!-- SCRIPT -->
     <script src="js/i18n.js" defer></script>
     <script src="js/audio.js" defer></script>
     <script src="js/canvas.js" defer></script>
