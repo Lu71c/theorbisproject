@@ -162,6 +162,19 @@ html, body {
     box-shadow: var(--neon-shadow);
 }
 
+/* PULSANTE LINGUA SOBRIO E SATINATO */
+.lang-btn-subtle {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #e2e8f0 !important;
+}
+
+.lang-btn-subtle:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2) !important;
+}
+
 /* HERO MAIN & HUD LAYOUT */
 .hero-hud {
     position: relative;
@@ -176,7 +189,7 @@ html, body {
     padding: 1rem 2rem;
 }
 
-/* MODIFICA TITOLI: AUTOREVOLI, ELEGANTI E B2B */
+/* TITOLI CENTRALI */
 .hero-titles {
     text-align: center;
     max-width: 900px;
@@ -199,7 +212,7 @@ html, body {
     letter-spacing: 0.3px;
 }
 
-/* HUD CONTAINER CENTRALE CON I 4 NODI */
+/* HUD CONTAINER CENTRALE */
 .hud-container {
     position: relative;
     width: 100%;
@@ -210,19 +223,20 @@ html, body {
     justify-content: center;
 }
 
-/* CORE SVG LOGO CENTRALE 3D */
-.hud-center {
-    width: 220px;
-    height: 220px;
+/* PIANETA ORBIS INGRANDITO E INTERATTIVO */
+.hud-center.planet-interactive {
+    width: 240px;
+    height: 240px;
     position: absolute;
     z-index: 2;
-    filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.35));
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.4));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
-.hud-center:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 35px rgba(0, 255, 157, 0.5));
+.hud-center.planet-interactive:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 45px rgba(0, 255, 157, 0.6));
 }
 
 .cyber-logo-svg {
@@ -236,17 +250,16 @@ html, body {
 .shield-facet-left,
 .shield-facet-right {
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .shield-facet-top:hover {
-    fill-opacity: 0.8;
+    fill-opacity: 0.85;
     filter: brightness(1.3);
 }
 
 .shield-facet-left:hover,
 .shield-facet-right:hover {
-    fill-opacity: 0.7;
+    fill-opacity: 0.75;
     filter: brightness(1.2);
 }
 
@@ -256,12 +269,12 @@ html, body {
 
 @keyframes pulseCoreDot {
     0%, 100% {
-        r: 8px;
+        r: 7px;
         fill: #00ff9d;
         filter: drop-shadow(0 0 6px #00ff9d);
     }
     50% {
-        r: 10px;
+        r: 9px;
         fill: #ffffff;
         filter: drop-shadow(0 0 14px #00f3ff);
     }
@@ -300,7 +313,7 @@ html, body {
     to { transform: rotate(-360deg); }
 }
 
-/* 4 NODI FLUTTUANTI (POSIZIONAMENTO QUADRANTI HUD 3D) */
+/* 4 NODI FLUTTUANTI (POSIZIONAMENTO HUD 3D) */
 .hud-node {
     position: absolute;
     width: 270px;
@@ -315,8 +328,17 @@ html, body {
     text-decoration: none;
     color: var(--text-primary);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 243, 255, 0.05);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 3;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* STATO NASCOSTO INIZIALE ("BIG BANG" READY) */
+.hud-node-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.2) translate(0, 0) !important;
 }
 
 .node-top-left     { top: 15px; left: 30px; }
@@ -324,7 +346,7 @@ html, body {
 .node-bottom-left  { bottom: 15px; left: 30px; }
 .node-bottom-right { bottom: 15px; right: 30px; }
 
-.hud-node:hover {
+.hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
     background: rgba(12, 24, 48, 0.85);
     box-shadow: 0 0 25px rgba(0, 255, 157, 0.3), inset 0 0 18px rgba(0, 255, 157, 0.15);
@@ -366,10 +388,10 @@ html, body {
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
-.bottom-node:hover {
+.bottom-node:not(.hud-node-hidden):hover {
     background: rgba(0, 243, 255, 0.15);
     border-color: var(--emerald-glow);
     box-shadow: var(--neon-shadow), 0 0 20px rgba(0, 255, 157, 0.3);
@@ -390,6 +412,71 @@ html, body {
     0% { transform: scale(0.95); opacity: 0.7; }
     50% { transform: scale(1.35); opacity: 1; }
     100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* XENON: LA GUIDA ALIENA FLUTTUANTE */
+#xenon-container {
+    position: fixed;
+    bottom: 52px;
+    right: 30px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.xenon-float {
+    animation: xenonFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes xenonFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(-1.5deg);
+    }
+}
+
+/* FUMETTO GLASSMORPHISM DI XENON */
+.xenon-bubble {
+    pointer-events: auto;
+    background: rgba(8, 15, 30, 0.85);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px);
+    border-radius: 14px 14px 2px 14px;
+    padding: 12px 16px;
+    max-width: 280px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 243, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.xenon-bubble p {
+    font-size: 0.82rem;
+    color: #e2e8f0;
+    line-height: 1.45;
+    letter-spacing: 0.2px;
+}
+
+.xenon-avatar-btn {
+    pointer-events: auto;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.xenon-avatar-btn:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 157, 0.6));
+}
+
+.xenon-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
 }
 
 /* FOOTER STRUTTURATO */
@@ -532,10 +619,10 @@ html, body {
         margin: 1rem 0;
     }
 
-    .hud-center {
+    .hud-center.planet-interactive {
         position: relative;
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
         margin-bottom: 0.8rem;
     }
 
@@ -547,6 +634,25 @@ html, body {
         right: auto !important;
         width: 100%;
         max-width: 330px;
+    }
+
+    #xenon-container {
+        bottom: 50px;
+        right: 15px;
+    }
+
+    .xenon-bubble {
+        max-width: 220px;
+        padding: 10px 12px;
+    }
+
+    .xenon-bubble p {
+        font-size: 0.75rem;
+    }
+
+    .xenon-avatar-btn {
+        width: 60px;
+        height: 60px;
     }
 
     /* Bottom Sheet per Mobile */
