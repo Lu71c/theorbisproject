@@ -9,6 +9,766 @@
     --emerald-glow: #00ff9d;
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
+    --glass-bg: rgba(8, 15, 30, 0.82);
+    --glass-border: rgba(0, 243, 255, 0.22);
+    --glass-border-hover: rgba(0, 255, 157, 0.75);
+    --neon-shadow: 0 0 25px rgba(0, 243, 255, 0.35);
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CANVAS SFONDO INTERATTIVO */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* VIGNETTATURA & AMBIENCE OVERLAY */
+.cyber-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 30%, rgba(2, 6, 16, 0.92) 100%);
+}
+
+/* NAVBAR SUPERIORE */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: rgba(2, 6, 16, 0.65);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--glass-border);
+    filter: drop-shadow(0 0 6px var(--cyan-glow));
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.brand-logo-img:hover {
+    transform: scale(1.08);
+    border-color: var(--cyan-glow);
+}
+
+.brand-text {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.brand-orbis {
+    background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+.center-links {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.center-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.center-links a:hover {
+    color: #ffffff;
+    opacity: 1;
+    text-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.system-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.cyber-btn {
+    background: rgba(0, 243, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    color: var(--cyan-glow);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cyber-btn:hover {
+    background: rgba(0, 243, 255, 0.22);
+    box-shadow: var(--neon-shadow);
+}
+
+.lang-btn-subtle {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #e2e8f0 !important;
+}
+
+.lang-btn-subtle:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* HERO MAIN & HUD LAYOUT */
+.hero-hud {
+    position: relative;
+    z-index: 5;
+    width: 100vw;
+    height: calc(100vh - 110px);
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* TITOLI CENTRALI */
+.hero-titles {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-titles h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    margin-bottom: 0.8rem;
+}
+
+.hero-titles p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #cbd5e1;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* HUD CONTAINER CENTRALE */
+.hud-container {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PIANETA ORBIS GIGANTE TRIDIMENSIONALE (360px) */
+.hud-center.planet-interactive {
+    width: 360px;
+    height: 360px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.hud-center.planet-interactive:hover {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 65px rgba(52, 211, 153, 0.65));
+}
+
+/* ANIMAZIONE SUPERNOVA BIG BANG (CLICK) */
+.hud-center.planet-exploded {
+    animation: supernovaExplode 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    pointer-events: none !important;
+}
+
+@keyframes supernovaExplode {
+    0% {
+        transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 35px rgba(56, 189, 248, 0.5));
+        opacity: 1;
+    }
+    20% {
+        transform: scale(0.88);
+        filter: brightness(2.5) drop-shadow(0 0 80px #ffffff);
+        opacity: 1;
+    }
+    55% {
+        transform: scale(1.7);
+        filter: brightness(4) drop-shadow(0 0 150px #38bdf8);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(2.4);
+        filter: brightness(5) drop-shadow(0 0 250px #34d399);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ONDA D'URTO DELLA SUPERNOVA */
+.hud-center.planet-exploded #supernova-shockwave {
+    animation: shockwaveExpand 0.75s ease-out forwards;
+}
+
+@keyframes shockwaveExpand {
+    0% {
+        r: 10px;
+        opacity: 1;
+        stroke-width: 6px;
+        stroke: #ffffff;
+    }
+    50% {
+        opacity: 0.8;
+        stroke: #38bdf8;
+    }
+    100% {
+        r: 180px;
+        opacity: 0;
+        stroke-width: 1px;
+        stroke: #34d399;
+    }
+}
+
+.cyber-logo-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* SFACCETTATURE TERRAFERMA VERDE */
+.shield-facet-top,
+.shield-facet-left,
+.shield-facet-right {
+    transition: all 0.3s ease;
+}
+
+.shield-facet-top:hover {
+    fill-opacity: 1;
+    filter: brightness(1.3);
+}
+
+.shield-facet-left:hover,
+.shield-facet-right:hover {
+    fill-opacity: 0.95;
+    filter: brightness(1.2);
+}
+
+.core-dot-3d {
+    animation: pulseCoreDot 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseCoreDot {
+    0%, 100% {
+        r: 6px;
+        fill: #ffffff;
+        filter: drop-shadow(0 0 8px #34d399);
+    }
+    50% {
+        r: 8px;
+        fill: #34d399;
+        filter: drop-shadow(0 0 16px #ffffff);
+    }
+}
+
+/* ANELLI 3D ROTANTI (RETRO E FRONTE) */
+.ring-saturn-back-1 {
+    animation: rotateClockwise 32s linear infinite;
+    transform-origin: center;
+}
+
+.ring-saturn-back-2 {
+    animation: rotateCounterClockwise 24s linear infinite;
+    transform-origin: center;
+}
+
+.ring-saturn-front-1 {
+    animation: rotateClockwise 32s linear infinite;
+    transform-origin: center;
+}
+
+.ring-saturn-front-2 {
+    animation: rotateCounterClockwise 20s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotateClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* 4 NODI FLUTTUANTI (SCHEDE SERVIZI) */
+.hud-node {
+    position: absolute;
+    width: 300px;
+    padding: 16px 22px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(0, 243, 255, 0.06);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 3;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hud-node-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.1) translate(0, 0) !important;
+}
+
+.node-top-left     { top: 25px; left: 10px; }
+.node-top-right    { top: 25px; right: 10px; }
+.node-bottom-left  { bottom: 25px; left: 10px; }
+.node-bottom-right { bottom: 25px; right: 10px; }
+
+.hud-node:not(.hud-node-hidden):hover {
+    border-color: var(--emerald-glow);
+    background: rgba(12, 24, 48, 0.92);
+    box-shadow: 0 0 35px rgba(0, 255, 157, 0.35), inset 0 0 20px rgba(0, 255, 157, 0.2);
+    transform: translateY(-5px) scale(1.04);
+}
+
+.node-icon {
+    font-size: 1.75rem;
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.6));
+}
+
+.node-text h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.node-text span {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 3px;
+}
+
+/* BOTTOM NODE (COMPLIANCE CENTER) */
+.bottom-node {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 30px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    color: var(--cyan-glow);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s ease;
+}
+
+.bottom-node:not(.hud-node-hidden):hover {
+    background: rgba(0, 243, 255, 0.18);
+    border-color: var(--emerald-glow);
+    box-shadow: var(--neon-shadow), 0 0 25px rgba(0, 255, 157, 0.35);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.pulse-dot {
+    width: 9px;
+    height: 9px;
+    background-color: var(--emerald-glow);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--emerald-glow);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.35); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* XENON: GUIDA ALIENA FLUTTUANTE CON TRANSIZIONE ESATTA AL CENTRO SU PC */
+#xenon-container {
+    position: fixed;
+    bottom: 50px;
+    right: 35px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    pointer-events: none;
+    transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* DOPO LA SUPERNOVA: XENON SI POSIZIONA ESATTAMENTE AL CENTRO AL POSTO DEL PIANETA */
+#xenon-container.xenon-moved-center {
+    bottom: auto !important;
+    top: 52% !important;
+    right: 50% !important;
+    transform: translate(50%, -50%) !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.xenon-float {
+    animation: xenonDrift 9s ease-in-out infinite;
+}
+
+@keyframes xenonDrift {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-10px, -15px) rotate(-2.5deg);
+    }
+    50% {
+        transform: translate(-20px, -6px) rotate(2deg);
+    }
+    75% {
+        transform: translate(-6px, -18px) rotate(-1deg);
+    }
+}
+
+.xenon-bubble {
+    pointer-events: auto;
+    background: rgba(8, 15, 30, 0.92);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 12px 18px;
+    max-width: 320px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 243, 255, 0.15);
+    transition: all 0.35s ease;
+    text-align: center;
+}
+
+.xenon-bubble p {
+    font-size: 0.84rem;
+    color: #e2e8f0;
+    line-height: 1.45;
+    letter-spacing: 0.2px;
+}
+
+.xenon-avatar-btn {
+    pointer-events: auto;
+    width: 78px;
+    height: 78px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.xenon-avatar-btn:hover {
+    transform: scale(1.14);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 157, 0.7));
+}
+
+.xenon-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.modal-xenon-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 1.5rem;
+}
+
+.xenon-mini-avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px var(--emerald-glow));
+}
+
+.modal-xenon-bar p {
+    font-size: 0.82rem;
+    color: #e2e8f0;
+    line-height: 1.35;
+}
+
+/* FOOTER STRUTTURATO */
+.bottom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: rgba(2, 6, 16, 0.88);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.75rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--cyan-glow);
+}
+
+.footer-credits {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    opacity: 0.85;
+    transition: fill 0.25s ease, opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-link:hover .social-svg {
+    fill: #ffffff;
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(0, 243, 255, 0.8));
+}
+
+/* SCHEDE MODALI & GLASSMORPHISM INSET VIEWPORT */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(2, 6, 16, 0.8);
+    backdrop-filter: blur(16px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal-content-box {
+    position: relative;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    max-width: 1200px;
+    max-height: 800px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    overflow-y: auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.85), inset 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+.cyber-btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 50, 50, 0.1);
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    color: #ff5555;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.cyber-btn-close:hover {
+    background: rgba(255, 50, 50, 0.35);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+}
+
+/* RESPONSIVE DESIGN (MOBILE & TABLET) */
+@media (max-width: 850px) {
+    .center-links { display: none; }
+    .footer-credits { display: none; }
+
+    .hero-titles h2 { font-size: 1.45rem; }
+    .hero-titles p { font-size: 0.95rem; }
+
+    .hud-container {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        margin: 1rem 0;
+    }
+
+    .hud-center.planet-interactive {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin-bottom: 0.8rem;
+    }
+
+    .hud-node {
+        position: relative;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100%;
+        max-width: 330px;
+    }
+
+    #xenon-container {
+        bottom: 50px;
+        right: 15px;
+    }
+
+    #xenon-container.xenon-moved-center {
+        top: 50% !important;
+        right: 50% !important;
+        transform: translate(50%, -50%) !important;
+    }
+
+    .xenon-bubble {
+        max-width: 220px;
+        padding: 10px 12px;
+    }
+
+    .xenon-bubble p {
+        font-size: 0.75rem;
+    }
+
+    .xenon-avatar-btn {
+        width: 62px;
+        height: 62px;
+    }
+
+    #modal-content-box {
+        width: 100vw;
+        height: 92dvh;
+        max-height: 92dvh;
+        position: fixed;
+        bottom: 0;
+        border-radius: 20px 20px 0 0;
+        padding: 1.5rem;
+    }
+}/* ==========================================================================
+   THE ORBIS PROJECT - CYBER-MINIMALIST 3D HUD STYLESHEET
+   Target: Zero frameworks, Ultra performance, High Visual Impact
+   ========================================================================== */
+
+:root {
+    --bg-dark: #020610;
+    --cyan-glow: #00f3ff;
+    --emerald-glow: #00ff9d;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
     --glass-bg: rgba(8, 15, 30, 0.78);
     --glass-border: rgba(0, 243, 255, 0.25);
     --glass-border-hover: rgba(0, 255, 157, 0.75);
