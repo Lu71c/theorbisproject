@@ -17,7 +17,7 @@ const modalData = {
                 <!-- Burocrate -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">🏛️️ Burocrate</h3>
+                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">🏛 Burocrate</h3>
                         <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1rem;">Simula un ispettore statale severissimo. Ottimizza pratiche, contratti e documenti previdenziali per scovare errori e prevenire rigetti formali.</p>
                     </div>
                     <a href="https://gemini.google.com/gem/1xrRrEVQDK74NcMbbLNJJGtaFcNVJ4YiD?usp=sharing" target="_blank" class="cyber-btn-install" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:8px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:bold; transition:all 0.3s ease;">INSTALLA GEMMA</a>
@@ -116,17 +116,82 @@ const modalData = {
             `
     },
     'osint': {
-        title: "👁‍🗨️ OSINT DATA ANALYSIS",
-        subtitle: "Data Mining Python, API Direct Integration & Lead Extraction",
+        title: "👁‍🗨️ OSINT & DATA INTELLIGENCE",
+        subtitle: "Data Mining Python, Analisi Concorrenza & Lead Generation B2B",
         content: `
-            <div style="line-height:1.6; color:#e2e8f0;">
-                <p style="margin-bottom:1rem;">Sviluppiamo pipeline personalizzate in <strong>Python</strong> per l'estrazione, pulizia ed elaborazione dati ad alte prestazioni.</p>
-                <div style="background:rgba(10, 25, 45, 0.8); border:1px solid rgba(0,255,157,0.3); padding:1rem; font-family:monospace; border-radius:6px; margin-bottom:1rem; color:#00ff9d;">
-                    > [SYSTEM STATUS]: EXTRACTION COMPLETE<br>
-                    > Data Cleaned: P.IVA, PEC, Phone, Contact Name<br>
-                    > Format Output: Structured JSON / PostgreSQL Ready
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
+                <p>Nel mercato odierno, chi ha i dati detta le regole. La nostra infrastruttura <strong>OSINT (Open Source Intelligence)</strong> trasforma il caos del web pubblico in database commerciali strutturati e legali.</p>
+                <p style="margin-top:0.8rem;">Sviluppiamo pipeline personalizzate in Python per estrarre, pulire ed elaborare informazioni pubbliche, consegnandoti insight azionabili direttamente nel tuo CRM o nelle tue dashboard direzionali.</p>
+            </div>
+
+            <!-- I 3 PILASTRI DEL SERVIZIO -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🎯 Lead Generation Automatica</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Estrazione di anagrafiche aziendali, contatti B2B e decision maker da registri, fiere e directory pubbliche nel pieno rispetto del GDPR (Dati di Persone Giuridiche).</p>
                 </div>
-            </div>`
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">📉 Price & Competitor Intelligence</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Monitoraggio in tempo reale dei cataloghi e dei prezzi della concorrenza. Ricevi alert automatici non appena un competitor modifica le sue offerte strategiche.</p>
+                </div>
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🌐 Sentiment & Reputation Mining</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Analisi massiva delle recensioni e delle opinioni online tramite IA per individuare i punti deboli dei tuoi concorrenti e usarli come leva nelle tue vendite.</p>
+                </div>
+            </div>
+
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">🧭 ANALISI SWOT STRATEGICA DELL'OSINT</h3>
+            
+            <!-- GRIGLIA SWOT 2x2 CYBER-STYLE -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+                
+                <!-- STRENGTHS (Punti di Forza) - Verde Smeraldo -->
+                <div style="background:rgba(0, 255, 157, 0.05); border-left:4px solid #00ff9d; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>S - PUNTI DI FORZA</span> <span>💪</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Dati 100% Legali:</strong> Estrazione limitata a fonti pubbliche, zero violazioni.</li>
+                        <li><strong>Scalabilità Immediata:</strong> Python permette di analizzare 10 o 100.000 record con lo stesso sforzo.</li>
+                        <li><strong>Zero Costi di Acquisizione:</strong> Nessun budget bruciato in Ads per trovare i lead.</li>
+                    </ul>
+                </div>
+
+                <!-- WEAKNESSES (Punti di Debolezza) - Arancione -->
+                <div style="background:rgba(255, 153, 0, 0.05); border-left:4px solid #ff9900; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#ff9900; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>W - DEBOLEZZE (Mitigate)</span> <span>🔧</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Dipendenza Strutturale:</strong> Se il sito target cambia codice, lo script va aggiornato (gestito dalla nostra manutenzione).</li>
+                        <li><strong>Dati "Sporchi":</strong> Il web è caotico. I nostri script includono moduli IA di data-cleaning per consegnare solo dati puri.</li>
+                    </ul>
+                </div>
+
+                <!-- OPPORTUNITIES (Opportunità) - Ciano -->
+                <div style="background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>O - OPPORTUNITÀ</span> <span>🚀</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Oceano Blu:</strong> Scoprire "zone scoperte" e nicchie di mercato dove i competitor non sono ancora arrivati.</li>
+                        <li><strong>Vantaggio Temporale:</strong> Prevedere le mosse dei concorrenti analizzando le loro assunzioni (Job Posting Analysis).</li>
+                    </ul>
+                </div>
+
+                <!-- THREATS (Minacce) - Rosso/Viola -->
+                <div style="background:rgba(255, 50, 100, 0.05); border-left:4px solid #ff3264; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#ff3264; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>T - MINACCE (Gestite)</span> <span>🛡️</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Sistemi Anti-Bot:</strong> I siti moderni bloccano il traffico anomalo. Usiamo proxy rotanti e simulazione del comportamento umano.</li>
+                        <li><strong>GDPR e Privacy:</strong> Rischio multe. Il nostro filtro esclude in automatico le PII (Personally Identifiable Information) fisiche.</li>
+                    </ul>
+                </div>
+
+            </div>
+        `
     },
     'suite-aziendale': {
         title: "⚙️ SUITE & AUTOMAZIONE AZIENDALE",
@@ -233,7 +298,7 @@ const modalData = {
         content: "<p style='color:#e2e8f0;'>Siamo ingegneri e sviluppatori software focalizzati sulle prestazioni e sull'efficienza. Creiamo soluzioni tecnologiche su misura, eliminando ogni zavorra inutile per offrire velocità e valore concreto alle imprese.</p>"
     },
     'info': {
-        title: "ℹ️ INFORMAZIONI",
+        title: "ℹ️️ INFORMAZIONI",
         subtitle: "Specifiche di Sistema",
         content: "<p style='color:#e2e8f0;'>Sito realizzato con tecnologia Vanilla Web. Nessun framework (React/Angular), nessun server intermedio. Tempo di risposta globale &lt; 150ms.</p>"
     },
