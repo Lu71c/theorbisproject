@@ -100,19 +100,34 @@ const modalData = {
 
 let isBigBangTriggered = false;
 
-// Funzione per scatenare l'esplosione a raggiera dei Nodi (Big Bang)
+// Funzione per scatenare l'esplosione Big Bang, dissolvere il pianeta e spostare Xenon
 function triggerBigBang() {
+    if (isBigBangTriggered) return;
+
+    // 1. Dissolvenza del Pianeta Orbis
+    const planetCore = document.getElementById('hud-core');
+    if (planetCore) {
+        planetCore.classList.add('planet-exploded');
+    }
+
+    // 2. Volo di Xenon verso in Alto a Destra
+    const xenonContainer = document.getElementById('xenon-container');
+    if (xenonContainer) {
+        xenonContainer.classList.add('xenon-moved-top');
+    }
+
+    // 3. Rilascio a raggiera dei 4 Nodi dei Servizi
     const hiddenNodes = document.querySelectorAll('.hud-node-hidden');
     hiddenNodes.forEach((node, index) => {
         setTimeout(() => {
             node.classList.remove('hud-node-hidden');
-        }, index * 90); // Rilascio progressivo elusivo
+        }, 200 + index * 90);
     });
 
-    // Aggiorna il messaggio di Xenon
+    // 4. Aggiornamento del Fumetto di Xenon
     const xenonText = document.getElementById('xenon-text');
     if (xenonText) {
-        xenonText.innerText = "Eccellente! Gli artefatti tecnologici sono stati sbloccati. Esplora i nodi o clicca su di me per assistenza.";
+        xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
     }
 
     isBigBangTriggered = true;
@@ -122,7 +137,6 @@ function openModal(key) {
     const data = modalData[key];
     if (!data) return;
 
-    // Se si apre una modale direttamente da hash URL, sblocchiamo comunque il Big Bang
     if (!isBigBangTriggered) {
         triggerBigBang();
     }
@@ -130,7 +144,6 @@ function openModal(key) {
     const overlay = document.getElementById('modal-overlay');
     const dynamicBody = document.getElementById('modal-dynamic-body');
 
-    // SVG Mini Avatar di Xenon per l'intestazione della finestra modale
     const xenonMiniSvg = `
         <svg viewBox="0 0 120 120" class="xenon-mini-avatar">
             <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
@@ -174,7 +187,7 @@ function handleHashChange() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // CLICK SUL PIANETA ORBIS -> SBLOCCO "BIG BANG" DEI NODI
+    // CLICK SUL PIANETA ORBIS -> BIG BANG, DISSOLVENZA E SPOSTAMENTO XENON
     const planetCore = document.getElementById('hud-core');
     if (planetCore) {
         planetCore.addEventListener('click', () => {
@@ -213,5 +226,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // URL Hash Routing Listeners
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Check iniziale al caricamento della pagina
+    handleHashChange();
 });
