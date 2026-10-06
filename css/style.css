@@ -301,9 +301,11 @@ html, body {
     color: var(--text-primary);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(0, 243, 255, 0.06);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 15;
+    z-index: 100; /* ALZATO PER RICEVERE IL CLICK SOPRA QUALSIASI OVERLAY */
     opacity: 1;
     transform: scale(1);
+    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI TASTI */
+    cursor: pointer;
 }
 
 .hud-node-hidden {
@@ -343,7 +345,11 @@ html, body {
     margin-top: 3px;
 }
 
-/* BOTTOM NODE (COMPLIANCE CENTER) */
+/* BOTTOM NODE (COMPLIANCE CENTER E LINK NAVBAR) */
+.bottom-node, .center-links a {
+    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ PER I LINK IN BASSO E IN ALTO */
+}
+
 .bottom-node {
     display: flex;
     align-items: center;
@@ -360,6 +366,7 @@ html, body {
     letter-spacing: 1px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
+    z-index: 100;
 }
 
 .bottom-node:not(.hud-node-hidden):hover {
@@ -496,6 +503,7 @@ html, body {
     color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
+    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI LINK NEL FOOTER */
 }
 
 .footer-links a:hover {
@@ -520,6 +528,7 @@ html, body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI SOCIAL */
 }
 
 .social-svg {
