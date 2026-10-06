@@ -34,7 +34,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* CANVAS SFONDO INTERATTIVO */
+/* CANVAS SFONDO INTERATTIVO (Pointer events a none per far passare i click agli elementi HTML) */
 #bg-canvas {
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 /* VIGNETTATURA & AMBIENCE OVERLAY */
@@ -220,15 +220,15 @@ html, body {
     justify-content: center;
 }
 
-/* PIANETA ORBIS OLOGRAMMA 3D (360px) */
+/* PIANETA ORBIS OLOGRAMMA 3D */
 .hud-center.planet-interactive {
     width: 360px;
     height: 360px;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     cursor: pointer;
     filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.35));
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.3s ease;
 }
 
 .hud-center.planet-interactive:hover {
@@ -236,12 +236,12 @@ html, body {
     filter: drop-shadow(0 0 50px rgba(52, 211, 153, 0.55));
 }
 
-/* TRANSIZIONE ISTANTANEA ALLA SCOMPARSA DEL PIANETA (AZZERATO IL LAG DELLA SUPERNOVA) */
+/* SCOMPARSA FLUIDA DEL PIANETA */
 .hud-center.planet-exploded {
     opacity: 0 !important;
-    transform: scale(0.85) !important;
+    transform: scale(0.7) !important;
     pointer-events: none !important;
-    transition: transform 0.2s ease, opacity 0.2s ease !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
 }
 
 .cyber-logo-svg {
@@ -250,7 +250,7 @@ html, body {
     overflow: visible;
 }
 
-/* SFACCETTATURE TERRAFERMA VERDE INTEGRATA SOTTO L'ATMOSFERA */
+/* SFACCETTATURE TERRAFERMA VERDE */
 .shield-facet-top,
 .shield-facet-left,
 .shield-facet-right {
@@ -285,37 +285,6 @@ html, body {
     }
 }
 
-/* ANELLI 3D ROTANTI (RETRO E FRONTE) */
-.ring-saturn-back-1 {
-    animation: rotateClockwise 32s linear infinite;
-    transform-origin: center;
-}
-
-.ring-saturn-back-2 {
-    animation: rotateCounterClockwise 24s linear infinite;
-    transform-origin: center;
-}
-
-.ring-saturn-front-1 {
-    animation: rotateClockwise 32s linear infinite;
-    transform-origin: center;
-}
-
-.ring-saturn-front-2 {
-    animation: rotateCounterClockwise 20s linear infinite;
-    transform-origin: center;
-}
-
-@keyframes rotateClockwise {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes rotateCounterClockwise {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
-}
-
 /* 4 NODI FLUTTUANTI (SCHEDE SERVIZI) */
 .hud-node {
     position: absolute;
@@ -331,8 +300,8 @@ html, body {
     text-decoration: none;
     color: var(--text-primary);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(0, 243, 255, 0.06);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 3;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 15;
     opacity: 1;
     transform: scale(1);
 }
@@ -340,7 +309,7 @@ html, body {
 .hud-node-hidden {
     opacity: 0 !important;
     pointer-events: none !important;
-    transform: scale(0.2) translate(0, 0) !important;
+    transform: scale(0.2) !important;
 }
 
 .node-top-left     { top: 25px; left: 10px; }
@@ -416,7 +385,7 @@ html, body {
     100% { transform: scale(0.95); opacity: 0.7; }
 }
 
-/* XENON: GUIDA ALIENA FLUTTUANTE CON TRANSIZIONE FLUIDA AL CENTRO SU PC */
+/* XENON: GUIDA ALIENA FLUTTUANTE */
 #xenon-container {
     position: fixed;
     bottom: 50px;
@@ -427,17 +396,19 @@ html, body {
     align-items: flex-end;
     gap: 12px;
     pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* DOPO LO SBLOCCO: XENON SI SPOSTA ESATTAMENTE AL CENTRO AL POSTO DEL PIANETA */
+/* SPOSTAMENTO CORRETTO DI XENON AL CENTRO */
 #xenon-container.xenon-moved-center {
-    bottom: auto !important;
     top: 50% !important;
-    right: 50% !important;
-    transform: translate(50%, -50%) !important;
+    left: 50% !important;
+    bottom: auto !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
     flex-direction: column !important;
     align-items: center !important;
+    animation: none !important; /* Disattiva il drift per non rompere il centraggio */
 }
 
 .xenon-float {
@@ -641,8 +612,8 @@ html, body {
 
     #xenon-container.xenon-moved-center {
         top: 50% !important;
-        right: 50% !important;
-        transform: translate(50%, -50%) !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 
     .xenon-bubble {
