@@ -52,89 +52,80 @@
             <div class="hud-center planet-interactive" id="hud-core" title="Clicca sul Pianeta Orbis per accedere ai servizi">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
                     <defs>
-                        <!-- Filtro Glow e Ombra Prospettica per la Terraferma -->
-                        <filter id="coreGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="3" result="blur" />
-                            <feMerge>
-                                <feMergeNode in="blur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-                        
+                        <!-- Filtro Ombra Prospettica per la Terraferma -->
                         <filter id="land3DShadow" x="-30%" y="-30%" width="160%" height="160%">
-                            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#020610" flood-opacity="0.8" />
+                            <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#020610" flood-opacity="0.9" />
                         </filter>
 
-                        <!-- GRADIENTE OCEANO VOLUMETRICO (Oltremare, Indaco, Ciano Profondo) -->
+                        <!-- GRADIENTE OCEANO PROFONDO (Indaco scuro, Cobalto, Blu Notte) -->
                         <radialGradient id="planetOceanGrad" cx="35%" cy="30%" r="70%">
-                            <stop offset="0%" stop-color="#38bdf8" />
-                            <stop offset="25%" stop-color="#0284c7" />
-                            <stop offset="60%" stop-color="#0369a1" />
-                            <stop offset="90%" stop-color="#0f172a" />
-                            <stop offset="100%" stop-color="#0284c7" />
+                            <stop offset="0%" stop-color="#1e3a8a" />
+                            <stop offset="40%" stop-color="#172554" />
+                            <stop offset="85%" stop-color="#090d16" />
+                            <stop offset="100%" stop-color="#020610" />
                         </radialGradient>
 
-                        <!-- Atmosphere / Corona Luminosa -->
-                        <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="65%" stop-color="#00f3ff" stop-opacity="0" />
-                            <stop offset="88%" stop-color="#38bdf8" stop-opacity="0.35" />
-                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0" />
+                        <!-- ATMOSFERA E VELO CLIMATICO (Sovrapposto per velare il diamante) -->
+                        <radialGradient id="atmosphereOverlay" cx="40%" cy="30%" r="65%">
+                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+                            <stop offset="50%" stop-color="#0284c7" stop-opacity="0.15" />
+                            <stop offset="85%" stop-color="#00f3ff" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                         </radialGradient>
 
-                        <!-- GRADIENTI TERRAFERMA VERDE SMERALDO/GIADA -->
+                        <!-- GRADIENTI TERRAFERMA VERDE SMERALDO/GIADA SOTTO-ATMOSFERA -->
                         <linearGradient id="facetRomboGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
-                            <stop offset="45%" stop-color="#34d399" stop-opacity="0.9" />
-                            <stop offset="100%" stop-color="#059669" stop-opacity="0.85" />
+                            <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.9" />
+                            <stop offset="50%" stop-color="#10b981" stop-opacity="0.85" />
+                            <stop offset="100%" stop-color="#047857" stop-opacity="0.8" />
                         </linearGradient>
 
                         <linearGradient id="facetLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.9" />
-                            <stop offset="100%" stop-color="#044e32" stop-opacity="0.8" />
-                        </linearGradient>
-
-                        <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stop-color="#059669" stop-opacity="0.85" />
                             <stop offset="100%" stop-color="#022c1e" stop-opacity="0.75" />
                         </linearGradient>
+
+                        <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#047857" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#011e14" stop-opacity="0.7" />
+                        </linearGradient>
                     </defs>
 
-                    <!-- 1. ANELLI POSTERIORI (Passano dietro al pianeta) -->
+                    <!-- 1. ANELLI POSTERIORI (Passano DIETRO al pianeta per effetto 3D) -->
                     <g id="rings-back">
-                        <ellipse class="ring ring-saturn-back-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" fill="none" />
-                        <ellipse class="ring ring-saturn-back-2" cx="100" cy="100" rx="88" ry="18" transform="rotate(35 100 100)" stroke="rgba(192, 132, 252, 0.35)" stroke-width="1" fill="none" />
+                        <ellipse class="ring ring-saturn-back-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.2" fill="none" />
+                        <ellipse class="ring ring-saturn-back-2" cx="100" cy="100" rx="88" ry="18" transform="rotate(35 100 100)" stroke="rgba(192, 132, 252, 0.25)" stroke-width="1" fill="none" />
                     </g>
 
-                    <!-- 2. CORPO DEL PIANETA ORBIS (Oceano Volumetrico) -->
-                    <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="rgba(56, 189, 248, 0.5)" stroke-width="0.8" />
-                    <circle cx="100" cy="100" r="76" fill="url(#atmosphereGlow)" pointer-events="none" />
+                    <!-- 2. CORPO DEL PIANETA (Oceano Scuro) -->
+                    <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.8" />
 
-                    <!-- 3. ANELLI ANTERIORI (Passano davanti al pianeta per effetto 3D) -->
-                    <g id="rings-front">
-                        <ellipse class="ring ring-saturn-front-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="#38bdf8" stroke-dasharray="140 180" stroke-dashoffset="-30" stroke-width="1.4" fill="none" />
-                        <ellipse class="ring ring-saturn-front-2" cx="100" cy="100" rx="90" ry="32" transform="rotate(-60 100 100)" stroke="#fbbf24" stroke-dasharray="80 200" stroke-width="1" fill="none" opacity="0.6" />
-                    </g>
-
-                    <!-- 4. GEOMETRIA TERRAFERMA VERDE (Proporzioni robuste e Ombra 3D) -->
+                    <!-- 3. GEOMETRIA TERRAFERMA VERDE (Incastonata sul pianeta) -->
                     <g filter="url(#land3DShadow)" id="landmass-core">
                         <!-- Facciata Superiore (Rombo Prospettico) -->
-                        <polygon class="shield-facet-top" points="45,78 100,52 155,78 100,98" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="1.2" />
-                        <circle class="core-dot-3d" cx="100" cy="75" r="6" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+                        <polygon class="shield-facet-top" points="45,78 100,52 155,78 100,98" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.6" />
+                        <circle class="core-dot-3d" cx="100" cy="75" r="5" fill="#ffffff" stroke="#10b981" stroke-width="1.5" />
                         
                         <!-- Facce Inferiori -->
-                        <polygon class="shield-facet-left" points="45,78 100,98 100,150" fill="url(#facetLeftGrad)" stroke="#10b981" stroke-width="1" />
-                        <polygon class="shield-facet-right" points="155,78 100,98 100,150" fill="url(#facetRightGrad)" stroke="#059669" stroke-width="1" />
+                        <polygon class="shield-facet-left" points="45,78 100,98 100,150" fill="url(#facetLeftGrad)" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.5" />
+                        <polygon class="shield-facet-right" points="155,78 100,98 100,150" fill="url(#facetRightGrad)" stroke="#059669" stroke-width="0.8" stroke-opacity="0.5" />
                         
                         <!-- Spigolo Centrale -->
-                        <line x1="100" y1="98" x2="100" y2="150" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                        <line x1="100" y1="98" x2="100" y2="150" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" />
                     </g>
 
-                    <!-- 5. ONDA D'URTO SUPERNOVA (Attivabile al click) -->
-                    <circle id="supernova-shockwave" cx="100" cy="100" r="10" fill="none" stroke="#ffffff" stroke-width="2" opacity="0" pointer-events="none" />
+                    <!-- 4. ATMOSFERA SOVRAPPOSTA (Copre e vela la terraferma per dare effetto pianeta reale) -->
+                    <circle cx="100" cy="100" r="72" fill="url(#atmosphereOverlay)" pointer-events="none" />
+
+                    <!-- 5. ANELLI ANTERIORI (Passano DAVANTI al pianeta) -->
+                    <g id="rings-front">
+                        <ellipse class="ring ring-saturn-front-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="#38bdf8" stroke-dasharray="140 180" stroke-dashoffset="-30" stroke-width="1.4" fill="none" opacity="0.8" />
+                        <ellipse class="ring ring-saturn-front-2" cx="100" cy="100" rx="90" ry="32" transform="rotate(-60 100 100)" stroke="#fbbf24" stroke-dasharray="80 200" stroke-width="1" fill="none" opacity="0.5" />
+                    </g>
                 </svg>
             </div>
 
-            <!-- I 4 NODI FLUTTUANTI (Partono Nascosti per la Supernova) -->
+            <!-- I 4 NODI FLUTTUANTI (Partono Nascosti) -->
             <a href="#agenti-ai" class="hud-node node-top-left hud-node-hidden" data-target="agenti-ai">
                 <div class="node-icon">🧠</div>
                 <div class="node-text">
@@ -259,7 +250,6 @@
     <!-- CONTAINER DELLE SCHEDE MODALI / POPUP VIEWPORT -->
     <div id="modal-overlay" class="hidden">
         <div id="modal-content-box">
-            <!-- NOTA: Il vecchio pulsante statico "ESCI" è stato rimosso. Viene generato dinamicamente via JS. -->
             <div id="modal-dynamic-body"></div>
         </div>
     </div>
