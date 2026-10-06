@@ -104,24 +104,24 @@ let isBigBangTriggered = false;
 function triggerBigBang() {
     if (isBigBangTriggered) return;
 
-    // 1. Dissolvenza del Pianeta Orbis
+    // 1. Innesco della Supernova e dissolvenza del Pianeta Orbis
     const planetCore = document.getElementById('hud-core');
     if (planetCore) {
         planetCore.classList.add('planet-exploded');
     }
 
-    // 2. Volo di Xenon verso in Alto a Destra
+    // 2. Volo di Xenon verso ESATTAMENTE IL CENTRO dello schermo (Sostituito .xenon-moved-top)
     const xenonContainer = document.getElementById('xenon-container');
     if (xenonContainer) {
-        xenonContainer.classList.add('xenon-moved-top');
+        xenonContainer.classList.add('xenon-moved-center');
     }
 
-    // 3. Rilascio a raggiera dei 4 Nodi dei Servizi
+    // 3. Rilascio a raggiera dei 4 Nodi dei Servizi dopo il flash della Supernova
     const hiddenNodes = document.querySelectorAll('.hud-node-hidden');
     hiddenNodes.forEach((node, index) => {
         setTimeout(() => {
             node.classList.remove('hud-node-hidden');
-        }, 200 + index * 90);
+        }, 550 + index * 90); // Ritardo calibrato a 550ms per farlo coincidere col picco dell'esplosione
     });
 
     // 4. Aggiornamento del Fumetto di Xenon
