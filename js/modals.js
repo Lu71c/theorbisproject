@@ -17,7 +17,7 @@ const modalData = {
                 <!-- Burocrate -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">🏛️ Burocrate</h3>
+                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">🏛️️ Burocrate</h3>
                         <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1rem;">Simula un ispettore statale severissimo. Ottimizza pratiche, contratti e documenti previdenziali per scovare errori e prevenire rigetti formali.</p>
                     </div>
                     <a href="https://gemini.google.com/gem/1xrRrEVQDK74NcMbbLNJJGtaFcNVJ4YiD?usp=sharing" target="_blank" class="cyber-btn-install" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:8px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:bold; transition:all 0.3s ease;">INSTALLA GEMMA</a>
@@ -98,7 +98,7 @@ const modalData = {
                 <!-- Youtuber -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">▶️️ Youtuber</h3>
+                        <h3 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.1rem;">▶ Youtuber</h3>
                         <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1rem;">Analista numerico spietato. Studia i volumi di ricerca e i trucchi psicologici per farti fare views. Crea titoli micidiali e strutture per trattenere il pubblico.</p>
                     </div>
                     <a href="https://gemini.google.com/gem/1nFuZ30FBhA9L5-a5PBOS2RbPcp5imv_W?usp=sharing" target="_blank" class="cyber-btn-install" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:8px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:bold; transition:all 0.3s ease;">INSTALLA GEMMA</a>
@@ -139,19 +139,80 @@ const modalData = {
     },
     'telegram-bridge': {
         title: "⚡ SITO WEB INTELLIGENTE",
-        subtitle: "Siti Web Custom su GitHub Pages & Gestione Telegram Bot",
+        subtitle: "Vanilla JS, Zero Hosting & Gestione IA via Telegram",
         content: `
-            <div style="line-height:1.6; color:#e2e8f0;">
-                <p style="margin-bottom:1rem;">Creiamo Single-Page Application ultra-veloci ospitate su GitHub Pages, collegate direttamente ad un <strong>Bot Telegram aziendale</strong>.</p>
-                <div style="background:rgba(0, 243, 255, 0.05); padding:1rem; border-radius:6px;">
-                    <strong>Vantaggi dell'integrazione Telegram:</strong>
-                    <ul style="margin-left:1.5rem; margin-top:0.5rem;">
-                        <li>Ricevi notifiche di contatto e lead in tempo reale direttamente in chat.</li>
-                        <li>Gestisci gli aggiornamenti del tuo sito via comandi Telegram.</li>
-                        <li>Zero costi mensili di server: architettura serverless al 100%.</li>
-                    </ul>
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
+                <p>Rivoluzioniamo la presenza online delle PMI offrendo siti in puro codice Vanilla JS ultraveloci <strong>(&lt;150ms)</strong>. Garantiamo la <strong>proprietà totale e perpetua del codice</strong> sul tuo account GitHub (zero lock-in) e abbattiamo a zero i costi di hosting.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🤖 Gestione IA Istantanea</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Nessun pannello complicato. Chiedi le modifiche al tuo assistente IA via Telegram (voce o testo) per aggiornamenti istantanei con funzione di rollback automatico.</p>
                 </div>
-            </div>`
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🔐 Zero-Knowledge Security</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Dimentica le password rubate. Autenticazione sicura tramite ID Telegram anonimo, nel pieno rispetto del GDPR e dell'EU AI Act (Human-in-the-Loop).</p>
+                </div>
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">⚙️ Diagnostica Automatica</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Infrastruttura IA (a soli 15-20€/mese) che esegue check giornalieri su integrità, performance e analytics, avvisandoti solo se necessario.</p>
+                </div>
+            </div>
+
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">📊 ANALISI COMPETITIVA</h3>
+            
+            <div style="overflow-x:auto; background:rgba(2, 6, 16, 0.4); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px;">
+                <table style="width:100%; min-width:600px; text-align:left; border-collapse:collapse; font-size:0.85rem;">
+                    <thead>
+                        <tr style="background:rgba(0, 243, 255, 0.05); border-bottom:2px solid #00f3ff;">
+                            <th style="padding:12px; color:#94a3b8; font-weight:600;">CARATTERISTICA</th>
+                            <th style="padding:12px; color:#e2e8f0; font-weight:600;">Agency Tradizionale</th>
+                            <th style="padding:12px; color:#e2e8f0; font-weight:600;">Piattaforme DIY</th>
+                            <th style="padding:12px; color:#00ff9d; font-weight:800; text-shadow:0 0 8px rgba(0,255,157,0.4);">THE ORBIS PROJECT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Velocità</td>
+                            <td style="padding:12px; color:#94a3b8;">Lenta (2-5s)</td>
+                            <td style="padding:12px; color:#94a3b8;">Media (1-3s)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Istantanea (&lt;150ms)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Proprietà Codice</td>
+                            <td style="padding:12px; color:#94a3b8;">In prestito / Vincolata</td>
+                            <td style="padding:12px; color:#94a3b8;">Nessuna (Lock-in)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">100% Tua su GitHub</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Costi di Hosting</td>
+                            <td style="padding:12px; color:#94a3b8;">100-300€/anno</td>
+                            <td style="padding:12px; color:#94a3b8;">15-40€/mese</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">0€ (Gratis a vita)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Aggiornamenti</td>
+                            <td style="padding:12px; color:#94a3b8;">Lenti (2-4 giorni)</td>
+                            <td style="padding:12px; color:#94a3b8;">Manuali (Fai-da-te)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Istantanei via IA Telegram</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Sicurezza e Privacy</td>
+                            <td style="padding:12px; color:#94a3b8;">Richiede Password</td>
+                            <td style="padding:12px; color:#94a3b8;">Traccia dati utenti</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Zero-Knowledge (ID Telegram)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">EU AI Act</td>
+                            <td style="padding:12px; color:#94a3b8;">Non conforme</td>
+                            <td style="padding:12px; color:#94a3b8;">Non conforme</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Garantita (Human-in-loop)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        `
     },
     'compliance': {
         title: "🛡️ ETICA & CODICE // COMPLIANCE CENTER",
