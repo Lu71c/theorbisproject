@@ -91,16 +91,10 @@
                         </linearGradient>
                     </defs>
 
-                    <!-- 1. ANELLI POSTERIORI (Passano DIETRO al pianeta per effetto 3D) -->
-                    <g id="rings-back">
-                        <ellipse class="ring ring-saturn-back-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.2" fill="none" />
-                        <ellipse class="ring ring-saturn-back-2" cx="100" cy="100" rx="88" ry="18" transform="rotate(35 100 100)" stroke="rgba(192, 132, 252, 0.25)" stroke-width="1" fill="none" />
-                    </g>
-
-                    <!-- 2. CORPO DEL PIANETA (Oceano Scuro) -->
+                    <!-- 1. CORPO DEL PIANETA (Oceano Scuro) -->
                     <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.8" />
 
-                    <!-- 3. GEOMETRIA TERRAFERMA VERDE (Incastonata sul pianeta) -->
+                    <!-- 2. GEOMETRIA TERRAFERMA VERDE (Incastonata sul pianeta) -->
                     <g filter="url(#land3DShadow)" id="landmass-core">
                         <!-- Facciata Superiore (Rombo Prospettico) -->
                         <polygon class="shield-facet-top" points="45,78 100,52 155,78 100,98" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.6" />
@@ -114,14 +108,8 @@
                         <line x1="100" y1="98" x2="100" y2="150" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" />
                     </g>
 
-                    <!-- 4. ATMOSFERA SOVRAPPOSTA (Copre e vela la terraferma per dare effetto pianeta reale) -->
+                    <!-- 3. ATMOSFERA SOVRAPPOSTA -->
                     <circle cx="100" cy="100" r="72" fill="url(#atmosphereOverlay)" pointer-events="none" />
-
-                    <!-- 5. ANELLI ANTERIORI (Passano DAVANTI al pianeta) -->
-                    <g id="rings-front">
-                        <ellipse class="ring ring-saturn-front-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="#38bdf8" stroke-dasharray="140 180" stroke-dashoffset="-30" stroke-width="1.4" fill="none" opacity="0.8" />
-                        <ellipse class="ring ring-saturn-front-2" cx="100" cy="100" rx="90" ry="32" transform="rotate(-60 100 100)" stroke="#fbbf24" stroke-dasharray="80 200" stroke-width="1" fill="none" opacity="0.5" />
-                    </g>
                 </svg>
             </div>
 
