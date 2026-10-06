@@ -48,91 +48,93 @@
         <!-- HUD NAVIGAZIONE INTERATTIVA (PIANETA ORBIS GIGANTE) -->
         <div class="hud-container" id="hud-container">
             
-            <!-- CORE VETTORIALE: PIANETA ORBIS & TERRAFERMA VERDE CENTRATA -->
+            <!-- CORE VETTORIALE 3D: PIANETA ORBIS & TERRAFERMA SMERALDO -->
             <div class="hud-center planet-interactive" id="hud-core" title="Clicca sul Pianeta Orbis per accedere ai servizi">
                 <svg viewBox="0 0 200 200" class="cyber-logo-svg">
                     <defs>
-                        <!-- Filtri Glow e Aura -->
+                        <!-- Filtro Glow e Ombra Prospettica per la Terraferma -->
                         <filter id="coreGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feGaussianBlur stdDeviation="3" result="blur" />
                             <feMerge>
                                 <feMergeNode in="blur" />
                                 <feMergeNode in="SourceGraphic" />
                             </feMerge>
                         </filter>
-                        <filter id="softAura" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="22" />
+                        
+                        <filter id="land3DShadow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#020610" flood-opacity="0.8" />
                         </filter>
 
-                        <!-- GRADIENTE CORPO PIANETA: OCEANO AZZURRO / CELESTE UNIFORME E LUMINOSO (ZERO ECLOSIONE SCURA) -->
-                        <radialGradient id="planetOceanGrad" cx="40%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#44e5ff" />
-                            <stop offset="35%" stop-color="#00a8ff" />
-                            <stop offset="75%" stop-color="#0055d4" />
-                            <stop offset="100%" stop-color="#002b80" />
+                        <!-- GRADIENTE OCEANO VOLUMETRICO (Oltremare, Indaco, Ciano Profondo) -->
+                        <radialGradient id="planetOceanGrad" cx="35%" cy="30%" r="70%">
+                            <stop offset="0%" stop-color="#38bdf8" />
+                            <stop offset="25%" stop-color="#0284c7" />
+                            <stop offset="60%" stop-color="#0369a1" />
+                            <stop offset="90%" stop-color="#0f172a" />
+                            <stop offset="100%" stop-color="#0284c7" />
                         </radialGradient>
 
                         <!-- Atmosphere / Corona Luminosa -->
                         <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="70%" stop-color="#00f3ff" stop-opacity="0.2" />
-                            <stop offset="92%" stop-color="#00a8ff" stop-opacity="0.45" />
-                            <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                            <stop offset="65%" stop-color="#00f3ff" stop-opacity="0" />
+                            <stop offset="88%" stop-color="#38bdf8" stop-opacity="0.35" />
+                            <stop offset="100%" stop-color="#00f3ff" stop-opacity="0" />
                         </radialGradient>
 
-                        <!-- GRADIENTI TERRAFERMA VERDE SMERALDO (PIRAMIDE ORBIS RIPROPORZIONATA) -->
+                        <!-- GRADIENTI TERRAFERMA VERDE SMERALDO/GIADA -->
                         <linearGradient id="facetRomboGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
-                            <stop offset="40%" stop-color="#80ffc2" stop-opacity="0.9" />
-                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.8" />
+                            <stop offset="45%" stop-color="#34d399" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#059669" stop-opacity="0.85" />
                         </linearGradient>
 
                         <linearGradient id="facetLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.9" />
-                            <stop offset="100%" stop-color="#006633" stop-opacity="0.75" />
+                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#044e32" stop-opacity="0.8" />
                         </linearGradient>
 
                         <linearGradient id="facetRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#00e676" stop-opacity="0.85" />
-                            <stop offset="100%" stop-color="#004d26" stop-opacity="0.7" />
+                            <stop offset="0%" stop-color="#059669" stop-opacity="0.85" />
+                            <stop offset="100%" stop-color="#022c1e" stop-opacity="0.75" />
                         </linearGradient>
                     </defs>
 
-                    <!-- Aura Atmosferica Esterna -->
-                    <circle cx="100" cy="100" r="85" fill="url(#atmosphereGlow)" filter="url(#softAura)" />
-
-                    <!-- Corpo del Pianeta Orbis (Oceano Azzurro Radioso) -->
-                    <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="#00f3ff" stroke-width="1" stroke-dasharray="140 10 30 5" />
-
-                    <!-- 6 ANELLI ORBITALI MULTI-LIVELLO STILE SATURNO (TONALITÀ CALDE: ARANCIO, ORO, AMBRA, VIOLETTO) -->
-                    <ellipse class="ring ring-saturn-1" cx="100" cy="100" rx="98" ry="28" transform="rotate(-22 100 100)" stroke="#ff7700" />
-                    <ellipse class="ring ring-saturn-2" cx="100" cy="100" rx="91" ry="20" transform="rotate(-22 100 100)" stroke="#ffb700" />
-                    <ellipse class="ring ring-saturn-3" cx="100" cy="100" rx="83" ry="14" transform="rotate(-22 100 100)" stroke="#c084fc" />
-                    <ellipse class="ring ring-saturn-4" cx="100" cy="100" rx="95" ry="34" transform="rotate(35 100 100)" stroke="#ff9900" />
-                    <ellipse class="ring ring-saturn-5" cx="100" cy="100" rx="87" ry="42" transform="rotate(-65 100 100)" stroke="#f59e0b" />
-                    <ellipse class="ring ring-saturn-6" cx="100" cy="100" rx="77" ry="77" stroke="#fbbf24" />
-
-                    <!-- GEOMETRIA SIMBOLO ORBIS / TERRAFERMA VERDE (LARGA, ROBUSTA E INTERAMENTE INCASTONATA) -->
-                    <g filter="url(#coreGlowFilter)">
-                        <!-- FACCIA SUPERIORE: ROMBO PROSPETTICO ALLARGATO ("TOZZO") -->
-                        <polygon class="shield-facet-top" points="50,78 100,55 150,78 100,96" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="1.2" />
-                        
-                        <!-- Occhio / Punto Centrale incastonato nel Rombo Verde -->
-                        <circle class="core-dot-3d" cx="100" cy="75" r="6" fill="#ffffff" stroke="#00ff9d" stroke-width="1.8" />
-
-                        <!-- FACCIA INFERIORE SINISTRA -->
-                        <polygon class="shield-facet-left" points="50,78 100,96 100,148" fill="url(#facetLeftGrad)" stroke="#00ff9d" stroke-width="1.2" />
-
-                        <!-- FACCIA INFERIORE DESTRA -->
-                        <polygon class="shield-facet-right" points="150,78 100,96 100,148" fill="url(#facetRightGrad)" stroke="#00e676" stroke-width="1.2" />
-
-                        <!-- Spigoli e Contorni Verde Smeraldo -->
-                        <polygon points="50,78 100,55 150,78 100,148" fill="none" stroke="#00ff9d" stroke-width="1.5" />
-                        <line x1="100" y1="96" x2="100" y2="148" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                    <!-- 1. ANELLI POSTERIORI (Passano dietro al pianeta) -->
+                    <g id="rings-back">
+                        <ellipse class="ring ring-saturn-back-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" fill="none" />
+                        <ellipse class="ring ring-saturn-back-2" cx="100" cy="100" rx="88" ry="18" transform="rotate(35 100 100)" stroke="rgba(192, 132, 252, 0.35)" stroke-width="1" fill="none" />
                     </g>
+
+                    <!-- 2. CORPO DEL PIANETA ORBIS (Oceano Volumetrico) -->
+                    <circle cx="100" cy="100" r="72" fill="url(#planetOceanGrad)" stroke="rgba(56, 189, 248, 0.5)" stroke-width="0.8" />
+                    <circle cx="100" cy="100" r="76" fill="url(#atmosphereGlow)" pointer-events="none" />
+
+                    <!-- 3. ANELLI ANTERIORI (Passano davanti al pianeta per effetto 3D) -->
+                    <g id="rings-front">
+                        <ellipse class="ring ring-saturn-front-1" cx="100" cy="100" rx="98" ry="26" transform="rotate(-20 100 100)" stroke="#38bdf8" stroke-dasharray="140 180" stroke-dashoffset="-30" stroke-width="1.4" fill="none" />
+                        <ellipse class="ring ring-saturn-front-2" cx="100" cy="100" rx="90" ry="32" transform="rotate(-60 100 100)" stroke="#fbbf24" stroke-dasharray="80 200" stroke-width="1" fill="none" opacity="0.6" />
+                    </g>
+
+                    <!-- 4. GEOMETRIA TERRAFERMA VERDE (Proporzioni robuste e Ombra 3D) -->
+                    <g filter="url(#land3DShadow)" id="landmass-core">
+                        <!-- Facciata Superiore (Rombo Prospettico) -->
+                        <polygon class="shield-facet-top" points="45,78 100,52 155,78 100,98" fill="url(#facetRomboGrad)" stroke="#ffffff" stroke-width="1.2" />
+                        <circle class="core-dot-3d" cx="100" cy="75" r="6" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+                        
+                        <!-- Facce Inferiori -->
+                        <polygon class="shield-facet-left" points="45,78 100,98 100,150" fill="url(#facetLeftGrad)" stroke="#10b981" stroke-width="1" />
+                        <polygon class="shield-facet-right" points="155,78 100,98 100,150" fill="url(#facetRightGrad)" stroke="#059669" stroke-width="1" />
+                        
+                        <!-- Spigolo Centrale -->
+                        <line x1="100" y1="98" x2="100" y2="150" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                    </g>
+
+                    <!-- 5. ONDA D'URTO SUPERNOVA (Attivabile al click) -->
+                    <circle id="supernova-shockwave" cx="100" cy="100" r="10" fill="none" stroke="#ffffff" stroke-width="2" opacity="0" pointer-events="none" />
                 </svg>
             </div>
 
-            <!-- I 4 NODI FLUTTUANTI (Partono Nascosti per l'Esplosione Big Bang) -->
+            <!-- I 4 NODI FLUTTUANTI (Partono Nascosti per la Supernova) -->
             <a href="#agenti-ai" class="hud-node node-top-left hud-node-hidden" data-target="agenti-ai">
                 <div class="node-icon">🧠</div>
                 <div class="node-text">
