@@ -9,7 +9,7 @@
     --emerald-glow: #00ff9d;
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
-    --glass-bg: rgba(8, 15, 30, 0.75);
+    --glass-bg: rgba(8, 15, 30, 0.78);
     --glass-border: rgba(0, 243, 255, 0.25);
     --glass-border-hover: rgba(0, 255, 157, 0.75);
     --neon-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
@@ -104,7 +104,6 @@ html, body {
     color: var(--text-primary);
 }
 
-/* EVIDENZIAZIONE PAROLA "ORBIS" (ARGENTO METALLICO LUCIDO) */
 .brand-orbis {
     background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%);
     -webkit-background-clip: text;
@@ -162,7 +161,6 @@ html, body {
     box-shadow: var(--neon-shadow);
 }
 
-/* PULSANTE LINGUA SOBRIO E SATINATO */
 .lang-btn-subtle {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
@@ -196,7 +194,7 @@ html, body {
 }
 
 .hero-titles h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
@@ -216,27 +214,35 @@ html, body {
 .hud-container {
     position: relative;
     width: 100%;
-    max-width: 920px;
-    height: 400px;
+    max-width: 980px;
+    height: 440px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* PIANETA ORBIS INGRANDITO E INTERATTIVO */
+/* PIANETA ORBIS GIGANTE "MARTE" (360px) E INTERATTIVO */
 .hud-center.planet-interactive {
-    width: 250px;
-    height: 250px;
+    width: 360px;
+    height: 360px;
     position: absolute;
     z-index: 2;
     cursor: pointer;
-    filter: drop-shadow(0 0 30px rgba(0, 243, 255, 0.45));
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    filter: drop-shadow(0 0 35px rgba(0, 243, 255, 0.5));
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, filter 0.5s ease;
 }
 
 .hud-center.planet-interactive:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 50px rgba(0, 255, 157, 0.65));
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 60px rgba(0, 255, 157, 0.75));
+}
+
+/* DISSOLVENZA DOPO L'ESPLOSIONE BIG BANG */
+.hud-center.planet-exploded {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(1.8) !important;
+    filter: drop-shadow(0 0 100px rgba(255, 255, 255, 1)) !important;
 }
 
 .cyber-logo-svg {
@@ -245,7 +251,7 @@ html, body {
     overflow: visible;
 }
 
-/* STILI DELLE SFACCETTATURE 3D PIRAMIDE */
+/* TERRAFERMA VERDE E SFACCETTATURE 3D */
 .shield-facet-top,
 .shield-facet-left,
 .shield-facet-right {
@@ -253,14 +259,14 @@ html, body {
 }
 
 .shield-facet-top:hover {
-    fill-opacity: 0.95;
-    filter: brightness(1.3);
+    fill-opacity: 1;
+    filter: brightness(1.35);
 }
 
 .shield-facet-left:hover,
 .shield-facet-right:hover {
-    fill-opacity: 0.85;
-    filter: brightness(1.2);
+    fill-opacity: 0.95;
+    filter: brightness(1.25);
 }
 
 .core-dot-3d {
@@ -270,17 +276,17 @@ html, body {
 @keyframes pulseCoreDot {
     0%, 100% {
         r: 6px;
-        fill: #00ff9d;
-        filter: drop-shadow(0 0 6px #00ff9d);
+        fill: #ffffff;
+        filter: drop-shadow(0 0 8px #00ff9d);
     }
     50% {
         r: 8px;
-        fill: #ffffff;
-        filter: drop-shadow(0 0 14px #00f3ff);
+        fill: #00ff9d;
+        filter: drop-shadow(0 0 16px #ffffff);
     }
 }
 
-/* 6 ANELLI ORBITALI MULTI-LIVELLO STILE SATURNO */
+/* 6 ANELLI ORBITALI MULTI-LIVELLO STILE SATURNO (TONALITÀ CALDE) */
 .ring {
     fill: none;
     stroke-linecap: round;
@@ -288,51 +294,45 @@ html, body {
 }
 
 .ring-saturn-1 {
-    stroke: var(--cyan-glow);
-    stroke-width: 1.2;
-    stroke-dasharray: 60 20 120 40;
-    animation: rotateClockwise 32s linear infinite;
-    opacity: 0.75;
+    stroke-width: 1.4;
+    stroke-dasharray: 80 20 140 40;
+    animation: rotateClockwise 30s linear infinite;
+    opacity: 0.8;
 }
 
 .ring-saturn-2 {
-    stroke: var(--emerald-glow);
-    stroke-width: 1.5;
-    stroke-dasharray: 40 80 50 30;
+    stroke-width: 1.6;
+    stroke-dasharray: 50 90 60 30;
     animation: rotateCounterClockwise 22s linear infinite;
-    opacity: 0.65;
+    opacity: 0.75;
 }
 
 .ring-saturn-3 {
-    stroke: #a855f7;
-    stroke-width: 1;
-    stroke-dasharray: 30 50 90 20;
+    stroke-width: 1.2;
+    stroke-dasharray: 40 60 100 20;
     animation: rotateClockwise 18s linear infinite;
-    opacity: 0.55;
+    opacity: 0.65;
 }
 
 .ring-saturn-4 {
-    stroke: #fbbf24;
-    stroke-width: 1.2;
-    stroke-dasharray: 80 30 40 10;
+    stroke-width: 1.4;
+    stroke-dasharray: 90 30 50 20;
     animation: rotateCounterClockwise 26s linear infinite;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .ring-saturn-5 {
-    stroke: var(--cyan-glow);
-    stroke-width: 0.8;
-    stroke-dasharray: 100 20 30 40;
-    animation: rotateClockwise 40s linear infinite;
-    opacity: 0.45;
+    stroke-width: 1;
+    stroke-dasharray: 120 20 40 30;
+    animation: rotateClockwise 38s linear infinite;
+    opacity: 0.55;
 }
 
 .ring-saturn-6 {
-    stroke: rgba(0, 255, 157, 0.4);
-    stroke-width: 1;
-    stroke-dasharray: 15 40;
-    animation: rotateCounterClockwise 15s linear infinite;
-    opacity: 0.35;
+    stroke-width: 1.2;
+    stroke-dasharray: 20 50;
+    animation: rotateCounterClockwise 16s linear infinite;
+    opacity: 0.45;
 }
 
 @keyframes rotateClockwise {
@@ -345,88 +345,87 @@ html, body {
     to { transform: rotate(-360deg); }
 }
 
-/* 4 NODI FLUTTUANTI (POSIZIONAMENTO HUD 3D) */
+/* 4 NODI FLUTTUANTI */
 .hud-node {
     position: absolute;
-    width: 270px;
-    padding: 14px 18px;
+    width: 290px;
+    padding: 16px 20px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
-    border-radius: 10px;
+    backdrop-filter: blur(14px);
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     text-decoration: none;
     color: var(--text-primary);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 243, 255, 0.05);
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 243, 255, 0.08);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 3;
     opacity: 1;
     transform: scale(1);
 }
 
-/* STATO NASCOSTO INIZIALE ("BIG BANG" READY) */
 .hud-node-hidden {
     opacity: 0 !important;
     pointer-events: none !important;
     transform: scale(0.1) translate(0, 0) !important;
 }
 
-.node-top-left     { top: 15px; left: 30px; }
-.node-top-right    { top: 15px; right: 30px; }
-.node-bottom-left  { bottom: 15px; left: 30px; }
-.node-bottom-right { bottom: 15px; right: 30px; }
+.node-top-left     { top: 20px; left: 10px; }
+.node-top-right    { top: 20px; right: 10px; }
+.node-bottom-left  { bottom: 20px; left: 10px; }
+.node-bottom-right { bottom: 20px; right: 10px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
-    background: rgba(12, 24, 48, 0.85);
-    box-shadow: 0 0 25px rgba(0, 255, 157, 0.3), inset 0 0 18px rgba(0, 255, 157, 0.15);
-    transform: translateY(-4px) scale(1.03);
+    background: rgba(12, 24, 48, 0.9);
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.35), inset 0 0 20px rgba(0, 255, 157, 0.2);
+    transform: translateY(-5px) scale(1.04);
 }
 
 .node-icon {
-    font-size: 1.6rem;
-    filter: drop-shadow(0 0 6px rgba(0, 243, 255, 0.5));
+    font-size: 1.7rem;
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.6));
 }
 
 .node-text h3 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: 0.5px;
 }
 
 .node-text span {
-    font-size: 0.73rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
     display: block;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
-/* BOTTOM NODE (ETICA & CODICE) */
+/* BOTTOM NODE */
 .bottom-node {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 11px 26px;
-    background: rgba(0, 243, 255, 0.04);
+    padding: 12px 28px;
+    background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border-radius: 30px;
     color: var(--cyan-glow);
     text-decoration: none;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s ease;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s ease;
 }
 
 .bottom-node:not(.hud-node-hidden):hover {
-    background: rgba(0, 243, 255, 0.15);
+    background: rgba(0, 243, 255, 0.18);
     border-color: var(--emerald-glow);
-    box-shadow: var(--neon-shadow), 0 0 20px rgba(0, 255, 157, 0.3);
+    box-shadow: var(--neon-shadow), 0 0 25px rgba(0, 255, 157, 0.35);
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -446,7 +445,7 @@ html, body {
     100% { transform: scale(0.95); opacity: 0.7; }
 }
 
-/* XENON: LA GUIDA ALIENA DIVERSIFICATA E DINAMICA */
+/* XENON: GUIDA ALIENA FLUTTUANTE CON SPOSTAMENTO IN ALTO A DESTRA */
 #xenon-container {
     position: fixed;
     bottom: 52px;
@@ -457,6 +456,14 @@ html, body {
     align-items: flex-end;
     gap: 12px;
     pointer-events: none;
+    transition: top 0.8s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.8s cubic-bezier(0.16, 1, 0.3, 1), right 0.8s ease;
+}
+
+#xenon-container.xenon-moved-top {
+    bottom: auto !important;
+    top: 85px !important;
+    right: 35px !important;
+    flex-direction: column-reverse !important;
 }
 
 .xenon-float {
@@ -478,7 +485,6 @@ html, body {
     }
 }
 
-/* FUMETTO GLASSMORPHISM DI XENON */
 .xenon-bubble {
     pointer-events: auto;
     background: rgba(8, 15, 30, 0.88);
@@ -517,7 +523,6 @@ html, body {
     overflow: visible;
 }
 
-/* MODAL XENON BANNER INTERNO */
 .modal-xenon-bar {
     display: flex;
     align-items: center;
@@ -582,7 +587,6 @@ html, body {
     opacity: 0.85;
 }
 
-/* BIANCO LUCIDO VETTORIALE PER ICONE SOCIAL SVG */
 .social-icons {
     display: flex;
     align-items: center;
@@ -684,8 +688,8 @@ html, body {
 
     .hud-center.planet-interactive {
         position: relative;
-        width: 170px;
-        height: 170px;
+        width: 220px;
+        height: 220px;
         margin-bottom: 0.8rem;
     }
 
@@ -704,6 +708,11 @@ html, body {
         right: 15px;
     }
 
+    #xenon-container.xenon-moved-top {
+        top: 75px !important;
+        right: 15px !important;
+    }
+
     .xenon-bubble {
         max-width: 220px;
         padding: 10px 12px;
@@ -718,7 +727,6 @@ html, body {
         height: 62px;
     }
 
-    /* Bottom Sheet per Mobile */
     #modal-content-box {
         width: 100vw;
         height: 92dvh;
