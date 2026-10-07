@@ -142,8 +142,8 @@ const modalData = {
 
             <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">🧭 ANALISI SWOT STRATEGICA DELL'OSINT</h3>
             
-            <!-- GRIGLIA SWOT 2x2 CYBER-STYLE -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+            <!-- GRIGLIA SWOT 2x2 PERFETTA -->
+            <div class="swot-grid-2x2">
                 
                 <!-- STRENGTHS (Punti di Forza) - Verde Smeraldo -->
                 <div style="background:rgba(0, 255, 157, 0.05); border-left:4px solid #00ff9d; border-radius:4px; padding:1.2rem;">
@@ -298,7 +298,7 @@ const modalData = {
         content: "<p style='color:#e2e8f0;'>Siamo ingegneri e sviluppatori software focalizzati sulle prestazioni e sull'efficienza. Creiamo soluzioni tecnologiche su misura, eliminando ogni zavorra inutile per offrire velocità e valore concreto alle imprese.</p>"
     },
     'info': {
-        title: "ℹ️️ INFORMAZIONI",
+        title: "ℹ INFORMAZIONI",
         subtitle: "Specifiche di Sistema",
         content: "<p style='color:#e2e8f0;'>Sito realizzato con tecnologia Vanilla Web. Nessun framework (React/Angular), nessun server intermedio. Tempo di risposta globale &lt; 150ms.</p>"
     },
@@ -344,6 +344,14 @@ function triggerBigBang() {
     const xenonText = document.getElementById('xenon-text');
     if (xenonText) {
         xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
+        
+        // FUMETTO SFUMA DOPO 2.5 SECONDI
+        setTimeout(() => {
+            const xenonSpeech = document.getElementById('xenon-speech');
+            if (xenonSpeech) {
+                xenonSpeech.classList.add('fade-out');
+            }
+        }, 2500);
     }
 
     isBigBangTriggered = true;
