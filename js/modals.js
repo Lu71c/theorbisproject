@@ -12,7 +12,7 @@ const modalData = {
                 <p>Non offriamo semplici chatbot, ma <strong>Agenti AI specializzati</strong> con logica anti-allucinazione. Clicca su "Installa Gemma" per aggiungerli direttamente al tuo Google Gemini e usarli in sicurezza con i tuoi dati.</p>
             </div>
             
-            <div class="agents-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="agents-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
                 
                 <!-- Burocrate -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
@@ -125,7 +125,7 @@ const modalData = {
             </div>
 
             <!-- I 3 PILASTRI DEL SERVIZIO -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🎯 Lead Generation Automatica</h4>
                     <p style="font-size:0.85rem; color:#94a3b8;">Estrazione di anagrafiche aziendali, contatti B2B e decision maker da registri, fiere e directory pubbliche nel pieno rispetto del GDPR (Dati di Persone Giuridiche).</p>
@@ -210,7 +210,7 @@ const modalData = {
                 <p>Rivoluzioniamo la presenza online delle PMI offrendo siti in puro codice Vanilla JS ultraveloci <strong>(&lt;150ms)</strong>. Garantiamo la <strong>proprietà totale e perpetua del codice</strong> sul tuo account GitHub (zero lock-in) e abbattiamo a zero i costi di hosting.</p>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:2rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:2rem;">
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🤖 Gestione IA Istantanea</h4>
                     <p style="font-size:0.85rem; color:#94a3b8;">Nessun pannello complicato. Chiedi le modifiche al tuo assistente IA via Telegram (voce o testo) per aggiornamenti istantanei con funzione di rollback automatico.</p>
@@ -228,7 +228,7 @@ const modalData = {
             <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">📊 ANALISI COMPETITIVA</h3>
             
             <div style="overflow-x:auto; background:rgba(2, 6, 16, 0.4); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px;">
-                <table style="width:100%; min-width:600px; text-align:left; border-collapse:collapse; font-size:0.85rem;">
+                <table style="width:100%; min-width:550px; text-align:left; border-collapse:collapse; font-size:0.85rem;">
                     <thead>
                         <tr style="background:rgba(0, 243, 255, 0.05); border-bottom:2px solid #00f3ff;">
                             <th style="padding:12px; color:#94a3b8; font-weight:600;">CARATTERISTICA</th>
@@ -290,7 +290,7 @@ const modalData = {
             </div>
 
             <!-- 4 PILASTRI DI COMPLIANCE -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; margin-bottom:2rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:2rem;">
                 
                 <!-- PILASTRO 1: GDPR PRIVACY BY DESIGN -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
@@ -351,7 +351,7 @@ const modalData = {
             </div>
 
             <!-- I 3 PILASTRI DELLA MIA VISIONE -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
                 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🏛️ Ingegneria Umanistica</h4>
@@ -387,7 +387,7 @@ const modalData = {
             </div>
 
             <!-- I 3 PILASTRI DEL PROGETTO -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
                 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🚀 Accessibilità Senza Attrito</h4>
@@ -423,7 +423,7 @@ const modalData = {
             </div>
 
             <!-- I 3 PROFILI RICERCATI -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
                 
                 <!-- PROFILO 1: ETHICAL HACKERS -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
@@ -470,7 +470,7 @@ const modalData = {
             </div>
 
             <!-- 3 CARDS ROUTING EMAIL -->
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:2rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:2rem;">
                 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
@@ -506,7 +506,7 @@ const modalData = {
                 </h3>
 
                 <form id="cyber-contact-form" onsubmit="handleContactSubmit(event)">
-                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
                         <div>
                             <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">REPARTO DESTINATARIO</label>
                             <select id="contact-dept" class="cyber-input" style="width:100%;">
@@ -553,7 +553,7 @@ const modalData = {
                 <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare tempo o denaro, puoi aiutarci a mantenere i server accesi e la ricerca indipendente attiva.</p>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:2rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:2rem;">
                 
                 <!-- PAYPAL CARD -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:all 0.3s ease;">
@@ -598,7 +598,7 @@ const modalData = {
                 </p>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
                 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:0.95rem;">👤 Titolare del Trattamento</h4>
@@ -707,7 +707,7 @@ function openModal(key) {
     const dynamicBody = document.getElementById('modal-dynamic-body');
 
     const xenonHelpIcon = `
-        <div class="xenon-help-icon" title="Clicca per la Guida di Xenon" style="cursor:pointer; width:36px; height:36px; border-radius:50%; background:rgba(0, 243, 255, 0.08); border:1px solid var(--glass-border); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease;">
+        <div class="xenon-help-icon" title="Clicca per la Guida di Xenon" style="cursor:pointer; width:36px; height:36px; border-radius:50%; background:rgba(0, 243, 255, 0.08); border:1px solid var(--glass-border); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; flex-shrink:0;">
             <svg viewBox="0 0 120 120" style="width:24px; height:24px; filter:drop-shadow(0 0 4px rgba(0, 255, 157, 0.6));">
                 <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
                 <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
@@ -721,21 +721,27 @@ function openModal(key) {
     `;
 
     const writeUsBtnHtml = `
-        <button class="cyber-btn-write-dynamic" style="background:rgba(0, 243, 255, 0.1); border:1px solid rgba(0, 243, 255, 0.35); color:#00f3ff; padding:8px 14px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">✉️ SCRIVICI</button>
+        <button class="cyber-btn-write-dynamic" style="background:rgba(0, 243, 255, 0.1); border:1px solid rgba(0, 243, 255, 0.35); color:#00f3ff; padding:8px 12px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">
+            <span class="btn-text-desktop">✉️ SCRIVICI</span>
+            <span class="btn-text-mobile">✉️</span>
+        </button>
     `;
 
     const closeBtnHtml = `
-        <button class="cyber-btn-close-dynamic" style="background:rgba(255, 50, 50, 0.1); border:1px solid rgba(255, 50, 50, 0.3); color:#ff5555; padding:8px 16px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">✖ ESCI</button>
+        <button class="cyber-btn-close-dynamic" style="background:rgba(255, 50, 50, 0.1); border:1px solid rgba(255, 50, 50, 0.3); color:#ff5555; padding:8px 12px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">
+            <span class="btn-text-desktop">✖ ESCI</span>
+            <span class="btn-text-mobile">✖</span>
+        </button>
     `;
 
     dynamicBody.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem; gap:1rem;">
-            <div>
-                <h2 style="font-size:1.8rem; color:#00f3ff; margin-bottom:0.3rem;">${data.title}</h2>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem; gap:1rem; flex-wrap:wrap;">
+            <div style="flex: 1; min-width: 180px;">
+                <h2 class="modal-title" style="font-size:1.8rem; color:#00f3ff; margin-bottom:0.3rem; word-break:break-word; hyphens:auto;">${data.title}</h2>
                 <h4 style="font-size:0.9rem; color:#00ff9d; font-weight:400; line-height:1.4;">${data.subtitle}</h4>
             </div>
             
-            <div style="display:flex; gap:10px; align-items:center; flex-shrink:0;">
+            <div class="modal-header-controls" style="display:flex; gap:6px; align-items:center; flex-shrink:0; flex-wrap:wrap;">
                 ${xenonHelpIcon}
                 ${key !== 'contatti' ? writeUsBtnHtml : ''}
                 ${closeBtnHtml}
@@ -747,10 +753,18 @@ function openModal(key) {
         ${data.content}
         
         <style>
+            .btn-text-desktop { display: inline; }
+            .btn-text-mobile { display: none; }
+            
             .cyber-btn-close-dynamic:hover {
                 background: rgba(255, 50, 50, 0.35) !important;
                 color: #ffffff !important;
                 box-shadow: 0 0 15px rgba(255, 50, 50, 0.4) !important;
+            }
+            
+            @media (max-width: 768px) {
+                .btn-text-desktop { display: none !important; }
+                .btn-text-mobile { display: inline !important; }
             }
         </style>
     `;
