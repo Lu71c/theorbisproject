@@ -340,9 +340,41 @@ const modalData = {
         `
     },
     'chi-siamo': {
-        title: "🏢 CHI SIAMO",
-        subtitle: "The Orbis Project Architecture",
-        content: "<p style='color:#e2e8f0;'>Siamo ingegneri e sviluppatori software focalizzati sulle prestazioni e sull'efficienza. Creiamo soluzioni tecnologiche su misura, eliminando ogni zavorra inutile per offrire velocità e valore concreto alle imprese.</p>"
+        title: "🏢 CHI SONO // SIMONE CLEMENTE",
+        subtitle: "Filosofia, Esperienza sul Campo e Intelligenza Artificiale al Servizio dell'Uomo",
+        content: `
+            <!-- INTRO BIO PERSONALE -->
+            <div style="line-height:1.65; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">👋 CIAO, SONO SIMONE CLEMENTE</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">Nato nel 1996, ho sempre coltivato due grandi passioni apparentemente opposte: da un lato la storia, la filosofia e gli studi umanistici, dall'altro la tecnologia, la programmazione e i sistemi informatici. <strong>The Orbis Project</strong> è il punto d'incontro esatto tra questi due mondi.</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65; margin-top:0.8rem;">Attualmente frequento il corso universitario in <strong>Filosofia e Intelligenza Artificiale</strong>, un percorso ripreso in età adulta mentre continuavo a lavorare. Con oltre dieci anni di esperienza sul campo nel mondo del lavoro reale, ho imparato a conoscere da vicino le difficoltà quotidiane, i punti d'attrito e le inefficienze che rallentano persone e imprese.</p>
+            </div>
+
+            <!-- I 3 PILASTRI DELLA MIA VISIONE -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+                
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🏛️ Ingegneria Umanistica</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Metto il pensiero critico e l'etica al centro del codice. La tecnologia non deve alienare l'essere umano, ma elevarne le capacità analitiche e creative.</p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">💼 10+ Anni di Esperienza Reale</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Non parlo per teorie astratte. Ho vissuto sulla mia pelle il lavoro quotidiano, comprendendo esattamente dove si annidano i colli di bottiglia e le perdite di tempo.</p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">⚡ Eliminazione dell'Attrito</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Progetto automazioni e Agenti AI con un solo scopo: liberare l'uomo dai compiti ripetitivi e meccanici, restituendo tempo, energia e dignità al lavoro.</p>
+                </div>
+
+            </div>
+
+            <!-- CHIUSA SINTETICA -->
+            <div style="text-align:center; padding:1rem; background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px;">
+                <p style="font-size:0.85rem; color:#e2e8f0; margin:0;">Insieme possiamo costruire un futuro in cui l'Intelligenza Artificiale non sostituisce l'uomo, ma lo libera dalle sue catene quotidiane.</p>
+            </div>
+        `
     },
     'info': {
         title: "ℹ INFORMAZIONI // THE ORBIS PROJECT",
