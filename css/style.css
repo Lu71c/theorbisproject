@@ -34,7 +34,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* CANVAS SFONDO INTERATTIVO (Pointer events a none per far passare i click agli elementi HTML) */
+/* CANVAS SFONDO INTERATTIVO */
 #bg-canvas {
     position: fixed;
     top: 0;
@@ -193,7 +193,7 @@ html, body {
 }
 
 .hero-titles h2 {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
@@ -202,7 +202,7 @@ html, body {
 }
 
 .hero-titles p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 400;
     color: #cbd5e1;
     line-height: 1.6;
@@ -213,8 +213,8 @@ html, body {
 .hud-container {
     position: relative;
     width: 100%;
-    max-width: 1020px;
-    height: 450px;
+    max-width: 1100px;
+    height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,26 +285,26 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (SCHEDE SERVIZI) */
+/* 4 NODI FLUTTUANTI (SCHEDE SERVIZI INGRANDITE & CENTRATE) */
 .hud-node {
     position: absolute;
-    width: 300px;
-    padding: 16px 22px;
+    width: 370px; /* INGRANDITO PER RIEMPUIRE MEGLIO IL DESKTOP */
+    padding: 20px 26px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(16px);
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     text-decoration: none;
     color: var(--text-primary);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(0, 243, 255, 0.06);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 243, 255, 0.08);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 100; /* ALZATO PER RICEVERE IL CLICK SOPRA QUALSIASI OVERLAY */
+    z-index: 100;
     opacity: 1;
     transform: scale(1);
-    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI TASTI */
+    pointer-events: auto !important;
     cursor: pointer;
 }
 
@@ -314,54 +314,55 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-.node-top-left     { top: 25px; left: 10px; }
-.node-top-right    { top: 25px; right: 10px; }
-.node-bottom-left  { bottom: 25px; left: 10px; }
-.node-bottom-right { bottom: 25px; right: 10px; }
+/* RIPOSIZIONAMENTO PIÙ VICINO AL CENTRO PER DESKTOP */
+.node-top-left     { top: 35px; left: 30px; }
+.node-top-right    { top: 35px; right: 30px; }
+.node-bottom-left  { bottom: 35px; left: 30px; }
+.node-bottom-right { bottom: 35px; right: 30px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
-    background: rgba(12, 24, 48, 0.92);
-    box-shadow: 0 0 35px rgba(0, 255, 157, 0.35), inset 0 0 20px rgba(0, 255, 157, 0.2);
-    transform: translateY(-4px) scale(1.03);
+    background: rgba(12, 24, 48, 0.94);
+    box-shadow: 0 0 40px rgba(0, 255, 157, 0.4), inset 0 0 25px rgba(0, 255, 157, 0.25);
+    transform: translateY(-5px) scale(1.04);
 }
 
 .node-icon {
-    font-size: 1.75rem;
-    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.6));
+    font-size: 2.1rem;
+    filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.7));
 }
 
 .node-text h3 {
-    font-size: 1.02rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--text-primary);
     letter-spacing: 0.5px;
 }
 
 .node-text span {
-    font-size: 0.76rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     display: block;
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
-/* BOTTOM NODE (COMPLIANCE CENTER E LINK NAVBAR) */
+/* BOTTOM NODE (COMPLIANCE CENTER) */
 .bottom-node, .center-links a {
-    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ PER I LINK IN BASSO E IN ALTO */
+    pointer-events: auto !important;
 }
 
 .bottom-node {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 30px;
+    padding: 14px 34px;
     background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
     border-radius: 30px;
     color: var(--cyan-glow);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
@@ -406,16 +407,24 @@ html, body {
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* SPOSTAMENTO CORRETTO DI XENON AL CENTRO */
+/* SPOSTAMENTO DI XENON AL CENTRO + ANIMAZIONE FLUTTUANTE CONTINUA */
 #xenon-container.xenon-moved-center {
     top: 50% !important;
     left: 50% !important;
     bottom: auto !important;
     right: auto !important;
-    transform: translate(-50%, -50%) !important;
     flex-direction: column !important;
     align-items: center !important;
-    animation: none !important; /* Disattiva il drift per non rompere il centraggio */
+    animation: xenonCenterFloat 6s ease-in-out infinite !important; /* RIPRISTINATO IL MOVIMENTO AL CENTRO */
+}
+
+@keyframes xenonCenterFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -60%) rotate(2deg);
+    }
 }
 
 .xenon-float {
@@ -437,6 +446,7 @@ html, body {
     }
 }
 
+/* DISSOLVENZA FLUIDA DEL FUMETTO */
 .xenon-bubble {
     pointer-events: auto;
     background: rgba(8, 15, 30, 0.92);
@@ -446,8 +456,15 @@ html, body {
     padding: 12px 18px;
     max-width: 320px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 243, 255, 0.15);
-    transition: all 0.35s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     text-align: center;
+    opacity: 1;
+}
+
+.xenon-bubble.fade-out {
+    opacity: 0 !important;
+    transform: translateY(-10px) scale(0.9) !important;
+    pointer-events: none !important;
 }
 
 .xenon-bubble p {
@@ -503,7 +520,7 @@ html, body {
     color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
-    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI LINK NEL FOOTER */
+    pointer-events: auto !important;
 }
 
 .footer-links a:hover {
@@ -528,7 +545,7 @@ html, body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    pointer-events: auto !important; /* FORZA L'INTERATTIVITÀ DEI SOCIAL */
+    pointer-events: auto !important;
 }
 
 .social-svg {
@@ -580,6 +597,13 @@ html, body {
     padding: 2.5rem;
     overflow-y: auto;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.85), inset 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+/* CLASSE HELPER PER SWOT 2x2 PERFETTA */
+.swot-grid-2x2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem !important;
 }
 
 /* RESPONSIVE DESIGN (MOBILE & TABLET) */
@@ -647,5 +671,9 @@ html, body {
         bottom: 0;
         border-radius: 20px 20px 0 0;
         padding: 1.5rem;
+    }
+
+    .swot-grid-2x2 {
+        grid-template-columns: 1fr !important;
     }
 }
