@@ -1,3 +1,610 @@
+/* ==========================================================================
+   THE ORBIS PROJECT - CYBER-MINIMALIST 3D HUD STYLESHEET
+   Target: Zero frameworks, Ultra performance, High Visual Impact
+   ========================================================================== */
+
+:root {
+    --bg-dark: #020610;
+    --cyan-glow: #00f3ff;
+    --emerald-glow: #00ff9d;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --glass-bg: rgba(8, 15, 30, 0.85);
+    --glass-border: rgba(0, 243, 255, 0.28);
+    --glass-border-hover: rgba(0, 255, 157, 0.85);
+    --neon-shadow: 0 0 25px rgba(0, 243, 255, 0.35);
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CANVAS SFONDO INTERATTIVO */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* VIGNETTATURA & AMBIENCE OVERLAY */
+.cyber-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 30%, rgba(2, 6, 16, 0.92) 100%);
+}
+
+/* NAVBAR SUPERIORE */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: rgba(2, 6, 16, 0.65);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--glass-border);
+    filter: drop-shadow(0 0 6px var(--cyan-glow));
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.brand-logo-img:hover {
+    transform: scale(1.08);
+    border-color: var(--cyan-glow);
+}
+
+.brand-text {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.brand-orbis {
+    background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+.center-links {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.center-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.center-links a:hover {
+    color: #ffffff;
+    opacity: 1;
+    text-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.system-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.cyber-btn {
+    background: rgba(0, 243, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    color: var(--cyan-glow);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cyber-btn:hover {
+    background: rgba(0, 243, 255, 0.22);
+    box-shadow: var(--neon-shadow);
+}
+
+.lang-btn-subtle {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #e2e8f0 !important;
+}
+
+.lang-btn-subtle:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* HERO MAIN & HUD LAYOUT */
+.hero-hud {
+    position: relative;
+    z-index: 5;
+    width: 100vw;
+    height: calc(100vh - 110px);
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem 1.5rem 2rem;
+}
+
+/* TITOLI CENTRALI */
+.hero-titles {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-titles h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 0.6rem;
+}
+
+.hero-titles p {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #cbd5e1;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+/* HUD CONTAINER CENTRALE AMPLIATO */
+.hud-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PIANETA ORBIS OLOGRAMMA 3D */
+.hud-center.planet-interactive {
+    width: 360px;
+    height: 360px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.35));
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.3s ease;
+}
+
+.hud-center.planet-interactive:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 50px rgba(52, 211, 153, 0.55));
+}
+
+/* SCOMPARSA FLUIDA DEL PIANETA */
+.hud-center.planet-exploded {
+    opacity: 0 !important;
+    transform: scale(0.7) !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+.cyber-logo-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* SFACCETTATURE TERRAFERMA VERDE */
+.shield-facet-top,
+.shield-facet-left,
+.shield-facet-right {
+    transition: all 0.3s ease;
+}
+
+.shield-facet-top:hover {
+    fill-opacity: 1;
+    filter: brightness(1.2);
+}
+
+.shield-facet-left:hover,
+.shield-facet-right:hover {
+    fill-opacity: 0.9;
+    filter: brightness(1.15);
+}
+
+.core-dot-3d {
+    animation: pulseCoreDot 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseCoreDot {
+    0%, 100% {
+        r: 5px;
+        fill: #ffffff;
+        filter: drop-shadow(0 0 6px #10b981);
+    }
+    50% {
+        r: 7px;
+        fill: #34d399;
+        filter: drop-shadow(0 0 12px #ffffff);
+    }
+}
+
+/* 4 NODI FLUTTUANTI */
+.hud-node {
+    position: absolute;
+    width: 430px;
+    padding: 28px 30px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.65), inset 0 0 25px rgba(0, 243, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+.hud-node-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.2) !important;
+}
+
+.node-top-left     { top: 20px; left: 10px; }
+.node-top-right    { top: 20px; right: 10px; }
+.node-bottom-left  { bottom: 20px; left: 10px; }
+.node-bottom-right { bottom: 20px; right: 10px; }
+
+.hud-node:not(.hud-node-hidden):hover {
+    border-color: var(--emerald-glow);
+    background: rgba(12, 24, 48, 0.95);
+    box-shadow: 0 0 50px rgba(0, 255, 157, 0.45), inset 0 0 30px rgba(0, 255, 157, 0.3);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.node-icon {
+    font-size: 3.6rem;
+    filter: drop-shadow(0 0 14px rgba(0, 243, 255, 0.8));
+    flex-shrink: 0;
+}
+
+.node-text h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.node-text span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 6px;
+}
+
+/* BOTTOM NODE (COMPLIANCE CENTER) */
+.bottom-node, .center-links a {
+    pointer-events: auto !important;
+}
+
+.bottom-node {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 28px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    color: var(--cyan-glow);
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    z-index: 100;
+    margin-top: 10px;
+}
+
+.bottom-node:not(.hud-node-hidden):hover {
+    background: rgba(0, 243, 255, 0.2);
+    border-color: var(--emerald-glow);
+    box-shadow: var(--neon-shadow), 0 0 30px rgba(0, 255, 157, 0.4);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--emerald-glow);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--emerald-glow);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.35); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* XENON: GUIDA ALIENA FLUTTUANTE */
+#xenon-container {
+    position: fixed;
+    bottom: 50px;
+    right: 35px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#xenon-container.xenon-moved-center {
+    top: 50% !important;
+    left: 50% !important;
+    bottom: auto !important;
+    right: auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    animation: xenonCenterFloat 6s ease-in-out infinite !important;
+}
+
+@keyframes xenonCenterFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -60%) rotate(2deg);
+    }
+}
+
+.xenon-float {
+    animation: xenonDrift 9s ease-in-out infinite;
+}
+
+@keyframes xenonDrift {
+    0%, 100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-10px, -15px) rotate(-2.5deg);
+    }
+    50% {
+        transform: translate(-20px, -6px) rotate(2deg);
+    }
+    75% {
+        transform: translate(-6px, -18px) rotate(-1deg);
+    }
+}
+
+.xenon-bubble {
+    pointer-events: auto;
+    background: rgba(8, 15, 30, 0.92);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 12px 18px;
+    max-width: 320px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 243, 255, 0.15);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    text-align: center;
+    opacity: 1;
+}
+
+.xenon-bubble.fade-out {
+    opacity: 0 !important;
+    transform: translateY(-10px) scale(0.9) !important;
+    pointer-events: none !important;
+}
+
+.xenon-bubble p {
+    font-size: 0.84rem;
+    color: #e2e8f0;
+    line-height: 1.45;
+    letter-spacing: 0.2px;
+}
+
+.xenon-avatar-btn {
+    pointer-events: auto;
+    width: 92px;
+    height: 92px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.xenon-avatar-btn:hover {
+    transform: scale(1.14);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 157, 0.7));
+}
+
+.xenon-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* FOOTER STRUTTURATO */
+.bottom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: rgba(2, 6, 16, 0.88);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.75rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    pointer-events: auto !important;
+}
+
+.footer-links a:hover {
+    color: var(--cyan-glow);
+}
+
+.footer-credits {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    pointer-events: auto !important;
+}
+
+.social-svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    opacity: 0.85;
+    transition: fill 0.25s ease, opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-link:hover .social-svg {
+    fill: #ffffff;
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(0, 243, 255, 0.8));
+}
+
+/* SCHEDE MODALI & GLASSMORPHISM INSET VIEWPORT */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(2, 6, 16, 0.8);
+    backdrop-filter: blur(16px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal-content-box {
+    position: relative;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    max-width: 1200px;
+    max-height: 800px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    overflow-y: auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.85), inset 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+/* CLASSE HELPER PER SWOT 2x2 PERFETTA */
+.swot-grid-2x2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem !important;
+}
+
 /* FORMS & INPUTS CYBER-STYLE */
 .cyber-input, .cyber-textarea {
     background: rgba(2, 6, 16, 0.7) !important;
@@ -32,4 +639,91 @@
     background: rgba(0, 243, 255, 0.25) !important;
     color: #ffffff !important;
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.4) !important;
+}
+
+/* RESPONSIVE DESIGN (MOBILE & TABLET) */
+@media (max-width: 850px) {
+    .center-links { display: none; }
+    .footer-credits { display: none; }
+
+    .hero-titles h2 { font-size: 1.45rem; }
+    .hero-titles p { font-size: 0.95rem; }
+
+    .hud-container {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        margin: 1rem 0;
+    }
+
+    .hud-center.planet-interactive {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        margin-bottom: 0.8rem;
+    }
+
+    .hud-node {
+        position: relative;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100%;
+        max-width: 340px;
+        padding: 16px 20px;
+        gap: 14px;
+        border-radius: 12px;
+    }
+
+    .node-icon {
+        font-size: 2.2rem;
+    }
+
+    .node-text h3 {
+        font-size: 1.05rem;
+    }
+
+    .node-text span {
+        font-size: 0.78rem;
+    }
+
+    #xenon-container {
+        bottom: 50px;
+        right: 15px;
+    }
+
+    #xenon-container.xenon-moved-center {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .xenon-bubble {
+        max-width: 220px;
+        padding: 10px 12px;
+    }
+
+    .xenon-bubble p {
+        font-size: 0.75rem;
+    }
+
+    .xenon-avatar-btn {
+        width: 68px;
+        height: 68px;
+    }
+
+    #modal-content-box {
+        width: 100vw;
+        height: 92dvh;
+        max-height: 92dvh;
+        position: fixed;
+        bottom: 0;
+        border-radius: 20px 20px 0 0;
+        padding: 1.5rem;
+    }
+
+    .swot-grid-2x2 {
+        grid-template-columns: 1fr !important;
+    }
 }
