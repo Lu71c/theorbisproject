@@ -27,11 +27,19 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
     background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: var(--font-main);
     -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 769px) {
+    html, body {
+        overflow: hidden;
+    }
 }
 
 /* CANVAS SFONDO INTERATTIVO */
@@ -43,6 +51,7 @@ html, body {
     height: 100vh;
     z-index: 1;
     pointer-events: none;
+    touch-action: pan-y;
 }
 
 /* VIGNETTATURA & AMBIENCE OVERLAY */
@@ -177,7 +186,7 @@ html, body {
     position: relative;
     z-index: 5;
     width: 100vw;
-    height: calc(100vh - 110px);
+    min-height: calc(100vh - 110px);
     margin-top: 70px;
     display: flex;
     flex-direction: column;
@@ -190,6 +199,7 @@ html, body {
 .hero-titles {
     text-align: center;
     max-width: 900px;
+    transition: all 0.3s ease;
 }
 
 .hero-titles h2 {
@@ -207,6 +217,7 @@ html, body {
     color: #cbd5e1;
     line-height: 1.5;
     letter-spacing: 0.3px;
+    transition: all 0.3s ease;
 }
 
 /* HUD CONTAINER CENTRALE AMPLIATO */
@@ -242,6 +253,14 @@ html, body {
     transform: scale(0.7) !important;
     pointer-events: none !important;
     transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* NASCONDE/RIDUCE IL SOTTOTITOLO QUANDO IL PIANETA È ESPLOSO */
+.hero-hud:has(.planet-exploded) #main-subtitle {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 .cyber-logo-svg {
@@ -533,6 +552,14 @@ html, body {
     opacity: 0.85;
 }
 
+.footer-credits-desktop {
+    display: inline;
+}
+
+.footer-credits-mobile {
+    display: none;
+}
+
 .social-icons {
     display: flex;
     align-items: center;
@@ -641,86 +668,191 @@ html, body {
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.4) !important;
 }
 
-/* RESPONSIVE DESIGN (MOBILE & TABLET) */
-@media (max-width: 850px) {
-    .center-links { display: none; }
-    .footer-credits { display: none; }
+/* ==========================================================================
+   OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. NAVBAR MOBILE CON SCROLL ORIZZONTALE COMPATTO */
+    .top-nav {
+        height: auto;
+        flex-direction: column;
+        padding: 8px 12px;
+        gap: 8px;
+    }
 
-    .hero-titles h2 { font-size: 1.45rem; }
-    .hero-titles p { font-size: 0.95rem; }
+    .brand-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .center-links {
+        display: flex !important;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 4px 0;
+        gap: 1.2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .center-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .center-links a {
+        font-size: 0.78rem;
+        letter-spacing: 0.8px;
+    }
+
+    /* 2. FOOTER RISTRUTTURATO SU 2 RIGHE */
+    .bottom-footer {
+        height: auto;
+        flex-direction: column;
+        padding: 8px 12px;
+        gap: 6px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-credits-desktop {
+        display: none !important;
+    }
+
+    .footer-credits-mobile {
+        display: inline !important;
+        font-size: 0.72rem;
+        opacity: 0.9;
+    }
+
+    /* 3. HERO & SCHERMATA 2 "BIG BANG" */
+    .hero-hud {
+        margin-top: 95px;
+        min-height: calc(100vh - 160px);
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+
+    .hero-titles h2 {
+        font-size: 1.3rem;
+        line-height: 1.25;
+    }
+
+    .hero-titles p {
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
 
     .hud-container {
         height: auto;
-        flex-direction: column;
-        gap: 12px;
-        margin: 1rem 0;
+        min-height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px 0;
+        margin: 0.5rem 0;
     }
 
     .hud-center.planet-interactive {
         position: relative;
-        width: 220px;
-        height: 220px;
-        margin-bottom: 0.8rem;
+        grid-column: span 2;
+        justify-self: center;
+        width: 180px;
+        height: 180px;
+        margin-bottom: 0.5rem;
     }
 
     .hud-node {
-        position: relative;
+        position: relative !important;
         top: auto !important;
         bottom: auto !important;
         left: auto !important;
         right: auto !important;
-        width: 100%;
-        max-width: 340px;
-        padding: 16px 20px;
-        gap: 14px;
-        border-radius: 12px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 8px 12px !important;
+        gap: 10px !important;
+        border-radius: 12px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        justify-content: center !important;
     }
 
     .node-icon {
-        font-size: 2.2rem;
+        font-size: 1.8rem !important;
     }
 
     .node-text h3 {
-        font-size: 1.05rem;
+        font-size: 0.85rem !important;
+        line-height: 1.2 !important;
     }
 
     .node-text span {
-        font-size: 0.78rem;
+        font-size: 0.7rem !important;
+        margin-top: 2px !important;
     }
 
+    .bottom-node {
+        font-size: 0.72rem;
+        padding: 6px 16px;
+        text-align: center;
+    }
+
+    /* XENON POSIZIONAMENTO AD ANGOLO IN SECONDA SCHERMATA */
     #xenon-container {
         bottom: 50px;
-        right: 15px;
+        right: 12px;
     }
 
     #xenon-container.xenon-moved-center {
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        top: 85px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: scale(0.7) !important;
+        animation: none !important;
+        flex-direction: row-reverse !important;
+        align-items: center !important;
     }
 
-    .xenon-bubble {
-        max-width: 220px;
-        padding: 10px 12px;
+    #xenon-container.xenon-moved-center .xenon-bubble {
+        max-width: 190px;
+        padding: 6px 10px;
     }
 
-    .xenon-bubble p {
-        font-size: 0.75rem;
+    #xenon-container.xenon-moved-center .xenon-bubble p {
+        font-size: 0.7rem;
     }
 
     .xenon-avatar-btn {
-        width: 68px;
-        height: 68px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 4. MODALE POPUP COMPATTA E SENZA VUOTI */
+    #modal-overlay {
+        align-items: flex-start;
+        padding-top: 15px;
+        overflow-y: auto;
     }
 
     #modal-content-box {
-        width: 100vw;
-        height: 92dvh;
-        max-height: 92dvh;
-        position: fixed;
-        bottom: 0;
-        border-radius: 20px 20px 0 0;
-        padding: 1.5rem;
+        width: 92% !important;
+        max-width: 420px !important;
+        height: auto !important;
+        max-height: 88vh !important;
+        margin: 15px auto !important;
+        padding: 1.2rem !important;
+        position: relative !important;
+        bottom: auto !important;
+        border-radius: 14px !important;
+    }
+
+    #modal-dynamic-body h2,
+    #modal-dynamic-body h3,
+    .modal-title {
+        font-size: 1.2rem !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
     }
 
     .swot-grid-2x2 {
