@@ -588,6 +588,55 @@ const modalData = {
             </div>
         `
     }
+   'privacy': {
+        title: "🛡️ PRIVACY & COOKIE POLICY",
+        subtitle: "Informativa sulla Trasparenza, Trattamento Dati e Telemetria Anonima (GDPR Reg. UE 2016/679)",
+        content: `
+            <div style="line-height:1.65; color:#e2e8f0; margin-bottom:1.5rem; padding:1.2rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
+                <p style="font-size:0.9rem; color:#94a3b8; margin:0;">
+                    Questo sito è progettato secondo i principi di <strong>Privacy by Design e Privacy by Default (Art. 25 GDPR)</strong>. Garantiamo la massima trasparenza e il rispetto assoluto della riservatezza dei tuoi dati.
+                </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+                
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:0.95rem;">👤 Titolare del Trattamento</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5; margin:0;">
+                        Il Titolare del Trattamento è Simone Clemente (<em>The Orbis Project</em>). Per qualsiasi richiesta in materia di privacy o per esercitare i tuoi diritti (Artt. 15-22 GDPR), puoi scrivere direttamente a: <span style="color:#00ff9d; font-family:monospace;">simone@theorbisproject.com</span>.
+                    </p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:0.95rem;">🔐 Filosofia Zero-Knowledge</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5; margin:0;">
+                        Durante la navigazione non vengono richiesti account, registrazioni o password. Non utilizziamo cookie di profilazione o tracciatori pubblicitari di terze parti.
+                    </p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:0.95rem;">📩 Form Contatti Volontario</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5; margin:0;">
+                        L'invio di messaggi tramite il modulo contatti avviene su tua scelta. L'eventuale recapito inserito serve unicamente a risponderti e non viene mai memorizzato in database di marketing né ceduto a terzi.
+                    </p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:0.95rem;">📊 Telemetria Anonima (Cookie)</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5; margin:0;">
+                        Utilizziamo solo un contatore statistico aggregato di prima parte (es. conteggio dei clic sulle Gems). Non registriamo indirizzi IP o dati del dispositivo: il dato è 100% anonimo e non soggetto a banner di consenso.
+                    </p>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; padding:0.9rem; background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px;">
+                <p style="font-size:0.8rem; color:#cbd5e1; margin:0;">
+                    🔗 <strong>Link Esterni:</strong> I collegamenti ai social e ai gateway di supporto (PayPal, Stripe, Gemini) rimandano a piattaforme esterne collocate sui rispettivi server protetti.
+                </p>
+            </div>
+        `
+    },
 };
 
 let isBigBangTriggered = false;
