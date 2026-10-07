@@ -158,4 +158,449 @@ const modalData = {
                 </div>
 
                 <!-- WEAKNESSES -->
-                <div style="background:rgba(255, 153, 0, 0.05); border-left:4px solid #ff9900; border
+                <div style="background:rgba(255, 153, 0, 0.05); border-left:4px solid #ff9900; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#ff9900; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>W - DEBOLEZZE (Mitigate)</span> <span>🔧</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Dipendenza Strutturale:</strong> Se il sito target cambia codice, lo script va aggiornato (gestito dalla nostra manutenzione).</li>
+                        <li><strong>Dati "Sporchi":</strong> Il web è caotico. I nostri script includono moduli IA di data-cleaning per consegnare solo dati puri.</li>
+                    </ul>
+                </div>
+
+                <!-- OPPORTUNITIES -->
+                <div style="background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>O - OPPORTUNITÀ</span> <span>🚀</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Oceano Blu:</strong> Scoprire "zone scoperte" e nicchie di mercato dove i competitor non sono ancora arrivati.</li>
+                        <li><strong>Vantaggio Temporale:</strong> Prevedere le mosse dei concorrenti analizzando le loro assunzioni (Job Posting Analysis).</li>
+                    </ul>
+                </div>
+
+                <!-- THREATS -->
+                <div style="background:rgba(255, 50, 100, 0.05); border-left:4px solid #ff3264; border-radius:4px; padding:1.2rem;">
+                    <h4 style="color:#ff3264; margin-bottom:0.5rem; font-size:1rem; display:flex; justify-content:space-between;">
+                        <span>T - MINACCE (Gestite)</span> <span>🛡️</span>
+                    </h4>
+                    <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
+                        <li><strong>Sistemi Anti-Bot:</strong> I siti moderni bloccano il traffico anomalo. Usiamo proxy rotanti e simulazione del comportamento umano.</li>
+                        <li><strong>GDPR e Privacy:</strong> Rischio multe. Il nostro filtro esclude in automatico le PII (Personally Identifiable Information) fisiche.</li>
+                    </ul>
+                </div>
+
+            </div>
+        `
+    },
+    'suite-aziendale': {
+        title: "⚙️ SUITE & AUTOMAZIONE AZIENDALE",
+        subtitle: "Workflow Optimization, Internal Tools & B2B Dashboards",
+        content: `
+            <div style="line-height:1.6; color:#e2e8f0;">
+                <p style="margin-bottom:1rem;">Riduciamo a zero i compiti ripetitivi ingegnerizzando automazioni custom che collegano i software che già utilizzi.</p>
+                <p>Dai report periodici automatici ai sistemi di sincronizzazione inventario/gestionale tramite API dedicate.</p>
+            </div>`
+    },
+    'telegram-bridge': {
+        title: "⚡ SITO WEB INTELLIGENTE",
+        subtitle: "Vanilla JS, Zero Hosting & Gestione IA via Telegram",
+        content: `
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
+                <p>Rivoluzioniamo la presenza online delle PMI offrendo siti in puro codice Vanilla JS ultraveloci <strong>(&lt;150ms)</strong>. Garantiamo la <strong>proprietà totale e perpetua del codice</strong> sul tuo account GitHub (zero lock-in) e abbattiamo a zero i costi di hosting.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🤖 Gestione IA Istantanea</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Nessun pannello complicato. Chiedi le modifiche al tuo assistente IA via Telegram (voce o testo) per aggiornamenti istantanei con funzione di rollback automatico.</p>
+                </div>
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🔐 Zero-Knowledge Security</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Dimentica le password rubate. Autenticazione sicura tramite ID Telegram anonimo, nel pieno rispetto del GDPR e dell'EU AI Act (Human-in-the-Loop).</p>
+                </div>
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">⚙️ Diagnostica Automatica</h4>
+                    <p style="font-size:0.85rem; color:#94a3b8;">Infrastruttura IA (a soli 15-20€/mese) che esegue check giornalieri su integrità, performance e analytics, avvisandoti solo se necessario.</p>
+                </div>
+            </div>
+
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">📊 ANALISI COMPETITIVA</h3>
+            
+            <div style="overflow-x:auto; background:rgba(2, 6, 16, 0.4); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px;">
+                <table style="width:100%; min-width:600px; text-align:left; border-collapse:collapse; font-size:0.85rem;">
+                    <thead>
+                        <tr style="background:rgba(0, 243, 255, 0.05); border-bottom:2px solid #00f3ff;">
+                            <th style="padding:12px; color:#94a3b8; font-weight:600;">CARATTERISTICA</th>
+                            <th style="padding:12px; color:#e2e8f0; font-weight:600;">Agency Tradizionale</th>
+                            <th style="padding:12px; color:#e2e8f0; font-weight:600;">Piattaforme DIY</th>
+                            <th style="padding:12px; color:#00ff9d; font-weight:800; text-shadow:0 0 8px rgba(0,255,157,0.4);">THE ORBIS PROJECT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Velocità</td>
+                            <td style="padding:12px; color:#94a3b8;">Lenta (2-5s)</td>
+                            <td style="padding:12px; color:#94a3b8;">Media (1-3s)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Istantanea (&lt;150ms)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Proprietà Codice</td>
+                            <td style="padding:12px; color:#94a3b8;">In prestito / Vincolata</td>
+                            <td style="padding:12px; color:#94a3b8;">Nessuna (Lock-in)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">100% Tua su GitHub</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Costi di Hosting</td>
+                            <td style="padding:12px; color:#94a3b8;">100-300€/anno</td>
+                            <td style="padding:12px; color:#94a3b8;">15-40€/mese</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">0€ (Gratis a vita)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Aggiornamenti</td>
+                            <td style="padding:12px; color:#94a3b8;">Lenti (2-4 giorni)</td>
+                            <td style="padding:12px; color:#94a3b8;">Manuali (Fai-da-te)</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Istantanei via IA Telegram</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgba(0, 243, 255, 0.1);">
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">Sicurezza e Privacy</td>
+                            <td style="padding:12px; color:#94a3b8;">Richiede Password</td>
+                            <td style="padding:12px; color:#94a3b8;">Traccia dati utenti</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Zero-Knowledge (ID Telegram)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px; font-weight:600; color:#00f3ff;">EU AI Act</td>
+                            <td style="padding:12px; color:#94a3b8;">Non conforme</td>
+                            <td style="padding:12px; color:#94a3b8;">Non conforme</td>
+                            <td style="padding:12px; color:#00ff9d; font-weight:bold;">Garantita (Human-in-loop)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        `
+    },
+    'compliance': {
+        title: "🛡️ ETICA & CODICE // COMPLIANCE CENTER",
+        subtitle: "EU AI Act, GDPR & Human-in-the-Loop Architecture",
+        content: `
+            <div style="line-height:1.6; color:#e2e8f0;">
+                <p style="margin-bottom:1rem;">Sviluppare tecnologia nel mondo moderno significa garantire la massima sicurezza legale e tutela della privacy.</p>
+                <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+                    <li><strong>Conformità EU AI Act:</strong> Trasparenza degli algoritmi e valutazione del livello di rischio.</li>
+                    <li><strong>Privacy by Design & GDPR:</strong> Offuscamento dati sensibili e protezione rigorosa delle informazioni aziendali.</li>
+                    <li><strong>Human-in-the-Loop:</strong> L'intelligenza artificiale potenziata, guidata e validata dal controllo umano.</li>
+                </ul>
+            </div>`
+    },
+    'chi-siamo': {
+        title: "🏢 CHI SIAMO",
+        subtitle: "The Orbis Project Architecture",
+        content: "<p style='color:#e2e8f0;'>Siamo ingegneri e sviluppatori software focalizzati sulle prestazioni e sull'efficienza. Creiamo soluzioni tecnologiche su misura, eliminando ogni zavorra inutile per offrire velocità e valore concreto alle imprese.</p>"
+    },
+    'info': {
+        title: "ℹ INFORMAZIONI",
+        subtitle: "Specifiche di Sistema",
+        content: "<p style='color:#e2e8f0;'>Sito realizzato con tecnologia Vanilla Web. Nessun framework (React/Angular), nessun server intermedio. Tempo di risposta globale &lt; 150ms.</p>"
+    },
+    'lavora-con-noi': {
+        title: "🤝 LAVORA CON NOI",
+        subtitle: "Opportunità e Collaborazioni",
+        content: "<p style='color:#e2e8f0;'>Sei uno sviluppatore Python, specialista OSINT o esperto di conformità legale tech? Scrivici per collaborare sui nostri progetti B2B.</p>"
+    },
+    'contatti': {
+        title: "✉️ CENTRO COMANDO & COMUNICAZIONI",
+        subtitle: "Routing Diretto & Form Privacy-First (Zero-Knowledge)",
+        content: `
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
+                <p>Nessun form infinito e nessuna attesa. Risposte dirette entro 24 ore nel pieno rispetto della privacy.</p>
+            </div>
+
+            <!-- 3 CARDS ROUTING EMAIL -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.4rem; font-size:1rem;">💡 Info & Agenti AI</h4>
+                        <p style="font-size:0.82rem; color:#94a3b8; margin-bottom:0.8rem;">Informazioni generali, supporto sull'installazione delle Gems Gemini e quesiti tecnici.</p>
+                    </div>
+                    <div style="font-family:monospace; font-size:0.85rem; color:#00ff9d; background:rgba(0,0,0,0.3); padding:6px 10px; border-radius:4px; border:1px solid rgba(0,255,157,0.2);">info@theorbisproject.com</div>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.4rem; font-size:1rem;">⚙️ Business & Progetti Custom</h4>
+                        <p style="font-size:0.82rem; color:#94a3b8; margin-bottom:0.8rem;">OSINT Data Analysis, Siti Web Intelligenti e Automazioni Aziendali B2B.</p>
+                    </div>
+                    <div style="font-family:monospace; font-size:0.85rem; color:#00ff9d; background:rgba(0,0,0,0.3); padding:6px 10px; border-radius:4px; border:1px solid rgba(0,255,157,0.2);">business@theorbisproject.com</div>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.4rem; font-size:1rem;">🛡️ Direzione & Partnership</h4>
+                        <p style="font-size:0.82rem; color:#94a3b8; margin-bottom:0.8rem;">Canale diretto con Simone Clemente per collaborazioni, invio CV e partnership.</p>
+                    </div>
+                    <div style="font-family:monospace; font-size:0.85rem; color:#00ff9d; background:rgba(0,0,0,0.3); padding:6px 10px; border-radius:4px; border:1px solid rgba(0,255,157,0.2);">simone@theorbisproject.com</div>
+                </div>
+
+            </div>
+
+            <!-- FORM PRIVACY-FIRST INTEGRATO -->
+            <div style="background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.25); border-radius:12px; padding:1.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:1.2rem; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span>📨 INVIO MESSAGGIO DIRECT</span>
+                    <span style="font-size:0.75rem; color:#00ff9d; font-weight:normal; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:12px; border:1px solid rgba(0,255,157,0.3);">Zero-Knowledge Ready</span>
+                </h3>
+
+                <form id="cyber-contact-form" onsubmit="handleContactSubmit(event)">
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">REPARTO DESTINATARIO</label>
+                            <select id="contact-dept" class="cyber-input" style="width:100%;">
+                                <option value="info@theorbisproject.com">💡 Info & Agenti AI (info@...)</option>
+                                <option value="business@theorbisproject.com">⚙️ Business B2B & Progetti (business@...)</option>
+                                <option value="simone@theorbisproject.com">🛡️ Direzione & Partnership (simone@...)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">IL TUO RECAPITO (Email / Telefono) <span style="color:#00ff9d; font-size:0.75rem;">[OPZIONALE]</span></label>
+                            <input type="text" id="contact-recapito" class="cyber-input" placeholder="es. nome@azienda.it oppure +39 333..." style="width:100%;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:1rem;">
+                        <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">OGGETTO DEL MESSAGGIO</label>
+                        <input type="text" id="contact-subject" class="cyber-input" placeholder="Inserisci il motivo del contatto..." required style="width:100%;">
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">MESSAGGIO</label>
+                        <textarea id="contact-message" class="cyber-textarea" rows="4" placeholder="Scrivi qui il tuo messaggio o la tua richiesta custom..." required style="width:100%;"></textarea>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                        <span style="font-size:0.78rem; color:#94a3b8; display:flex; align-items:center; gap:6px;">
+                            <span style="color:#00ff9d;">🛡️</span> Risposta garantita entro 24 ore nel rispetto del GDPR.
+                        </span>
+                        <button type="submit" class="cyber-btn-submit" style="background:rgba(0, 255, 157, 0.12); border:1px solid #00ff9d; color:#00ff9d; padding:10px 24px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:0.9rem; transition:all 0.3s ease;">
+                            🚀 INVIA MESSAGGIO DIRECT
+                        </button>
+                    </div>
+                </form>
+                <div id="form-status-msg" style="margin-top:1rem; font-family:monospace; font-size:0.85rem; display:none;"></div>
+            </div>
+        `
+    },
+    'sostienici': {
+        title: "✨ SOSTIENICI",
+        subtitle: "Supporta la Ricerca Indipendente",
+        content: "<p style='color:#e2e8f0;'>Sostieni il nostro impegno nello sviluppo di software etico, aperto e conforme alle normative europee sulla riservatezza dei dati.</p>"
+    }
+};
+
+let isBigBangTriggered = false;
+
+function triggerBigBang() {
+    if (isBigBangTriggered) return;
+
+    const planetCore = document.getElementById('hud-core');
+    if (planetCore) {
+        planetCore.classList.add('planet-exploded');
+    }
+
+    const xenonContainer = document.getElementById('xenon-container');
+    if (xenonContainer) {
+        xenonContainer.classList.add('xenon-moved-center');
+    }
+
+    const hiddenNodes = document.querySelectorAll('.hud-node-hidden');
+    hiddenNodes.forEach((node, index) => {
+        setTimeout(() => {
+            node.classList.remove('hud-node-hidden');
+        }, 550 + index * 90);
+    });
+
+    const xenonText = document.getElementById('xenon-text');
+    if (xenonText) {
+        xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
+        
+        setTimeout(() => {
+            const xenonSpeech = document.getElementById('xenon-speech');
+            if (xenonSpeech) {
+                xenonSpeech.classList.add('fade-out');
+            }
+        }, 2500);
+    }
+
+    isBigBangTriggered = true;
+}
+
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const statusDiv = document.getElementById('form-status-msg');
+    const dept = document.getElementById('contact-dept').value;
+    const recapito = document.getElementById('contact-recapito').value || 'Anonimo (Zero-Knowledge)';
+
+    if (statusDiv) {
+        statusDiv.style.display = 'block';
+        statusDiv.style.color = '#00ff9d';
+        statusDiv.style.border = '1px solid rgba(0, 255, 157, 0.3)';
+        statusDiv.style.padding = '12px';
+        statusDiv.style.borderRadius = '6px';
+        statusDiv.style.background = 'rgba(0, 255, 157, 0.08)';
+        statusDiv.innerHTML = `> [TRANSMISSION VERIFIED]: Messaggio inviato con successo a <strong>${dept}</strong>.<br>> Recapito riscontro: ${recapito}<br>> Presa in carico completata (< 24h).`;
+    }
+
+    document.getElementById('cyber-contact-form').reset();
+}
+
+function openModal(key) {
+    const data = modalData[key];
+    if (!data) return;
+
+    if (!isBigBangTriggered) {
+        triggerBigBang();
+    }
+
+    const overlay = document.getElementById('modal-overlay');
+    const dynamicBody = document.getElementById('modal-dynamic-body');
+
+    const xenonHelpIcon = `
+        <div class="xenon-help-icon" title="Clicca per la Guida di Xenon" style="cursor:pointer; width:36px; height:36px; border-radius:50%; background:rgba(0, 243, 255, 0.08); border:1px solid var(--glass-border); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease;">
+            <svg viewBox="0 0 120 120" style="width:24px; height:24px; filter:drop-shadow(0 0 4px rgba(0, 255, 157, 0.6));">
+                <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
+                <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
+                <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
+                <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                <circle cx="53" cy="45" r="2" fill="#00f3ff" />
+                <circle cx="67" cy="45" r="2" fill="#00f3ff" />
+            </svg>
+        </div>
+    `;
+
+    const writeUsBtnHtml = `
+        <button class="cyber-btn-write-dynamic" style="background:rgba(0, 243, 255, 0.1); border:1px solid rgba(0, 243, 255, 0.35); color:#00f3ff; padding:8px 14px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">✉️ SCRIVICI</button>
+    `;
+
+    const closeBtnHtml = `
+        <button class="cyber-btn-close-dynamic" style="background:rgba(255, 50, 50, 0.1); border:1px solid rgba(255, 50, 50, 0.3); color:#ff5555; padding:8px 16px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">✖ ESCI</button>
+    `;
+
+    dynamicBody.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem; gap:1rem;">
+            <div>
+                <h2 style="font-size:1.8rem; color:#00f3ff; margin-bottom:0.3rem;">${data.title}</h2>
+                <h4 style="font-size:0.9rem; color:#00ff9d; font-weight:400; line-height:1.4;">${data.subtitle}</h4>
+            </div>
+            
+            <div style="display:flex; gap:10px; align-items:center; flex-shrink:0;">
+                ${xenonHelpIcon}
+                ${key !== 'contatti' ? writeUsBtnHtml : ''}
+                ${closeBtnHtml}
+            </div>
+        </div>
+        
+        <hr style="border:0; border-top:1px solid rgba(0,243,255,0.2); margin-bottom:1.5rem;">
+        
+        ${data.content}
+        
+        <style>
+            .cyber-btn-close-dynamic:hover {
+                background: rgba(255, 50, 50, 0.35) !important;
+                color: #ffffff !important;
+                box-shadow: 0 0 15px rgba(255, 50, 50, 0.4) !important;
+            }
+        </style>
+    `;
+
+    overlay.classList.remove('hidden');
+
+    const dynamicCloseBtn = document.querySelector('.cyber-btn-close-dynamic');
+    if (dynamicCloseBtn) {
+        dynamicCloseBtn.addEventListener('click', closeModal);
+    }
+
+    const dynamicWriteBtn = document.querySelector('.cyber-btn-write-dynamic');
+    if (dynamicWriteBtn) {
+        dynamicWriteBtn.addEventListener('click', () => {
+            openModal('contatti');
+            
+            setTimeout(() => {
+                const deptSelect = document.getElementById('contact-dept');
+                if (deptSelect) {
+                    if (['osint', 'suite-aziendale', 'telegram-bridge'].includes(key)) {
+                        deptSelect.value = 'business@theorbisproject.com';
+                    } else if (key === 'lavora-con-noi') {
+                        deptSelect.value = 'simone@theorbisproject.com';
+                    } else {
+                        deptSelect.value = 'info@theorbisproject.com';
+                    }
+                }
+            }, 50);
+        });
+    }
+
+    const helpBtn = document.querySelector('.xenon-help-icon');
+    if(helpBtn) {
+        helpBtn.addEventListener('mouseover', () => {
+            helpBtn.style.background = 'rgba(0, 255, 157, 0.15)';
+            helpBtn.style.borderColor = '#00ff9d';
+        });
+        helpBtn.addEventListener('mouseout', () => {
+            helpBtn.style.background = 'rgba(0, 243, 255, 0.08)';
+            helpBtn.style.borderColor = 'rgba(0, 243, 255, 0.25)';
+        });
+        helpBtn.addEventListener('click', () => {
+            alert('Xenon: Modalità Guida - Puoi usare il form sottostante per inviare una richiesta diretta.');
+        });
+    }
+}
+
+function closeModal() {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.add('hidden');
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+}
+
+function handleHashChange() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && modalData[hash]) {
+        openModal(hash);
+    } else {
+        closeModal();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const planetCore = document.getElementById('hud-core');
+    if (planetCore) {
+        planetCore.addEventListener('click', () => {
+            triggerBigBang();
+        });
+    }
+
+    const xenonAvatar = document.getElementById('xenon-avatar');
+    if (xenonAvatar) {
+        xenonAvatar.addEventListener('click', () => {
+            if (!isBigBangTriggered) {
+                triggerBigBang();
+            } else {
+                openModal('info');
+            }
+        });
+    }
+
+    const overlay = document.getElementById('modal-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+});
