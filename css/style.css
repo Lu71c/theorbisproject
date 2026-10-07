@@ -209,12 +209,12 @@ html, body {
     letter-spacing: 0.3px;
 }
 
-/* HUD CONTAINER CENTRALE COMPATTO */
+/* HUD CONTAINER CENTRALE AMPLIATO PER PERMETTERE IL RESPIRO CENTRALE */
 .hud-container {
     position: relative;
     width: 100%;
-    max-width: 1060px;
-    height: 500px;
+    max-width: 1280px; /* ALLARGATO PER SPINGERE LE SCHEDE VERSO GLI ESTREMI */
+    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,11 +285,11 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (STILE PANNELLO DASHBOARD XL) */
+/* 4 NODI FLUTTUANTI (AMPI, IMPONENTI E SPINTI VERSO GLI ESTERNI) */
 .hud-node {
     position: absolute;
-    width: 430px; /* SCHEDE MOLTO PIÙ AMPIE E IMPONENTI */
-    padding: 28px 30px; /* ALTEZZA AUMENTATA NOTEVOLMENTE */
+    width: 430px;
+    padding: 28px 30px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(18px);
@@ -314,11 +314,11 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-/* POSIZIONAMENTO CENTRATO E COMPATTO */
-.node-top-left     { top: 15px; left: 15px; }
-.node-top-right    { top: 15px; right: 15px; }
-.node-bottom-left  { bottom: 15px; left: 15px; }
-.node-bottom-right { bottom: 15px; right: 15px; }
+/* COORDINATE SPINTE VERSO GLI ESTERNI (CREA LO SPAZIO PERMETTENDO A XENON DI RESPIRARE) */
+.node-top-left     { top: 20px; left: 10px; }
+.node-top-right    { top: 20px; right: 10px; }
+.node-bottom-left  { bottom: 20px; left: 10px; }
+.node-bottom-right { bottom: 20px; right: 10px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
@@ -329,13 +329,13 @@ html, body {
 
 /* ICONE PROTAGONISTI GIGANTI */
 .node-icon {
-    font-size: 3.6rem; /* ICONA MOLTO PIÙ GRANDE */
+    font-size: 3.6rem;
     filter: drop-shadow(0 0 14px rgba(0, 243, 255, 0.8));
     flex-shrink: 0;
 }
 
 .node-text h3 {
-    font-size: 1.35rem; /* TESTO INGRANDITO */
+    font-size: 1.35rem;
     font-weight: 800;
     color: #ffffff;
     letter-spacing: 0.5px;
@@ -348,7 +348,7 @@ html, body {
     margin-top: 6px;
 }
 
-/* BOTTOM NODE (COMPLIANCE CENTER) */
+/* BOTTOM NODE (COMPLIANCE CENTER SNELLO ED ELEGANTE) */
 .bottom-node, .center-links a {
     pointer-events: auto !important;
 }
@@ -356,21 +356,21 @@ html, body {
 .bottom-node {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px 36px;
-    background: rgba(0, 243, 255, 0.06);
+    gap: 10px;
+    padding: 9px 28px; /* SNELLITO PER NON OCCUPARE TROPPO SPAZIO VERTICALE */
+    background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
-    border-radius: 30px;
+    border-radius: 25px;
     color: var(--cyan-glow);
     text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
     z-index: 100;
-    margin-top: -10px; /* AVVICINATO VERSO L'ALTO */
+    margin-top: 10px;
 }
 
 .bottom-node:not(.hud-node-hidden):hover {
@@ -382,11 +382,11 @@ html, body {
 }
 
 .pulse-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: var(--emerald-glow);
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--emerald-glow);
+    box-shadow: 0 0 10px var(--emerald-glow);
     animation: pulse 2s infinite;
 }
 
@@ -477,10 +477,11 @@ html, body {
     letter-spacing: 0.2px;
 }
 
+/* AVATAR XENON INGRANDITO DEL 15% */
 .xenon-avatar-btn {
     pointer-events: auto;
-    width: 78px;
-    height: 78px;
+    width: 92px; /* INGRANDITO DEL 15% PER ESSERE IL FULCRO VISIVO */
+    height: 92px;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -677,8 +678,8 @@ html, body {
     }
 
     .xenon-avatar-btn {
-        width: 62px;
-        height: 62px;
+        width: 68px;
+        height: 68px;
     }
 
     #modal-content-box {
