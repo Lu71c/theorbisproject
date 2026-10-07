@@ -5,7 +5,7 @@
 
 const modalData = {
     'agenti-ai': {
-        title: "🧠 AGENTI AI VERTICALI",
+        title: "🤖 AGENTI AI VERTICALI",
         subtitle: "Gemini Gems pre-ingegnerizzate per task specifici. Installale sul tuo account in un clic.",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
@@ -116,7 +116,7 @@ const modalData = {
             `
     },
     'osint': {
-        title: "👁‍🗨️ OSINT & DATA INTELLIGENCE",
+        title: "🔍 OSINT & DATA INTELLIGENCE",
         subtitle: "Data Mining Python, Analisi Concorrenza & Lead Generation B2B",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
@@ -194,7 +194,7 @@ const modalData = {
         `
     },
     'suite-aziendale': {
-        title: "⚙️ SUITE & AUTOMAZIONE AZIENDALE",
+        title: "💼 SUITE & AUTOMAZIONE AZIENDALE",
         subtitle: "Workflow Optimization, Internal Tools & B2B Dashboards",
         content: `
             <div style="line-height:1.6; color:#e2e8f0;">
@@ -203,7 +203,7 @@ const modalData = {
             </div>`
     },
     'telegram-bridge': {
-        title: "⚡ SITO WEB INTELLIGENTE",
+        title: "🧠 SITO WEB INTELLIGENTE",
         subtitle: "Vanilla JS, Zero Hosting & Gestione IA via Telegram",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
@@ -588,7 +588,7 @@ const modalData = {
             </div>
         `
     },
-   'privacy': {
+    'privacy': {
         title: "🛡️ PRIVACY & COOKIE POLICY",
         subtitle: "Informativa sulla Trasparenza, Trattamento Dati e Telemetria Anonima (GDPR Reg. UE 2016/679)",
         content: `
