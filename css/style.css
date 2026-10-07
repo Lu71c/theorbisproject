@@ -314,10 +314,10 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-.node-top-left     { top: 20px; left: 10px; }
-.node-top-right    { top: 20px; right: 10px; }
-.node-bottom-left  { bottom: 20px; left: 10px; }
-.node-bottom-right { bottom: 20px; right: 10px; }
+.node-top-left     { top: 65px; left: 120px; }
+.node-top-right    { top: 65px; right: 120px; }
+.node-bottom-left  { bottom: 65px; left: 120px; }
+.node-bottom-right { bottom: 65px; right: 120px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
