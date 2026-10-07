@@ -587,7 +587,7 @@ const modalData = {
                 <p style="font-size:0.75rem; color:#94a3b8; margin:0;"><strong>Trasparenza Zero-Knowledge:</strong> Nessun dato personale transita o viene salvato sui server di The Orbis Project. Le transazioni vengono processate esclusivamente dai gateway bancari esterni (Stripe/PayPal).</p>
             </div>
         `
-    }
+    },
    'privacy': {
         title: "🛡️ PRIVACY & COOKIE POLICY",
         subtitle: "Informativa sulla Trasparenza, Trattamento Dati e Telemetria Anonima (GDPR Reg. UE 2016/679)",
