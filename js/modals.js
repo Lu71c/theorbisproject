@@ -281,16 +281,63 @@ const modalData = {
     },
     'compliance': {
         title: "🛡️ ETICA & CODICE // COMPLIANCE CENTER",
-        subtitle: "EU AI Act, GDPR & Human-in-the-Loop Architecture",
+        subtitle: "Manifesto Tecnologico: GDPR, EU AI Act & Human-in-the-Loop",
         content: `
-            <div style="line-height:1.6; color:#e2e8f0;">
-                <p style="margin-bottom:1rem;">Sviluppare tecnologia nel mondo moderno significa garantire la massima sicurezza legale e tutela della privacy.</p>
-                <ul style="margin-left:1.5rem; margin-bottom:1rem;">
-                    <li><strong>Conformità EU AI Act:</strong> Trasparenza degli algoritmi e valutazione del livello di rischio.</li>
-                    <li><strong>Privacy by Design & GDPR:</strong> Offuscamento dati sensibili e protezione rigorosa delle informazioni aziendali.</li>
-                    <li><strong>Human-in-the-Loop:</strong> L'intelligenza artificiale potenziata, guidata e validata dal controllo umano.</li>
-                </ul>
-            </div>`
+            <!-- BANNER INTRODUTTIVO -->
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA ANTROPOCENTRICA E PRIVACY ASSOLUTA</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">In un ecosistema digitale dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni software e Agenti AI ad altissime prestazioni nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
+            </div>
+
+            <!-- 4 PILASTRI DI COMPLIANCE -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; margin-bottom:2rem;">
+                
+                <!-- PILASTRO 1: GDPR PRIVACY BY DESIGN -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                        <h4 style="color:#00f3ff; font-size:1rem;">🔐 Privacy by Design & Default</h4>
+                        <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 25 GDPR</span>
+                    </div>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun cookie tracciante di terze parti, nessuna profilazione invisibile e zero raccolte di dati superflui. Il sito gira su codice puro Vanilla JS e offre form con opzioni Zero-Knowledge per garantire l'anonimato delle comunicazioni.</p>
+                </div>
+
+                <!-- PILASTRO 2: HUMAN-IN-THE-LOOP & AI ACT -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                        <h4 style="color:#00f3ff; font-size:1rem;">🧠 Human-in-the-Loop (IA)</h4>
+                        <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 14 AI Act / Art. 22 GDPR</span>
+                    </div>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">I nostri Agenti AI (Gems) sono ingegnerizzati con logiche anti-allucinazione e anti-bias. Nessun automatismo sostituisce il giudizio umano: l'IA lavora esclusivamente come copilota ad alta precisione sotto la supervisione dell'utente.</p>
+                </div>
+
+                <!-- PILASTRO 3: OSINT B2B LEGALE -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                        <h4 style="color:#00f3ff; font-size:1rem;">👁️ Data Mining B2B Legale</h4>
+                        <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 14 & Recit. 14 GDPR</span>
+                    </div>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Le nostre pipeline Python OSINT estraggono unicamente informazioni pubbliche di persone giuridiche e mercati B2B. I nostri script integrano filtri automatici di data-cleaning che scartano qualsiasi PII (Dato Personale Fisico).</p>
+                </div>
+
+                <!-- PILASTRO 4: ACCOUNTABILITY & CODE OWNERSHIP -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                        <h4 style="color:#00f3ff; font-size:1rem;">⚙️ Open Code & Copyright</h4>
+                        <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 5.2 GDPR / Art. 53 AI Act</span>
+                    </div>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Garantiamo la trasparenza e la proprietà totale del codice su GitHub senza 'scatole nere' o server intermedi trasparenti. Rispettiamo rigorosamente il diritto d'autore e le regole europee TDM (Text and Data Mining opt-out).</p>
+                </div>
+
+            </div>
+
+            <!-- TRUST MATRIX FOOTER -->
+            <div style="background:rgba(2, 6, 16, 0.5); border:1px solid rgba(0, 255, 157, 0.25); border-radius:8px; padding:1rem; display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:1rem; text-align:center;">
+                <div style="font-size:0.8rem; color:#e2e8f0;"><strong style="color:#00ff9d;">✓ GDPR COMPLIANT</strong><br><span style="color:#94a3b8; font-size:0.75rem;">Reg. UE 2016/679</span></div>
+                <div style="font-size:0.8rem; color:#e2e8f0;"><strong style="color:#00ff9d;">✓ EU AI ACT READY</strong><br><span style="color:#94a3b8; font-size:0.75rem;">Reg. UE 2024/1689</span></div>
+                <div style="font-size:0.8rem; color:#e2e8f0;"><strong style="color:#00ff9d;">✓ ZERO-KNOWLEDGE</strong><br><span style="color:#94a3b8; font-size:0.75rem;">Nessun tracciamento dati</span></div>
+                <div style="font-size:0.8rem; color:#e2e8f0;"><strong style="color:#00ff9d;">✓ FULL CODE OWNERSHIP</strong><br><span style="color:#94a3b8; font-size:0.75rem;">Zero Vendor Lock-in</span></div>
+            </div>
+        `
     },
     'chi-siamo': {
         title: "🏢 CHI SIAMO",
