@@ -38,7 +38,6 @@ function initParticles() {
         const layer = Math.random();
         let radius, speedMult, alpha, flareType;
 
-        // Recuperata la tua logica originale per i Flare!
         if (layer < 0.35) {
             radius = Math.random() * 0.8 + 0.3;
             speedMult = 0.12;
@@ -93,7 +92,7 @@ function createShootingStar() {
     });
 }
 
-// Tracciamento fisica Mouse & Touch
+// Tracciamento fisica Mouse & Touch (Non interrompe lo scroll nativo né il Pull-to-Refresh)
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -103,6 +102,13 @@ window.addEventListener('mouseleave', () => {
     mouse.x = -1000;
     mouse.y = -1000;
 });
+
+window.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+    }
+}, { passive: true });
 
 window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) {
@@ -122,7 +128,7 @@ document.addEventListener('visibilitychange', () => {
     if (isTabActive) requestAnimationFrame(render);
 });
 
-// LA TUA FUNZIONE PER I RIFLESSI OTTICI DELLE STELLE (Ripristinata!)
+// RIFLESSI OTTICI DELLE STELLE
 function drawStarFlare(x, y, size, alpha, colorStr, type) {
     ctx.strokeStyle = colorStr + (alpha * 0.6) + ')';
     ctx.lineWidth = 0.7;
@@ -184,7 +190,7 @@ function render() {
         ctx.fillStyle = p.color + currentAlpha + ')';
         ctx.fill();
 
-        // Disegna i flares se la stella è abbastanza luminosa!
+        // Disegna i flares se la stella è abbastanza luminosa
         if (p.flareType > 0 && currentAlpha > 0.25) {
             const flareSize = p.radius * (p.layer > 0.8 ? 4 : 2.5);
             drawStarFlare(p.x, p.y, flareSize, currentAlpha, p.color, p.flareType);
