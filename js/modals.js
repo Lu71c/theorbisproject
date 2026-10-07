@@ -392,8 +392,47 @@ const modalData = {
     },
     'sostienici': {
         title: "✨ SOSTIENICI",
-        subtitle: "Supporta la Ricerca Indipendente",
-        content: "<p style='color:#e2e8f0;'>Sostieni il nostro impegno nello sviluppo di software etico, aperto e conforme alle normative europee sulla riservatezza dei dati.</p>"
+        subtitle: "Supporta la Tecnologia Indipendente e Privacy-First",
+        content: `
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
+                <p><strong>La tecnologia non deve spiarti per essere utile.</strong></p>
+                <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare tempo o denaro, puoi aiutarci a mantenere i server accesi e la ricerca indipendente attiva.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                
+                <!-- PAYPAL CARD -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:all 0.3s ease;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">💙</div>
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem;">PayPal</h4>
+                    <p style="font-size:0.8rem; color:#94a3b8; margin-bottom:1.5rem; flex-grow:1;">Supporto rapido, tracciabile e sicuro tramite il circuito più diffuso al mondo.</p>
+                    <a href="#" target="_blank" style="width:100%; background:rgba(0, 243, 255, 0.1); border:1px solid #00f3ff; color:#00f3ff; padding:10px; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:bold; transition:all 0.3s ease;">SUPPORTA CON PAYPAL</a>
+                </div>
+
+                <!-- STRIPE / CARTA CARD -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:all 0.3s ease;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">💳</div>
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem;">Carta di Credito</h4>
+                    <p style="font-size:0.8rem; color:#94a3b8; margin-bottom:1.5rem; flex-grow:1;">Transazione diretta e sicura garantita dai gateway crittografati Stripe.</p>
+                    <a href="#" target="_blank" style="width:100%; background:rgba(0, 243, 255, 0.1); border:1px solid #00f3ff; color:#00f3ff; padding:10px; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:bold; transition:all 0.3s ease;">SUPPORTA CON CARTA</a>
+                </div>
+
+                <!-- CRYPTO CARD (ANONIMATO TOTALE) -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:all 0.3s ease; position:relative; overflow:hidden;">
+                    <div style="position:absolute; top:0; right:0; background:#00ff9d; color:#020610; font-size:0.65rem; font-weight:bold; padding:2px 10px; border-bottom-left-radius:8px;">Zero-Knowledge</div>
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">₿</div>
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem;">Crypto Wallet</h4>
+                    <p style="font-size:0.8rem; color:#94a3b8; margin-bottom:1.5rem; flex-grow:1;">L'unico metodo per un supporto 100% anonimo e decentralizzato (BTC/ETH).</p>
+                    <button onclick="alert('Indirizzo BTC: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\\n(L\\'indirizzo reale verrà inserito qui)')" style="width:100%; background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:10px; border-radius:4px; cursor:pointer; font-size:0.85rem; font-weight:bold; font-family:var(--font-main); transition:all 0.3s ease;">MOSTRA INDIRIZZO</button>
+                </div>
+
+            </div>
+
+            <div style="display:flex; justify-content:center; align-items:center; gap:10px; padding-top:1rem; border-top:1px solid rgba(0, 243, 255, 0.1);">
+                <span style="font-size:1.2rem;">🛡️</span>
+                <p style="font-size:0.75rem; color:#94a3b8; margin:0;"><strong>Trasparenza Zero-Knowledge:</strong> Nessun dato personale transita o viene salvato sui server di The Orbis Project. Le transazioni vengono processate esclusivamente dai gateway bancari esterni (Stripe/PayPal).</p>
+            </div>
+        `
     }
 };
 
