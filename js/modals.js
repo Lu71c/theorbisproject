@@ -345,9 +345,40 @@ const modalData = {
         content: "<p style='color:#e2e8f0;'>Siamo ingegneri e sviluppatori software focalizzati sulle prestazioni e sull'efficienza. Creiamo soluzioni tecnologiche su misura, eliminando ogni zavorra inutile per offrire velocità e valore concreto alle imprese.</p>"
     },
     'info': {
-        title: "ℹ INFORMAZIONI",
-        subtitle: "Specifiche di Sistema",
-        content: "<p style='color:#e2e8f0;'>Sito realizzato con tecnologia Vanilla Web. Nessun framework (React/Angular), nessun server intermedio. Tempo di risposta globale &lt; 150ms.</p>"
+        title: "ℹ INFORMAZIONI // THE ORBIS PROJECT",
+        subtitle: "Democratizzare la tecnologia avanzata con un'architettura etica e Privacy-First",
+        content: `
+            <!-- MANIFESTO TECNOLOGICO E FILOSOFICO -->
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">💡 DALLA SILICON VALLEY AL NEGOZIO SOTTO CASA</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">La tecnologia più avanzata del pianeta non deve essere un privilegio riservato alle multinazionali, né un cavallo di Troia per sottrarre e monetizzare i dati aziendali. <strong>The Orbis Project</strong> nasce con una missione precisa: democratizzare l'innovazione radicale, mettendo nelle mani di chiunque, dal piccolo commerciante locale al professionista indipendente, le stesse capacità analitiche, la potenza dell'IA e l'efficienza strutturale sviluppate nei grandi laboratori tech della California.</p>
+            </div>
+
+            <!-- I 3 PILASTRI DEL PROGETTO -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+                
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🚀 Accessibilità Senza Attrito</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Portiamo soluzioni di livello enterprise a costi abbattuti e con una curva di apprendimento pari a zero, eliminando qualsiasi complessità inutile.</p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">🔐 Sovranità dei Dati (Zero-Knowledge)</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun tracciamento, nessuna profilazione, nessuna vendita di informazioni a terzi. La tecnologia deve lavorare <em>per</em> l'utente, non <em>sull'utente</em>.</p>
+                </div>
+
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
+                    <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">⚙️ Architettura Pura</h4>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Niente framework pesanti, niente abbonamenti vincolanti o infrastrutture opache. Solo codice reattivo, pulito e di proprietà diretta del cliente.</p>
+                </div>
+
+            </div>
+
+            <!-- CHIUSA SINTETICA -->
+            <div style="text-align:center; padding:1rem; background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px;">
+                <p style="font-size:0.85rem; color:#e2e8f0; margin:0;">Non vendiamo software "in prestito" con trappole di rinnovo: progettiamo strumenti di emancipazione digitale etici, veloci e accessibili a tutti.</p>
+            </div>
+        `
     },
     'lavora-con-noi': {
         title: "🤝 LAVORA CON NOI",
