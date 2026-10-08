@@ -672,7 +672,7 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. HEADER & NAVBAR MOBILE SU 2 RIGHE SENZA SPAZI VUOTI NÉ SCROLL */
+    /* 1. HEADER & NAVBAR MOBILE SU 2 RIGHE BILANCIATE SENZA SPAZI VUOTI */
     .top-nav {
         height: auto;
         flex-direction: row;
@@ -685,24 +685,29 @@ html, body {
 
     .brand-container {
         order: 1;
-        width: auto;
+        flex: 1;
+        display: flex;
+        align-items: center;
         gap: 8px;
     }
 
     .brand-logo-img {
         width: 34px;
         height: 34px;
+        flex-shrink: 0;
     }
 
     .brand-text {
-        font-size: 0.75rem;
-        letter-spacing: 1.2px;
-        line-height: 1.1;
+        font-size: clamp(0.68rem, 2.8vw, 0.78rem);
+        letter-spacing: 1.8px;
+        line-height: 1.15;
+        white-space: nowrap;
     }
 
     .system-controls {
         order: 2;
         gap: 6px;
+        flex-shrink: 0;
     }
 
     .system-controls .cyber-btn {
@@ -725,7 +730,7 @@ html, body {
     }
 
     .center-links a {
-        font-size: 0.66rem;
+        font-size: 0.65rem;
         letter-spacing: 0.3px;
         padding: 2px 0;
         font-weight: 700;
@@ -751,31 +756,36 @@ html, body {
         opacity: 0.9;
     }
 
-    /* 3. HERO & SCHERMATA 1 / SCHERMATA 2 "BIG BANG" */
+    /* 3. HERO TITOLI SU SINGOLA RIGA SU MOBILE */
     .hero-hud {
         margin-top: 85px;
         min-height: calc(100vh - 145px);
-        padding: 0.4rem 0.8rem 1rem 0.8rem;
+        padding: 0.4rem 0.6rem 1rem 0.6rem;
     }
 
     .hero-titles h2 {
-        font-size: 1.15rem;
-        line-height: 1.25;
-        margin-bottom: 0.3rem;
+        font-size: clamp(0.65rem, 3.1vw, 0.82rem) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.2rem !important;
     }
 
     .hero-titles p {
-        font-size: 0.75rem;
-        line-height: 1.3;
+        font-size: clamp(0.55rem, 2.5vw, 0.68rem) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0px !important;
+        line-height: 1.2 !important;
     }
 
+    /* PIANETA INGRANDITO E CENTRATO (SCHERMATA 1) */
     .hud-container {
         height: auto;
         min-height: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-        padding: 6px 0;
+        padding: 4px 0;
         margin: 0.3rem 0;
     }
 
@@ -783,11 +793,19 @@ html, body {
         position: relative;
         grid-column: span 2;
         justify-self: center;
-        width: 160px;
-        height: 160px;
-        margin-bottom: 0.3rem;
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0.6rem auto !important;
     }
 
+    .hud-center.planet-exploded {
+        position: absolute !important;
+        opacity: 0 !important;
+        transform: scale(0.7) !important;
+        pointer-events: none !important;
+    }
+
+    /* GRIGLIA 4 SCHEDE IN ALTO (SCHERMATA 2 BIG BANG) */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -825,23 +843,23 @@ html, body {
         margin-top: 4px;
     }
 
-    /* XENON & SPEECH BUBBLE POSIZIONAMENTO SCHERMATA 1 E 2 */
+    /* 4. XENON POSIZIONAMENTO ALZATO IN SCHERMATA 1 (NON SOVRAPPONE PRIVACY) */
     #xenon-container {
-        bottom: 48px;
+        bottom: 85px !important;
         right: 12px;
-        left: 12px;
+        left: auto;
         flex-direction: column;
         align-items: flex-end;
         gap: 6px;
     }
 
     .xenon-avatar-btn {
-        width: 72px;
-        height: 72px;
+        width: 75px !important;
+        height: 75px !important;
     }
 
     .xenon-bubble {
-        max-width: 250px;
+        max-width: 240px;
         padding: 8px 12px;
     }
 
@@ -850,47 +868,49 @@ html, body {
         line-height: 1.35;
     }
 
-    /* POSIZIONAMENTO SECONDA SCHERMATA (BIG BANG ESPLOSO) */
+    /* XENON IN SECONDA SCHERMATA: APPARE IN ALTO AL CENTRO E SCIVOLA MORBIDO */
     #xenon-container.xenon-moved-center {
-        top: auto !important;
-        bottom: 48px !important;
-        left: 12px !important;
-        right: 12px !important;
-        transform: none !important;
-        animation: none !important;
-        flex-direction: row !important;
-        align-items: flex-end !important;
-        justify-content: flex-start !important;
-        gap: 10px !important;
+        top: 140px !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: translateX(-50%) !important;
+        animation: xenonMobileCenterFloat 5s ease-in-out infinite !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @keyframes xenonMobileCenterFloat {
+        0%, 100% {
+            transform: translateX(-50%) translateY(0px);
+        }
+        50% {
+            transform: translateX(-50%) translateY(-6px);
+        }
     }
 
     #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 72px !important;
-        height: 72px !important;
-        flex-shrink: 0 !important;
+        width: 70px !important;
+        height: 70px !important;
     }
 
     #xenon-container.xenon-moved-center .xenon-bubble {
-        max-width: calc(100vw - 110px) !important;
-        padding: 8px 12px !important;
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto !important;
-        text-align: left !important;
+        max-width: 280px !important;
+        padding: 6px 12px !important;
+        text-align: center !important;
+        transition: opacity 0.6s ease, transform 0.6s ease !important;
     }
 
     #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto !important;
+        opacity: 0 !important;
+        transform: translateY(-10px) scale(0.9) !important;
+        pointer-events: none !important;
     }
 
-    #xenon-container.xenon-moved-center .xenon-bubble p {
-        font-size: 0.72rem !important;
-        line-height: 1.3 !important;
-    }
-
-    /* 4. MODALE POPUP CON CONTROLLI IN ALTO A DESTRA E TITOLO SOTTO */
+    /* 5. MODALE POPUP CON CONTROLLI IN ALTO A DESTRA E TITOLO SOTTO */
     #modal-overlay {
         align-items: flex-start;
         padding-top: 10px;
