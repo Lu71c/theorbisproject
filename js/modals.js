@@ -665,10 +665,10 @@ function triggerBigBang() {
     if (xenonText) {
         xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
-        // Su PC il fumetto sfuma; su mobile rimarrà sempre visibile via CSS
+        // Il fumetto scompare sia su PC che su Mobile dopo 2.5 secondi per permettere il riposizionamento pulito al centro
         setTimeout(() => {
             const xenonSpeech = document.getElementById('xenon-speech');
-            if (xenonSpeech && window.innerWidth > 768) {
+            if (xenonSpeech) {
                 xenonSpeech.classList.add('fade-out');
             }
         }, 2500);
