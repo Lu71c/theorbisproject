@@ -462,8 +462,8 @@ const modalData = {
         `
     },
     'contatti': {
-        title: "✉️ CENTRO COMANDO & COMUNICAZIONI",
-        subtitle: "Routing Diretto & Form Privacy-First (Zero-Knowledge)",
+        title: "✉️ COMUNICA CON NOI",
+        subtitle: "Routing Diretto & Form Privacy-First",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
                 <p>Nessun form infinito e nessuna attesa. Risposte dirette entro 24 ore nel pieno rispetto della privacy.</p>
@@ -501,7 +501,7 @@ const modalData = {
             <!-- FORM PRIVACY-FIRST INTEGRATO -->
             <div style="background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.25); border-radius:12px; padding:1.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:1.2rem; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <span>📨 INVIO MESSAGGIO DIRECT</span>
+                    <span>📨 INVIA MESSAGGIO </span>
                     <span style="font-size:0.75rem; color:#00ff9d; font-weight:normal; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:12px; border:1px solid rgba(0,255,157,0.3);">Zero-Knowledge Ready</span>
                 </h3>
 
@@ -516,7 +516,7 @@ const modalData = {
                             </select>
                         </div>
                         <div>
-                            <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">IL TUO RECAPITO (Email / Telefono) <span style="color:#00ff9d; font-size:0.75rem;">[OPZIONALE]</span></label>
+                            <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.4rem; font-weight:600;">IL TUO RECAPITO <span style="color:#00ff9d; font-size:0.75rem;">[OPZIONALE]</span></label>
                             <input type="text" id="contact-recapito" class="cyber-input" placeholder="es. nome@azienda.it oppure +39 333..." style="width:100%;">
                         </div>
                     </div>
@@ -545,12 +545,12 @@ const modalData = {
         `
     },
     'sostienici': {
-        title: "✨ SOSTIENICI",
-        subtitle: "Supporta la Tecnologia Indipendente e Privacy-First",
+        title: "✨ SUPPORTA IL PROGETTO",
+        subtitle: "Sostieni la Tecnologia Indipendente",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
-                <p><strong>La tecnologia non deve spiarti per essere utile.</strong></p>
-                <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare tempo o denaro, puoi aiutarci a mantenere i server accesi e la ricerca indipendente attiva.</p>
+                <p><strong>Non guadagniamo su di te</strong></p>
+                <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare tempo o denaro, puoi aiutarci a tenere i server accesi e la ricerca indipendente attiva.</p>
             </div>
 
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:2rem;">
@@ -584,7 +584,7 @@ const modalData = {
 
             <div style="display:flex; justify-content:center; align-items:center; gap:10px; padding-top:1rem; border-top:1px solid rgba(0, 243, 255, 0.1);">
                 <span style="font-size:1.2rem;">🛡️</span>
-                <p style="font-size:0.75rem; color:#94a3b8; margin:0;"><strong>Trasparenza Zero-Knowledge:</strong> Nessun dato personale transita o viene salvato sui server di The Orbis Project. Le transazioni vengono processate esclusivamente dai gateway bancari esterni (Stripe/PayPal).</p>
+                <p style="font-size:0.75rem; color:#94a3b8; margin:0;"><strong>Trasparenza Zero-Knowledge:</strong> Nessun dato personale transita o viene salvato sui nostri server. Le transazioni vengono processate esclusivamente dai gateway bancari esterni (Stripe/PayPal).</p>
             </div>
         `
     },
