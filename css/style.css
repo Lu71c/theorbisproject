@@ -670,7 +670,7 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. HEADER & NAVBAR MOBILE: TITOLO CENTRATO E ALLUNGATO */
+    /* 1. HEADER & NAVBAR MOBILE */
     .top-nav {
         height: auto;
         flex-direction: row;
@@ -687,7 +687,7 @@ html, body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 10px;
+        gap: 8px;
     }
 
     .brand-logo-img {
@@ -696,20 +696,26 @@ html, body {
         flex-shrink: 0;
     }
 
-    /* Titolo "THE ORBIS PROJECT" staccato, centrato e allungato orizzontalmente */
+    /* Distanzia ORBIS da PROJECT ed evita sovrapposizioni */
+    .brand-orbis {
+        margin-right: 0.35em !important;
+    }
+
+    /* Rimuove il break di riga e stira verticalmente il testo dell'header */
+    .brand-text br {
+        display: none !important;
+    }
+
     .brand-text {
         flex: 1;
         text-align: center;
-        font-size: clamp(0.78rem, 3.2vw, 0.95rem);
-        letter-spacing: 3.5px; /* Spaziatura orizzontale amplia */
-        line-height: 1.1;
-        white-space: nowrap;
-        margin-right: 6px;
-    }
-
-    /* Rimuove l'andata a capo nel titolo dell'header su mobile */
-    .brand-text br {
-        display: none;
+        font-size: clamp(0.72rem, 3.1vw, 0.9rem) !important;
+        letter-spacing: 2.5px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+        transform: scaleY(1.3) !important; /* Stiramento verticale */
+        transform-origin: center !important;
     }
 
     .system-controls {
@@ -764,39 +770,45 @@ html, body {
         opacity: 0.9;
     }
 
-    /* 3. HERO TITOLI: MASSIMA DIMENSIONE SU 1 SOLA RIGA (SENZA ANDARE A CAPO) */
+    /* 3. HERO TITOLI: MASSIMA DIMENSIONE SU 1 SOLA RIGA */
     .hero-hud {
-        margin-top: 85px;
-        min-height: calc(100vh - 145px);
-        padding: 0.4rem 0.6rem 1rem 0.6rem;
+        margin-top: 85px !important;
+        min-height: calc(100vh - 145px) !important;
+        padding: 0.4rem 0.2rem 1rem 0.2rem !important;
     }
 
     .hero-titles {
-        width: 100%;
-        padding: 0 4px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 4px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
     }
 
-    /* Titolo Principale ingrandito al massimo consentito su una singola riga */
+    /* Titolo Principale regolato dinamicamente alla massima larghezza schermo su riga singola */
     .hero-titles h2, 
     #main-title {
-        font-size: clamp(0.72rem, 3.4vw, 1.05rem) !important;
+        font-size: clamp(12px, 3.75vw, 18px) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
         line-height: 1.2 !important;
-        margin-bottom: 0.3rem !important;
+        margin-bottom: 4px !important;
         text-align: center !important;
-        width: 100%;
+        width: 100% !important;
+        display: block !important;
+        font-weight: 800 !important;
     }
 
-    /* Sottotitolo ingrandito al massimo consentito su una singola riga */
+    /* Sottotitolo regolato dinamicamente alla massima larghezza schermo su riga singola */
     .hero-titles p, 
     #main-subtitle {
-        font-size: clamp(0.6rem, 2.7vw, 0.85rem) !important;
+        font-size: clamp(9px, 2.65vw, 13px) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
         line-height: 1.2 !important;
         text-align: center !important;
-        width: 100%;
+        width: 100% !important;
+        display: block !important;
     }
 
     /* PIANETA INGRANDITO E CENTRATO (SCHERMATA 1) */
