@@ -714,7 +714,7 @@ html, body {
         display: none !important;
     }
 
-    /* LOGO TESTO "THE ORBIS PROJECT" INGRANDITO E IMPONENTE */
+    /* LOGO TESTO "THE ORBIS PROJECT" INGRANDITO ED ELEGANTE */
     .brand-text {
         flex: 1 !important;
         text-align: center !important;
@@ -782,12 +782,12 @@ html, body {
         opacity: 0.9 !important;
     }
 
-    /* 3. HERO HUD MOBILE: MARGINE SUPERIORE AUMENTATO PER STACCARE I TITOLI DAI LINK NAV */
+    /* 3. HERO HUD MOBILE: MARGINE SUPERIORE STACCATO PER FAR RESPIRARE I LINK */
     .hero-hud {
         margin-top: 84px !important;
         height: calc(100dvh - 126px) !important;
         min-height: auto !important;
-        padding: 0.3rem 0.6rem 2.2rem 0.6rem !important; /* Bottom-padding generoso per sollevare tutto */
+        padding: 0.3rem 0.6rem 2.2rem 0.6rem !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
@@ -842,7 +842,7 @@ html, body {
 
     /* Quando il pianeta esplode (Fase 2), la griglia si abbassa di 60px lasciando respiro a Xenon */
     .hero-hud:has(.planet-exploded) .hud-container {
-        margin-top: 60px !important; 
+        margin-top: clamp(52px, 7vh, 68px) !important; 
         margin-bottom: 4px !important;
     }
 
@@ -863,7 +863,7 @@ html, body {
         pointer-events: none !important;
     }
 
-    /* LE 4 SCHEDE INGRANDITE IN VERTICALE E TRASPARENTI (Schermata 2 Mobile) */
+    /* LE 4 SCHEDE INGRANDITE CON ELASTICITÀ VERTICALE IN VH (Schermata 2 Mobile) */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -872,13 +872,13 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 18px 8px !important; /* Ingrandite in verticale */
+        padding: clamp(12px, 2.2vh, 20px) 8px !important; /* Padding dinamico in vh per schermi alti */
         gap: 6px !important;
         border-radius: 12px !important;
         flex-direction: column !important;
         text-align: center !important;
         justify-content: center !important;
-        min-height: 98px !important; /* Ingrandite da 84px a 98px per riempire con equilibrio lo spazio centrale */
+        min-height: clamp(84px, 11.5vh, 120px) !important; /* Si allunga automaticamente sugli schermi alti come iPhone 16 / Pixel 9 */
         
         /* TRASPARENZA GLASSMORPHISM PER FAR TRASPARIRE IL CANVAS STELLATO */
         background: rgba(8, 15, 30, 0.45) !important;
@@ -907,14 +907,14 @@ html, body {
         white-space: nowrap !important;
     }
 
-    /* BOTTONE ETICA E CODICE: SOLLEVATO E POSIZIONATO A METÀ DELLO SPAZIO LIBERO IN BASSO */
+    /* BOTTONE ETICA E CODICE: SOLLEVATO A METÀ DELLO SPAZIO LIBERO IN BASSO, SU 1 RIGA SGLA */
     .bottom-node {
         position: relative !important;
-        font-size: clamp(0.52rem, 2.2vw, 0.68rem) !important;
+        font-size: clamp(0.50rem, 2.15vw, 0.65rem) !important;
         white-space: nowrap !important;
         padding: 8px 14px !important;
         text-align: center !important;
-        margin: 10px auto 18px auto !important; /* Margine inferiore aumentato per farlo salire visibilmente */
+        margin: 6px auto clamp(14px, 2.5vh, 26px) auto !important; /* Margine inferiore dinamico in vh per salire al centro dello spazio libero */
         display: inline-flex !important;
         max-width: 98% !important;
         justify-content: center !important;
@@ -955,7 +955,7 @@ html, body {
     /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA INGRANDITO, FLUTTUANTE E CON FUMETTO TRASLUCIDO) */
     html body #xenon-container.xenon-moved-center {
         position: fixed !important;
-        top: 142px !important; /* Posizionato visivamente nell'interstizio perfetto sotto il sottotitolo staccato */
+        top: clamp(130px, 16vh, 150px) !important; /* Posizionato visivamente nell'interstizio perfetto sotto il sottotitolo */
         right: 10px !important;
         left: 10px !important;
         bottom: auto !important;
