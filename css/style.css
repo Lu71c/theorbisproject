@@ -66,7 +66,7 @@ html, body {
     background: radial-gradient(circle at center, transparent 30%, rgba(2, 6, 16, 0.92) 100%);
 }
 
-/* NAVBAR SUPERIORE */
+/* NAVBAR SUPERIORE (PC) */
 .top-nav {
     position: fixed;
     top: 0;
@@ -255,7 +255,6 @@ html, body {
     transition: transform 0.3s ease, opacity 0.3s ease !important;
 }
 
-/* SOTTOTITOLO SEMPRE VISIBILE IN TUTTE LE SCHERMATE */
 .hero-hud:has(.planet-exploded) #main-subtitle {
     opacity: 1;
     max-height: none;
@@ -269,7 +268,6 @@ html, body {
     overflow: visible;
 }
 
-/* SFACCETTATURE TERRAFERMA VERDE */
 .shield-facet-top,
 .shield-facet-left,
 .shield-facet-right {
@@ -672,7 +670,7 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. HEADER & NAVBAR MOBILE SU 2 RIGHE BILANCIATE SENZA SPAZI VUOTI */
+    /* 1. HEADER & NAVBAR MOBILE: TITOLO CENTRATO E ALLUNGATO */
     .top-nav {
         height: auto;
         flex-direction: row;
@@ -688,20 +686,30 @@ html, body {
         flex: 1;
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: flex-start;
+        gap: 10px;
     }
 
     .brand-logo-img {
-        width: 34px;
-        height: 34px;
+        width: 38px;
+        height: 38px;
         flex-shrink: 0;
     }
 
+    /* Titolo "THE ORBIS PROJECT" staccato, centrato e allungato orizzontalmente */
     .brand-text {
-        font-size: clamp(0.68rem, 2.8vw, 0.78rem);
-        letter-spacing: 1.8px;
-        line-height: 1.15;
+        flex: 1;
+        text-align: center;
+        font-size: clamp(0.78rem, 3.2vw, 0.95rem);
+        letter-spacing: 3.5px; /* Spaziatura orizzontale amplia */
+        line-height: 1.1;
         white-space: nowrap;
+        margin-right: 6px;
+    }
+
+    /* Rimuove l'andata a capo nel titolo dell'header su mobile */
+    .brand-text br {
+        display: none;
     }
 
     .system-controls {
@@ -756,26 +764,39 @@ html, body {
         opacity: 0.9;
     }
 
-    /* 3. HERO TITOLI SU SINGOLA RIGA SU MOBILE */
+    /* 3. HERO TITOLI: MASSIMA DIMENSIONE SU 1 SOLA RIGA (SENZA ANDARE A CAPO) */
     .hero-hud {
         margin-top: 85px;
         min-height: calc(100vh - 145px);
         padding: 0.4rem 0.6rem 1rem 0.6rem;
     }
 
-    .hero-titles h2 {
-        font-size: clamp(0.65rem, 3.1vw, 0.82rem) !important;
-        white-space: nowrap !important;
-        letter-spacing: 0px !important;
-        line-height: 1.2 !important;
-        margin-bottom: 0.2rem !important;
+    .hero-titles {
+        width: 100%;
+        padding: 0 4px;
     }
 
-    .hero-titles p {
-        font-size: clamp(0.55rem, 2.5vw, 0.68rem) !important;
+    /* Titolo Principale ingrandito al massimo consentito su una singola riga */
+    .hero-titles h2, 
+    #main-title {
+        font-size: clamp(0.72rem, 3.4vw, 1.05rem) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
         line-height: 1.2 !important;
+        margin-bottom: 0.3rem !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    /* Sottotitolo ingrandito al massimo consentito su una singola riga */
+    .hero-titles p, 
+    #main-subtitle {
+        font-size: clamp(0.6rem, 2.7vw, 0.85rem) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        width: 100%;
     }
 
     /* PIANETA INGRANDITO E CENTRATO (SCHERMATA 1) */
@@ -843,7 +864,7 @@ html, body {
         margin-top: 4px;
     }
 
-    /* 4. XENON POSIZIONAMENTO ALZATO IN SCHERMATA 1 (NON SOVRAPPONE PRIVACY) */
+    /* 4. XENON POSIZIONAMENTO ALZATO IN SCHERMATA 1 */
     #xenon-container {
         bottom: 85px !important;
         right: 12px;
@@ -868,7 +889,7 @@ html, body {
         line-height: 1.35;
     }
 
-    /* XENON IN SECONDA SCHERMATA: APPARE IN ALTO AL CENTRO E SCIVOLA MORBIDO */
+    /* XENON IN SECONDA SCHERMATA */
     #xenon-container.xenon-moved-center {
         top: 140px !important;
         left: 50% !important;
@@ -910,7 +931,7 @@ html, body {
         pointer-events: none !important;
     }
 
-    /* 5. MODALE POPUP CON CONTROLLI IN ALTO A DESTRA E TITOLO SOTTO */
+    /* 5. MODALE POPUP */
     #modal-overlay {
         align-items: flex-start;
         padding-top: 10px;
