@@ -181,7 +181,7 @@ html, body {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2) !important;
 }
 
-/* HERO MAIN & HUD LAYOUT (PC) */
+/* HERO MAIN & HUD LAYOUT (PC - INTATTO) */
 .hero-hud {
     position: relative;
     z-index: 5;
@@ -222,7 +222,7 @@ html, body {
     transition: all 0.3s ease;
 }
 
-/* HUD CONTAINER CENTRALE (PC) */
+/* HUD CONTAINER CENTRALE (PC - INTATTO) */
 .hud-container {
     position: relative;
     width: 100%;
@@ -305,7 +305,7 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (PC) */
+/* 4 NODI FLUTTUANTI (PC - INTATTO) */
 .hud-node {
     position: absolute;
     width: 420px;
@@ -710,8 +710,8 @@ html, body {
     .brand-text {
         flex: 1 !important;
         text-align: center !important;
-        font-size: clamp(0.7rem, 3vw, 0.88rem) !important;
-        letter-spacing: 2.2px !important;
+        font-size: clamp(0.72rem, 3.1vw, 0.9rem) !important;
+        letter-spacing: 2.5px !important;
         line-height: 1 !important;
         white-space: nowrap !important;
         display: inline-block !important;
@@ -774,30 +774,31 @@ html, body {
         opacity: 0.9 !important;
     }
 
-    /* 3. HERO HUD MOBILE: Layout compatto che mantiene tutto entro i pixel dello schermo */
+    /* 3. HERO HUD MOBILE: Distribuzione proporzionata che fa respirare il layout */
     .hero-hud {
-        margin-top: 70px !important;
+        margin-top: 72px !important;
         min-height: calc(100vh - 118px) !important;
-        padding: 0.2rem 0.4rem 0.4rem 0.4rem !important;
-        justify-content: flex-start !important;
-        gap: 4px !important;
+        padding: 0.5rem 0.6rem 0.6rem 0.6rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; /* Distribuisce uniformemente lo spazio dall'alto al basso */
     }
 
     .hero-titles {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 2px !important;
-        margin: 0 auto 4px auto !important;
+        margin: 0 auto 6px auto !important;
         text-align: center !important;
     }
 
     .hero-titles h2, 
     #main-title {
-        font-size: clamp(11px, 3.6vw, 17px) !important;
+        font-size: clamp(13px, 4vw, 19px) !important; /* Grandezza recuperata per la massima leggibilità */
         white-space: nowrap !important;
         letter-spacing: 0px !important;
-        line-height: 1.15 !important;
-        margin-bottom: 2px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 3px !important;
         text-align: center !important;
         width: 100% !important;
         display: block !important;
@@ -806,10 +807,10 @@ html, body {
 
     .hero-titles p, 
     #main-subtitle {
-        font-size: clamp(8.5px, 2.5vw, 12px) !important;
+        font-size: clamp(10px, 2.8vw, 13.5px) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
-        line-height: 1.15 !important;
+        line-height: 1.2 !important;
         text-align: center !important;
         width: 100% !important;
         display: block !important;
@@ -821,10 +822,17 @@ html, body {
         min-height: auto !important;
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 6px !important;
+        gap: 8px !important;
         padding: 0 !important;
         margin: 4px 0 !important;
         width: 100% !important;
+        transition: margin 0.3s ease !important;
+    }
+
+    /* Quando il pianeta esplode (Fase 2), la griglia si abbassa di 52px per lasciare spazio a Xenon */
+    .hero-hud:has(.planet-exploded) .hud-container {
+        margin-top: 52px !important; 
+        margin-bottom: 8px !important;
     }
 
     /* PIANETA (Schermata 1 Mobile) */
@@ -832,9 +840,9 @@ html, body {
         position: relative !important;
         grid-column: span 2 !important;
         justify-self: center !important;
-        width: 185px !important;
-        height: 185px !important;
-        margin: 0.2rem auto !important;
+        width: 195px !important;
+        height: 195px !important;
+        margin: 0.5rem auto !important;
     }
 
     .hud-center.planet-exploded {
@@ -853,30 +861,30 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 8px 6px !important;
-        gap: 4px !important;
+        padding: 10px 6px !important;
+        gap: 6px !important;
         border-radius: 10px !important;
         flex-direction: column !important;
         text-align: center !important;
         justify-content: center !important;
-        min-height: 64px !important;
+        min-height: 68px !important;
     }
 
     .node-icon {
-        font-size: 1.3rem !important;
+        font-size: 1.4rem !important;
     }
 
     /* TITOLI CARDS SU 1 SOLA RIGA PERFETTA (Incluso "SITO WEB INTELLIGENTE") */
     .node-text h3 {
-        font-size: clamp(0.62rem, 2.5vw, 0.74rem) !important;
+        font-size: clamp(0.65rem, 2.6vw, 0.78rem) !important;
         white-space: nowrap !important;
-        line-height: 1.1 !important;
+        line-height: 1.15 !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
     }
 
     .node-text span {
-        font-size: 0.6rem !important;
+        font-size: 0.63rem !important;
         margin-top: 2px !important;
         white-space: nowrap !important;
     }
@@ -884,11 +892,11 @@ html, body {
     /* BOTTONE ETICA E CODICE: GARANTITO VISIBILE E SU 1 SOLA RIGA */
     .bottom-node {
         position: relative !important;
-        font-size: clamp(0.48rem, 2.05vw, 0.62rem) !important;
+        font-size: clamp(0.55rem, 2.2vw, 0.7rem) !important;
         white-space: nowrap !important;
-        padding: 6px 10px !important;
+        padding: 8px 14px !important;
         text-align: center !important;
-        margin: 8px auto 2px auto !important;
+        margin: 8px auto 6px auto !important;
         display: inline-flex !important;
         max-width: 98% !important;
         justify-content: center !important;
@@ -926,7 +934,7 @@ html, body {
     /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA PER POLLICE DESTRO, FLUTTUANTE E FUMETTO TRASLUCIDO) */
     html body #xenon-container.xenon-moved-center {
         position: fixed !important;
-        top: 128px !important; /* Interstizio perfetto sotto il sottotitolo */
+        top: 122px !important; /* Interstizio esatto tra sottotitolo e griglia */
         right: 8px !important;
         left: 8px !important;
         bottom: auto !important;
@@ -941,6 +949,7 @@ html, body {
         /* Animazione continua di fluttuazione attiva */
         animation: xenonMobileRightFloat 3.8s ease-in-out infinite !important;
         transition: all 0.6s ease !important;
+        z-index: 60 !important;
     }
 
     @keyframes xenonMobileRightFloat {
@@ -955,8 +964,8 @@ html, body {
     /* Avatar alieno cliccabile a destra */
     html body #xenon-container.xenon-moved-center #xenon-avatar,
     html body #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 48px !important;
-        height: 48px !important;
+        width: 50px !important;
+        height: 50px !important;
         flex-shrink: 0 !important;
         pointer-events: auto !important;
     }
@@ -965,9 +974,9 @@ html, body {
     html body #xenon-container.xenon-moved-center #xenon-speech,
     html body #xenon-container.xenon-moved-center .xenon-bubble {
         max-width: calc(100% - 62px) !important;
-        padding: 4px 8px !important;
+        padding: 5px 8px !important;
         text-align: left !important;
-        background: rgba(8, 15, 30, 0.35) !important;
+        background: rgba(8, 15, 30, 0.45) !important;
         border: 1px solid rgba(0, 243, 255, 0.22) !important;
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
@@ -979,7 +988,7 @@ html, body {
 
     html body #xenon-container.xenon-moved-center .xenon-bubble p {
         color: #ffffff !important;
-        font-size: 0.62rem !important;
+        font-size: 0.65rem !important;
         line-height: 1.2 !important;
         font-weight: 500 !important;
         text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;
