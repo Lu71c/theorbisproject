@@ -186,13 +186,14 @@ html, body {
     position: relative;
     z-index: 5;
     width: 100vw;
-    min-height: calc(100vh - 100px); 
-    margin-top: 65px;
+    min-height: calc(100vh - 110px); 
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 0.2rem 2rem 1rem 2rem;
+    justify-content: center;
+    padding: 0.5rem 2rem 1rem 2rem;
+    gap: 15px;
 }
 
 /* TITOLI CENTRALI */
@@ -221,22 +222,22 @@ html, body {
     transition: all 0.3s ease;
 }
 
-/* HUD CONTAINER CENTRALE (PC) */
+/* HUD CONTAINER CENTRALE (PC - Ridotta l'altezza per stringere la spaccatura verticale) */
 .hud-container {
     position: relative;
     width: 100%;
-    max-width: 1100px; /* Ridotto da 1280px a 1100px per stringere la griglia */
-    height: 420px;
+    max-width: 1200px;
+    height: 320px; /* Ridotto da 420px a 320px: la fila sopra e quella sotto si avvicinano fortemente! */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 /* PIANETA ORBIS OLOGRAMMA 3D */
 .hud-center.planet-interactive {
-    width: 330px;
-    height: 330px;
+    width: 320px;
+    height: 320px;
     position: absolute;
     z-index: 10;
     cursor: pointer;
@@ -304,10 +305,10 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (PC: Schede riavvicinate verso il centro, eliminando l'autostrada vuota) */
+/* 4 NODI FLUTTUANTI (PC: Eliminata l'autostrada orizzontale) */
 .hud-node {
     position: absolute;
-    width: 410px;
+    width: 420px;
     padding: 22px 26px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -333,11 +334,11 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-/* Posizionamento PC compatto verso il centro */
-.node-top-left     { top: 15px; left: 110px; }
-.node-top-right    { top: 15px; right: 110px; }
-.node-bottom-left  { bottom: 15px; left: 110px; }
-.node-bottom-right { bottom: 15px; right: 110px; }
+/* Posizionamento PC compatto: le schede in alto scendono e quelle in basso salgono verso l'alieno */
+.node-top-left     { top: 0px; left: 100px; }
+.node-top-right    { top: 0px; right: 100px; }
+.node-bottom-left  { bottom: 0px; left: 100px; }
+.node-bottom-right { bottom: 0px; right: 100px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
@@ -388,7 +389,7 @@ html, body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
     z-index: 100;
-    margin-bottom: 20px; 
+    margin-top: 10px;
 }
 
 .bottom-node:not(.hud-node-hidden):hover {
@@ -414,7 +415,7 @@ html, body {
     100% { transform: scale(0.95); opacity: 0.7; }
 }
 
-/* XENON: GUIDA ALIENA FLUTTUANTE (Posizione Iniziale) */
+/* XENON: GUIDA ALIENA FLUTTUANTE (PC) */
 #xenon-container {
     position: fixed;
     bottom: 50px;
@@ -428,7 +429,6 @@ html, body {
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* XENON PC: SCHERMATA 2 (Al centro esatto, fumetto scompare) */
 #xenon-container.xenon-moved-center {
     top: 50% !important;
     left: 50% !important;
@@ -481,7 +481,6 @@ html, body {
     opacity: 1;
 }
 
-/* Su PC, il fumetto scompare quando va al centro */
 #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
     opacity: 0 !important;
     transform: translateY(-10px) scale(0.9) !important;
@@ -776,11 +775,11 @@ html, body {
         opacity: 0.9;
     }
 
-    /* 3. HERO HUD MOBILE: De-compresso con spaziatura equilibrata */
+    /* 3. HERO HUD MOBILE: De-compresso per dare respiro */
     .hero-hud {
-        margin-top: 78px !important;
-        min-height: calc(100vh - 135px) !important;
-        padding: 0.6rem 0.5rem 1rem 0.5rem !important;
+        margin-top: 80px !important;
+        min-height: calc(100vh - 130px) !important;
+        padding: 0.4rem 0.6rem 0.8rem 0.6rem !important;
         justify-content: space-between !important;
     }
 
@@ -822,13 +821,13 @@ html, body {
         min-height: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px !important; /* Aumentato gap per de-comprimere le schede */
+        gap: 10px !important;
         padding: 4px 0;
-        margin: 10px 0 !important;
+        margin: 12px 0 !important;
         width: 100%;
     }
 
-    /* PIANETA (Schermata 1) */
+    /* PIANETA (Schermata 1 Mobile) */
     .hud-center.planet-interactive {
         position: relative;
         grid-column: span 2;
@@ -854,7 +853,7 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 12px 10px !important; /* Padding confortevole */
+        padding: 12px 10px !important;
         gap: 8px !important;
         border-radius: 12px !important;
         flex-direction: column !important;
@@ -877,11 +876,11 @@ html, body {
         margin-top: 3px !important;
     }
 
-    /* BOTTONE ETICA E CODICE: Forzato su 1 SOLA RIGA elegante su mobile */
+    /* BOTTONE ETICA E CODICE: Visibile su 1 SOLA RIGA pulita */
     .bottom-node {
         position: relative !important;
-        font-size: clamp(0.55rem, 2.35vw, 0.72rem) !important; /* Font calibrato per riga singola */
-        white-space: nowrap !important; /* Niente andata a capo */
+        font-size: clamp(0.52rem, 2.2vw, 0.68rem) !important;
+        white-space: nowrap !important;
         padding: 8px 14px !important;
         text-align: center;
         margin: 14px auto 8px auto !important;
@@ -890,6 +889,8 @@ html, body {
         justify-content: center;
         align-items: center;
         line-height: 1 !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
     /* 4. XENON POSIZIONAMENTO INIZIALE (Schermata 1 Mobile) */
@@ -917,16 +918,16 @@ html, body {
         line-height: 1.35;
     }
 
-    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA PER POLLICE DESTRO, CON MOVIMENTO E FUMETTO TRASLUCIDO SU 3 RIGHE) */
+    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA, CENTRATO TRA SOTTOTITOLO E SCHEDE, IN MOVIMENTO CONTINUO) */
     #xenon-container.xenon-moved-center {
-        /* Posizionato in alto a destra, nell'interstizio tra sottotitolo e griglia */
-        top: 118px !important; 
+        /* Posizionamento assoluto nell'interstizio verticale tra sottotitolo e griglia */
+        top: 105px !important; 
         right: 12px !important;
         left: auto !important;
         bottom: auto !important;
         transform: none !important;
         
-        flex-direction: row-reverse !important; /* Alieno a DESTRA, Fumetto a SINISTRA */
+        flex-direction: row-reverse !important; /* Alieno a DESTRA (facile da toccare col pollice), Fumetto a SINISTRA */
         align-items: center !important;
         justify-content: flex-end !important;
         gap: 8px !important;
@@ -941,34 +942,34 @@ html, body {
             transform: translateY(0px) rotate(0deg);
         }
         50% {
-            transform: translateY(-6px) rotate(1.5deg);
+            transform: translateY(-7px) rotate(2deg);
         }
     }
 
-    /* Alieno cliccabile a destra */
+    /* Alieno cliccabile sulla destra */
     #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 58px !important;
-        height: 58px !important;
-        flex-shrink: 0;
+        width: 55px !important;
+        height: 55px !important;
+        flex-shrink: 0 !important;
     }
 
-    /* Fumetto traslucido compatto in max 3 righe a sinistra dell'alieno */
+    /* Fumetto trasparente a sinistra in max 3 righe */
     #xenon-container.xenon-moved-center .xenon-bubble {
         max-width: 210px !important;
-        padding: 6px 10px !important;
+        padding: 5px 9px !important;
         text-align: left !important;
-        /* VETRO TRASPARENTE PER MOSTRARE LO SFONDO GALATTICO */
+        /* VETRO TRASPARENTE PER FAR VEDERE LO SFONDO SPASIALE */
         background: rgba(8, 15, 30, 0.35) !important;
-        border: 1px solid rgba(0, 243, 255, 0.22) !important;
+        border: 1px solid rgba(0, 243, 255, 0.2) !important;
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
         transition: opacity 0.6s ease, transform 0.6s ease !important;
     }
     
     #xenon-container.xenon-moved-center .xenon-bubble p {
         color: #ffffff !important;
-        font-size: 0.68rem !important; /* Ridotto per rientrare in 3 righe */
+        font-size: 0.67rem !important;
         line-height: 1.25 !important;
         font-weight: 500 !important;
         text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;
