@@ -181,18 +181,17 @@ html, body {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2) !important;
 }
 
-/* HERO MAIN & HUD LAYOUT (Modificato per PC per salvare spazio verticale) */
+/* HERO MAIN & HUD LAYOUT (PC) */
 .hero-hud {
     position: relative;
     z-index: 5;
     width: 100vw;
-    /* Riduciamo l'altezza minima e i margini per PC per far entrare il pulsante Compliance */
     min-height: calc(100vh - 100px); 
-    margin-top: 60px;
+    margin-top: 65px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; /* Distribuisce meglio lo spazio verticale */
+    justify-content: space-evenly;
     padding: 0.2rem 2rem 1rem 2rem;
 }
 
@@ -201,7 +200,7 @@ html, body {
     text-align: center;
     max-width: 900px;
     transition: all 0.3s ease;
-    margin-bottom: 0; /* Rimuove margini per PC */
+    margin-bottom: 0;
 }
 
 .hero-titles h2 {
@@ -210,7 +209,7 @@ html, body {
     letter-spacing: 1px;
     color: #ffffff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    margin-bottom: 0.4rem; /* Leggermente ridotto */
+    margin-bottom: 0.4rem;
 }
 
 .hero-titles p {
@@ -222,22 +221,22 @@ html, body {
     transition: all 0.3s ease;
 }
 
-/* HUD CONTAINER CENTRALE AMPLIATO (Compresso verticalmente per PC) */
+/* HUD CONTAINER CENTRALE (PC) */
 .hud-container {
     position: relative;
     width: 100%;
-    max-width: 1280px;
-    height: 440px; /* Ridotto da 520px a 440px per stringere le schede al centro */
+    max-width: 1100px; /* Ridotto da 1280px a 1100px per stringere la griglia */
+    height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0; /* Margine per distanziare dai titoli in alto */
+    margin: 8px 0;
 }
 
 /* PIANETA ORBIS OLOGRAMMA 3D */
 .hud-center.planet-interactive {
-    width: 340px; /* Leggermente più piccolo su PC */
-    height: 340px;
+    width: 330px;
+    height: 330px;
     position: absolute;
     z-index: 10;
     cursor: pointer;
@@ -305,11 +304,11 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (PC) */
+/* 4 NODI FLUTTUANTI (PC: Schede riavvicinate verso il centro, eliminando l'autostrada vuota) */
 .hud-node {
     position: absolute;
-    width: 410px; /* Leggermente ridotte per evitare sovrapposizioni a 100% zoom */
-    padding: 24px 28px;
+    width: 410px;
+    padding: 22px 26px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(18px);
@@ -334,11 +333,11 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-/* Riposizionamento Schede PC per creare spazio al centro/basso */
-.node-top-left     { top: 25px; left: 140px; }
-.node-top-right    { top: 25px; right: 140px; }
-.node-bottom-left  { bottom: 25px; left: 140px; }
-.node-bottom-right { bottom: 25px; right: 140px; }
+/* Posizionamento PC compatto verso il centro */
+.node-top-left     { top: 15px; left: 110px; }
+.node-top-right    { top: 15px; right: 110px; }
+.node-bottom-left  { bottom: 15px; left: 110px; }
+.node-bottom-right { bottom: 15px; right: 110px; }
 
 .hud-node:not(.hud-node-hidden):hover {
     border-color: var(--emerald-glow);
@@ -348,13 +347,13 @@ html, body {
 }
 
 .node-icon {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     filter: drop-shadow(0 0 14px rgba(0, 243, 255, 0.8));
     flex-shrink: 0;
 }
 
 .node-text h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #ffffff;
     letter-spacing: 0.5px;
@@ -364,7 +363,7 @@ html, body {
     font-size: 0.85rem;
     color: var(--text-secondary);
     display: block;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 /* BOTTOM NODE (COMPLIANCE CENTER) - PC */
@@ -376,21 +375,20 @@ html, body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 9px 28px;
+    padding: 8px 24px;
     background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
     border-radius: 25px;
     color: var(--cyan-glow);
     text-decoration: none;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
     z-index: 100;
-    /* Margini regolati per posizionamento assoluto su PC */
-    margin-bottom: 25px; 
+    margin-bottom: 20px; 
 }
 
 .bottom-node:not(.hud-node-hidden):hover {
@@ -677,7 +675,7 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. HEADER & NAVBAR MOBILE: PERFETTO CENTRAGGIO VERTICALE */
+    /* 1. HEADER & NAVBAR MOBILE */
     .top-nav {
         height: auto;
         flex-direction: row;
@@ -778,19 +776,19 @@ html, body {
         opacity: 0.9;
     }
 
-    /* 3. HERO HUD MOBILE: Compressione verticale per inserire il pulsante Etica */
+    /* 3. HERO HUD MOBILE: De-compresso con spaziatura equilibrata */
     .hero-hud {
-        margin-top: 85px !important;
-        min-height: calc(100vh - 145px) !important;
-        padding: 0.4rem 0.2rem 1rem 0.2rem !important;
-        justify-content: flex-start !important; /* Compatta gli elementi verso l'alto */
+        margin-top: 78px !important;
+        min-height: calc(100vh - 135px) !important;
+        padding: 0.6rem 0.5rem 1rem 0.5rem !important;
+        justify-content: space-between !important;
     }
 
     .hero-titles {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 4px !important;
-        margin: 0 auto 10px auto !important; /* Leggero margine sotto i titoli */
+        margin: 0 auto 12px auto !important;
         text-align: center !important;
     }
 
@@ -818,16 +816,16 @@ html, body {
         display: block !important;
     }
 
-    /* GRIGLIA CONTAINER SCHEDE E PIANETA (Compresso su Mobile) */
+    /* GRIGLIA CONTAINER SCHEDE E PIANETA (MOBILE) */
     .hud-container {
         height: auto;
         min-height: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 6px; /* Gap ridotto per salvare spazio */
-        padding: 0;
-        margin: 0;
-        width: 98%;
+        gap: 10px !important; /* Aumentato gap per de-comprimere le schede */
+        padding: 4px 0;
+        margin: 10px 0 !important;
+        width: 100%;
     }
 
     /* PIANETA (Schermata 1) */
@@ -837,7 +835,7 @@ html, body {
         justify-self: center;
         width: 200px !important;
         height: 200px !important;
-        margin: 0.2rem auto !important; /* Margini ridotti */
+        margin: 0.5rem auto !important;
     }
 
     .hud-center.planet-exploded {
@@ -847,7 +845,7 @@ html, body {
         pointer-events: none !important;
     }
 
-    /* LE 4 SCHEDE (Schermata 2) */
+    /* LE 4 SCHEDE (Schermata 2 Mobile) */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -856,38 +854,42 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 8px 10px !important; /* Padding compresso */
-        gap: 6px !important; /* Gap compresso */
-        border-radius: 10px !important;
+        padding: 12px 10px !important; /* Padding confortevole */
+        gap: 8px !important;
+        border-radius: 12px !important;
         flex-direction: column !important;
         text-align: center !important;
         justify-content: center !important;
+        min-height: 85px !important;
     }
 
     .node-icon {
-        font-size: 1.4rem !important; /* Leggermente ridotto per mobile */
+        font-size: 1.6rem !important;
     }
 
     .node-text h3 {
-        font-size: 0.78rem !important; /* Leggermente ridotto */
+        font-size: 0.8rem !important;
         line-height: 1.15 !important;
     }
 
     .node-text span {
-        font-size: 0.65rem !important;
-        margin-top: 2px !important;
+        font-size: 0.68rem !important;
+        margin-top: 3px !important;
     }
 
-    /* BOTTONE ETICA E CODICE: Ora è sempre visibile sotto la griglia delle 4 schede */
+    /* BOTTONE ETICA E CODICE: Forzato su 1 SOLA RIGA elegante su mobile */
     .bottom-node {
-        position: relative !important; /* Lo svincola da posizionamenti assoluti anomali */
-        font-size: 0.7rem;
-        padding: 6px 14px;
+        position: relative !important;
+        font-size: clamp(0.55rem, 2.35vw, 0.72rem) !important; /* Font calibrato per riga singola */
+        white-space: nowrap !important; /* Niente andata a capo */
+        padding: 8px 14px !important;
         text-align: center;
-        margin: 15px auto 0 auto !important; /* Spinge verso il basso creando un blocco centrale sotto le schede */
-        display: flex !important;
-        max-width: 90%;
+        margin: 14px auto 8px auto !important;
+        display: inline-flex !important;
+        max-width: 96% !important;
         justify-content: center;
+        align-items: center;
+        line-height: 1 !important;
     }
 
     /* 4. XENON POSIZIONAMENTO INIZIALE (Schermata 1 Mobile) */
@@ -915,63 +917,66 @@ html, body {
         line-height: 1.35;
     }
 
-    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA, SOPRA LE SCHEDE, FUMETTO TRASLUCIDO) */
+    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA PER POLLICE DESTRO, CON MOVIMENTO E FUMETTO TRASLUCIDO SU 3 RIGHE) */
     #xenon-container.xenon-moved-center {
-        /* Lo fissa a destra invece che al centro */
-        top: 130px !important; 
-        right: 15px !important;
+        /* Posizionato in alto a destra, nell'interstizio tra sottotitolo e griglia */
+        top: 118px !important; 
+        right: 12px !important;
         left: auto !important;
         bottom: auto !important;
-        transform: none !important; /* Rimuove la traslazione del centro */
+        transform: none !important;
         
-        flex-direction: row-reverse !important; /* Inverte l'ordine: Alieno a destra, Fumetto a sinistra */
-        align-items: flex-start !important; /* Allinea in alto */
+        flex-direction: row-reverse !important; /* Alieno a DESTRA, Fumetto a SINISTRA */
+        align-items: center !important;
         justify-content: flex-end !important;
-        gap: 10px !important;
+        gap: 8px !important;
         
-        animation: xenonMobileRightFloat 5s ease-in-out infinite !important;
+        /* Animazione continua di fluttuazione anche in schermata 2 */
+        animation: xenonMobileRightFloat 4s ease-in-out infinite !important;
         transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     @keyframes xenonMobileRightFloat {
         0%, 100% {
-            transform: translateY(0px);
+            transform: translateY(0px) rotate(0deg);
         }
         50% {
-            transform: translateY(-6px);
+            transform: translateY(-6px) rotate(1.5deg);
         }
     }
 
-    /* Dimensioni alieno quando si sposta a destra */
+    /* Alieno cliccabile a destra */
     #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 60px !important; /* Un po' più piccolo per non coprire troppo */
-        height: 60px !important;
+        width: 58px !important;
+        height: 58px !important;
         flex-shrink: 0;
     }
 
-    /* Il fumetto di Xenon in Schermata 2 Mobile DIVENTA TRASPARENTE */
+    /* Fumetto traslucido compatto in max 3 righe a sinistra dell'alieno */
     #xenon-container.xenon-moved-center .xenon-bubble {
-        max-width: 200px !important;
+        max-width: 210px !important;
         padding: 6px 10px !important;
         text-align: left !important;
-        /* EFFETTO TRASPARENZA VETRO PER FAR VEDERE LE STELLE */
-        background: rgba(8, 15, 30, 0.3) !important; /* Sfondo scuro ma molto trasparente */
-        border: 1px solid rgba(0, 243, 255, 0.15) !important; /* Bordo alleggerito */
-        backdrop-filter: blur(4px) !important; /* Leggera sfocatura, ma fa passare il bg */
-        box-shadow: none !important; /* Togliamo ombre pesanti */
+        /* VETRO TRASPARENTE PER MOSTRARE LO SFONDO GALATTICO */
+        background: rgba(8, 15, 30, 0.35) !important;
+        border: 1px solid rgba(0, 243, 255, 0.22) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
         transition: opacity 0.6s ease, transform 0.6s ease !important;
     }
     
-    /* Forza il testo nel fumetto traslucido ad essere brillante per contrasto */
     #xenon-container.xenon-moved-center .xenon-bubble p {
         color: #ffffff !important;
+        font-size: 0.68rem !important; /* Ridotto per rientrare in 3 righe */
+        line-height: 1.25 !important;
         font-weight: 500 !important;
-        text-shadow: 0 0 5px rgba(0,0,0,0.8) !important; /* Ombra interna per leggibilità */
+        text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;
     }
 
-    /* Annulliamo il fade-out del fumetto su mobile (DEVE RIMANERE VISIBILE) */
+    /* Mantiene il fumetto visibile su mobile */
     #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
-        opacity: 1 !important; /* Sovrascriviamo l'opacità a 0 per mantenerlo visibile */
+        opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
         pointer-events: auto !important;
     }
