@@ -340,14 +340,14 @@ const modalData = {
         `
     },
     'chi-siamo': {
-        title: "🏢 CHI SONO // SIMONE CLEMENTE",
-        subtitle: "Filosofia, Esperienza sul Campo e Intelligenza Artificiale al Servizio dell'Uomo",
+        title: "🏢 CHI SIAMO? O MEGLIO, CHI SONO?",
+        subtitle: "Sudio, Capacità, Esperienza sul Campo e IA Etica al Servizio dell'Uomo",
         content: `
             <!-- INTRO BIO PERSONALE -->
             <div style="line-height:1.65; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
-                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">👋 CIAO, SONO SIMONE CLEMENTE</p>
-                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">Nato nel 1996, ho sempre coltivato due grandi passioni apparentemente opposte: da un lato la storia, la filosofia e gli studi umanistici, dall'altro la tecnologia, la programmazione e i sistemi informatici. <strong>The Orbis Project</strong> è il punto d'incontro esatto tra questi due mondi.</p>
-                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65; margin-top:0.8rem;">Attualmente frequento il corso universitario in <strong>Filosofia e Intelligenza Artificiale</strong>, un percorso ripreso in età adulta mentre continuavo a lavorare. Con oltre dieci anni di esperienza sul campo nel mondo del lavoro reale, ho imparato a conoscere da vicino le difficoltà quotidiane, i punti d'attrito e le inefficienze che rallentano persone e imprese.</p>
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">👋 CIAO, BENVENUTO!</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">Mi chiamo Simone Clemente e sono nato a Roma nel 1996. Lavoro da quando ho 16 anni ma nel privato ho sempre coltivato due grandi passioni apparentemente opposte: da un lato la storia, la filosofia e gli studi umanistici, dall'altro la tecnologia, la programmazione e i sistemi informatici. <strong>The Orbis Project</strong> è il punto d'incontro esatto tra questi due mondi.</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65; margin-top:0.8rem;">Una volta compiuti 30 anni, con quindici anni di esperienza maturati in diversi settori nel mondo del lavoro reale, dove ho imparato a conoscere da vicino le difficoltà quotidiane, i punti d'attrito e le inefficienze che rallentano persone e imprese, ho deciso di mettere in campo le mie capacità per puntare a migliorarne i punti di attrito</p>
             </div>
 
             <!-- I 3 PILASTRI DELLA MIA VISIONE -->
@@ -359,13 +359,13 @@ const modalData = {
                 </div>
 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
-                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">💼 10+ Anni di Esperienza Reale</h4>
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">💼 15+ Anni di Esperienza Reale</h4>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Non parlo per teorie astratte. Ho vissuto sulla mia pelle il lavoro quotidiano, comprendendo esattamente dove si annidano i colli di bottiglia e le perdite di tempo.</p>
                 </div>
 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">⚡ Eliminazione dell'Attrito</h4>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Progetto automazioni e Agenti AI con un solo scopo: liberare l'uomo dai compiti ripetitivi e meccanici, restituendo tempo, energia e dignità al lavoro.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Progetto automazioni e IA con un solo scopo: liberare l'uomo dai compiti ripetitivi e meccanici, restituendo tempo, energia e dignità al lavoratore.</p>
                 </div>
 
             </div>
@@ -377,13 +377,13 @@ const modalData = {
         `
     },
     'info': {
-        title: "ℹ INFORMAZIONI // THE ORBIS PROJECT",
+        title: "THE ORBIS PROJECT",
         subtitle: "Democratizzare la tecnologia avanzata con un'architettura etica e Privacy-First",
         content: `
             <!-- MANIFESTO TECNOLOGICO E FILOSOFICO -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
                 <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">💡 DALLA SILICON VALLEY AL NEGOZIO SOTTO CASA</p>
-                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">La tecnologia più avanzata del pianeta non deve essere un privilegio riservato alle multinazionali, né un cavallo di Troia per sottrarre e monetizzare i dati aziendali. <strong>The Orbis Project</strong> nasce con una missione precisa: democratizzare l'innovazione radicale, mettendo nelle mani di chiunque, dal piccolo commerciante locale al professionista indipendente, le stesse capacità analitiche, la potenza dell'IA e l'efficienza strutturale sviluppate nei grandi laboratori tech della California.</p>
+                <p style="font-size:0.9rem; color:#94a3b8; line-height:1.65;">La tecnologia non deve essere un privilegio riservato alle multinazionali, né un cavallo di Troia usato per sottrarre i tuoi dati e monetizzarli. <strong>The Orbis Project</strong> nasce con una missione precisa: democratizzare l'innovazione, mettendo nelle mani di chiunque, dal piccolo commerciante locale al professionista indipendente, la stessa efficienza usata nei grandi laboratori tech e IA.</p>
             </div>
 
             <!-- I 3 PILASTRI DEL PROGETTO -->
@@ -391,12 +391,12 @@ const modalData = {
                 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1rem;">🚀 Accessibilità Senza Attrito</h4>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Portiamo soluzioni di livello enterprise a costi abbattuti e con una curva di apprendimento pari a zero, eliminando qualsiasi complessità inutile.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Portiamo soluzioni di livello enterprise, facili da usare e a costi abbattuti, eliminando qualsiasi complessità inutile. È la tecnologia che deve piegarsi all'umano e non viceversa.</p>
                 </div>
 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
                     <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">🔐 Sovranità dei Dati (Zero-Knowledge)</h4>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun tracciamento, nessuna profilazione, nessuna vendita di informazioni a terzi. La tecnologia deve lavorare <em>per</em> l'utente, non <em>sull'utente</em>.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Qui non sarai tracciato,profilato e nessuno venderà le tue informazioni a terzi. Il nostro sito deve lavorare <em>per</em> l'utente, non <em>sull'utente</em>.</p>
                 </div>
 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.2rem;">
@@ -408,7 +408,7 @@ const modalData = {
 
             <!-- CHIUSA SINTETICA -->
             <div style="text-align:center; padding:1rem; background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px;">
-                <p style="font-size:0.85rem; color:#e2e8f0; margin:0;">Non vendiamo software "in prestito" con trappole di rinnovo: progettiamo strumenti di emancipazione digitale etici, veloci e accessibili a tutti.</p>
+                <p style="font-size:0.85rem; color:#e2e8f0; margin:0;">Non vendiamo software "in prestito" con trappole di rinnovo: progettiamo strumenti di emancipazione digitale accessibili a tutti.</p>
             </div>
         `
     },
