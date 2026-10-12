@@ -340,8 +340,8 @@ const modalData = {
         `
     },
     'chi-siamo': {
-        title: "🏢 CHI SIAMO? O MEGLIO, CHI SONO?",
-        subtitle: "Sudio, Capacità, Esperienza sul Campo e IA Etica al Servizio dell'Uomo",
+        title: "🏢 O MEGLIO, CHI SONO?",
+        subtitle: "Studio, Esperienza sul Campo, Innovazione Tecnologica e IA Etica al Servizio dell'Uomo",
         content: `
             <!-- INTRO BIO PERSONALE -->
             <div style="line-height:1.65; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
@@ -395,7 +395,7 @@ const modalData = {
                 </div>
 
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.2rem;">
-                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">🔐 Sovranità dei Dati (Zero-Knowledge)</h4>
+                    <h4 style="color:#00ff9d; margin-bottom:0.5rem; font-size:1rem;">🔐 Sovranità dei Dati</h4>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Qui non sarai tracciato,profilato e nessuno venderà le tue informazioni a terzi. Il nostro sito deve lavorare <em>per</em> l'utente, non <em>sull'utente</em>.</p>
                 </div>
 
@@ -413,8 +413,8 @@ const modalData = {
         `
     },
     'lavora-con-noi': {
-        title: "🤝 LAVORA CON NOI // OPEN CALL & TESTING",
-        subtitle: "Stress Test, Red Teaming AI e programma per Hacker Etici",
+        title: "🤝 OPEN CALL & TESTING",
+        subtitle: "Stress Test, Red Teaming AI e Hacker Etici",
         content: `
             <!-- INTRODUZIONE -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
@@ -428,7 +428,7 @@ const modalData = {
                 <!-- PROFILO 1: ETHICAL HACKERS -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">🛡️ Hacker Etici (Security)</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">🛡️ Hacker Etici</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Penetration Testing</span>
                     </div>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Cerchiamo esperti di cibersicurezza per scovare eventuali falle nel codice Vanilla JS, nell'infrastruttura web e nei form Zero-Knowledge. <em>Regola fondamentale:</em> definiremo insieme le regole d'ingaggio preventivamente via email prima di qualsiasi test.</p>
@@ -437,16 +437,16 @@ const modalData = {
                 <!-- PROFILO 2: AI RED TEAMING -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 255, 157, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00ff9d; font-size:1rem;">🧠 AI Stress Tester (Red Team)</h4>
+                        <h4 style="color:#00ff9d; font-size:1rem;">🧠 AI Stress Tester</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Prompt Injection</span>
                     </div>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Il tuo compito sarà tentare di forzare le istruzioni di sistema dei nostri Agenti AI (Gems), cercare di provocare allucinazioni o aggirare le logiche di controllo, aiutandoci a renderli invulnerabili alle tecniche di prompt injection.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Il tuo compito sarà tentare di forzare le istruzioni di sistema dei nostri Agenti AI, cercare di provocare allucinazioni o aggirare le logiche di controllo, aiutandoci a renderli invulnerabili al prompt injection.</p>
                 </div>
 
                 <!-- PROFILO 3: BETA TESTERS -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">⚡ Beta Tester & Early Adopters</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">⚡ Beta Tester</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">UX & Field Testing</span>
                     </div>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Utenti reali, professionisti e commercianti disposti a testare in anteprima i nuovi prototipi B2B, le automazioni e gli script OSINT, fornendo feedback critici su usabilità, velocità e valore pratico nel mondo reale.</p>
@@ -456,13 +456,13 @@ const modalData = {
 
             <!-- CALL TO ACTION -->
             <div style="text-align:center; padding:1.2rem; background:rgba(8, 15, 30, 0.8); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px;">
-                <p style="font-size:0.88rem; color:#e2e8f0; margin-bottom:0.8rem;">Vuoi collaborare con noi o metterti alla prova come tester?</p>
+                <p style="font-size:0.88rem; color:#e2e8f0; margin-bottom:0.8rem;">Vuoi collaborare con noi? Scrivici!</p>
                 <button onclick="openModal('contatti')" style="background:rgba(0, 255, 157, 0.12); border:1px solid #00ff9d; color:#00ff9d; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:0.85rem; font-family:var(--font-main); transition:all 0.3s ease;">✉️ CANDIDATI O PROPONI UN TEST</button>
             </div>
         `
     },
     'contatti': {
-        title: "✉️ COMUNICA CON NOI",
+        title: "✉️ CONTATTA ORBIS",
         subtitle: "Routing Diretto & Form Privacy-First",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
