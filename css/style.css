@@ -670,7 +670,7 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* 1. HEADER & NAVBAR MOBILE */
+    /* 1. HEADER & NAVBAR MOBILE: PERFETTO CENTRAGGIO VERTICALE */
     .top-nav {
         height: auto;
         flex-direction: row;
@@ -701,7 +701,7 @@ html, body {
         margin-right: 0.35em !important;
     }
 
-    /* Rimuove il break di riga e allunga il testo dell'header sull'asse Y del 95% verso il basso */
+    /* Rimuove il break di riga e stira il testo in asse centrale con l'icona del logo e dei pulsanti */
     .brand-text br {
         display: none !important;
     }
@@ -714,13 +714,15 @@ html, body {
         line-height: 1 !important;
         white-space: nowrap !important;
         display: inline-block !important;
-        transform: scaleY(1.95) !important; /* Ingrandito e allungato verticalmente del +50% rispetto al valore precedente */
-        transform-origin: top center !important; /* Forza lo stiramento verso il basso */
-        margin-top: 2px !important;
+        transform: scaleY(1.4) !important; /* Stiramento verticale proporzionato */
+        transform-origin: center center !important; /* Allineamento sull'asse mediano senza decentrare verso il basso */
+        margin: 0 !important;
     }
 
     .system-controls {
         order: 2;
+        display: flex;
+        align-items: center;
         gap: 6px;
         flex-shrink: 0;
     }
