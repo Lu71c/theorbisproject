@@ -222,12 +222,12 @@ html, body {
     transition: all 0.3s ease;
 }
 
-/* HUD CONTAINER CENTRALE (PC - Ridotta l'altezza per stringere la spaccatura verticale) */
+/* HUD CONTAINER CENTRALE (PC) */
 .hud-container {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 320px; /* Ridotto da 420px a 320px: la fila sopra e quella sotto si avvicinano fortemente! */
+    height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -305,7 +305,7 @@ html, body {
     }
 }
 
-/* 4 NODI FLUTTUANTI (PC: Eliminata l'autostrada orizzontale) */
+/* 4 NODI FLUTTUANTI (PC) */
 .hud-node {
     position: absolute;
     width: 420px;
@@ -334,7 +334,6 @@ html, body {
     transform: scale(0.2) !important;
 }
 
-/* Posizionamento PC compatto: le schede in alto scendono e quelle in basso salgono verso l'alieno */
 .node-top-left     { top: 0px; left: 100px; }
 .node-top-right    { top: 0px; right: 100px; }
 .node-bottom-left  { bottom: 0px; left: 100px; }
@@ -676,32 +675,32 @@ html, body {
 @media (max-width: 768px) {
     /* 1. HEADER & NAVBAR MOBILE */
     .top-nav {
-        height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 8px 12px;
-        justify-content: space-between;
-        align-items: center;
-        gap: 6px;
+        height: auto !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        padding: 6px 10px !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 4px !important;
     }
 
     .brand-container {
-        order: 1;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
+        order: 1 !important;
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
     }
 
     .brand-logo-img {
-        width: 38px;
-        height: 38px;
-        flex-shrink: 0;
+        width: 36px !important;
+        height: 36px !important;
+        flex-shrink: 0 !important;
     }
 
     .brand-orbis {
-        margin-right: 0.35em !important;
+        margin-right: 0.3em !important;
     }
 
     .brand-text br {
@@ -709,60 +708,60 @@ html, body {
     }
 
     .brand-text {
-        flex: 1;
-        text-align: center;
-        font-size: clamp(0.72rem, 3.1vw, 0.9rem) !important;
-        letter-spacing: 2.5px !important;
+        flex: 1 !important;
+        text-align: center !important;
+        font-size: clamp(0.7rem, 3vw, 0.88rem) !important;
+        letter-spacing: 2.2px !important;
         line-height: 1 !important;
         white-space: nowrap !important;
         display: inline-block !important;
-        transform: scaleY(1.4) !important; 
+        transform: scaleY(1.35) !important; 
         transform-origin: center center !important; 
         margin: 0 !important;
     }
 
     .system-controls {
-        order: 2;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        flex-shrink: 0;
+        order: 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        flex-shrink: 0 !important;
     }
 
     .system-controls .cyber-btn {
-        padding: 4px 8px;
-        font-size: 0.75rem;
+        padding: 4px 7px !important;
+        font-size: 0.72rem !important;
     }
 
     .center-links {
-        order: 3;
+        order: 3 !important;
         display: flex !important;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        overflow-x: visible;
-        white-space: nowrap;
-        padding: 4px 0 0 0;
-        gap: 2px;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        margin-top: 2px;
+        width: 100% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        overflow-x: visible !important;
+        white-space: nowrap !important;
+        padding: 3px 0 0 0 !important;
+        gap: 2px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+        margin-top: 2px !important;
     }
 
     .center-links a {
-        font-size: 0.65rem;
-        letter-spacing: 0.3px;
-        padding: 2px 0;
-        font-weight: 700;
+        font-size: 0.62rem !important;
+        letter-spacing: 0.2px !important;
+        padding: 2px 0 !important;
+        font-weight: 700 !important;
     }
 
     /* 2. FOOTER RISTRUTTURATO COMPATTO */
     .bottom-footer {
-        height: auto;
-        flex-direction: column;
-        padding: 6px 12px;
-        gap: 4px;
-        justify-content: center;
-        text-align: center;
+        height: auto !important;
+        flex-direction: column !important;
+        padding: 5px 10px !important;
+        gap: 3px !important;
+        justify-content: center !important;
+        text-align: center !important;
     }
 
     .footer-credits-desktop {
@@ -771,33 +770,34 @@ html, body {
 
     .footer-credits-mobile {
         display: inline !important;
-        font-size: 0.7rem;
-        opacity: 0.9;
+        font-size: 0.68rem !important;
+        opacity: 0.9 !important;
     }
 
-    /* 3. HERO HUD MOBILE: De-compresso per dare respiro */
+    /* 3. HERO HUD MOBILE: Layout compatto che mantiene tutto entro i pixel dello schermo */
     .hero-hud {
-        margin-top: 80px !important;
-        min-height: calc(100vh - 130px) !important;
-        padding: 0.4rem 0.6rem 0.8rem 0.6rem !important;
-        justify-content: space-between !important;
+        margin-top: 70px !important;
+        min-height: calc(100vh - 118px) !important;
+        padding: 0.2rem 0.4rem 0.4rem 0.4rem !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
     }
 
     .hero-titles {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 0 4px !important;
-        margin: 0 auto 12px auto !important;
+        padding: 0 2px !important;
+        margin: 0 auto 4px auto !important;
         text-align: center !important;
     }
 
     .hero-titles h2, 
     #main-title {
-        font-size: clamp(12px, 3.75vw, 18px) !important;
+        font-size: clamp(11px, 3.6vw, 17px) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
-        line-height: 1.2 !important;
-        margin-bottom: 4px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 2px !important;
         text-align: center !important;
         width: 100% !important;
         display: block !important;
@@ -806,10 +806,10 @@ html, body {
 
     .hero-titles p, 
     #main-subtitle {
-        font-size: clamp(9px, 2.65vw, 13px) !important;
+        font-size: clamp(8.5px, 2.5vw, 12px) !important;
         white-space: nowrap !important;
         letter-spacing: 0px !important;
-        line-height: 1.2 !important;
+        line-height: 1.15 !important;
         text-align: center !important;
         width: 100% !important;
         display: block !important;
@@ -817,24 +817,24 @@ html, body {
 
     /* GRIGLIA CONTAINER SCHEDE E PIANETA (MOBILE) */
     .hud-container {
-        height: auto;
-        min-height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px !important;
-        padding: 4px 0;
-        margin: 12px 0 !important;
-        width: 100%;
+        height: auto !important;
+        min-height: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+        padding: 0 !important;
+        margin: 4px 0 !important;
+        width: 100% !important;
     }
 
     /* PIANETA (Schermata 1 Mobile) */
     .hud-center.planet-interactive {
-        position: relative;
-        grid-column: span 2;
-        justify-self: center;
-        width: 200px !important;
-        height: 200px !important;
-        margin: 0.5rem auto !important;
+        position: relative !important;
+        grid-column: span 2 !important;
+        justify-self: center !important;
+        width: 185px !important;
+        height: 185px !important;
+        margin: 0.2rem auto !important;
     }
 
     .hud-center.planet-exploded {
@@ -853,41 +853,46 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 12px 10px !important;
-        gap: 8px !important;
-        border-radius: 12px !important;
+        padding: 8px 6px !important;
+        gap: 4px !important;
+        border-radius: 10px !important;
         flex-direction: column !important;
         text-align: center !important;
         justify-content: center !important;
-        min-height: 85px !important;
+        min-height: 64px !important;
     }
 
     .node-icon {
-        font-size: 1.6rem !important;
+        font-size: 1.3rem !important;
     }
 
+    /* TITOLI CARDS SU 1 SOLA RIGA PERFETTA (Incluso "SITO WEB INTELLIGENTE") */
     .node-text h3 {
-        font-size: 0.8rem !important;
-        line-height: 1.15 !important;
+        font-size: clamp(0.62rem, 2.5vw, 0.74rem) !important;
+        white-space: nowrap !important;
+        line-height: 1.1 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
     .node-text span {
-        font-size: 0.68rem !important;
-        margin-top: 3px !important;
+        font-size: 0.6rem !important;
+        margin-top: 2px !important;
+        white-space: nowrap !important;
     }
 
-    /* BOTTONE ETICA E CODICE: Visibile su 1 SOLA RIGA pulita */
+    /* BOTTONE ETICA E CODICE: GARANTITO VISIBILE E SU 1 SOLA RIGA */
     .bottom-node {
         position: relative !important;
-        font-size: clamp(0.52rem, 2.2vw, 0.68rem) !important;
+        font-size: clamp(0.48rem, 2.05vw, 0.62rem) !important;
         white-space: nowrap !important;
-        padding: 8px 14px !important;
-        text-align: center;
-        margin: 14px auto 8px auto !important;
+        padding: 6px 10px !important;
+        text-align: center !important;
+        margin: 8px auto 2px auto !important;
         display: inline-flex !important;
-        max-width: 96% !important;
-        justify-content: center;
-        align-items: center;
+        max-width: 98% !important;
+        justify-content: center !important;
+        align-items: center !important;
         line-height: 1 !important;
         opacity: 1 !important;
         pointer-events: auto !important;
@@ -896,11 +901,11 @@ html, body {
     /* 4. XENON POSIZIONAMENTO INIZIALE (Schermata 1 Mobile) */
     #xenon-container {
         bottom: 75px !important;
-        right: 12px;
-        left: auto;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 6px;
+        right: 12px !important;
+        left: auto !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 6px !important;
     }
 
     .xenon-avatar-btn {
@@ -909,32 +914,33 @@ html, body {
     }
 
     .xenon-bubble {
-        max-width: 240px;
-        padding: 8px 12px;
+        max-width: 240px !important;
+        padding: 8px 12px !important;
     }
 
     .xenon-bubble p {
-        font-size: 0.72rem;
-        line-height: 1.35;
+        font-size: 0.72rem !important;
+        line-height: 1.35 !important;
     }
 
-    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA, CENTRATO TRA SOTTOTITOLO E SCHEDE, IN MOVIMENTO CONTINUO) */
-    #xenon-container.xenon-moved-center {
-        /* Posizionamento assoluto nell'interstizio verticale tra sottotitolo e griglia */
-        top: 105px !important; 
-        right: 12px !important;
-        left: auto !important;
+    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA PER POLLICE DESTRO, FLUTTUANTE E FUMETTO TRASLUCIDO) */
+    html body #xenon-container.xenon-moved-center {
+        position: fixed !important;
+        top: 128px !important; /* Interstizio perfetto sotto il sottotitolo */
+        right: 8px !important;
+        left: 8px !important;
         bottom: auto !important;
-        transform: none !important;
+        width: calc(100vw - 16px) !important;
         
-        flex-direction: row-reverse !important; /* Alieno a DESTRA (facile da toccare col pollice), Fumetto a SINISTRA */
+        display: flex !important;
+        flex-direction: row !important; /* Fumetto a SINISTRA, Avatar a DESTRA per il pollice */
         align-items: center !important;
         justify-content: flex-end !important;
-        gap: 8px !important;
+        gap: 6px !important;
         
-        /* Animazione continua di fluttuazione anche in schermata 2 */
-        animation: xenonMobileRightFloat 4s ease-in-out infinite !important;
-        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        /* Animazione continua di fluttuazione attiva */
+        animation: xenonMobileRightFloat 3.8s ease-in-out infinite !important;
+        transition: all 0.6s ease !important;
     }
 
     @keyframes xenonMobileRightFloat {
@@ -942,44 +948,50 @@ html, body {
             transform: translateY(0px) rotate(0deg);
         }
         50% {
-            transform: translateY(-7px) rotate(2deg);
+            transform: translateY(-6px) rotate(1.5deg);
         }
     }
 
-    /* Alieno cliccabile sulla destra */
-    #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 55px !important;
-        height: 55px !important;
+    /* Avatar alieno cliccabile a destra */
+    html body #xenon-container.xenon-moved-center #xenon-avatar,
+    html body #xenon-container.xenon-moved-center .xenon-avatar-btn {
+        width: 48px !important;
+        height: 48px !important;
         flex-shrink: 0 !important;
+        pointer-events: auto !important;
     }
 
-    /* Fumetto trasparente a sinistra in max 3 righe */
-    #xenon-container.xenon-moved-center .xenon-bubble {
-        max-width: 210px !important;
-        padding: 5px 9px !important;
+    /* Fumetto traslucido vetro a sinistra dell'alieno */
+    html body #xenon-container.xenon-moved-center #xenon-speech,
+    html body #xenon-container.xenon-moved-center .xenon-bubble {
+        max-width: calc(100% - 62px) !important;
+        padding: 4px 8px !important;
         text-align: left !important;
-        /* VETRO TRASPARENTE PER FAR VEDERE LO SFONDO SPASIALE */
         background: rgba(8, 15, 30, 0.35) !important;
-        border: 1px solid rgba(0, 243, 255, 0.2) !important;
+        border: 1px solid rgba(0, 243, 255, 0.22) !important;
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-        transition: opacity 0.6s ease, transform 0.6s ease !important;
-    }
-    
-    #xenon-container.xenon-moved-center .xenon-bubble p {
-        color: #ffffff !important;
-        font-size: 0.67rem !important;
-        line-height: 1.25 !important;
-        font-weight: 500 !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
 
-    /* Mantiene il fumetto visibile su mobile */
-    #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
+    html body #xenon-container.xenon-moved-center .xenon-bubble p {
+        color: #ffffff !important;
+        font-size: 0.62rem !important;
+        line-height: 1.2 !important;
+        font-weight: 500 !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;
+        margin: 0 !important;
+    }
+
+    /* Forza il fumetto a rimanere visibile su mobile */
+    html body #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
         pointer-events: auto !important;
+        display: block !important;
     }
 
     /* 5. MODALE POPUP */
