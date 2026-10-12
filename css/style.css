@@ -784,10 +784,10 @@ html, body {
 
     /* 3. HERO HUD MOBILE: MARGINE SUPERIORE STACCATO PER FAR RESPIRARE I LINK */
     .hero-hud {
-        margin-top: 84px !important;
-        height: calc(100dvh - 126px) !important;
+        margin-top: 76px !important;
+        height: calc(100dvh - 118px) !important;
         min-height: auto !important;
-        padding: 0.3rem 0.6rem 2.2rem 0.6rem !important;
+        padding: 0.4rem 0.6rem 0.8rem 0.6rem !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
@@ -801,6 +801,7 @@ html, body {
         padding: 0 2px !important;
         margin: 0 auto 2px auto !important;
         text-align: center !important;
+        flex-shrink: 0 !important;
     }
 
     .hero-titles h2, 
@@ -833,17 +834,20 @@ html, body {
         min-height: auto !important;
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        gap: clamp(8px, 1.8vh, 16px) !important;
         padding: 0 !important;
         margin: 4px 0 !important;
         width: 100% !important;
-        transition: margin 0.3s ease !important;
+        transition: all 0.3s ease !important;
     }
 
-    /* Quando il pianeta esplode (Fase 2), la griglia si abbassa di 60px lasciando respiro a Xenon */
+    /* Quando il pianeta esplode (Fase 2), la griglia diventa flessibile e occupa tutto lo spazio verticale */
     .hero-hud:has(.planet-exploded) .hud-container {
+        flex: 1 1 auto !important; /* Si estende per riempire l'intero vuoto centrale */
+        grid-template-rows: repeat(2, 1fr) !important; /* Forza le 2 righe a dividersi al 50% lo spazio disponibile */
         margin-top: clamp(52px, 7vh, 68px) !important; 
-        margin-bottom: 4px !important;
+        margin-bottom: 8px !important;
+        align-items: stretch !important;
     }
 
     /* PIANETA (Schermata 1 Mobile) */
@@ -863,7 +867,7 @@ html, body {
         pointer-events: none !important;
     }
 
-    /* LE 4 SCHEDE INGRANDITE CON ELASTICITÀ VERTICALE IN VH (Schermata 2 Mobile) */
+    /* LE 4 SCHEDE CHE SI ESPANDONOIN ALTEZZA SUI TELEFONI ALTI (> 400px) */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -872,13 +876,15 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: clamp(12px, 2.2vh, 20px) 8px !important; /* Padding dinamico in vh per schermi alti */
+        height: 100% !important; /* Riempie al 100% l'altezza della riga della griglia flessibile */
+        min-height: clamp(85px, 11vh, 140px) !important;
+        padding: clamp(10px, 1.8vh, 20px) 8px !important;
         gap: 6px !important;
         border-radius: 12px !important;
         flex-direction: column !important;
         text-align: center !important;
         justify-content: center !important;
-        min-height: clamp(84px, 11.5vh, 120px) !important; /* Si allunga automaticamente sugli schermi alti come iPhone 16 / Pixel 9 */
+        align-items: center !important;
         
         /* TRASPARENZA GLASSMORPHISM PER FAR TRASPARIRE IL CANVAS STELLATO */
         background: rgba(8, 15, 30, 0.45) !important;
@@ -907,14 +913,14 @@ html, body {
         white-space: nowrap !important;
     }
 
-    /* BOTTONE ETICA E CODICE: SOLLEVATO A METÀ DELLO SPAZIO LIBERO IN BASSO, SU 1 RIGA SGLA */
+    /* BOTTONE ETICA E CODICE: SOLLEVATO E RIGIDO SU 1 SOLA RIGA */
     .bottom-node {
         position: relative !important;
         font-size: clamp(0.50rem, 2.15vw, 0.65rem) !important;
         white-space: nowrap !important;
         padding: 8px 14px !important;
         text-align: center !important;
-        margin: 6px auto clamp(14px, 2.5vh, 26px) auto !important; /* Margine inferiore dinamico in vh per salire al centro dello spazio libero */
+        margin: 4px auto 6px auto !important;
         display: inline-flex !important;
         max-width: 98% !important;
         justify-content: center !important;
@@ -925,6 +931,7 @@ html, body {
         background: rgba(0, 243, 255, 0.08) !important;
         border: 1px solid var(--glass-border) !important;
         z-index: 50 !important;
+        flex-shrink: 0 !important;
     }
 
     /* 4. XENON POSIZIONAMENTO INIZIALE (Schermata 1 Mobile) */
@@ -955,7 +962,7 @@ html, body {
     /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA INGRANDITO, FLUTTUANTE E CON FUMETTO TRASLUCIDO) */
     html body #xenon-container.xenon-moved-center {
         position: fixed !important;
-        top: clamp(130px, 16vh, 150px) !important; /* Posizionato visivamente nell'interstizio perfetto sotto il sottotitolo */
+        top: clamp(130px, 16vh, 150px) !important; /* Posizionato nell'interstizio tra sottotitolo e griglia */
         right: 10px !important;
         left: 10px !important;
         bottom: auto !important;
