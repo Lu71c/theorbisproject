@@ -665,11 +665,13 @@ function triggerBigBang() {
     if (xenonText) {
         xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
-        // Il fumetto scompare sia su PC che su Mobile dopo 2.5 secondi per permettere il riposizionamento pulito al centro
+        // MODIFICA QUI: Il fumetto scompare DOPO 2.5 secondi SOLO SU SCHERMI GRANDI (PC)
         setTimeout(() => {
-            const xenonSpeech = document.getElementById('xenon-speech');
-            if (xenonSpeech) {
-                xenonSpeech.classList.add('fade-out');
+            if (window.innerWidth > 768) {
+                const xenonSpeech = document.getElementById('xenon-speech');
+                if (xenonSpeech) {
+                    xenonSpeech.classList.add('fade-out');
+                }
             }
         }, 2500);
     }
