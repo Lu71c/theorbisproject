@@ -673,11 +673,13 @@ html, body {
    OPTIMIZED RESPONSIVE MOBILE STYLES (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* BLOCCO DELLO SCROLL SUL BODY (Sensazione App Nativa) */
+    /* 1. MANTIENE IL LAYOUT AD UNA PAGINA MA CONSENTE IL PULL-TO-REFRESH NATIVO */
     html, body {
-        overflow: hidden !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior-y: auto !important;
         height: 100% !important;
-        touch-action: manipulation !important;
+        touch-action: pan-y !important;
     }
 
     /* 1. HEADER & NAVBAR MOBILE */
@@ -843,8 +845,8 @@ html, body {
 
     /* Quando il pianeta esplode (Fase 2), la griglia diventa flessibile e occupa tutto lo spazio verticale */
     .hero-hud:has(.planet-exploded) .hud-container {
-        flex: 1 1 auto !important; /* Si estende per riempire l'intero vuoto centrale */
-        grid-template-rows: repeat(2, 1fr) !important; /* Forza le 2 righe a dividersi al 50% lo spazio disponibile */
+        flex: 1 1 auto !important;
+        grid-template-rows: repeat(2, 1fr) !important;
         margin-top: clamp(52px, 7vh, 68px) !important; 
         margin-bottom: 8px !important;
         align-items: stretch !important;
@@ -867,7 +869,7 @@ html, body {
         pointer-events: none !important;
     }
 
-    /* LE 4 SCHEDE CHE SI ESPANDONOIN ALTEZZA SUI TELEFONI ALTI (> 400px) */
+    /* LE 4 SCHEDE: ORA MOLTO TRASPARENTI CON SFONDO E COMETE BEN VISIBILI */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -876,7 +878,7 @@ html, body {
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        height: 100% !important; /* Riempie al 100% l'altezza della riga della griglia flessibile */
+        height: 100% !important;
         min-height: clamp(85px, 11vh, 140px) !important;
         padding: clamp(10px, 1.8vh, 20px) 8px !important;
         gap: 6px !important;
@@ -886,19 +888,19 @@ html, body {
         justify-content: center !important;
         align-items: center !important;
         
-        /* TRASPARENZA GLASSMORPHISM PER FAR TRASPARIRE IL CANVAS STELLATO */
-        background: rgba(8, 15, 30, 0.45) !important;
-        border: 1px solid rgba(0, 243, 255, 0.25) !important;
-        backdrop-filter: blur(6px) !important;
-        -webkit-backdrop-filter: blur(6px) !important;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 243, 255, 0.08) !important;
+        /* TRASPARENZA CRISTALLINA: RISALTA IL CANVAS STELLATO E LE COMETE */
+        background: rgba(8, 15, 30, 0.15) !important;
+        border: 1px solid rgba(0, 243, 255, 0.28) !important;
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 15px rgba(0, 243, 255, 0.08) !important;
     }
 
     .node-icon {
         font-size: 1.5rem !important;
     }
 
-    /* TITOLI CARDS RIGIDI SU 1 RIGA SGLA (Incluso "SITO WEB INTELLIGENTE") */
+    /* TITOLI CARDS RIGIDI SU 1 RIGA */
     .node-text h3 {
         font-size: clamp(0.64rem, 2.55vw, 0.76rem) !important;
         white-space: nowrap !important;
@@ -913,14 +915,14 @@ html, body {
         white-space: nowrap !important;
     }
 
-    /* BOTTONE ETICA E CODICE: SOLLEVATO E RIGIDO SU 1 SOLA RIGA */
+    /* BOTTONE ETICA E CODICE: ALZATO DI 3-4 MM E ADATTIVO SU TUTTI GLI SCHERMI */
     .bottom-node {
         position: relative !important;
         font-size: clamp(0.50rem, 2.15vw, 0.65rem) !important;
         white-space: nowrap !important;
         padding: 8px 14px !important;
         text-align: center !important;
-        margin: 4px auto 6px auto !important;
+        margin: 4px auto clamp(16px, 2.8vh, 24px) auto !important;
         display: inline-flex !important;
         max-width: 98% !important;
         justify-content: center !important;
@@ -959,22 +961,21 @@ html, body {
         line-height: 1.35 !important;
     }
 
-    /* XENON IN SECONDA SCHERMATA MOBILE (A DESTRA INGRANDITO, FLUTTUANTE E CON FUMETTO TRASLUCIDO) */
+    /* XENON IN SECONDA SCHERMATA MOBILE */
     html body #xenon-container.xenon-moved-center {
         position: fixed !important;
-        top: clamp(130px, 16vh, 150px) !important; /* Posizionato nell'interstizio tra sottotitolo e griglia */
+        top: clamp(130px, 16vh, 150px) !important;
         right: 10px !important;
         left: 10px !important;
         bottom: auto !important;
         width: calc(100vw - 20px) !important;
         
         display: flex !important;
-        flex-direction: row !important; /* Fumetto a SINISTRA, Avatar a DESTRA per il pollice */
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: flex-end !important;
         gap: 8px !important;
         
-        /* Animazione fluttuante attiva */
         animation: xenonMobileRightFloat 3.8s ease-in-out infinite !important;
         transition: all 0.5s ease !important;
         z-index: 60 !important;
@@ -992,7 +993,7 @@ html, body {
     /* Avatar alieno ingrandito sulla destra */
     html body #xenon-container.xenon-moved-center #xenon-avatar,
     html body #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 60px !important; /* Ingrandito per tocco comodo col pollice */
+        width: 60px !important;
         height: 60px !important;
         flex-shrink: 0 !important;
         pointer-events: auto !important;
@@ -1023,7 +1024,6 @@ html, body {
         margin: 0 !important;
     }
 
-    /* Mantiene il fumetto visibile su mobile */
     html body #xenon-container.xenon-moved-center .xenon-bubble.fade-out {
         opacity: 1 !important;
         transform: translateY(0) scale(1) !important;
