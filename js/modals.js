@@ -194,19 +194,19 @@ const modalData = {
         `
     },
     'suite-aziendale': {
-        title: "💼 DOMOTICA AZIENDALE // SUITE 2027",
+        title: "💼 L'AZIENDA DEL FUTURO",
         subtitle: "L'Ufficio Sintetico Multi-Agente: Addio al Data Entry. Il Futuro dell'Operativo B2B.",
         content: `
             <!-- BANNER STATUS: COMING SOON RIVOLUZIONARIO -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px; position:relative;">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:6px;">
                     <span style="font-size:0.75rem; letter-spacing:1.5px; color:#00ff9d; background:rgba(0,255,157,0.12); padding:3px 10px; border-radius:12px; border:1px solid rgba(0,255,157,0.3); font-weight:bold;">
-                        STATUS: CLASSIFIED // BETA IN CORSO
+                        STATUS: BETA IN CORSO
                     </span>
                     <span style="font-size:0.75rem; color:#94a3b8; font-family:monospace;">DEPLOY PREVISTO: GENNAIO 2027</span>
                 </div>
-                <p style="font-size:1.1rem; font-weight:800; color:#00f3ff; margin-bottom:0.4rem;">IL DATA ENTRY È MORTO. IL RESPONSABILE OPERATIVO NON DEVE PIÙ VIVERE SU EXCEL.</p>
-                <p style="font-size:0.88rem; color:#cbd5e1;">Nelle aziende ad alta complessità logistica, le figure di responsabilità passano fino all'80% delle ore a fare calcoli manuali, incastrare celle e gestire emergenze. Stiamo ingegnerizzando il sistema che spazza via questo attrito alla radice, trasformando l'IA da semplice chatbot da intrattenimento a una vera e propria <strong>architettura di lavoro organica</strong>.</p>
+                <p style="font-size:1.1rem; font-weight:800; color:#00f3ff; margin-bottom:0.4rem;">IL RESPONSABILE DI UFFICIO NON DEVE PIÙ VIVERE SU EXCEL.</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">Nelle aziende ad alta complessità logistica, le figure di responsabilità passano fino all'80% delle ore a fare calcoli manuali, incastrare celle e gestire emergenze. Stiamo ingegnerizzando il sistema che spazza via questo attrito alla radice, trasformando l'IA da semplice chatbot a una vera e propria <strong>architettura di lavoro organica</strong>.</p>
             </div>
 
             <!-- IL TEOREMA DEI 3 FATTORI -->
@@ -223,7 +223,7 @@ const modalData = {
             </div>
 
             <!-- I 3 PILASTRI DELL'UFFICIO SINTETICO -->
-            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1.2rem; letter-spacing:1px;">⚙️ L'ARCHITETTURA: L'UFFICIO SINTETICO</h3>
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1.2rem; letter-spacing:1px;">⚙️ L'UFFICIO SINTETICO</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:2.2rem;">
                 
                 <!-- PILASTRO 1: PYTHON -->
@@ -260,7 +260,7 @@ const modalData = {
 
             <!-- FORGIATO SUL CAMPO -->
             <div style="background:rgba(2, 6, 16, 0.5); border:1px solid rgba(0, 255, 157, 0.25); border-radius:8px; padding:1.2rem; margin-bottom:2rem; line-height:1.6;">
-                <h4 style="color:#00ff9d; font-size:0.95rem; margin-bottom:0.4rem; letter-spacing:0.8px;">⚔️ FORGIATO SUL CAMPO, NON IN TEORIA</h4>
+                <h4 style="color:#00ff9d; font-size:0.95rem; margin-bottom:0.4rem; letter-spacing:0.8px;">⚔️ FORGIATO SUL CAMPO</h4>
                 <p style="font-size:0.84rem; color:#cbd5e1;">
                     Questo ecosistema non nasce da astratti pitch di Silicon Valley, ma viene quotidianamente affinato e sottoposto a stress-test nei settori operativi più complessi ed esigenti (turnazioni h24, cantieri regionali, sicurezza fiduciaria e rotazione continua di personale). Se supera questo banco di prova, regge l'operatività di qualunque realtà aziendale nel mondo.
                 </p>
