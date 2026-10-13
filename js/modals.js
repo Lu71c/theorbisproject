@@ -286,7 +286,7 @@ const modalData = {
             <!-- BANNER INTRODUTTIVO -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
                 <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA UMANA ED ETICA</p>
-                <p style="font-size:0.88rem; color:#cbd5e1;">In un mondo dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni IT e Agenti AI nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">In un mondo dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni IT e Agenti AI nel pieno rispetto della dignità dell'utente e dei quadri normativi europei vigenti<strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
             </div>
 
             <!-- 4 PILASTRI DI COMPLIANCE -->
