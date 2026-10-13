@@ -204,7 +204,7 @@ const modalData = {
     },
     'telegram-bridge': {
         title: "🧠 SITO WEB INTELLIGENTE",
-        subtitle: "Vanilla JS, Zero Hosting & Gestione IA via Telegram",
+        subtitle: "Pure Code, Zero Hosting & Gestione sito via IA",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:1.5rem;">
                 <p>Rivoluzioniamo la presenza online delle PMI offrendo siti in puro codice Vanilla JS ultraveloci <strong>(&lt;150ms)</strong>. Garantiamo la <strong>proprietà totale e perpetua del codice</strong> sul tuo account GitHub (zero lock-in) e abbattiamo a zero i costi di hosting.</p>
