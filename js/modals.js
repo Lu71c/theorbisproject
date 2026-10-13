@@ -117,7 +117,7 @@ const modalData = {
     },
     'osint': {
         title: "🔍 OSINT & DATA INTELLIGENCE",
-        subtitle: "Data Mining Python, Analisi Concorrenza & Lead Generation B2B",
+        subtitle: "Scraping, Analisi di Mercato & Lead Generation",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
                 <p>Nel mercato odierno, chi ha i dati detta le regole. La nostra infrastruttura <strong>OSINT (Open Source Intelligence)</strong> trasforma il caos del web pubblico in database commerciali strutturati e legali.</p>
@@ -140,7 +140,7 @@ const modalData = {
                 </div>
             </div>
 
-            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">🧭 ANALISI SWOT STRATEGICA DELL'OSINT</h3>
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem; letter-spacing:1px;">🧭 ANALISI SWOT STRATEGICA</h3>
             
             <!-- GRIGLIA SWOT 2x2 PERFETTA -->
             <div class="swot-grid-2x2">
@@ -152,7 +152,7 @@ const modalData = {
                     </h4>
                     <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
                         <li><strong>Dati 100% Legali:</strong> Estrazione limitata a fonti pubbliche, zero violazioni.</li>
-                        <li><strong>Scalabilità Immediata:</strong> Python permette di analizzare 10 o 100.000 record con lo stesso sforzo.</li>
+                        <li><strong>Scalabilità Immediata:</strong> Python permette di analizzare 10 o 100.000 record con lo stesso identico sforzo.</li>
                         <li><strong>Zero Costi di Acquisizione:</strong> Nessun budget bruciato in Ads per trovare i lead.</li>
                     </ul>
                 </div>
@@ -186,7 +186,7 @@ const modalData = {
                     </h4>
                     <ul style="font-size:0.85rem; color:#e2e8f0; margin-left:1.2rem; line-height:1.5;">
                         <li><strong>Sistemi Anti-Bot:</strong> I siti moderni bloccano il traffico anomalo. Usiamo proxy rotanti e simulazione del comportamento umano.</li>
-                        <li><strong>GDPR e Privacy:</strong> Rischio multe. Il nostro filtro esclude in automatico le PII (Personally Identifiable Information) fisiche.</li>
+                        <li><strong>GDPR e Privacy:</strong> Rischio multe. Il nostro filtro esclude alla fonte le PII private.</li>
                     </ul>
                 </div>
 
