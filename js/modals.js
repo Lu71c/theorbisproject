@@ -280,13 +280,13 @@ const modalData = {
         `
     },
     'compliance': {
-        title: "🛡️ ETICA & CODICE // COMPLIANCE CENTER",
-        subtitle: "Manifesto Tecnologico: GDPR, EU AI Act & Human-in-the-Loop",
+        title: "🛡️ COMPLIANCE CENTER",
+        subtitle: "GDPR, EU AI Act & Human-in-the-Loop",
         content: `
             <!-- BANNER INTRODUTTIVO -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
-                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA UMANA E PRIVACY ASSOLUTA</p>
-                <p style="font-size:0.88rem; color:#cbd5e1;">In un mondo dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni software e Agenti AI ad altissime prestazioni nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA UMANA ED ETICA</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">In un mondo dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni software e Agenti AI nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
             </div>
 
             <!-- 4 PILASTRI DI COMPLIANCE -->
@@ -313,7 +313,7 @@ const modalData = {
                 <!-- PILASTRO 3: OSINT B2B LEGALE -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">👁️ Scraping Legale</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">👁️ Ingestion</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 14 & Recit. 14 GDPR</span>
                     </div>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Le nostre pipeline Python OSINT estraggono unicamente informazioni pubbliche di persone giuridiche e mercati B2B. I nostri script integrano filtri automatici di data-cleaning che scartano qualsiasi PII (Dato Personale Fisico). Non profiliamo persone.</p>
@@ -322,7 +322,7 @@ const modalData = {
                 <!-- PILASTRO 4: ACCOUNTABILITY & CODE OWNERSHIP -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">⚙️Vero Copyright</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">⚙️ Copyright</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 5.2 GDPR / Art. 53 AI Act</span>
                     </div>
                     <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Garantiamo la trasparenza e la proprietà totale del codice su GitHub senza server intermedi. Rispettiamo rigorosamente il diritto d'autore e le regole europee TDM (Text and Data Mining opt-out).</p>
