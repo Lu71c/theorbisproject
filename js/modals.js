@@ -944,5 +944,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', handleHashChange);
     handleHashChange();
 });
-
-ecco te l'ho incollato. Fai una bella analisi del testo e correggi, ma il testo sta benissimo, l'idea sta tutta. Ricordati la chiusura del file JSON che avevi rotto. Comunque fammi una bella cosa.
