@@ -285,8 +285,8 @@ const modalData = {
         content: `
             <!-- BANNER INTRODUTTIVO -->
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
-                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA ANTROPOCENTRICA E PRIVACY ASSOLUTA</p>
-                <p style="font-size:0.88rem; color:#cbd5e1;">In un ecosistema digitale dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni software e Agenti AI ad altissime prestazioni nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
+                <p style="font-size:1.05rem; font-weight:bold; color:#00f3ff; margin-bottom:0.4rem;">🏛️ IL NOSTRO MANIFESTO: TECNOLOGIA UMANA E PRIVACY ASSOLUTA</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">In un mondo dominato da tracciamenti invasivi e algoritmi opachi, <strong>The Orbis Project</strong> dimostra che è possibile offrire soluzioni software e Agenti AI ad altissime prestazioni nel pieno rispetto della dignità dell'utente e dei quadri normativi europei <strong>(GDPR Reg. UE 2016/679 & EU AI Act Reg. UE 2024/1689)</strong>.</p>
             </div>
 
             <!-- 4 PILASTRI DI COMPLIANCE -->
@@ -295,37 +295,37 @@ const modalData = {
                 <!-- PILASTRO 1: GDPR PRIVACY BY DESIGN -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">🔐 Privacy by Design & Default</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">🔐 Privacy by Design</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 25 GDPR</span>
                     </div>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun cookie tracciante di terze parti, nessuna profilazione invisibile e zero raccolte di dati superflui. Il sito gira su codice puro Vanilla JS e offre form con opzioni Zero-Knowledge per garantire l'anonimato delle comunicazioni.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun cookie tracciante di terze parti, nessuna profilazione e zero raccolte di dati superflui. Il sito gira su codice Vanilla (HTML, CSS, JS) e offre form anonimi per garantire la privacy nelle comunicazioni.</p>
                 </div>
 
                 <!-- PILASTRO 2: HUMAN-IN-THE-LOOP & AI ACT -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">🧠 Human-in-the-Loop (IA)</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">🧠 H-I-T-L (IA)</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 14 AI Act / Art. 22 GDPR</span>
                     </div>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">I nostri Agenti AI (Gems) sono ingegnerizzati con logiche anti-allucinazione e anti-bias. Nessun automatismo sostituisce il giudizio umano: l'IA lavora esclusivamente come copilota ad alta precisione sotto la supervisione dell'utente.</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">I nostri Agenti AI sono ingegnerizzati con logiche anti-allucinazione e anti-bias e ferrei blocchi di dominio. Nessun automatismo sostituisce il giudizio umano: l'IA lavora esclusivamente come copilota ad alta precisione sotto la supervisione dell'utente. Il principio base dietro ogni nostra creazione è il rispetto dello "Human In The Loop". </p>
                 </div>
 
                 <!-- PILASTRO 3: OSINT B2B LEGALE -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">👁️ Data Mining B2B Legale</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">👁️ Scraping Legale</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 14 & Recit. 14 GDPR</span>
                     </div>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Le nostre pipeline Python OSINT estraggono unicamente informazioni pubbliche di persone giuridiche e mercati B2B. I nostri script integrano filtri automatici di data-cleaning che scartano qualsiasi PII (Dato Personale Fisico).</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Le nostre pipeline Python OSINT estraggono unicamente informazioni pubbliche di persone giuridiche e mercati B2B. I nostri script integrano filtri automatici di data-cleaning che scartano qualsiasi PII (Dato Personale Fisico). Non profiliamo persone.</p>
                 </div>
 
                 <!-- PILASTRO 4: ACCOUNTABILITY & CODE OWNERSHIP -->
                 <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#00f3ff; font-size:1rem;">⚙️ Open Code & Copyright</h4>
+                        <h4 style="color:#00f3ff; font-size:1rem;">⚙️Vero Copyright</h4>
                         <span style="font-size:0.7rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:10px; border:1px solid rgba(0,255,157,0.2);">Art. 5.2 GDPR / Art. 53 AI Act</span>
                     </div>
-                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Garantiamo la trasparenza e la proprietà totale del codice su GitHub senza 'scatole nere' o server intermedi trasparenti. Rispettiamo rigorosamente il diritto d'autore e le regole europee TDM (Text and Data Mining opt-out).</p>
+                    <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Garantiamo la trasparenza e la proprietà totale del codice su GitHub senza server intermedi. Rispettiamo rigorosamente il diritto d'autore e le regole europee TDM (Text and Data Mining opt-out).</p>
                 </div>
 
             </div>
@@ -550,7 +550,7 @@ const modalData = {
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px;">
                 <p><strong>Non guadagniamo su di te</strong></p>
-                <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare tempo o denaro, puoi aiutarci a tenere i server accesi e la ricerca indipendente attiva.</p>
+                <p style="margin-top:0.5rem; font-size:0.9rem; color:#94a3b8;">Offriamo infrastrutture ad alte prestazioni e Agent AI specializzati senza cookie traccianti, senza banner pubblicitari e senza vendere i tuoi dati. Se il nostro lavoro ti ha fatto risparmiare denaro, puoi aiutarci a tenere i server accesi e la ricerca indipendente attiva.</p>
             </div>
 
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:2rem;">
