@@ -205,7 +205,7 @@ const modalData = {
                     </span>
                     <span style="font-size:0.75rem; color:#94a3b8; font-family:monospace;">DEPLOY PREVISTO: GENNAIO 2027</span>
                 </div>
-                <p style="font-size:1.1rem; font-weight:800; color:#00f3ff; margin-bottom:0.4rem;">IL RESPONSABILE DI UFFICIO NON DEVE PIÙ VIVERE SU EXCEL.</p>
+                <p style="font-size:1.1rem; font-weight:800; color:#00f3ff; margin-bottom:0.4rem;">IL RESPONSABILE DI UFFICIO NON DEVE PIÙ VIVERE SU EXCEL O SU FOGLI SPARSI.</p>
                 <p style="font-size:0.88rem; color:#cbd5e1;">Nelle aziende ad alta complessità logistica, le figure di responsabilità passano fino all'80% delle ore a fare calcoli manuali, incastrare celle e gestire emergenze. Stiamo ingegnerizzando il sistema che spazza via questo attrito alla radice, trasformando l'IA da semplice chatbot a una vera e propria <strong>architettura di lavoro organica</strong>.</p>
             </div>
 
