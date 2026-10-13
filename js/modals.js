@@ -193,14 +193,96 @@ const modalData = {
             </div>
         `
     },
-    'suite-aziendale': {
-        title: "💼 SUITE & AUTOMAZIONE AZIENDALE",
-        subtitle: "Workflow Optimization, Internal Tools & B2B Dashboards",
+   'suite-aziendale': {
+        title: "💼 DOMOTICA AZIENDALE // SUITE 2027",
+        subtitle: "L'Ufficio Sintetico Multi-Agente: Addio al Data Entry. Il Futuro dell'Operativo B2B.",
         content: `
-            <div style="line-height:1.6; color:#e2e8f0;">
-                <p style="margin-bottom:1rem;">Riduciamo a zero i compiti ripetitivi ingegnerizzando automazioni custom che collegano i software che già utilizzi.</p>
-                <p>Dai report periodici automatici ai sistemi di sincronizzazione inventario/gestionale tramite API dedicate.</p>
-            </div>`
+            <!-- BANNER STATUS: COMING SOON RIVOLUZIONARIO -->
+            <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem; padding:1.5rem; background:rgba(0, 243, 255, 0.05); border-left:4px solid #00f3ff; border-radius:4px; position:relative;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:6px;">
+                    <span style="font-size:0.75rem; letter-spacing:1.5px; color:#00ff9d; background:rgba(0,255,157,0.12); padding:3px 10px; border-radius:12px; border:1px solid rgba(0,255,157,0.3); font-weight:bold;">
+                        STATUS: CLASSIFIED // BETA IN CORSO
+                    </span>
+                    <span style="font-size:0.75rem; color:#94a3b8; font-family:monospace;">DEPLOY PREVISTO: GENNAIO 2027</span>
+                </div>
+                <p style="font-size:1.1rem; font-weight:800; color:#00f3ff; margin-bottom:0.4rem;">IL DATA ENTRY È MORTO. IL RESPONSABILE OPERATIVO NON DEVE PIÙ VIVERE SU EXCEL.</p>
+                <p style="font-size:0.88rem; color:#cbd5e1;">Nelle aziende ad alta complessità logistica, le figure di responsabilità passano fino all'80% delle ore a fare calcoli manuali, incastrare celle e gestire emergenze. Stiamo ingegnerizzando il sistema che spazza via questo attrito alla radice, trasformando l'IA da semplice chatbot da intrattenimento a una vera e propria <strong>architettura di lavoro organica</strong>.</p>
+            </div>
+
+            <!-- IL TEOREMA DEI 3 FATTORI -->
+            <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; margin-bottom:2rem;">
+                <h4 style="color:#00f3ff; font-size:1rem; margin-bottom:0.6rem; display:flex; align-items:center; gap:8px;">
+                    <span>🧭 IL TEOREMA DEI TRE FATTORI: NUMERO, SPAZIO, TEMPO</span>
+                </h4>
+                <p style="font-size:0.85rem; color:#94a3b8; line-height:1.6; margin-bottom:0.8rem;">
+                    Oltre il 70% delle imprese condivide la stessa identica criticità: coordinare un <strong>Numero</strong> di operatori, impiegandoli in uno <strong>Spazio</strong> (cantieri, appalti o zone operative) attraverso il vincolo del <strong>Tempo</strong> (turnazioni, monte ore contrattuali, indisponibilità, riposi e cambi dell'ultimo minuto).
+                </p>
+                <p style="font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+                    I software tradizionali falliscono perché richiedono inserimento manuale continuo. I Large Language Models falliscono perché tentano di fare tutto da soli e allucinano sui numeri. La nostra soluzione cambia il paradigma: <strong>l'IA non è un oracolo onnipotente, è un ufficio compartimentato</strong>.
+                </p>
+            </div>
+
+            <!-- I 3 PILASTRI DELL'UFFICIO SINTETICO -->
+            <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:1.2rem; letter-spacing:1px;">⚙️ L'ARCHITETTURA: L'UFFICIO SINTETICO</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.2rem; margin-bottom:2.2rem;">
+                
+                <!-- PILASTRO 1: PYTHON -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:1.6rem; margin-bottom:0.5rem;">🖥️</div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.02rem;">Python: Il Calcolo Deterministico</h4>
+                        <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessuna matematica affidata all'IA. Pipeline Python pure eseguono l'incrocio massivo di dati, monte ore, contratti e vincoli normativi in frazioni di secondo. Risultato: zero allucinazioni matematiche.</p>
+                    </div>
+                    <div style="margin-top:1rem; font-size:0.75rem; color:#00ff9d; font-family:monospace;">[RUOLO: IL COMPUTER DELL'UFFICIO]</div>
+                </div>
+
+                <!-- PILASTRO 2: AGENTI DIALETTICI -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:1.6rem; margin-bottom:0.5rem;">👥</div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.02rem;">Agenti Multipli Dialettici</h4>
+                        <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Separazione categorica delle competenze. Un agente progetta e redige la pianificazione; un secondo agente ha il mandato esclusivo di distruggerne i punti deboli (Red Teaming) scovando conflitti fino alla perfezione.</p>
+                    </div>
+                    <div style="margin-top:1rem; font-size:0.75rem; color:#00ff9d; font-family:monospace;">[RUOLO: GLI IMPIEGATI SPECIALIZZATI]</div>
+                </div>
+
+                <!-- PILASTRO 3: WEB APP ZERO-KNOWLEDGE -->
+                <div style="background:rgba(8, 15, 30, 0.6); border:1px solid rgba(0, 243, 255, 0.15); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:1.6rem; margin-bottom:0.5rem;">🛡️</div>
+                        <h4 style="color:#00f3ff; margin-bottom:0.5rem; font-size:1.02rem;">Web App Sterile & Zero-Knowledge</h4>
+                        <p style="font-size:0.83rem; color:#94a3b8; line-height:1.5;">Nessun pannello complicato con credenziali a rischio breach. Interfaccia di comando istantanea validata tramite ID crittografico univoco, senza esporre mai i database societari alla rete esterna.</p>
+                    </div>
+                    <div style="margin-top:1rem; font-size:0.75rem; color:#00ff9d; font-family:monospace;">[RUOLO: LA SEDE BLINDATA]</div>
+                </div>
+
+            </div>
+
+            <!-- FORGIATO SUL CAMPO -->
+            <div style="background:rgba(2, 6, 16, 0.5); border:1px solid rgba(0, 255, 157, 0.25); border-radius:8px; padding:1.2rem; margin-bottom:2rem; line-height:1.6;">
+                <h4 style="color:#00ff9d; font-size:0.95rem; margin-bottom:0.4rem; letter-spacing:0.8px;">⚔️ FORGIATO SUL CAMPO, NON IN TEORIA</h4>
+                <p style="font-size:0.84rem; color:#cbd5e1;">
+                    Questo ecosistema non nasce da astratti pitch di Silicon Valley, ma viene quotidianamente affinato e sottoposto a stress-test nei settori operativi più complessi ed esigenti (turnazioni h24, cantieri regionali, sicurezza fiduciaria e rotazione continua di personale). Se supera questo banco di prova, regge l'operatività di qualunque realtà aziendale nel mondo.
+                </p>
+            </div>
+
+            <!-- CALL TO ACTION / EARLY ACCESS -->
+            <div style="text-align:center; padding:1.8rem; background:rgba(8, 15, 30, 0.85); border:1px solid rgba(0, 243, 255, 0.25); border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.5);">
+                <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:0.5rem;">SEI UN'AZIENDA CON ALTA COMPLESSITÀ OPERATIVA?</h3>
+                <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.2rem; max-width:650px; margin-left:auto; margin-right:auto;">
+                    I posti per la fase di Closed Alpha e i primi pilot B2B sono limitati e riservati a imprese selezionate. Se vuoi azzerare i costi del data entry e vedere la suite applicata al tuo flusso, contattaci direttamente.
+                </p>
+                <div style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
+                    <button onclick="openModal('contatti')" style="background:rgba(0, 255, 157, 0.15); border:1px solid #00ff9d; color:#00ff9d; padding:12px 28px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:0.9rem; font-family:var(--font-main); transition:all 0.3s ease; box-shadow:0 0 15px rgba(0,255,157,0.2);">
+                        🚀 CANDIDATI PER IL PILOT B2B
+                    </button>
+                    <span style="font-size:0.75rem; color:#94a3b8; font-family:monospace; margin-top:4px;">
+                        oppure scrivi direttamente a: <a href="mailto:business@theorbisproject.com" style="color:#00f3ff; text-decoration:none;">business@theorbisproject.com</a>
+                    </span>
+                </div>
+            </div>
+        `
+    },
     },
     'telegram-bridge': {
         title: "🧠 SITO WEB INTELLIGENTE",
