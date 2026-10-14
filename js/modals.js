@@ -720,10 +720,10 @@ const modalData = {
     },
 };
 
-let isBigBangTriggered = false;
+window.isBigBangTriggered = false;
 
 function triggerBigBang() {
-    if (isBigBangTriggered) return;
+    if (window.isBigBangTriggered) return;
 
     const planetCore = document.getElementById('hud-core');
     if (planetCore) {
@@ -744,7 +744,10 @@ function triggerBigBang() {
 
     const xenonText = document.getElementById('xenon-text');
     if (xenonText) {
-        xenonText.innerText = "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
+        const currentLang = window.currentLang || 'it';
+        xenonText.innerText = (typeof uiTranslations !== 'undefined' && uiTranslations[currentLang])
+            ? uiTranslations[currentLang].xenon_bigbang
+            : "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
         // MODIFICA QUI: Il fumetto scompare DOPO 2.5 secondi SOLO SU SCHERMI GRANDI (PC)
         setTimeout(() => {
@@ -757,7 +760,7 @@ function triggerBigBang() {
         }, 2500);
     }
 
-    isBigBangTriggered = true;
+    window.isBigBangTriggered = true;
 }
 
 function handleContactSubmit(event) {
@@ -783,7 +786,7 @@ function openModal(key) {
     const data = modalData[key];
     if (!data) return;
 
-    if (!isBigBangTriggered) {
+    if (!window.isBigBangTriggered) {
         triggerBigBang();
     }
 
@@ -922,7 +925,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const xenonAvatar = document.getElementById('xenon-avatar');
     if (xenonAvatar) {
         xenonAvatar.addEventListener('click', () => {
-            if (!isBigBangTriggered) {
+            if (!window.isBigBangTriggered) {
                 triggerBigBang();
             } else {
                 openModal('info');
