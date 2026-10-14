@@ -13,6 +13,9 @@ const modalData_EN = {
         subtitle: "Pre-engineered Gemini Gems for specific tasks. Install them on your account in one click.",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
+                <p style="background:rgba(0, 243, 255, 0.05); border-left:3px solid #00f3ff; padding:0.6rem 0.8rem; border-radius:4px; font-size:0.83rem; color:#94a3b8; margin-bottom:1rem;">
+                    🔑 <strong>Note:</strong> Make sure you are using a browser where you are already logged into Google, otherwise you will be redirected to the main Gemini page.
+                </p>
                 <p>We do not offer simple chatbots, but <strong>Specialized AI Agents</strong> with anti-hallucination logic. Click "INSTALL GEM" to add them directly to your Google Gemini and use them securely with your data.</p>
             </div>
             
