@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioBtn = document.getElementById('audio-toggle');
 
     if (audioBtn) {
+        // Impostazione visiva iniziale: audio disattivato all'avvio
+        audioBtn.innerText = "🔇";
+
         audioBtn.addEventListener('click', () => {
             isAudioEnabled = !isAudioEnabled;
             if (isAudioEnabled) {
@@ -91,9 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Attach haptic audio feedback on node hovers
-    document.querySelectorAll('.hud-node, .bottom-node, .cyber-btn').forEach(elem => {
-        elem.addEventListener('mouseenter', () => playBleep(600, 'sine', 0.03));
-        elem.addEventListener('click', () => playBleep(1000, 'triangle', 0.08));
+    // Delega eventi globale: riproduce il bip su qualsiasi elemento interattivo
+    document.addEventListener('click', (e) => {
+        // Ignora il pulsante audio principale per evitare il doppio bip
+        if (e.target.closest('#audio-toggle')) return;
+
+        const isClickable = e.target.closest('a, button, select, input, [role="button"], .hud-node, .bottom-node, .cyber-btn, #hud-core, #xenon-avatar, .xenon-help-icon, [data-target]');
+        if (isClickable) {
+            playBleep(1000, 'triangle', 0.08);
+        }
+    });
+
+    // Effetto hover su qualsiasi elemento interattivo
+    document.addEventListener('mouseover', (e) => {
+        const isHoverable = e.target.closest('a, button, select, .hud-node, .bottom-node, .cyber-btn, #hud-core, #xenon-avatar, [data-target]');
+        if (isHoverable && !isHoverable.dataset.soundHovered) {
+            isHoverable.dataset.soundHovered = 'true';
+            playBleep(600, 'sine', 0.03);
+            setTimeout(() => { delete isHoverable.dataset.soundHovered; }, 300);
+        }
     });
 });
