@@ -9,7 +9,10 @@ const modalData = {
         subtitle: "Gemini Gems pre-ingegnerizzate per task specifici. Installale sul tuo account in un clic.",
         content: `
             <div style="line-height:1.6; color:#e2e8f0; margin-bottom:2rem;">
-                <p>Non offriamo semplici chatbot, ma <strong>Agenti AI specializzati</strong> con logica anti-allucinazione. Clicca su "Installa Gemma" per aggiungerli direttamente al tuo Google Gemini e usarli in sicurezza con i tuoi dati.</p>
+                <p style="background:rgba(0, 243, 255, 0.05); border-left:3px solid #00f3ff; padding:0.6rem 0.8rem; border-radius:4px; font-size:0.83rem; color:#94a3b8; margin-bottom:1rem;">
+                    🔑 <strong>Nota:</strong> Assicurati di usare un browser in cui sei già loggato su Google, altrimenti verrai reindirizzato alla pagina base di Gemini.
+                </p>
+                <p>Non offriamo semplici chatbot, ma <strong>Agenti AI specializzati</strong> con logica anti allucinazione. Clicca su "Installa Gemma" per aggiungerli direttamente al tuo Google Gemini e usarli in sicurezza con i tuoi dati.</p>
             </div>
             
             <div class="agents-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
