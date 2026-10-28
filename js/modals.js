@@ -1,6 +1,7 @@
 /* ==========================================================================
    THE ORBIS PROJECT - MODAL ENGINE & PLANET BIG BANG ROUTER
    Fast, zero refresh, deeplinking support (#osint, #agenti-ai, etc.)
+   Tablet & Mobile Responsive Engineered
    ========================================================================== */
 
 const modalData = {
@@ -116,7 +117,7 @@ const modalData = {
                     transform: translateY(-2px);
                 }
             </style>
-            `
+        `
     },
     'osint': {
         title: "🔍 OSINT & DATA INTELLIGENCE",
@@ -752,9 +753,10 @@ function triggerBigBang() {
             ? uiTranslations[currentLang].xenon_bigbang
             : "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
-        // MODIFICA QUI: Il fumetto scompare DOPO 2.5 secondi SOLO SU SCHERMI GRANDI (PC)
+        // Dissolvenza automatica dopo 2.5 secondi SOLO su desktop ampi, mai su tablet o schermi bassi
         setTimeout(() => {
-            if (window.innerWidth > 768) {
+            const isSpaciousDesktop = window.innerWidth > 1024 && window.innerHeight > 650;
+            if (isSpaciousDesktop) {
                 const xenonSpeech = document.getElementById('xenon-speech');
                 if (xenonSpeech) {
                     xenonSpeech.classList.add('fade-out');
@@ -794,6 +796,7 @@ function openModal(key) {
     }
 
     const overlay = document.getElementById('modal-overlay');
+    const contentBox = document.getElementById('modal-content-box');
     const dynamicBody = document.getElementById('modal-dynamic-body');
 
     const xenonHelpIcon = `
@@ -806,6 +809,8 @@ function openModal(key) {
                 <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
                 <circle cx="53" cy="45" r="2" fill="#00f3ff" />
                 <circle cx="67" cy="45" r="2" fill="#00f3ff" />
+                <line x1="60" y1="34" x2="60" y2="24" stroke="#00ff9d" stroke-width="1.5" />
+                <circle cx="60" cy="22" r="3" fill="#00ff9d" />
             </svg>
         </div>
     `;
@@ -852,12 +857,20 @@ function openModal(key) {
                 box-shadow: 0 0 15px rgba(255, 50, 50, 0.4) !important;
             }
             
-            @media (max-width: 768px) {
+            @media (max-width: 1024px), (orientation: landscape) and (max-height: 600px) {
                 .btn-text-desktop { display: none !important; }
                 .btn-text-mobile { display: inline !important; }
             }
         </style>
     `;
+
+    // Reset dello scorrimento alla cima ad ogni apertura
+    if (contentBox) contentBox.scrollTop = 0;
+    if (overlay) overlay.scrollTop = 0;
+
+    // Blocca lo scroll di sfondo su mobile e tablet senza bloccare la modale
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     overlay.classList.remove('hidden');
 
@@ -887,7 +900,7 @@ function openModal(key) {
     }
 
     const helpBtn = document.querySelector('.xenon-help-icon');
-    if(helpBtn) {
+    if (helpBtn) {
         helpBtn.addEventListener('mouseover', () => {
             helpBtn.style.background = 'rgba(0, 255, 157, 0.15)';
             helpBtn.style.borderColor = '#00ff9d';
@@ -904,7 +917,12 @@ function openModal(key) {
 
 function closeModal() {
     const overlay = document.getElementById('modal-overlay');
-    overlay.classList.add('hidden');
+    if (overlay) overlay.classList.add('hidden');
+    
+    // Ripristina lo scorrimento naturale della pagina
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+
     history.pushState("", document.title, window.location.pathname + window.location.search);
 }
 
