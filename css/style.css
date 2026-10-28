@@ -37,10 +37,11 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* OVERFLOW BLOCCATO SOLO SU MONITOR DESKTOP AMPI CON ALTEZZA SUFFICIENTE */
-@media (min-width: 1025px) and (min-height: 751px) {
+/* OVERFLOW BLOCCATO SU DESKTOP E SU TABLET IN ORIZZONTALE (COCKPIT A SCHERMATA UNICA) */
+@media (min-width: 901px) and (orientation: landscape) and (min-height: 551px) {
     html, body {
-        overflow: hidden;
+        overflow: hidden !important;
+        height: 100% !important;
     }
 }
 
@@ -82,6 +83,7 @@ html, body {
     padding: 0 2rem;
     background: rgba(2, 6, 16, 0.65);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -314,7 +316,8 @@ html, body {
     padding: 22px 26px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 18px;
     display: flex;
     align-items: center;
@@ -381,6 +384,7 @@ html, body {
     background: rgba(0, 243, 255, 0.05);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 25px;
     color: var(--cyan-glow);
     text-decoration: none;
@@ -473,6 +477,7 @@ html, body {
     background: rgba(8, 15, 30, 0.92);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 14px;
     padding: 12px 18px;
     max-width: 320px;
@@ -528,6 +533,7 @@ html, body {
     padding: 0 2rem;
     background: rgba(2, 6, 16, 0.88);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-size: 0.75rem;
 }
@@ -601,6 +607,7 @@ html, body {
     height: 100vh;
     background: rgba(2, 6, 16, 0.8);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -672,8 +679,24 @@ html, body {
 }
 
 /* ==========================================================================
+   OTTIMIZZAZIONE GPU TOUCH / TABLET: ACCELERAZIONE HARDWARE
+   (Rimuove il lag da ricalcolo blur continuo sul passaggio comete)
+   ========================================================================== */
+@media (hover: none) and (pointer: coarse) {
+    .hud-node,
+    .top-nav,
+    .bottom-footer,
+    .bottom-node,
+    .xenon-bubble {
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        transform: translateZ(0);
+        will-change: transform;
+    }
+}
+
+/* ==========================================================================
    TABLET IN VERTICALE (Portrait: 769px - 1024px)
-   Simula e adatta il flusso ordinato del mobile con proporzioni generose
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait),
        (min-width: 769px) and (max-width: 900px) {
@@ -805,80 +828,211 @@ html, body {
 }
 
 /* ==========================================================================
-   LANDSCAPE VIEWPORTS (Tablet & Smartphone in Orizzontale)
-   Risolve il taglio a fondo pagina e impedisce a Xenon di coprire i contenuti
+   TABLET IN ORIZZONTALE (Landscape: 901px+ con altezza reale 551px - 850px)
+   COCKPIT A SCHERMATA UNICA (Zero Scroll — Calibratura Fluida Millimetrica)
    ========================================================================== */
-@media (orientation: landscape) and (max-height: 800px) {
-    html, body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        height: 100% !important;
+@media (min-width: 901px) and (orientation: landscape) and (min-height: 551px) and (max-height: 850px) {
+    .top-nav {
+        height: 50px !important;
+        padding: 0 1.5rem !important;
+    }
+
+    .brand-logo-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .brand-text {
+        font-size: 0.76rem !important;
+    }
+
+    .center-links {
+        gap: 1.2rem !important;
+    }
+
+    .center-links a {
+        font-size: 0.8rem !important;
+    }
+
+    .bottom-footer {
+        height: 32px !important;
+        padding: 0 1.5rem !important;
+        font-size: 0.68rem !important;
     }
 
     .hero-hud {
-        height: auto !important;
-        min-height: calc(100dvh - 85px) !important;
-        padding-bottom: 5.5rem !important;
-        justify-content: flex-start !important;
+        margin-top: 50px !important;
+        height: calc(100dvh - 82px) !important;
+        min-height: 0 !important;
+        max-height: calc(100dvh - 82px) !important;
+        padding: 0.2rem 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
+    .hero-titles {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .hero-titles h2 {
+        font-size: clamp(1.2rem, 2.2vw, 1.55rem) !important;
+        margin-bottom: 2px !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero-titles p {
+        font-size: clamp(0.78rem, 1.1vw, 0.88rem) !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Schermata 1 (Pianeta) */
+    .hud-center.planet-interactive {
+        width: clamp(180px, 28vh, 230px) !important;
+        height: clamp(180px, 28vh, 230px) !important;
+    }
+
+    /* Schermata 2 (4 Schede compatte) */
+    .hud-container {
+        height: clamp(190px, 32vh, 230px) !important;
+        max-width: 980px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+    }
+
+    .hud-node {
+        width: clamp(300px, 35vw, 360px) !important;
+        padding: 8px 14px !important;
+        min-height: 0 !important;
+        height: auto !important;
+        gap: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .node-icon {
+        font-size: 1.9rem !important;
+    }
+
+    .node-text h3 {
+        font-size: 0.86rem !important;
+        letter-spacing: 0.3px !important;
+        line-height: 1.15 !important;
+    }
+
+    .node-text span {
+        font-size: 0.70rem !important;
+        margin-top: 1px !important;
+    }
+
+    .node-top-left      { top: 0px !important; left: 15px !important; }
+    .node-top-right     { top: 0px !important; right: 15px !important; }
+    .node-bottom-left   { bottom: 0px !important; left: 15px !important; }
+    .node-bottom-right  { bottom: 0px !important; right: 15px !important; }
+
+    /* Xenon centrale compatto che non invade verticalmente */
+    #xenon-container.xenon-moved-center {
+        transform: translate(-50%, -50%) scale(0.68) !important;
+    }
+
+    #xenon-container.xenon-moved-center .xenon-bubble {
+        max-width: 260px !important;
+        padding: 6px 12px !important;
+    }
+
+    #xenon-container.xenon-moved-center .xenon-bubble p {
+        font-size: 0.75rem !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Compliance Center bloccato subito sopra il footer visibile */
     .bottom-node {
-        margin-top: 15px !important;
-        margin-bottom: 40px !important;
+        margin: 2px auto 4px auto !important;
+        padding: 5px 16px !important;
+        font-size: 0.74rem !important;
+        flex-shrink: 0 !important;
     }
 }
 
-/* SMARTPHONE IN ORIZZONTALE (Altezza < 550px) */
+/* ==========================================================================
+   SMARTPHONE IN ORIZZONTALE (Landscape a Bassa Altezza: <= 550px)
+   ========================================================================== */
 @media (orientation: landscape) and (max-height: 550px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        min-height: 100% !important;
+        touch-action: pan-y !important;
+    }
+
     .top-nav {
-        height: 50px !important;
+        height: 48px !important;
         padding: 0 1rem !important;
     }
 
     .brand-logo-img {
-        width: 32px !important;
-        height: 32px !important;
+        width: 30px !important;
+        height: 30px !important;
     }
 
     .brand-text {
-        font-size: 0.72rem !important;
+        font-size: 0.70rem !important;
+        letter-spacing: 1.5px !important;
     }
 
     .center-links a {
-        font-size: 0.75rem !important;
-        letter-spacing: 0.5px !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.4px !important;
+    }
+
+    .bottom-footer {
+        position: relative !important;
+        height: auto !important;
+        padding: 10px 1rem !important;
+        margin-top: 15px !important;
     }
 
     .hero-hud {
-        margin-top: 55px !important;
-        padding: 0.5rem 1rem 4.5rem 1rem !important;
-        gap: 10px !important;
+        margin-top: 50px !important;
+        height: auto !important;
+        min-height: calc(100dvh - 50px) !important;
+        padding: 0.4rem 1rem 1rem 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .hero-titles {
+        margin-bottom: 4px !important;
     }
 
     .hero-titles h2 {
-        font-size: 1.3rem !important;
+        font-size: 1.25rem !important;
         margin-bottom: 2px !important;
     }
 
     .hero-titles p {
-        font-size: 0.85rem !important;
+        font-size: 0.82rem !important;
     }
 
-    .hud-container {
-        height: auto !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        max-width: 760px !important;
-        margin: 10px auto !important;
-    }
-
+    /* Schermata 1 (Pianeta) */
     .hud-center.planet-interactive {
         position: relative !important;
         grid-column: span 2 !important;
         width: 145px !important;
         height: 145px !important;
-        margin: 5px auto !important;
+        margin: 4px auto !important;
     }
 
     .hud-center.planet-exploded {
@@ -888,6 +1042,57 @@ html, body {
         pointer-events: none !important;
     }
 
+    /* Schermata 1: Xenon parla in basso a destra col suo fumetto attivo */
+    #xenon-container:not(.xenon-moved-center) {
+        position: fixed !important;
+        bottom: 38px !important;
+        right: 12px !important;
+        left: auto !important;
+        top: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        pointer-events: none !important;
+        z-index: 50 !important;
+    }
+
+    #xenon-container:not(.xenon-moved-center) .xenon-avatar-btn {
+        width: 46px !important;
+        height: 46px !important;
+        pointer-events: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    #xenon-container:not(.xenon-moved-center) .xenon-bubble {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        max-width: 240px !important;
+        padding: 5px 9px !important;
+        text-align: left !important;
+        background: rgba(8, 15, 30, 0.78) !important;
+        border: 1px solid var(--glass-border) !important;
+        pointer-events: auto !important;
+    }
+
+    #xenon-container:not(.xenon-moved-center) .xenon-bubble p {
+        font-size: 0.65rem !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+
+    /* Schermata 2: Griglia delle 4 card */
+    .hud-container {
+        height: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        max-width: 760px !important;
+        width: 100% !important;
+        margin: 6px auto !important;
+    }
+
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -895,7 +1100,7 @@ html, body {
         right: auto !important;
         bottom: auto !important;
         width: 100% !important;
-        min-height: 72px !important;
+        min-height: 68px !important;
         padding: 8px 12px !important;
         gap: 10px !important;
         border-radius: 10px !important;
@@ -905,83 +1110,73 @@ html, body {
     }
 
     .node-icon {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
     }
 
     .node-text h3 {
-        font-size: 0.82rem !important;
+        font-size: 0.80rem !important;
         white-space: nowrap !important;
     }
 
     .node-text span {
-        font-size: 0.68rem !important;
-    }
-
-    /* Xenon in landscape phone: ancorato in basso a destra, non al centro a coprire le schede */
-    #xenon-container,
-    #xenon-container.xenon-moved-center {
-        position: fixed !important;
-        top: auto !important;
-        bottom: 48px !important;
-        right: 15px !important;
-        left: auto !important;
-        transform: none !important;
-        animation: none !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        z-index: 95 !important;
-        pointer-events: none !important;
-    }
-
-    #xenon-container .xenon-avatar-btn,
-    #xenon-container.xenon-moved-center .xenon-avatar-btn {
-        width: 48px !important;
-        height: 48px !important;
-        pointer-events: auto !important;
-    }
-
-    #xenon-container .xenon-bubble,
-    #xenon-container.xenon-moved-center .xenon-bubble {
-        display: none !important;
+        font-size: 0.65rem !important;
     }
 
     .bottom-node {
         font-size: 0.72rem !important;
         padding: 6px 16px !important;
-        margin: 10px auto 40px auto !important;
-    }
-}
-
-/* TABLET IN ORIZZONTALE CON ALTEZZA COMPRESSA (551px - 780px Height) */
-@media (orientation: landscape) and (min-height: 551px) and (max-height: 780px) and (min-width: 901px) {
-    .hero-hud {
-        padding-top: 1rem !important;
-        padding-bottom: 5rem !important;
-        justify-content: flex-start !important;
+        margin: 8px auto 6px auto !important;
+        flex-shrink: 0 !important;
     }
 
-    .hud-container {
-        height: 310px !important;
-        margin: 10px auto !important;
+    /* Schermata 2: Xenon si posiziona SOTTO Etica & Codice col fumetto disteso in orizzontale */
+    .hero-hud #xenon-container.xenon-moved-center {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        animation: none !important;
+        width: calc(100% - 20px) !important;
+        max-width: 680px !important;
+        margin: 10px auto 14px auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        z-index: 60 !important;
+        pointer-events: auto !important;
     }
 
-    .hud-node {
-        width: 360px !important;
-        padding: 16px 20px !important;
+    .hero-hud #xenon-container.xenon-moved-center .xenon-avatar-btn {
+        width: 50px !important;
+        height: 50px !important;
+        flex-shrink: 0 !important;
+        pointer-events: auto !important;
     }
 
-    .node-top-left     { top: 5px !important; left: 40px !important; }
-    .node-top-right    { top: 5px !important; right: 40px !important; }
-    .node-bottom-left  { bottom: 5px !important; left: 40px !important; }
-    .node-bottom-right { bottom: 5px !important; right: 40px !important; }
-    
-    #xenon-container.xenon-moved-center {
-        transform: translate(-50%, -50%) scale(0.82) !important;
+    .hero-hud #xenon-container.xenon-moved-center .xenon-bubble {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        flex: 1 1 auto !important;
+        max-width: 520px !important;
+        text-align: left !important;
+        padding: 7px 12px !important;
+        background: rgba(8, 15, 30, 0.75) !important;
+        border: 1px solid rgba(0, 243, 255, 0.28) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+        margin: 0 !important;
+        pointer-events: auto !important;
     }
 
-    .bottom-node {
-        margin-top: 15px !important;
-        margin-bottom: 40px !important;
+    .hero-hud #xenon-container.xenon-moved-center .xenon-bubble p {
+        font-size: 0.68rem !important;
+        line-height: 1.3 !important;
+        color: #e2e8f0 !important;
+        margin: 0 !important;
     }
 }
 
