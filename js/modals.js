@@ -753,11 +753,11 @@ function triggerBigBang() {
             ? uiTranslations[currentLang].xenon_bigbang
             : "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
-        // Dissolvenza automatica dopo 2.5 secondi SOLO su desktop ampi mouse-driven.
-        // Mai su tablet, smartphone o landscape, dove il fumetto deve rimanere persistente.
+        // Dissolvenza automatica dopo 2.5 secondi SOLO su PC Desktop puro
+        // Mai su tablet, mai su smartphone e mai in modalità landscape
         setTimeout(() => {
             const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-            const isSpaciousDesktop = window.innerWidth > 1150 && window.innerHeight > 780 && !isTouch;
+            const isSpaciousDesktop = window.innerWidth > 1024 && window.innerHeight > 750 && !isTouch;
             if (isSpaciousDesktop) {
                 const xenonSpeech = document.getElementById('xenon-speech');
                 if (xenonSpeech) {
@@ -870,7 +870,7 @@ function openModal(key) {
     if (contentBox) contentBox.scrollTop = 0;
     if (overlay) overlay.scrollTop = 0;
 
-    // Blocca lo scroll di sfondo su mobile e tablet senza bloccare la modale
+    // Blocca lo scroll del body
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
 
@@ -921,7 +921,7 @@ function closeModal() {
     const overlay = document.getElementById('modal-overlay');
     if (overlay) overlay.classList.add('hidden');
     
-    // Ripristina lo scorrimento naturale della pagina
+    // Ripristina lo scorrimento
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
 
