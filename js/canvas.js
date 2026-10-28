@@ -1,6 +1,6 @@
 /* ==========================================================================
-   THE ORBIS PROJECT - CANVAS 2D REACTIVE ENGINE (FLARES + SHOOTING STARS)
-   Target: 60-120 FPS constant, Zero-GC Comet Renderer, Zero Lag
+   THE ORBIS PROJECT - CANVAS 2D REACTIVE ENGINE (FLARES + CELESTIAL COMETS)
+   Target: 60-120 FPS constant, Fluid Atmospheric Trails, Zero Lag
    ========================================================================== */
 
 const canvas = document.getElementById('bg-canvas');
@@ -33,7 +33,7 @@ function resizeCanvas() {
 function initParticles() {
     particles = [];
     
-    // Calcolo adattivo del numero di particelle per evitare lag su Tablet e Mobile Landscape
+    // Calcolo adattivo del numero di stelle per non saturare la memoria GPU
     const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const isSmallHeight = height < 550;
     const isMobilePortrait = width < 768;
@@ -43,9 +43,9 @@ function initParticles() {
     if (isMobilePortrait || isSmallHeight) {
         count = 110;
     } else if (isTablet) {
-        count = 140; // Ottimizzato per Tablet Retina a 120Hz
+        count = 140; // Bilanciato per schermi 2K/120Hz
     } else {
-        count = 240; // Desktop ad alte prestazioni
+        count = 230; // Desktop
     }
 
     for (let i = 0; i < count; i++) {
@@ -91,18 +91,18 @@ function initParticles() {
     }
 }
 
-// LOGICA STELLE CADENTI
+// LOGICA STELLE CADENTI (Comete fluide, organiche e morbide)
 function createShootingStar() {
     if (shootingStars.length >= 2) return;
 
     shootingStars.push({
         x: Math.random() * width * 0.8 + width * 0.1,
-        y: Math.random() * height * 0.3,
-        length: Math.random() * 80 + 40,
-        speed: Math.random() * 8 + 6,
+        y: Math.random() * height * 0.35,
+        length: Math.random() * 85 + 50,
+        speed: Math.random() * 4.5 + 4.5, // Velocità fluida e naturale, mai a scatto laser
         angle: Math.PI / 4 + (Math.random() - 0.5) * 0.2,
         opacity: 1,
-        fadeSpeed: Math.random() * 0.02 + 0.015
+        fadeSpeed: Math.random() * 0.016 + 0.012
     });
 }
 
@@ -212,38 +212,35 @@ function render() {
     }
 
     // 2. GENERAZIONE STELLE CADENTI
-    if (Math.random() < 0.008) {
+    if (Math.random() < 0.007) {
         createShootingStar();
     }
 
-    // 3. RENDER STELLE CADENTI (Ottimizzato: Zero allocazioni GPU / No createLinearGradient per-frame)
+    // 3. RENDER STELLE CADENTI (Ripristino Gradiente Etereo Autentico)
     for (let i = shootingStars.length - 1; i >= 0; i--) {
         const s = shootingStars[i];
         
         const endX = s.x - Math.cos(s.angle) * s.length;
         const endY = s.y - Math.sin(s.angle) * s.length;
 
-        // Coda esterna eterea
+        // Gradiente morbido continuo: testa luminosa e coda che sfuma nel buio cosmico
+        const gradient = ctx.createLinearGradient(s.x, s.y, endX, endY);
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${s.opacity})`);
+        gradient.addColorStop(0.12, `rgba(0, 243, 255, ${s.opacity * 0.85})`);
+        gradient.addColorStop(0.45, `rgba(0, 255, 157, ${s.opacity * 0.45})`);
+        gradient.addColorStop(1, 'rgba(0, 243, 255, 0)');
+
         ctx.beginPath();
-        ctx.moveTo(endX, endY);
-        ctx.lineTo(s.x, s.y);
-        ctx.strokeStyle = `rgba(0, 243, 255, ${s.opacity * 0.38})`;
-        ctx.lineWidth = 1.0;
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(endX, endY);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 1.35;
+        ctx.lineCap = 'round';
         ctx.stroke();
 
-        // Coda intermedia ad alta brillantezza
-        const midX = s.x - Math.cos(s.angle) * (s.length * 0.4);
-        const midY = s.y - Math.sin(s.angle) * (s.length * 0.4);
+        // Nucleo brillante della cometa
         ctx.beginPath();
-        ctx.moveTo(midX, midY);
-        ctx.lineTo(s.x, s.y);
-        ctx.strokeStyle = `rgba(0, 255, 157, ${s.opacity * 0.75})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        // Nucleo frontale della cometa
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, 1.3, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, 1.2, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
         ctx.fill();
 
@@ -251,7 +248,7 @@ function render() {
         s.y += Math.sin(s.angle) * s.speed;
         s.opacity -= s.fadeSpeed;
 
-        if (s.opacity <= 0 || s.x > width || s.y > height) {
+        if (s.opacity <= 0 || s.x > width + 50 || s.y > height + 50) {
             shootingStars.splice(i, 1);
         }
     }
