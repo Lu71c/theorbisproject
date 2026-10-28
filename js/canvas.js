@@ -1,6 +1,6 @@
 /* ==========================================================================
    THE ORBIS PROJECT - CANVAS 2D REACTIVE ENGINE (FLARES + CELESTIAL COMETS)
-   Target: 60-120 FPS constant, Fluid Atmospheric Trails, Zero Lag
+   Target: 60-120 FPS constant, Fluid Atmospheric Trails, High-Speed Math
    ========================================================================== */
 
 const canvas = document.getElementById('bg-canvas');
@@ -33,7 +33,7 @@ function resizeCanvas() {
 function initParticles() {
     particles = [];
     
-    // Calcolo adattivo del numero di stelle per non saturare la memoria GPU
+    // Calibrazione della densità: preserva la fluidità a 60-120 FPS su schermi 2K
     const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const isSmallHeight = height < 550;
     const isMobilePortrait = width < 768;
@@ -41,11 +41,11 @@ function initParticles() {
 
     let count;
     if (isMobilePortrait || isSmallHeight) {
-        count = 110;
+        count = 100;
     } else if (isTablet) {
-        count = 140; // Bilanciato per schermi 2K/120Hz
+        count = 115; // Densità ottimale per tablet ad alta risoluzione
     } else {
-        count = 230; // Desktop
+        count = 210; // Desktop ad alte prestazioni
     }
 
     for (let i = 0; i < count; i++) {
@@ -61,18 +61,15 @@ function initParticles() {
             radius = Math.random() * 1.5 + 0.7;
             speedMult = 0.35;
             alpha = Math.random() * 0.45 + 0.25;
-            const rand = Math.random();
-            if (rand > 0.65) flareType = 1;      // Croce +
-            else if (rand > 0.4) flareType = 2; // Diagonale X
-            else flareType = 0;
+            flareType = 0; // Riserva i riflessi ottici solo alle stelle in primo piano
         } else {
             radius = Math.random() * 2.2 + 1.1;
             speedMult = 0.75;
             alpha = Math.random() * 0.5 + 0.45;
             const rand = Math.random();
-            if (rand > 0.55) flareType = 3;     // Asterisco *
+            if (rand > 0.6) flareType = 3;      // Asterisco *
             else if (rand > 0.3) flareType = 1;  // Croce +
-            else flareType = 2;                 // Diagonale X
+            else flareType = 2;                  // Diagonale X
         }
 
         particles.push({
@@ -91,7 +88,7 @@ function initParticles() {
     }
 }
 
-// LOGICA STELLE CADENTI (Comete fluide, organiche e morbide)
+// LOGICA STELLE CADENTI (Morbidezza e gradiente etereo naturale)
 function createShootingStar() {
     if (shootingStars.length >= 2) return;
 
@@ -99,14 +96,14 @@ function createShootingStar() {
         x: Math.random() * width * 0.8 + width * 0.1,
         y: Math.random() * height * 0.35,
         length: Math.random() * 85 + 50,
-        speed: Math.random() * 4.5 + 4.5, // Velocità fluida e naturale, mai a scatto laser
+        speed: Math.random() * 4.5 + 4.5,
         angle: Math.PI / 4 + (Math.random() - 0.5) * 0.2,
         opacity: 1,
         fadeSpeed: Math.random() * 0.016 + 0.012
     });
 }
 
-// Tracciamento fisica Mouse & Touch
+// Tracciamento fisica Mouse & Touch ad alta reattività
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -132,6 +129,11 @@ window.addEventListener('touchmove', (e) => {
 }, { passive: true });
 
 window.addEventListener('touchend', () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+});
+
+window.addEventListener('touchcancel', () => {
     mouse.x = -1000;
     mouse.y = -1000;
 });
@@ -172,7 +174,7 @@ function render() {
     ctx.clearRect(0, 0, width, height);
     time += 0.015;
 
-    // 1. RENDER STELLE DI SFONDO (Con flares)
+    // 1. RENDER STELLE DI SFONDO (Repulsione vettoriale priva di funzioni trigonometriche lente)
     for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
@@ -187,13 +189,12 @@ function render() {
         const dy = mouse.y - p.y;
         const distSq = dx * dx + dy * dy;
 
-        if (distSq < mouse.radiusSq && p.layer > 0.2) {
+        if (distSq < mouse.radiusSq && distSq > 0 && p.layer > 0.2) {
             const dist = Math.sqrt(distSq);
-            const angle = Math.atan2(dy, dx);
             const force = (mouse.radius - dist) / mouse.radius;
-            const repulsionPower = p.layer * 3.5;
-            p.x -= Math.cos(angle) * force * repulsionPower;
-            p.y -= Math.sin(angle) * force * repulsionPower;
+            const pushFactor = (p.layer * 3.5 * force) / dist;
+            p.x -= dx * pushFactor;
+            p.y -= dy * pushFactor;
         }
 
         const twinkle = Math.sin(time * 55 * p.twinkleSpeed + p.twinkleOffset) * 0.3;
@@ -204,9 +205,8 @@ function render() {
         ctx.fillStyle = p.color + currentAlpha + ')';
         ctx.fill();
 
-        // Disegna i flares se la stella è abbastanza luminosa
-        if (p.flareType > 0 && currentAlpha > 0.25) {
-            const flareSize = p.radius * (p.layer > 0.8 ? 4 : 2.5);
+        if (p.flareType > 0 && currentAlpha > 0.28) {
+            const flareSize = p.radius * 3.5;
             drawStarFlare(p.x, p.y, flareSize, currentAlpha, p.color, p.flareType);
         }
     }
@@ -216,14 +216,13 @@ function render() {
         createShootingStar();
     }
 
-    // 3. RENDER STELLE CADENTI (Ripristino Gradiente Etereo Autentico)
+    // 3. RENDER STELLE CADENTI (Gradiente a 4 stop cromatici morbido e continuo)
     for (let i = shootingStars.length - 1; i >= 0; i--) {
         const s = shootingStars[i];
         
         const endX = s.x - Math.cos(s.angle) * s.length;
         const endY = s.y - Math.sin(s.angle) * s.length;
 
-        // Gradiente morbido continuo: testa luminosa e coda che sfuma nel buio cosmico
         const gradient = ctx.createLinearGradient(s.x, s.y, endX, endY);
         gradient.addColorStop(0, `rgba(255, 255, 255, ${s.opacity})`);
         gradient.addColorStop(0.12, `rgba(0, 243, 255, ${s.opacity * 0.85})`);
@@ -238,7 +237,6 @@ function render() {
         ctx.lineCap = 'round';
         ctx.stroke();
 
-        // Nucleo brillante della cometa
         ctx.beginPath();
         ctx.arc(s.x, s.y, 1.2, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
@@ -256,7 +254,7 @@ function render() {
     requestAnimationFrame(render);
 }
 
-// Debounce su resize per transizioni fluide tra orientamenti senza freeze
+// Debounce su resize
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(resizeCanvas, 150);
