@@ -12,7 +12,7 @@
     <!-- Sfondo Interattivo Galattico (Canvas 2D) -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Overlay per Vignettatura & Glassmorphism globale -->
+    <!-- Overlay per Vignettatura globale (Senza blur pesante) -->
     <div class="cyber-vignette"></div>
 
     <!-- NAVBAR SUPERIORE -->
@@ -154,53 +154,53 @@
             ETICA & CODICE // Compliance Center (EU AI Act & GDPR)
         </a>
 
+        <!-- XENON: LA GUIDA ALIENA FLUTTUANTE (Spostato DENTRO il Main per gestione del flusso orizzontale) -->
+        <div id="xenon-container" class="xenon-float">
+            <!-- Fumetto di Dialogo -->
+            <div id="xenon-speech" class="xenon-bubble">
+                <p id="xenon-text">Saluti umano! Sono Xenon, la tua interfaccia guida. Clicca sul Pianeta Orbis e scopri i nostri artefatti tecnologici.</p>
+            </div>
+            
+            <!-- Avatar Vettoriale SVG di Xenon nell'UFO -->
+            <div id="xenon-avatar" class="xenon-avatar-btn" title="Parla con Xenon">
+                <svg viewBox="0 0 120 120" class="xenon-svg">
+                    <defs>
+                        <radialGradient id="ufoGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#00ff9d" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+                    
+                    <!-- Fascio di luce inferiore dell'UFO -->
+                    <polygon points="40,80 80,80 105,115 15,115" fill="url(#ufoGlow)" opacity="0.4" />
+                    
+                    <!-- Disco Volante (Base Metallico-Neon) -->
+                    <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
+                    <ellipse cx="60" cy="78" rx="30" ry="5" fill="#00ff9d" opacity="0.6" filter="blur(1px)" />
+                    <!-- Luci di Navigazione UFO -->
+                    <circle cx="25" cy="76" r="2.5" fill="#00ff9d" />
+                    <circle cx="42" cy="80" r="2.5" fill="#00f3ff" />
+                    <circle cx="60" cy="81" r="3" fill="#ffffff" />
+                    <circle cx="78" cy="80" r="2.5" fill="#00f3ff" />
+                    <circle cx="95" cy="76" r="2.5" fill="#00ff9d" />
+
+                    <!-- Cupola Trasparente di Vetro -->
+                    <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
+
+                    <!-- ALIEN XENON (Testa Grigio/Smeraldo e Occhi Neon) -->
+                    <path d="M 52,68 L 68,68 L 65,60 L 55,60 Z" fill="#1e293b" />
+                    <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
+                    <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                    <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
+                    <circle cx="53" cy="45" r="2" fill="#00f3ff" />
+                    <circle cx="67" cy="45" r="2" fill="#00f3ff" />
+                    <line x1="60" y1="34" x2="60" y2="24" stroke="#00ff9d" stroke-width="1.5" />
+                    <circle cx="60" cy="22" r="3" fill="#00ff9d" />
+                </svg>
+            </div>
+        </div>
+
     </main>
-
-    <!-- XENON: LA GUIDA ALIENA FLUTTUANTE -->
-    <div id="xenon-container" class="xenon-float">
-        <!-- Fumetto di Dialogo Glassmorphism -->
-        <div id="xenon-speech" class="xenon-bubble">
-            <p id="xenon-text">Saluti umano! Sono Xenon, la tua interfaccia guida. Clicca sul Pianeta Orbis e scopri i nostri artefatti tecnologici.</p>
-        </div>
-        
-        <!-- Avatar Vettoriale SVG di Xenon nell'UFO -->
-        <div id="xenon-avatar" class="xenon-avatar-btn" title="Parla con Xenon">
-            <svg viewBox="0 0 120 120" class="xenon-svg">
-                <defs>
-                    <radialGradient id="ufoGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.8" />
-                        <stop offset="100%" stop-color="#00ff9d" stop-opacity="0" />
-                    </radialGradient>
-                </defs>
-                
-                <!-- Fascio di luce inferiore dell'UFO -->
-                <polygon points="40,80 80,80 105,115 15,115" fill="url(#ufoGlow)" opacity="0.4" />
-                
-                <!-- Disco Volante (Base Metallico-Neon) -->
-                <ellipse cx="60" cy="75" rx="45" ry="12" fill="#0d1b2a" stroke="#00f3ff" stroke-width="1.8" />
-                <ellipse cx="60" cy="78" rx="30" ry="5" fill="#00ff9d" opacity="0.6" filter="blur(1px)" />
-                <!-- Luci di Navigazione UFO -->
-                <circle cx="25" cy="76" r="2.5" fill="#00ff9d" />
-                <circle cx="42" cy="80" r="2.5" fill="#00f3ff" />
-                <circle cx="60" cy="81" r="3" fill="#ffffff" />
-                <circle cx="78" cy="80" r="2.5" fill="#00f3ff" />
-                <circle cx="95" cy="76" r="2.5" fill="#00ff9d" />
-
-                <!-- Cupola Trasparente di Vetro -->
-                <path d="M 30,70 A 32,32 0 0,1 90,70 Z" fill="rgba(0, 243, 255, 0.15)" stroke="#00f3ff" stroke-width="1.2" />
-
-                <!-- ALIEN XENON (Testa Grigio/Smeraldo e Occhi Neon) -->
-                <path d="M 52,68 L 68,68 L 65,60 L 55,60 Z" fill="#1e293b" />
-                <path d="M 42,48 C 42,32 78,32 78,48 C 78,58 68,64 60,64 C 52,64 42,58 42,48 Z" fill="#94a3b8" stroke="#00ff9d" stroke-width="1" />
-                <ellipse cx="51" cy="48" rx="7" ry="10" transform="rotate(-15 51 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
-                <ellipse cx="69" cy="48" rx="7" ry="10" transform="rotate(15 69 48)" fill="#020610" stroke="#00f3ff" stroke-width="1" />
-                <circle cx="53" cy="45" r="2" fill="#00f3ff" />
-                <circle cx="67" cy="45" r="2" fill="#00f3ff" />
-                <line x1="60" y1="34" x2="60" y2="24" stroke="#00ff9d" stroke-width="1.5" />
-                <circle cx="60" cy="22" r="3" fill="#00ff9d" />
-            </svg>
-        </div>
-    </div>
 
     <!-- FOOTER STRUTTURATO -->
     <footer class="bottom-footer">
