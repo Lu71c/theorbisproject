@@ -362,6 +362,123 @@ const modalData = {
                     </tbody>
                 </table>
             </div>
+
+            <!-- VETRINA PROGETTI // 5 MODELLI OPERATIVI LIVE -->
+            <div id="demo-showcase-section" style="margin-top:2.8rem; padding-top:1.5rem; border-top:1px solid rgba(0, 243, 255, 0.2);">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:0.6rem;">
+                    <h3 style="color:#ffffff; font-size:1.15rem; letter-spacing:1px; margin:0; display:flex; align-items:center; gap:8px;">
+                        <span>🚀 VETRINA PROGETTI // 5 MODELLI OPERATIVI</span>
+                    </h3>
+                    <span style="font-size:0.75rem; color:#00ff9d; background:rgba(0,255,157,0.12); padding:3px 10px; border-radius:12px; border:1px solid rgba(0,255,157,0.3); font-weight:bold; font-family:monospace;">
+                        100% VANILLA JS • GITHUB HOSTED
+                    </span>
+                </div>
+                <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.6rem; line-height:1.5;">
+                    Prototipi reali ad altissime prestazioni per PMI e attività commerciali. Esplora le architetture già testate, responsive e pronte per essere personalizzate su misura in pochi giorni.
+                </p>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem;">
+                    
+                    <!-- 1. Benessere & Hair Spa -->
+                    <div style="background:rgba(8, 15, 30, 0.65); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.3s ease;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                                <h4 style="color:#00f3ff; font-size:1.05rem; margin:0;">💇‍♀️ Benessere & Hair Spa</h4>
+                                <span style="font-size:0.68rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:8px; border:1px solid rgba(0,255,157,0.25); font-family:monospace; font-weight:bold;">LIVE DEMO</span>
+                            </div>
+                            <div style="font-size:0.78rem; color:#94a3b8; font-family:monospace; margin-bottom:0.8rem;">Maison Brera — Atelier Privato</div>
+                            <ul style="font-size:0.82rem; color:#cbd5e1; line-height:1.55; margin-left:1.1rem; margin-bottom:1.3rem;">
+                                <li><strong>Pricing Dinamico per Ruolo:</strong> Switch istantaneo Senior Stylist vs Artistic Director con ricalcolo immediato dei listini.</li>
+                                <li><strong>Diagnostic Advisor 2.0:</strong> Quiz interattivo a step con algoritmo di prescrizione trattamenti su misura.</li>
+                                <li><strong>Drawer Schede Tecniche:</strong> Pannello off-canvas con protocolli, ingredienti e consigli di mantenimento.</li>
+                                <li><strong>Booking Engine WhatsApp:</strong> Generatore di messaggi formattati con data, orari e drink di benvenuto.</li>
+                            </ul>
+                        </div>
+                        <a href="https://lu71c.github.io/orbis-style/index.html" target="_blank" class="cyber-btn-visit" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:9px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:bold; letter-spacing:0.5px; transition:all 0.3s ease; display:block;">VISITA DEMO LIVE ↗</a>
+                    </div>
+
+                    <!-- 2. Hôtellerie & Relais -->
+                    <div style="background:rgba(8, 15, 30, 0.65); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.3s ease;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                                <h4 style="color:#00f3ff; font-size:1.05rem; margin:0;">🏰 Hôtellerie & Relais</h4>
+                                <span style="font-size:0.68rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:8px; border:1px solid rgba(0,255,157,0.25); font-family:monospace; font-weight:bold;">LIVE DEMO</span>
+                            </div>
+                            <div style="font-size:0.78rem; color:#94a3b8; font-family:monospace; margin-bottom:0.8rem;">Villa Bellaria — Country Relais</div>
+                            <ul style="font-size:0.82rem; color:#cbd5e1; line-height:1.55; margin-left:1.1rem; margin-bottom:1.3rem;">
+                                <li><strong>Booking Bar Deterministica:</strong> Calcolo notti matematico con logica di soggiorno minimo nei weekend.</li>
+                                <li><strong>Disintermediazione OTA:</strong> Sconto diretto del 15% applicato in tempo reale per azzerare le commissioni esterne.</li>
+                                <li><strong>Upselling Esperienze:</strong> Selezione extra (degustazioni, picnic nei vigneti, e-bike) e tassa soggiorno inclusa.</li>
+                                <li><strong>Preventivo WhatsApp:</strong> Inoltro richiesta dettagliata con date, suite e totale stimato in un clic.</li>
+                            </ul>
+                        </div>
+                        <a href="https://lu71c.github.io/orbis-hotel/index.html" target="_blank" class="cyber-btn-visit" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:9px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:bold; letter-spacing:0.5px; transition:all 0.3s ease; display:block;">VISITA DEMO LIVE ↗</a>
+                    </div>
+
+                    <!-- 3. E-Commerce Skincare -->
+                    <div style="background:rgba(8, 15, 30, 0.65); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.3s ease;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                                <h4 style="color:#00f3ff; font-size:1.05rem; margin:0;">✨ E-Commerce & Store</h4>
+                                <span style="font-size:0.68rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:8px; border:1px solid rgba(0,255,157,0.25); font-family:monospace; font-weight:bold;">LIVE DEMO</span>
+                            </div>
+                            <div style="font-size:0.78rem; color:#94a3b8; font-family:monospace; margin-bottom:0.8rem;">AURA — Skincare & Cosmetics</div>
+                            <ul style="font-size:0.82rem; color:#cbd5e1; line-height:1.55; margin-left:1.1rem; margin-bottom:1.3rem;">
+                                <li><strong>Zero Commissioni di Piattaforma:</strong> Vendita diretta senza costi mensili Shopify o percentuali sul fatturato.</li>
+                                <li><strong>Live Search & Filtri Attivi:</strong> Ricerca istantanea (<20ms) per principi attivi botanici e categorie di pelle.</li>
+                                <li><strong>Carrello Smart Dinamico:</strong> Barra di avanzamento per spedizione gratuita e persistenza LocalStorage.</li>
+                                <li><strong>Checkout Realistico:</strong> Modulo d'ordine integrato con emissione automatica di ID Ricevuta univoco.</li>
+                            </ul>
+                        </div>
+                        <a href="https://lu71c.github.io/orbis-store/index.html" target="_blank" class="cyber-btn-visit" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:9px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:bold; letter-spacing:0.5px; transition:all 0.3s ease; display:block;">VISITA DEMO LIVE ↗</a>
+                    </div>
+
+                    <!-- 4. Ristorazione Gourmet -->
+                    <div style="background:rgba(8, 15, 30, 0.65); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.3s ease;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                                <h4 style="color:#00f3ff; font-size:1.05rem; margin:0;">🍽️ Ristorazione Gourmet</h4>
+                                <span style="font-size:0.68rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:8px; border:1px solid rgba(0,255,157,0.25); font-family:monospace; font-weight:bold;">LIVE DEMO</span>
+                            </div>
+                            <div style="font-size:0.78rem; color:#94a3b8; font-family:monospace; margin-bottom:0.8rem;">Lumina — Cucina Sensoriale</div>
+                            <ul style="font-size:0.82rem; color:#cbd5e1; line-height:1.55; margin-left:1.1rem; margin-bottom:1.3rem;">
+                                <li><strong>Carta Digitale Istantanea:</strong> Navigazione a tab per percorsi degustazione, portate e cantina da 450+ vini.</li>
+                                <li><strong>Addio PDF Pesanti al Tavolo:</strong> Caricamento a <100ms anche con connettività mobile debole in sala.</li>
+                                <li><strong>Download Carta Ufficiale:</strong> Generatore di file documento pronto per la consultazione offline.</li>
+                                <li><strong>Tavolo Riservato con Voucher:</strong> Prenotazione rapida con codice univoco inviato al maître via WhatsApp.</li>
+                            </ul>
+                        </div>
+                        <a href="https://lu71c.github.io/ristorante-orbis/index.html" target="_blank" class="cyber-btn-visit" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:9px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:bold; letter-spacing:0.5px; transition:all 0.3s ease; display:block;">VISITA DEMO LIVE ↗</a>
+                    </div>
+
+                    <!-- 5. Centro Sportivo & Padel -->
+                    <div style="background:rgba(8, 15, 30, 0.65); border:1px solid rgba(0, 243, 255, 0.2); border-radius:8px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.3s ease;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                                <h4 style="color:#00f3ff; font-size:1.05rem; margin:0;">🎾 Centro Sportivo & SPA</h4>
+                                <span style="font-size:0.68rem; color:#00ff9d; background:rgba(0,255,157,0.1); padding:2px 8px; border-radius:8px; border:1px solid rgba(0,255,157,0.25); font-family:monospace; font-weight:bold;">LIVE DEMO</span>
+                            </div>
+                            <div style="font-size:0.78rem; color:#94a3b8; font-family:monospace; margin-bottom:0.8rem;">Michelangelo Sport — Firenze</div>
+                            <ul style="font-size:0.82rem; color:#cbd5e1; line-height:1.55; margin-left:1.1rem; margin-bottom:1.3rem;">
+                                <li><strong>Padel Booking a 2 Step:</strong> Tabellone orari dinamico (libero/occupato) con opzione campo libero o maestro.</li>
+                                <li><strong>Abbonamenti Palestra:</strong> Piani mensili, trimestrali e annuali con simulatore di checkout PayPal.</li>
+                                <li><strong>Iscrizione Tornei Calcio:</strong> Validazione squadre e generazione Pass ufficiale con codice identificativo.</li>
+                                <li><strong>Architettura SPA Nativa:</strong> Navigazione fluida a zero refresh per piscina olimpionica e corsi.</li>
+                            </ul>
+                        </div>
+                        <a href="https://lu71c.github.io/orbis-sport/index.html" target="_blank" class="cyber-btn-visit" style="background:rgba(0, 255, 157, 0.1); border:1px solid #00ff9d; color:#00ff9d; padding:9px; text-align:center; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:bold; letter-spacing:0.5px; transition:all 0.3s ease; display:block;">VISITA DEMO LIVE ↗</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <style>
+                .cyber-btn-visit:hover {
+                    background: rgba(0, 255, 157, 0.25) !important;
+                    box-shadow: 0 0 15px rgba(0, 255, 157, 0.45) !important;
+                    transform: translateY(-2px);
+                }
+            </style>
         `
     },
     'compliance': {
@@ -817,6 +934,12 @@ function openModal(key) {
         </div>
     `;
 
+    const demoBtnHtml = `
+        <button class="cyber-btn-demo-dynamic" style="background:rgba(0, 255, 157, 0.12); border:1px solid #00ff9d; color:#00ff9d; padding:8px 12px; border-radius:4px; cursor:pointer; font-weight:700; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">
+            DEMO
+        </button>
+    `;
+
     const writeUsBtnHtml = `
         <button class="cyber-btn-write-dynamic" style="background:rgba(0, 243, 255, 0.1); border:1px solid rgba(0, 243, 255, 0.35); color:#00f3ff; padding:8px 12px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.85rem; font-family:var(--font-main); transition:all 0.2s ease;">
             <span class="btn-text-desktop">✉️ SCRIVICI</span>
@@ -840,6 +963,7 @@ function openModal(key) {
             
             <div class="modal-header-controls" style="display:flex; gap:6px; align-items:center; flex-shrink:0; flex-wrap:wrap;">
                 ${xenonHelpIcon}
+                ${key === 'telegram-bridge' ? demoBtnHtml : ''}
                 ${key !== 'contatti' ? writeUsBtnHtml : ''}
                 ${closeBtnHtml}
             </div>
@@ -853,6 +977,12 @@ function openModal(key) {
             .btn-text-desktop { display: inline; }
             .btn-text-mobile { display: none; }
             
+            .cyber-btn-demo-dynamic:hover {
+                background: rgba(0, 255, 157, 0.25) !important;
+                box-shadow: 0 0 15px rgba(0, 255, 157, 0.45) !important;
+                transform: translateY(-2px);
+            }
+
             .cyber-btn-close-dynamic:hover {
                 background: rgba(255, 50, 50, 0.35) !important;
                 color: #ffffff !important;
@@ -875,6 +1005,16 @@ function openModal(key) {
     document.documentElement.style.overflow = 'hidden';
 
     overlay.classList.remove('hidden');
+
+    const dynamicDemoBtn = document.querySelector('.cyber-btn-demo-dynamic');
+    if (dynamicDemoBtn) {
+        dynamicDemoBtn.addEventListener('click', () => {
+            const showcaseEl = document.getElementById('demo-showcase-section');
+            if (showcaseEl) {
+                showcaseEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 
     const dynamicCloseBtn = document.querySelector('.cyber-btn-close-dynamic');
     if (dynamicCloseBtn) {
