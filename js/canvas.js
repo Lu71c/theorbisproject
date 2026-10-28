@@ -1,6 +1,6 @@
 /* ==========================================================================
    THE ORBIS PROJECT - CANVAS 2D REACTIVE ENGINE (FLARES + SHOOTING STARS)
-   Target: 60 FPS constant, Vanilla JS, Zero Lag
+   Target: 60 FPS constant, Adaptive Tablet/Mobile, Zero Lag
    ========================================================================== */
 
 const canvas = document.getElementById('bg-canvas');
@@ -12,6 +12,7 @@ let shootingStars = [];
 let mouse = { x: -1000, y: -1000, radius: 160, radiusSq: 25600 };
 let isTabActive = true;
 let time = 0;
+let resizeTimeout;
 
 // PALETTE CROMATICA REALE DELL'UNIVERSO
 const starColors = [
@@ -31,8 +32,21 @@ function resizeCanvas() {
 
 function initParticles() {
     particles = [];
-    const isMobile = width < 768;
-    const count = isMobile ? 120 : 250;
+    
+    // Calcolo adattivo del numero di particelle per evitare lag su Tablet e Mobile Landscape
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const isSmallHeight = height < 550;
+    const isMobilePortrait = width < 768;
+    const isTablet = (width >= 768 && width <= 1200) || (isTouch && width <= 1366);
+
+    let count;
+    if (isMobilePortrait || isSmallHeight) {
+        count = 110;
+    } else if (isTablet) {
+        count = 150; // Ottimizzato per Tablet Retina a 120Hz
+    } else {
+        count = 240; // Desktop ad alte prestazioni
+    }
 
     for (let i = 0; i < count; i++) {
         const layer = Math.random();
@@ -92,7 +106,7 @@ function createShootingStar() {
     });
 }
 
-// Tracciamento fisica Mouse & Touch (Non interrompe lo scroll nativo né il Pull-to-Refresh)
+// Tracciamento fisica Mouse & Touch
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -233,6 +247,11 @@ function render() {
     requestAnimationFrame(render);
 }
 
-window.addEventListener('resize', resizeCanvas);
+// Debounce su resize per transizioni fluide tra orientamenti senza freeze
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resizeCanvas, 150);
+});
+
 resizeCanvas();
 render();
