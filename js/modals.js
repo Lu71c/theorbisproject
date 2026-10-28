@@ -753,9 +753,11 @@ function triggerBigBang() {
             ? uiTranslations[currentLang].xenon_bigbang
             : "Eccellente! Il Pianeta si è rivelato. Esplora le schede dei nostri servizi o clicca su di me per assistenza.";
         
-        // Dissolvenza automatica dopo 2.5 secondi SOLO su desktop ampi, mai su tablet o schermi bassi
+        // Dissolvenza automatica dopo 2.5 secondi SOLO su desktop ampi mouse-driven.
+        // Mai su tablet, smartphone o landscape, dove il fumetto deve rimanere persistente.
         setTimeout(() => {
-            const isSpaciousDesktop = window.innerWidth > 1024 && window.innerHeight > 650;
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            const isSpaciousDesktop = window.innerWidth > 1150 && window.innerHeight > 780 && !isTouch;
             if (isSpaciousDesktop) {
                 const xenonSpeech = document.getElementById('xenon-speech');
                 if (xenonSpeech) {
