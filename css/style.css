@@ -868,6 +868,7 @@ html, body {
         align-items: stretch !important;
     }
 
+    /* RIPRISTINO SCHEDE A COLONNA SU TABLET (Trasparenza ed equilibrio come Smartphone) */
     .hud-node {
         position: relative !important;
         top: auto !important;
@@ -880,17 +881,17 @@ html, body {
         min-height: 110px !important;
         padding: 16px 20px !important;
         border-radius: 14px !important;
-        flex-direction: row !important;
-        text-align: left !important;
-        justify-content: flex-start !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        justify-content: center !important;
         align-items: center !important;
-        gap: 16px !important;
-        background: rgba(8, 15, 30, 0.4) !important;
+        gap: 8px !important;
+        background: rgba(8, 15, 30, 0.15) !important;
         border: 1px solid rgba(0, 243, 255, 0.28) !important;
     }
 
     .node-icon {
-        font-size: 2.3rem !important;
+        font-size: 2.8rem !important;
     }
 
     .node-text h3 {
@@ -1623,7 +1624,7 @@ html, body {
 
     @keyframes xenonMobileRightFloat {
         0%, 100% {
-            transform: translateY(0px);
+            transform: translateY(0px) rotate(0deg);
         }
         50% {
             transform: translateY(-6px) rotate(1.5deg);
