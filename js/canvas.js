@@ -1,6 +1,6 @@
 /* ==========================================================================
    THE ORBIS PROJECT - CANVAS 2D REACTIVE ENGINE (FLARES + SHOOTING STARS)
-   Target: 60 FPS constant, Adaptive Tablet/Mobile, Zero Lag
+   Target: 60-120 FPS constant, Zero-GC Comet Renderer, Zero Lag
    ========================================================================== */
 
 const canvas = document.getElementById('bg-canvas');
@@ -43,7 +43,7 @@ function initParticles() {
     if (isMobilePortrait || isSmallHeight) {
         count = 110;
     } else if (isTablet) {
-        count = 150; // Ottimizzato per Tablet Retina a 120Hz
+        count = 140; // Ottimizzato per Tablet Retina a 120Hz
     } else {
         count = 240; // Desktop ad alte prestazioni
     }
@@ -216,24 +216,36 @@ function render() {
         createShootingStar();
     }
 
-    // 3. RENDER STELLE CADENTI
+    // 3. RENDER STELLE CADENTI (Ottimizzato: Zero allocazioni GPU / No createLinearGradient per-frame)
     for (let i = shootingStars.length - 1; i >= 0; i--) {
         const s = shootingStars[i];
         
         const endX = s.x - Math.cos(s.angle) * s.length;
         const endY = s.y - Math.sin(s.angle) * s.length;
 
-        const gradient = ctx.createLinearGradient(s.x, s.y, endX, endY);
-        gradient.addColorStop(0, `rgba(0, 243, 255, ${s.opacity})`);
-        gradient.addColorStop(0.3, `rgba(0, 255, 157, ${s.opacity * 0.6})`);
-        gradient.addColorStop(1, 'rgba(0, 243, 255, 0)');
-
+        // Coda esterna eterea
         ctx.beginPath();
-        ctx.moveTo(s.x, s.y);
-        ctx.lineTo(endX, endY);
-        ctx.strokeStyle = gradient;
-        ctx.lineWidth = 1.2;
+        ctx.moveTo(endX, endY);
+        ctx.lineTo(s.x, s.y);
+        ctx.strokeStyle = `rgba(0, 243, 255, ${s.opacity * 0.38})`;
+        ctx.lineWidth = 1.0;
         ctx.stroke();
+
+        // Coda intermedia ad alta brillantezza
+        const midX = s.x - Math.cos(s.angle) * (s.length * 0.4);
+        const midY = s.y - Math.sin(s.angle) * (s.length * 0.4);
+        ctx.beginPath();
+        ctx.moveTo(midX, midY);
+        ctx.lineTo(s.x, s.y);
+        ctx.strokeStyle = `rgba(0, 255, 157, ${s.opacity * 0.75})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Nucleo frontale della cometa
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, 1.3, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
+        ctx.fill();
 
         s.x += Math.cos(s.angle) * s.speed;
         s.y += Math.sin(s.angle) * s.speed;
